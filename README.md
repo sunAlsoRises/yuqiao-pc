@@ -5,7 +5,7 @@
 ## 技术选型:
     oracle
     mybatis
-    druid
+    第三方短信
     jdbc      
     springboot
     前端:  
@@ -42,7 +42,7 @@
          templates
                    base   公共页面 
                    ershoufang : 二手房 相关
-                        ershoufangN : 二手福安列表
+                        ershoufangN : 二手房列表
                         secondHouse: 二手房详情
                    helphouse: 用户相关帮助
                         buy:买房
