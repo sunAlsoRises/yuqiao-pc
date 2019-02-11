@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.B_OrderMapper.B_OrderMapper">
+  <resultMap id="BaseResultMap" type="com.model.B_Order">
+    <id column="Id" jdbcType="NVARCHAR" property="id" />
+    <result column="FangYuanBianHao" jdbcType="NVARCHAR" property="fangyuanbianhao" />
+    <result column="YeZhuXingMing" jdbcType="NVARCHAR" property="yezhuxingming" />
+    <result column="YeZhuDianHua" jdbcType="NVARCHAR" property="yezhudianhua" />
+    <result column="KeYuanBianHao" jdbcType="NVARCHAR" property="keyuanbianhao" />
+    <result column="KeHuXingMing" jdbcType="NVARCHAR" property="kehuxingming" />
+    <result column="KeHuDianHua" jdbcType="NVARCHAR" property="kehudianhua" />
+    <result column="HeTongBianHao" jdbcType="NVARCHAR" property="hetongbianhao" />
+    <result column="BranchShopId" jdbcType="NVARCHAR" property="branchshopid" />
+    <result column="QuanZhengUserId" jdbcType="NVARCHAR" property="quanzhenguserid" />
+    <result column="QuanZhengName" jdbcType="NVARCHAR" property="quanzhengname" />
+    <result column="AnJieRenYuan" jdbcType="NVARCHAR" property="anjierenyuan" />
+    <result column="ShiShouYongJin" jdbcType="DECIMAL" property="shishouyongjin" />
+    <result column="YingShouYongJin" jdbcType="DECIMAL" property="yingshouyongjin" />
+    <result column="ChengJiaoJiaGe" jdbcType="DECIMAL" property="chengjiaojiage" />
+    <result column="FuKuangFangShi" jdbcType="NVARCHAR" property="fukuangfangshi" />
+    <result column="DingJinKuan" jdbcType="DECIMAL" property="dingjinkuan" />
+    <result column="ShouQiKuan" jdbcType="DECIMAL" property="shouqikuan" />
+    <result column="DaiKuanJinE" jdbcType="DECIMAL" property="daikuanjine" />
+    <result column="DingDanBianHao" jdbcType="NVARCHAR" property="dingdanbianhao" />
+    <result column="LastStatus" jdbcType="NVARCHAR" property="laststatus" />
+    <result column="CreateUserId" jdbcType="NVARCHAR" property="createuserid" />
+    <result column="CreateName" jdbcType="NVARCHAR" property="createname" />
+    <result column="CreateTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="LastUpdateUserId" jdbcType="NVARCHAR" property="lastupdateuserid" />
+    <result column="LastUpdateName" jdbcType="NVARCHAR" property="lastupdatename" />
+    <result column="LastUpdateTime" jdbcType="TIMESTAMP" property="lastupdatetime" />
+    <result column="CompanyId" jdbcType="NVARCHAR" property="companyid" />
+    <result column="IsDel" jdbcType="NVARCHAR" property="isdel" />
+
+    <!--房源表-->
+    <association property="house" javaType="com.model.FK_House">
+      <id property="id" column="id"/>
+      <result property="leixing" column="leixing"/>
+      <result property="zhuangtai" column="zhuangtai"/>
+      <result property="tongtu" column="tongtu"/>
+      <result property="isshow" column="isshow"/>
+      <result property="name" column="name"/>
+      <result property="dongzuo" column="dongzuo"/>
+
+      <result property="fangyuanbianhao" column="fangyuanbianhao"/>
+    </association>
+  </resultMap>
+  <sql id="Base_Column_List">
+    Id, FangYuanBianHao, YeZhuXingMing, YeZhuDianHua, KeYuanBianHao, KeHuXingMing, KeHuDianHua, 
+    HeTongBianHao, BranchShopId, QuanZhengUserId, QuanZhengName, AnJieRenYuan, ShiShouYongJin, 
+    YingShouYongJin, ChengJiaoJiaGe, FuKuangFangShi, DingJinKuan, ShouQiKuan, DaiKuanJinE, 
+    DingDanBianHao, LastStatus, CreateUserId, CreateName, CreateTime, LastUpdateUserId, 
+    LastUpdateName, LastUpdateTime, CompanyId, IsDel
+  </sql>
+  <!--类型-->
+  <sql id="leixing">
+
+  </sql>
+  <select id="findPriceByXiaoQuId" parameterType="String" resultType="BigDecimal">
+    SELECT Top 1 chengjiaojiage FROM B_Order WHERE FangYuanBianHao in
+   (
+	SELECT h.fangyuanbianhao FROM FK_House h  where h.name = #{xiaoquId}
+	and h.leixing LIKE '%售'
+    )
+ order by LastUpdateTime desc
+  </select>
+<!--查询当月成交数-->
+  <select id="findCountByMounth" resultType="int">
+    SELECT count(*) FROM B_Order
+        WHERE datediff(month,CreateTime,getdate())=0
+  </select>
+</mapper>

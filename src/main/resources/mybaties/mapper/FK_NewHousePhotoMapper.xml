@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mapper.housePhoto.FK_NewHousePhotoMapper" >
+  <resultMap id="BaseResultMap" type="com.model.FK_NewHousePhoto" >
+    <id column="Id" property="id" jdbcType="NVARCHAR" />
+    <result column="NewHouseId" property="newhouseid" jdbcType="NVARCHAR" />
+    <result column="FileName" property="filename" jdbcType="NVARCHAR" />
+    <result column="Path" property="path" jdbcType="NVARCHAR" />
+    <result column="CreateTime" property="createtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    Id, NewHouseId, FileName, Path, CreateTime
+  </sql>
+  <select id="getPhotosByNewId" parameterType="java.lang.String" resultMap="BaseResultMap">
+      select path from FK_NewHousePhoto where NewHouseId = #{id}
+  </select>
+</mapper>

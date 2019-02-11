@@ -1,0 +1,61 @@
+/*<div class="custom" data-type="price">*/
+                                     /*<div class="txt-box">*/
+                                                         /*<input type="text" class="txt" name="min_price" data-index="1" value="">*/
+                                                                                                                                /*</div>&nbsp;-&nbsp;*/
+/*<div class="txt-box">*/
+                    /*<input type="text" class="txt" name="max_price" data-index="1" value="">*/
+                                                                                           /*</div>&nbsp;元<input type="button" data-type="price" class="ok" value="确定" style="display: inline-block;">*/
+                                                                                                                                                                                                   /*</div>*/
+/*.hasmore #shoujia .custom {*/
+    /*display: inline-block;*/
+    /*zoom: 1;*/
+    /*vertical-align: middle;*/
+    /*margin-left: 10px;*/
+    /*padding-bottom: 1px;*/
+/*}*/
+/*.custom  .txt-box, .hasmore #shoujia .custom {*/
+    /*display: inline-block;*/
+    /*zoom: 1;*/
+    /*vertical-align: middle;*/
+/*}*/
+/*.custom  .txt-box {*/
+    /*width: 40px;*/
+    /*border: 1px solid #e3e3e3;*/
+    /*position: relative;*/
+/*}*/
+/*.custom  .txt-box .txt {*/
+    /*display: block;*/
+    /*border: 0 none;*/
+    /*width: 35px;*/
+    /*padding: 2px 1px;*/
+    /*text-align: center;*/
+    /*color: #333;*/
+    /*height: 18px;*/
+    /*line-height: 18px;*/
+    /*font-size: 12px;*/
+/*}*/
+/*.custom .ok, .custom {*/
+    /*display: inline-block;*/
+    /*zoom: 1;*/
+    /*vertical-align: middle;*/
+/*}*/
+/*.custom  .ok {*/
+    /*width: 43px;*/
+    /*padding: 3px 1px;*/
+    /*text-align: center;*/
+    /*border: 1px solid #b7b7b7;*/
+    /*background-color: #FFFFFF;*/
+    /*cursor: pointer;*/
+    /*margin-left: 5px;*/
+    /*color: #555;*/
+    /*font-size: 12px;*/
+/*}*/
+
+.custom input{
+    width: 35px;
+    height: 18px;
+}
+.custom .ok{
+    height: 100%;
+
+}

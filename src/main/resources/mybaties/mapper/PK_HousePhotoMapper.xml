@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mapper.housePhoto.HousePhotoMapper" >
+  <resultMap id="BaseResultMap" type="com.model.PK_HousePhoto" >
+    <id column="Id" property="id" jdbcType="NVARCHAR" />
+    <result column="HouseId" property="houseid" jdbcType="NVARCHAR" />
+    <result column="FileName" property="filename" jdbcType="NVARCHAR" />
+    <result column="Path" property="path" jdbcType="NVARCHAR" />
+    <result column="CreateTime" property="createtime" jdbcType="TIMESTAMP" />
+    <!--与二手房关联-->
+    <!--<association property="house"-->
+                 <!--select="com.mapper.ershoufang.ErshoufangXmlMapper.getHouseByHisTory"-->
+                <!--column="houseid" resultMap="com.mapper.ershoufang.ErshoufangXmlMapper.FK_HouseResultMap"/>-->
+    <association property="house" javaType="com.model.FK_House">
+      <id property="id" column="id"/>
+      <result property="leixing" column="leixing"/>
+      <result property="zhuangtai" column="zhuangtai"/>
+      <result property="tongtu" column="tongtu"/>
+      <result property="isshow" column="isshow"/>
+      <result property="name" column="name"/>
+      <result property="dongzuo" column="dongzuo"/>
+      <result property="danyuan" column="danyuan"/>
+      <result property="fanghao" column="fanghao"/>
+      <result property="louceng" column="louceng"/>
+      <result property="gongjiceng" column="gongjiceng"/>
+      <result property="mianji" column="mianji"/>
+      <result property="woshi" column="woshi"/>
+      <result property="ketingcanting" column="ketingcanting"/>
+      <result property="weishengjian" column="weishengjian"/>
+      <result property="chufang" column="chufang"/>
+      <result property="yangtai" column="yangtai"/>
+      <result property="zhuangxiu" column="zhuangxiu"/>
+      <result property="chaoxiang" column="chaoxiang"/>
+      <result property="louxing" column="louxing"/>
+      <result property="chewei" column="chewei"/>
+      <result property="createname" column="createname"/>
+      <result property="zuidishoujia" column="zuidishoujia"/>
+      <result property="peitao" column="peitao"/>
+      <result property="quyu" column="quyu"/>
+
+      <result property="lastupdatetime" column="lastupdatetime"/>
+      <result property="createuserid" column="CreateUserId"/>
+      <result property="huxing" column="huxing"/>
+      <result property="createtime" column="createtime"/>
+      <result property="zuigaoshoujia" column="zuigaoshoujia"/>
+      <result property="yajinleixing" column="yajinleixing"/>
+      <result property="shuxing" column="shuxing"/>
+      <result property="zuidizujin" column="zuidizujin"/>
+      <result property="zuigaozujin" column="zuigaozujin"/>
+    </association>
+
+  </resultMap>
+  <sql id="Base_Column_List" >
+    Id, HouseId, FileName, Path, CreateTime
+  </sql>
+  <!--通过小区id查询图片数量-->
+  <select id="getCountPhoto" parameterType="java.lang.String" resultType="int">
+        select count(id) from  PK_HousePhoto where houseid = #{id}
+  </select>
+  <!--通过小区id查询图片信息-->
+  <select id="getPhotosByEsfId" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select path from  PK_HousePhoto where houseid = #{id}
+  </select>
+</mapper>

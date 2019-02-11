@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户页面</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/base.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login-res/user.css}" />
+
+</head>
+<body>
+<script>
+    var projecImgtName = "yuqiaopc";
+    var pathName = window.document.location.pathname;
+    var projectName = pathName.substring(0,pathName.substr(1).indexOf('/')+1);
+    var BaseUrl_IIS_Application_Name = "http://dev-12.lingke.mobi";
+    var SecondaryPath = "HousePhoto";
+</script>
+<script th:src="@{/lib/jquery-3.2.1.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/newself/myself_quick_link.js}"></script>
+<script th:src="@{/js/util/spiltUtil.js}"></script>
+<script th:src="@{/js/newself/attentionHouse.js}"></script>
+<!--顶部导航栏开始-->
+<div th:replace="base/header :: html"></div>
+<!--顶部导航栏结束-->
+<div class="user-main">
+    <div class="main-left fl">
+        <div class="name">
+        </div>
+        <div class="user-name"></div>
+        <ul>
+            <li ><a th:href="@{/login/user}">首页</a></li>
+            <!--<li><a href="/site/seeList/">待看清单</a></li>-->
+            <!--<li><a href="/site/seeSchedule/">看房日程</a></li>-->
+            <li class="hover"><a th:href="@{/login/user/attentionHouse/}" >关注的房源</a></li>
+            <!--<li><a th:href="@{/login/user/attentionCommunity/}">关注的小区</a></li>-->
+            <!--<li><a th:href="@{/login/user/attentionHouse/}">我的经纪人</a></li>-->
+            <!--<li><a href="#">看房记录</a></li>-->
+            <li><a th:href="@{/login/user/entrust/}">我的委托</a></li>
+            <!--<li><a href="/site/searchlist/">我的搜索</a></li>-->
+            <!--<li><a href="/site/myWenda/">我的问答</a></li>-->
+            <!--<li><a href="/site/client/">编辑资料</a></li>-->
+        </ul>
+    </div>
+    <div class="main-right fr" id="allList">
+        <div class="title" id="showTotal">共<span>1</span>套 关注房源</div><div class="tab">
+        <span class="actTap selected hover" tap-target="#ershoufang">二手房</span>
+        <!--<span class="actTap" tap-target="#xinfang">新房</span>-->
+        <span class="actTap" tap-target="#zufang">租房</span><!--<span class="actTap actSetArgs" actdata="filter=1">已成交</span>--></div><script type="text/template" id="allListTemplate">
+
+        <!--<ul class="list-bot">-->
+
+        <div class="page">
+            <div class="page-box house-lst-page-box" node-type="pageList" node-val="totalPage=<%=totalPage%>&curPage=<%=curPage%>">
+            </div>
+        </div>
+        <!--<%}%>-->
+        <!--<%}else{%>-->
+        <div class="initial">
+            <div class="initial-logo"></div>
+            <p>还没有关注任何房源哦</p>
+        </div>
+        <!--<%}%>-->
+    </script>
+        <script type="text/template" id="newHouseListTpl">
+
+
+            <ul class="newHouse">
+                <!--<%if(list[i]['status']==4){%>-->
+                <li>
+                    <div class="left">
+                        <a target="_blank" href="javascript:;">
+                            <img class="main" src="<%=list[i]['cover_pic']?list[i]['cover_pic']:ShowDefaultImg.defaultImg%>.180x132.jpg" alt="">
+                        </a>
+                        <span>关注</span>
+                    </div>
+                    <div class="content">
+                        <a target="_blank" href="javascript:;" style="float: left;"><%=list[i]['resblock_name']%></a>
+                        <span style="background: #8e9492; color: #fff; font-size: 12px; float: left; padding: 0 5px;margin-left: 10px;">已下架</span>
+                    </div>
+                    <a class="del-fav <%= list[i]['fav_type'] == 'resblock' ? 'deleteNewHouseResblockFav' : 'deleteNewHouseFav' %>" data-id="<%=list[i]['project_name'] %>">取消关注</a>
+                </li>
+                <!--<%}else if(list[i]['fav_type']=="resblock"){%>-->
+                <li>
+                    <div class="left">
+                        <a target="_blank" href="<%=list[i]['pc_detail_url']%>">
+                            <img class="main" src="<%=list[i]['cover_pic']?list[i]['cover_pic']:ShowDefaultImg.defaultImg%>.180x132.jpg" alt="">
+                        </a>
+                        <span>于 关注</span>
+                    </div>
+                    <div class="content">
+                        <a target="_blank" href="" title="<%=list[i]['resblock_name']%>"><%=list[i]['resblock_name']%></a>
+                        <span class="bud-type"></span>
+                        <div class="description">暂无开盘时间</div>
+                        <div class="description"><%=list[i]['address']?list[i]['address']:'暂无地址'%></div>
+                        <!--<%if(list[i]['tags']){%>-->
+                        <div class="tabs">
+                            <!--<%for(var tagIndex = 0;tagIndex < list[i]['tags'].length && tagIndex < 5;tagIndex++){%>-->
+                            <span><%=list[i]['tags'][tagIndex]%></span>
+                            <!--<%}%>-->
+                        </div>
+                        <!--<%}%>-->
+                    </div>
+                    <div class="price">
+                        <!--<%if(list[i]['house_type'] =="别墅"){%>-->
+                        <div class="total">
+                            <!--<%if(list[i]['total_price'] != 0){%>-->
+                            约<span class="total-num"><%=list[i]['show_price']%></span><%=list[i]['show_price_unit']%>
+                            <!--<%}else{%>-->
+                            价格待定
+                            <!--<%}%>-->
+                        </div>
+                        <!--<%}else{%>-->
+                        <div class="average">
+                            <!--<%if(list[i]['show_price'] != 0){%>-->
+                            <span class="average-num"><%=list[i]['show_price']%></span><%=list[i]['show_price_unit']%>
+                            <!--<%}else{%>-->
+                            价格待定
+                            <!--<%}%>-->
+                        </div>
+                        <!--<%}%>-->
+                    </div>
+                    <a class="del-fav deleteNewHouseResblockFav" data-id="<%=list[i]['project_name']%>">取消关注</a>
+                </li>
+                <!--<%}else{%>-->
+                <li>
+                    <div class="left">
+                        <a target="_blank" href="<%=list[i]['pc_detail_url']%>">
+                            <img class="main" src="<%=list[i]['cover_pic']?list[i]['cover_pic']:ShowDefaultImg.defaultImg%>.180x132.jpg" alt="">
+                        </a>
+                        <span>于<%=list[i]['follow_time']%> 关注</span>
+                    </div>
+                    <div class="content">
+                        <a target="_blank" href="<%=list[i]['pc_detail_url']%>" title="<%=list[i]['resblock_name']%>"><%=list[i]['resblock_name']%></a>
+                        <div class="description"><%if(list[i]['open_date']){%><%=list[i]['open_date']%>开盘<%}else{%>暂无开盘时间<%}%></div>
+                        <div class="description"><%=list[i]['address']?list[i]['address']:'暂无地址'%></div>
+                        <!--<%if(list[i]['tags']){%>-->
+                        <div class="tabs">
+                            <!--<%for(var tagIndex = 0;tagIndex < list[i]['tags'].length && tagIndex < 5;tagIndex++){%>-->
+                            <span><%=list[i]['tags'][tagIndex]%></span>
+                            <!--<%}%>-->
+                        </div>
+                        <!--<%}%>-->
+                        <!--<%if(list[i]['reason']){%>-->
+                        <div class="remark">我的备注：<%=list[i]['reason']%></div><%}%>
+                    </div>
+                    <div class="price">
+                        <div class="average">
+                            <!--<%if(list[i].show_price != 0){%>-->
+                            <span class="average-num"><%=list[i].show_price%></span><%=list[i]['show_price_unit']%>
+                            <!--<%}else{%>-->
+                            价格待定
+                            <!--<%}%>-->
+                        </div>
+                        <div class="button" style="display: none;">
+                            <!--<%if(match.hasOwnProperty(list[i]["id"])){%>-->
+                            <button class="addMatch cancel-button" data-item='<%=JSON.stringify({id:list[i]["id"],title:list[i]["resblock_name"]+' '+list[i]["frame_name"]})%>'><span>× </span>取消对比</button>
+                            <!--<%}else{%>-->
+                            <button class="addMatch" data-item='<%=JSON.stringify({id:list[i]["id"],title:list[i]["resblock_name"]+' '+list[i]["frame_name"]})%>'><span>＋ </span>加入对比</button>
+                            <!--<%}%>-->
+                        </div>
+                    </div>
+                    <a class="del-fav deleteNewHouseFav" data-id="<%=list[i]['project_name']%>">取消关注</a>
+                </li>
+                <!--<%}%>-->
+            </ul>
+            <!--<%}%>-->
+            <!--<%if(typeof totalPage != "undefined" && totalPage >1){%>-->
+            <div class="page">
+                <div class="page-box house-lst-page-box" node-type="pageList" node-val="totalPage=<%=totalPage%>&curPage=<%=curPage%>">
+                </div>
+            </div>
+            <!--<%}%>-->
+            <!--<%}else{%>-->
+            <div class="initial">
+                <div class="initial-logo"></div>
+                <p>还没有关注任何房源哦</p>
+            </div>
+            <!--<%}%>-->
+        </script>
+        <div class="all-list selected fav-list" style="display: block;" id="ershoufang">
+
+            <ul class="list-bot">
+
+            </ul>
+
+
+        </div><div class="all-list fav-list" id="xinfang" style="display: none;">
+
+
+            <ul class="newHouse">
+
+                <li>
+                    <div class="left">
+                        <a target="_blank" href="http://sy.fang.lianjia.com/loupan/p_wkfcsjaftal/">
+                            <img class="main" src="https://image1.ljcdn.com/hdic-resblock/37d13faf-0d7c-4367-b897-a27b6733196a.jpg.180x132.jpg" alt="">
+                        </a>
+                        <span>于2018-10-27 11:51:30 关注</span>
+                    </div>
+                    <div class="content">
+                        <a target="_blank" href="http://sy.fang.lianjia.com/loupan/p_wkfcsjaftal/" title="万科翡翠四季">万科翡翠四季</a>
+                        <div class="description">2018-09-27开盘</div>
+                        <div class="description">浑南区沈营路66号</div>
+
+                        <div class="tabs">
+
+                            <span>品牌房企</span>
+
+                            <span>绿化率高</span>
+
+                        </div>
+
+
+                    </div>
+                    <div class="price">
+                        <div class="average">
+
+                            <span class="average-num">15000</span>元/平
+
+                        </div>
+                        <div class="button" style="display: none;">
+
+                            <button class="addMatch" data-item="{&quot;id&quot;:&quot;3120032253687928&quot;,&quot;title&quot;:&quot;万科翡翠四季 undefined&quot;}"><span>＋ </span>加入对比</button>
+
+                        </div>
+                    </div>
+                    <a class="del-fav deleteNewHouseFav" data-id="wkfcsjaftal">取消关注</a>
+                </li>
+
+            </ul>
+
+
+
+        </div><div class="all-list fav-list" id="zufang" style="display: none;">
+        <ul class="list-bot">
+        </ul>
+            <!--<div class="initial">-->
+                <!--<div class="initial-logo"></div>-->
+                <!--<p>还没有关注任何房源哦</p>-->
+            <!--</div>-->
+
+        </div></div>
+    <div class="clear"></div>
+</div>
+
+<!--底部-->
+
+<div th:replace="base/footer :: html"></div>
+<!--底部 end-->
+<!--<script src="https://s1.ljcdn.com/feroot/pc/asset/base/fe.js?_v=20180926210301"></script>-->
+<!--<script src="https://s1.ljcdn.com/feroot/pc/asset/common/common.js?_v=20180926210301"></script>-->
+<div id="only" data-city="bj" data-page="site_index"></div>
+
+<script>
+    welcome($(".user-name"));
+    var f1 = $("#ershoufang");
+    var f2 = $("#zufang");
+    // 为数量赋值
+    var title = $("#showTotal").find("span");
+    var loginUser = $.cookie("loginUser");
+    var houseLi = new HouseList(f1,f2,title);
+    if (loginUser){
+        // console.log(loginUser+"login");
+        var url = projectName+"/ershoufang/attention/";
+        houseLi.init(url,loginUser);
+    }else {
+        alert("登陆过期,请重新登陆");
+    }
+    houseLi.tigger($(".actTap").eq(0),$(".actTap").eq(1));
+</script>
+
+</body>
+</html>

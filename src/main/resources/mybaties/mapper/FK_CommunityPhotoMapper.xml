@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.housePhoto.CommunityPhotoMapper">
+  <resultMap id="BaseResultMap" type="com.model.FK_CommunityPhoto">
+    <id column="Id" jdbcType="NVARCHAR" property="id" />
+    <result column="CommunityId" jdbcType="NVARCHAR" property="communityid" />
+    <result column="FileName" jdbcType="NVARCHAR" property="filename" />
+    <result column="Path" jdbcType="NVARCHAR" property="path" />
+    <result column="Type" jdbcType="NVARCHAR" property="type" />
+    <result column="CreateTime" jdbcType="TIMESTAMP" property="createtime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    Id, CommunityId, FileName, Path, Type, CreateTime
+  </sql>
+  <select id="getPhotosByXqId" parameterType="java.lang.String" resultMap="BaseResultMap">
+      select path from FK_CommunityPhoto where CommunityId = #{id}
+  </select>
+</mapper>

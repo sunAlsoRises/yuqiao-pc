@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="yuqiao-pc:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>yuqiao-pc</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="yuqiao-pc-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="yuqiao-pc:war exploded" />
+    </root>
+  </artifact>
+</component>

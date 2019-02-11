@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.Dic_DutiesMapper" >
+  <resultMap id="BaseResultMap" type="com.model.Dic_Duties" >
+    <id column="Id" property="id" jdbcType="NVARCHAR" />
+    <result column="duname" property="name" jdbcType="NVARCHAR" />
+    <result column="OrderBy" property="orderby" jdbcType="INTEGER" />
+    <result column="CreateTime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="CreateUser" property="createuser" jdbcType="NVARCHAR" />
+    <result column="LastUpdateTime" property="lastupdatetime" jdbcType="TIMESTAMP" />
+    <result column="LastUpdateUser" property="lastupdateuser" jdbcType="NVARCHAR" />
+    <result column="CompanyId" property="companyid" jdbcType="NVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    Id, Name, OrderBy, CreateTime, CreateUser, LastUpdateTime, LastUpdateUser, CompanyId
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from Dic_Duties
+    where Id = #{id,jdbcType=NVARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from Dic_Duties
+    where Id = #{id,jdbcType=NVARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.model.Dic_Duties" >
+    insert into Dic_Duties (Id, Name, OrderBy, 
+      CreateTime, CreateUser, LastUpdateTime, 
+      LastUpdateUser, CompanyId)
+    values (#{id,jdbcType=NVARCHAR}, #{name,jdbcType=NVARCHAR}, #{orderby,jdbcType=INTEGER}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{createuser,jdbcType=NVARCHAR}, #{lastupdatetime,jdbcType=TIMESTAMP}, 
+      #{lastupdateuser,jdbcType=NVARCHAR}, #{companyid,jdbcType=NVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.model.Dic_Duties" >
+    insert into Dic_Duties
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        Id,
+      </if>
+      <if test="name != null" >
+        Name,
+      </if>
+      <if test="orderby != null" >
+        OrderBy,
+      </if>
+      <if test="createtime != null" >
+        CreateTime,
+      </if>
+      <if test="createuser != null" >
+        CreateUser,
+      </if>
+      <if test="lastupdatetime != null" >
+        LastUpdateTime,
+      </if>
+      <if test="lastupdateuser != null" >
+        LastUpdateUser,
+      </if>
+      <if test="companyid != null" >
+        CompanyId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=NVARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=NVARCHAR},
+      </if>
+      <if test="orderby != null" >
+        #{orderby,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createuser != null" >
+        #{createuser,jdbcType=NVARCHAR},
+      </if>
+      <if test="lastupdatetime != null" >
+        #{lastupdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastupdateuser != null" >
+        #{lastupdateuser,jdbcType=NVARCHAR},
+      </if>
+      <if test="companyid != null" >
+        #{companyid,jdbcType=NVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.model.Dic_Duties" >
+    update Dic_Duties
+    <set >
+      <if test="name != null" >
+        Name = #{name,jdbcType=NVARCHAR},
+      </if>
+      <if test="orderby != null" >
+        OrderBy = #{orderby,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null" >
+        CreateTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createuser != null" >
+        CreateUser = #{createuser,jdbcType=NVARCHAR},
+      </if>
+      <if test="lastupdatetime != null" >
+        LastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastupdateuser != null" >
+        LastUpdateUser = #{lastupdateuser,jdbcType=NVARCHAR},
+      </if>
+      <if test="companyid != null" >
+        CompanyId = #{companyid,jdbcType=NVARCHAR},
+      </if>
+    </set>
+    where Id = #{id,jdbcType=NVARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.model.Dic_Duties" >
+    update Dic_Duties
+    set Name = #{name,jdbcType=NVARCHAR},
+      OrderBy = #{orderby,jdbcType=INTEGER},
+      CreateTime = #{createtime,jdbcType=TIMESTAMP},
+      CreateUser = #{createuser,jdbcType=NVARCHAR},
+      LastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
+      LastUpdateUser = #{lastupdateuser,jdbcType=NVARCHAR},
+      CompanyId = #{companyid,jdbcType=NVARCHAR}
+    where Id = #{id,jdbcType=NVARCHAR}
+  </update>
+</mapper>

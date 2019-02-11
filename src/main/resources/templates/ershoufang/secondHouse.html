@@ -1,0 +1,2896 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org" ng-app="DetailHtml" class="ng-scope">
+
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <!--<script charset="utf-8" src="v.js">-->
+    <script type="text/javascript" th:src="@{/lib/jquery-3.2.1.min.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/base.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/address.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/base/houseMessage.css}"/>
+    <!--图片弹出js-->
+    <link rel="stylesheet" th:href="@{/css/base/lightbox.css}" type="text/css" media="screen"/>
+    <script type="text/javascript" th:src="@{/js/base/lightbox.js}"></script>
+
+    <script type="text/javascript" language="javascript">
+        var projecImgtName = "yuqiaopc";
+        var pathName = window.document.location.pathname;
+        var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
+
+        var BaseUrl_IIS_Application_Name = "http://dev-12.lingke.mobi";
+
+        var pageSize = "20";
+        var XqPhoto = "";
+        var HousePhoto = "";
+        var UserPhoto = "";
+        var tongjiurl = "";
+        var isJiaMeng = "false";
+        var onimgurl_small = "/yuqiao/img/house/linshi_house (1).jpg";
+        var onimgurl_big = "/yuqiao/img/house/linshi_house (2).jpg";
+        var onimgurl_jjr = "/yuqiao/img/house/linshi_house (3).jpg";
+    </script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="ie-stand">
+    <meta name="chinaz-site-verification" content="f48e24b0-224b-4aed-92c5-2c711f7e3590">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>
+        [[${hr.data.com.loupanmingcheng}]]
+    </title><!--	<link rel="apple-touch-icon-precomposed" href="https://g.yuqiaocdn.com/wwwyuqiaocn/v2014images/app_Logo.png">
+-->
+    <!--<script type="text/javascript" th:src="@{/js/lib.js}"></script>-->
+
+    <script type="text/javascript">
+        function show720iframe(url) {
+            $("#720imgiframe").attr("src", url);
+            $("#top720iframe").slideDown(function () {
+                $("#hideiframe").animate({
+                    left: 1100
+                });
+            });
+        }
+
+        function hide720iframe() {
+            $("#hideiframe").animate({
+                left: 1060
+            }, 150, function () {
+                $("#top720iframe").slideUp(function () {
+                    $("#720imgiframe").attr("src", "");
+                });
+            });
+        }
+
+        function isFlashMsg() {
+            if ($("#720imgiframe").attr("src") != undefined && $("#720imgiframe").attr("src") != "") {
+                var isIE = !-[1,];
+                if (isIE) {
+                    try {
+                        var swf1 = new ActiveXObject('ShockwaveFlash.ShockwaveFlash');
+                    } catch (e) {
+                        showdiv();
+                    }
+                } else {
+                    try {
+                        var swf2 = navigator.plugins['Shockwave Flash'];
+                        if (swf2 == undefined) {
+                            showdiv();
+                        }
+                    } catch (e) {
+                        showdiv();
+                    }
+                }
+            }
+        }
+
+        function showdiv() {
+            document.getElementById("show").style.display = 'block';
+        }
+
+        function hidediv() {
+            document.getElementById("show").style.display = 'none';
+        }
+
+        $(function () {
+            $("#hideiframe").click(function () {
+                hide720iframe();
+            });
+            $("li>a.quanjing360btn").click(function () {
+                show720iframe($(this).attr("param"));
+            });
+            if ($("li.t-h-m-curr").length > 0) {
+                $("li>a.quanjing360btn").click();
+            }
+            isFlashMsg();
+        });
+    </script>
+    <meta http-equiv="X-UA-Compatible" ie="EmulateIE9">
+    <!--<script type="text/javascript" src="../js/layer.js"></script>-->
+    <script type="text/javascript" th:src="@{/lib/jquery.imagepreview.1.0.js}"></script>
+    <!--<script type="text/javascript" th:src="@{/lib/houseshow.js}"></script>-->
+
+    <!--<script type="text/javascript">-->
+    <!--var _gaq = _gaq || [];-->
+    <!--var _hmt = _hmt || [];-->
+    <!--if(document.cookie.indexOf('mis_userid') > 0) {-->
+    <!--_hmt.push(['_setCustomVar', 1, "userType", "misUser", 1]);-->
+    <!--} else {-->
+    <!--_hmt.push(['_setCustomVar', 1, "userType", "visitor", 1]);-->
+    <!--}(function() {-->
+    <!--var hm = document.createElement("script");-->
+    <!--hm.src = "https://hm.baidu.com/hm.js?1f8e83330039496a701d7ae44836ed10";-->
+    <!--var s = document.getElementsByTagName("script")[0];-->
+    <!--s.parentNode.insertBefore(hm, s);-->
+    <!--})();-->
+    <!--</script>-->
+
+
+</head>
+
+<body ng-controller="Detailbody" class="ng-scope">
+
+
+<script type="text/javascript">
+    function openwindowindex(aa) {
+        layer.open({
+            type: 2,
+            area: ['360px', '500px'],
+            offset: 'rb',
+            shade: 0,
+            content: ['//webchat.7moor.com/wapchat.html?accessId=477a8f70-4a00-11e8-9b91-a74aa30cfb04&amp;fromUrl=www.yuqiao.cn&amp;urlTitle=%E8%8A%92%E6%9E%9C%E5%9C%A8%E7%BA%BFPc%E7%89%88', 'no']
+        });
+    }
+</script>
+
+<!--添加了 容联七陌  的客服-->
+
+<meta name="description"
+      content="沈阳誉桥在线|万科朗润园 1室1厅1卫 42平 价格：1300万,房源编号：007007 本房源真实存在，可登录誉桥房产交易平台www.yuqiao.cn或拨打誉桥在线客服热线024-62220168进行房源查询。">
+<meta name="keywords" content="沈阳誉桥在线|沈阳二手房|沈阳租房|沈阳二手房信息|沈阳二手房价格|万科朗润园二手房信息万科朗润园二手房价格">
+
+<!--右侧贴边导航quick_links.js控制-->
+<div th:replace="base/rightBase :: html"></div>
+<!--右侧贴边导航quick_links.js控制 end-->
+
+
+<!--顶部导航栏开始-->
+<div th:replace="base/header :: html"></div>
+<!--顶部导航栏结束-->
+
+<div id="pageflip">
+    <a href="javascript:void(0)" target="_top">
+        <!--<img src="yuqiaopc/../img/page_flip.png" style="width: 50px; display: block; height: 52px;" alt="誉桥不动产微信二维码">-->
+    </a>
+    <div class="msg_block" style="width: 50px; display: block; height: 50px;"></div>
+</div>
+<div class="loginLayer" style="display: none;">
+    <h3><span>会员登录</span><a href="javascript:void(0)" class="btnCloseLogin">x</a></h3>
+    <div class="loginwrapper">
+        <div class="loginboxtitle">
+            <a href="javascript:void(0)" class="loginbtncurr">登录</a>
+            <a href="https://www.yuqiao.cn/usercenter/reg/" target="_top">注册</a>
+        </div>
+        <!--登录内容-->
+        <div class="loginboxinput">
+					<span>
+                    <input pname="userName" onblur="this.style.color='#aaa';if(this.value=='') {this.value='输入用户名称';};"
+                           onfocus="this.style.color='#333';if(this.value=='输入用户名称') this.value='';" value="输入用户名称"
+                           class="logintext1" type="text"></span>
+            <span>
+                    <input pname="password" onblur="this.style.color='#aaa';if(this.value=='') {this.value='输入密码';};"
+                           onfocus="this.style.color='#333';if(this.value=='输入密码') this.value='';" value="输入密码"
+                           class="logintext1" type="password"></span>
+            <span><a href="javascript:void(0)" class="logintextbtn">立刻登录</a></span>
+            <span class="loginWJpass"><a href="https://www.yuqiao.cn/usercenter/findpwd/" target="_top">忘记密码</a></span>
+        </div>
+    </div>
+</div>
+<!--右侧悬浮 start-->
+<!--<script th:inline="javascript">-->
+<!--//获取对比  绑定点击事件-->
+<!--// $(function () {-->
+<!--function jiaruduibi(){-->
+<!--// 为对比栏添加房屋信息的div-->
+<!--// 获取地址栏的id diff-items-->
+<!--var house = '';-->
+<!--house+='<dl class="hasItem" dataid="'+[[${hr.data.id}]]+'" fore="0"><dt><a target="_blank" href="#">';-->
+<!--house+='<img src="https://img76.517cdn.com////up2017/zy/2018/6/18/house/viewimg/fid2862057_uid48635_20180618095304510491.jpg.2911.524x393.0.jpg" width="50" height="50"></a></dt>';-->
+<!--house+='<dd><div class="r-lishi-fy-info"><span><a href="/ershoufang/2862057/" target="_blank">三阳精装修一天没住</a></span>';-->
+<!--house+='<strong>85万</strong>/<i>2室1厅1卫</i>/<i>71㎡</i>/<i>南</i>/<i>高级装修</i>/<i>11984元/㎡</i>';-->
+<!--house+='<a class="del-comp-item  isdelcookie" id="'+[[${hr.data.id}]]+'"  onclick="tongbushanchu(id)"  hostiod="2862057">删除</a></div></dd></dl>';-->
+
+<!--var $house = $(house);-->
+<!--$(".compareList").append($house);-->
+<!--//	将加入对比文字变成已加入对比，并且使加入对比的div不可点击-->
+<!--$(".compareText").text("已加入对比");-->
+<!--$(".compareBtn").addClass("disable");-->
+<!--// //取消下划线的样式-->
+<!--// $(".compareBtn ").css("text-decoration","none");-->
+<!--// $(".compareBtn ").css("cursor","default");-->
+<!--$('.compareBtn').removeAttr('onclick');//去掉标签中的onclick事件-->
+<!--//显示对比栏目-->
+<!--$("#pop-compare").toggle();-->
+
+<!--}-->
+
+
+<!--</script>-->
+<!--<script type="text/javascript" src="../js/webmaster.js"></script>-->
+<!--右侧悬浮 end-->
+<form method="post" action="https://www.yuqiao.cn/zufang/007007/P53627?houseID=007007&amp;pUserID=53627" id="form1"
+      class="ng-pristine ng-valid">
+    <div class="aspNetHidden">
+        <input name="__VIEWSTATE" id="__VIEWSTATE"
+               value="/wEPDwUJMzY3ODc3MDUxZGTehIAxVlPv9RqQA11u+0eRpJS/XYRJByy1MReHLbWgjQ==" type="hidden">
+    </div>
+
+    <div id="goTop" class="n-top-div">
+        <!--顶部导航-->
+        <div class="n-top-wrapper">
+            <div class="n-topNav">
+                <div class="n-topLeft f-l">
+                    <ul>
+
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+                        <li>客服电话<em>4001-024-yuqiao</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em id="yijian"
+                                                                                                style="cursor: pointer;">意见反馈</em>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="n-topRight f-r">
+
+                    <!--登录前样式-->
+
+                    <!--登陆后样式-->
+
+                    <div class="n-top-r-l" id="_LoginUser">
+
+                        <i></i>
+                        <a rel="nofollow" href="../login-res/login.html" class="logintopbtn" target="_top">登录</a>
+                        <a rel="nofollow" href="https://www.yuqiao.cn/usercenter/reg/" target="_top">注册</a>
+                    </div>
+
+                    <!--<div class="n-top-mapsite">-->
+                    <!--<a href="#"><span>网站地图<i></i></span></a>-->
+                    <!--&lt;!&ndash;网站地图弹出&ndash;&gt;-->
+                    <!--<div class="mapmenu-btn clearfix">-->
+                    <!--<h1><a href="https://www.yuqiao.cn/ershoufang/" title="沈阳二手房">沈阳二手房</a></h1>-->
+                    <!--<ul>-->
+                    <!--<li>-->
+                    <!--<a href="https://www.yuqiao.cn/ershoufang/a1/" title="沈河区二手房" target="_top">沈河区</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                    <!--<a href="https://www.yuqiao.cn/ershoufang/a6/" title="皇姑区二手房" target="_top">皇姑区</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                    <!--<a href="https://www.yuqiao.cn/ershoufang/a5/" title="铁西区二手房" target="_top">铁西区</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                    <!--<a href="https://www.yuqiao.cn/ershoufang/a4/" title="大东区二手房" target="_top">大东区</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                    <!--<a href="https://www.yuqiao.cn/ershoufang/a2/" title="和平区二手房" target="_top">和平区</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                    <!--<a href="https://www.yuqiao.cn/ershoufang/a7/" title="浑南新区二手房" target="_top">浑南新区</a>-->
+                    <!--</li>-->
+                    <!--</ul>-->
+                    <!--<h2><a href="https://www.yuqiao.cn/map/" title="沈阳地图找房">沈阳地图找房</a></h2>-->
+                    <!--<h2><a href="https://www.yuqiao.cn/xiaoqu/" title="沈阳小区">沈阳小区</a></h2>-->
+                    <!--<ul>-->
+                    <!--<li>-->
+                    <!--<a href="https://www.yuqiao.cn/xiaoqu/a1/" title="沈河区小区" target="_top">沈河区</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                    <!--<a href="https://www.yuqiao.cn/xiaoqu/a6/" title="皇姑区小区" target="_top">皇姑区</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                    <!--<a href="https://www.yuqiao.cn/xiaoqu/a5/" title="铁西区小区" target="_top">铁西区</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                    <!--<a href="https://www.yuqiao.cn/xiaoqu/a4/" title="大东区小区" target="_top">大东区</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                    <!--<a href="https://www.yuqiao.cn/xiaoqu/a2/" title="和平区小区" target="_top">和平区</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                    <!--<a href="https://www.yuqiao.cn/xiaoqu/a7/" title="浑南新区小区" target="_top">浑南新区</a>-->
+                    <!--</li>-->
+                    <!--</ul>-->
+                    <!--<h2><a href="https://www.yuqiao.cn/shangyongfang/" title="沈阳门市房，厂房，土地，别墅买卖">沈阳商用房</a></h2>-->
+                    <!--<ul>-->
+                    <!--<li>-->
+                    <!--<a href="https://www.yuqiao.cn/shangyongfang/lx28/" title="沈阳二手别墅买卖" target="_top">别墅</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                    <!--<a href="https://www.yuqiao.cn/shangyongfang/lx24/" title="沈阳二手门市房买卖" target="_top">门市</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                    <!--<a href="https://www.yuqiao.cn/shangyongfang/lx25/" title="沈阳二手商住综合买卖" target="_top">商住综合</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                    <!--<a href="https://www.yuqiao.cn/shangyongfang/lx30/" title="沈阳二手车库买卖" target="_top">车库</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                    <!--<a href="https://www.yuqiao.cn/shangyongfang/lx29/" title="沈阳二手厂房仓库买卖" target="_top">厂房仓库</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                    <!--<a href="https://www.yuqiao.cn/shangyongfang/lx27/" title="沈阳二手库房买卖" target="_top">库房</a>-->
+                    <!--</li>-->
+                    <!--</ul>-->
+                    <!--<h2><a href="https://www.yuqiao.cn/s/" title="沈阳二手房经纪人">沈阳网络经纪人</a></h2>-->
+                    <!--<h2><a href="https://www.yuqiao.cn/daikuan/" title="沈阳二手房贷款，购房须知">购房须知</a></h2>-->
+                    <!--<h2><a href="https://www.yuqiao.cn/xinwen/" title="沈阳房产资讯">沈阳房产资讯</a></h2>-->
+                    <!--<h2><a rel="nofollow" href="https://www.yuqiao.cn/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC/" title="关于我们">关于我们</a></h2>-->
+                    <!--<h2><a href="https://zhuanti.yuqiao.cn/" title="">誉桥专题</a></h2>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash;网站地图弹出 end&ndash;&gt;-->
+                    <!--</div>-->
+                </div>
+            </div>
+        </div>
+        <!--网站主导航-->
+        <div id="_pMainNav" class="n-mainNav-wrapper">
+
+            <div class="n-mainNav">
+                <div class="main-logo">
+                    <a href="https://www.yuqiao.cn/" title="誉桥在线，誉桥不动产，誉桥中介，沈阳房产网" alt="誉桥在线，誉桥不动产，誉桥中介，沈阳房产网"><em
+                            class="l-t">真房源|零距离</em><em class="r-t">yuqiao.CN</em></a>
+                </div>
+                <div class="city-menu" style="display: none;">
+                    <span class="city-m-b"><i></i></span>
+                    <!--城市选择弹出-->
+                    <!--<div class="city-list-n">-->
+                    <!--<ul class="clearfix">-->
+
+                    <!--<li>-->
+                    <!--<a href="https://www.yuqiao.cn/" title="沈阳誉桥" target="_top">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://sy.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://bj.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://dl.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://as.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://fs.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://yk.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://jz.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://bx.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://dd.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://hld.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://ly.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://tl.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://fx.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://cy.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://cc.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://th.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://0438.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://ps.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://lys.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://dq.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://qqhe.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://tls.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://wlht.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://kf.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://qhd.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://pj.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://zmd.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--<li>-->
+                    <!--<a href="https://lf.yuqiao.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>-->
+                    <!--</li>-->
+
+                    <!--</ul>-->
+                    <!--</div>-->
+                    <!--城市选择弹出 end-->
+                </div>
+                <!--网站主导航-->
+                <div class="main-menu">
+                    <ul>
+
+                    </ul>
+                </div>
+                <!--网站主导航 end-->
+                <div class="h-r-ad">
+                    <a href="https://app.yuqiao.cn/" title="" target="_top" rel="nofollow"></a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="mainwrapper">
+        <!--面包屑-->
+        <div class="path-nav">
+            <a th:href="@{/}" title="" linktype="index">誉桥在线</a><code title="">&gt;</code>
+            <a th:href="@{/ershoufang/ershoufangs}" title="沈阳二手房" linktype="search">沈阳二手房</a><code title="">&gt;</code>
+            <!--<a linktype="areaSearch" href="https://www.yuqiao.cn/zufang/a5/">铁西区租房</a><code>&gt;</code>-->
+            <!--<a linktype="sqSearch" href="https://www.yuqiao.cn/zufang/a5/sq1214/">北一路万达租房</a><code>&gt;</code>-->
+            <a linktype="xqSearch" th:href="@{'/xiaoqu/'+${hr.data.name}}">[[${hr.data.com.loupanmingcheng}]]
+                [[${hr.data.leixing}]]</a><code>&gt;</code><code>[[${hr.data.com.loupanmingcheng}]]
+            [[${hr.data.com.loupandizhi}]]</code>
+        </div>
+        <!--房源信息-->
+        <div class="houseBOX width960">
+            <div class="t-h-box">
+                <div class="t-h-b-title clearfix">
+                    <i class="sellicon">售</i><span class="t-h-title"><span id="ContentPlaceHolder1__labTitle"
+                                                                           class="t-h-title">[[${hr.data.com.loupanmingcheng}]]  [[${hr.data.com.biaoqian}]] </span>
+
+							</span><span class="t-h-yishou">
+                        </span>
+                </div>
+                <!--<div class="t-h-liulan">-->
+                <!--浏览<br>-->
+                <!--<label id="busuanzi_value_page_pv"></label> 次-->
+
+                <!--</div>-->
+
+                <!--<script>
+                    $.post(BaseUrl_IIS_Application_Name + "Ashx/house_detail.ashx", {
+                        "action": "house_detailViewCount",
+                        "houseid": 007007
+                    }, function(redata) {
+                        $("#lblLiuLan").html(redata.data);
+                    });
+                </script>-->
+
+                <div id="ContentPlaceHolder1__pHouseTags" class="t-h-tags">
+                    <div class="tags-xq" th:text="${hr.data.com.xiaoqujianjie}"></div>
+                </div>
+                <div id="mis_detail" style="display: none;">
+                    <span id="user_span"></span>你好,
+                    <a href="#">点击这里打开房源后台详情</a>，如果房源联系人显示的不正常，请
+                    <a href="#">点击这里进行修复。</a>
+                    <input name="ctl00$ContentPlaceHolder1$cookiemisuser" id="ContentPlaceHolder1_cookiemisuser"
+                           type="hidden">
+                    <input name="ctl00$ContentPlaceHolder1$userdetail" id="ContentPlaceHolder1_userdetail"
+                           type="hidden">
+                    <input name="ctl00$ContentPlaceHolder1$mis_url" id="ContentPlaceHolder1_mis_url" type="hidden">
+                    <input name="ctl00$ContentPlaceHolder1$isJiaMeng" id="ContentPlaceHolder1_isJiaMeng" value="false"
+                           type="hidden">
+                </div>
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+                      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+                      crossorigin="anonymous">
+
+                <div class="compareBtn LOGCLICK" id="collect" log-mod="102100820741" data-bl="right_top"
+                     data-log_evtid="10231">
+                    <a href="javascript:void(0)" id="collectHouse" th:value="${hr.data.id}" class="followbtn">关注房源</a>
+                </div>
+
+            </div>
+            <script type="text/javascript" th:src="@{/js/newself/collect.js}"></script>
+
+
+            <!--<div id="top720iframe">
+                <div id="hideiframe"><i class="fontfaceicon"></i></div>
+                <iframe id="720imgiframe" scrolling="no" style="border: 0px none; display: inline; background-color: black;" src="index_1.html" width="1100" height="450"></iframe>
+
+                <div id="bg"></div>
+                <div>
+                    <div id="show">
+                        您当前浏览器未允许使用flash插件，无法体验全景最佳展示，请手动允许使用flash插件，开启之后，效果更佳
+                        <br>
+                        <div style="text-align: right; font-size: 18px;">
+                            <hr>
+                            <span onclick="hidediv()">关闭</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            -->
+
+            <!--房源基本信息内容-->
+            <div class="h-public clearfix">
+                <!--房源图片滚动-->
+                <div id="ContentPlaceHolder1__pHouseImage" class="h-m-img">
+
+                    <div class="h-m-movebox">
+                        <span id="prev" class="btn prev"></span>
+                        <span id="next" class="btn next"></span>
+                        <span id="prevTop" class="btn prev"></span>
+                        <span id="nextTop" class="btn next"></span>
+                        <div id="picBox" class="picBox">
+                            <ul class="cf" style="width: 3836px; left: 0px;">
+                                <!--201804 张广睿 增加视频附件repeter-->
+
+                                <li th:each="photo:${hr.data.housePhoto}">
+                                    <a href="#houseImage">
+                                        <img name="mob_bigImg"
+                                             th:src="@{'http://dev-12.lingke.mobi/HousePhoto/'+${photo.path}}"
+                                             onerror="javascript:this.src='/yuqiaopc/img/house/linshi_house (1).jpg';"
+                                             style="transform: rotate(0deg);" alt="主卧"></a>
+                                    <span></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="listBox" class="listBox">
+                            <ul class="cf" style="width: 742px; left: 0px;">
+                                <!--201804 张广睿 增加视频附件repeter-->
+
+                                <li class="on" th:each="photo:${hr.data.housePhoto}">
+                                    <em>
+                                        <img name="mob_smallImg"
+                                             th:src="@{'http://dev-12.lingke.mobi/HousePhoto/'+${photo.path}}"
+                                             onerror="javascript:this.src='/yuqiaopc/img/house/linshi_house (1).jpg';"
+                                             style="transform: rotate(0deg);" alt="主卧"></em>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--房源基本简介-->
+                <div class="h-info-box">
+
+                    <div class="h-about">
+                        <!--<div class="taiyangma">
+                            <img id="WechatImg_D" src="qrcode.aspx">
+                            <br> 微信扫码&nbsp;手机打开
+                        </div>-->
+
+                        <div class="shoujia clearfix">
+                            <ul>
+                                <li class="sj-zj"><em>[[${#strings.substringBefore(hr.data.zuidishoujia ,'.')}]]
+                                    万</em><i></i></li>
+                                <li th:text="${hr.data.huxing}"></li>
+                                <li class="bordernone">[[${hr.data.mianji}]] ㎡</li>
+                            </ul>
+                        </div>
+                        <div class="o-info clearfix">
+                            <ul>
+
+                                <!--<li><span>首付：3834万</span><span>月供：36171元/月<a href="#" class="jisuanqi" title="房贷计算器">房贷计算器</a></span></li>-->
+
+                                <li class="f-li-block"
+                                    th:text="'楼层：'+${hr.data.louceng}+'(共'+${hr.data.gongjiceng}+'层)'"></li>
+                                <li class="f-li-block" th:text="'朝向：'+${hr.data.chaoxiang}"></li>
+                                <li class="f-li-block" th:text="'装修：'+${hr.data.zhuangxiu}"></li>
+                                <li class="f-li-block" th:text="'房型：'+${hr.data.shuxing}"></li>
+
+                                <li>最高售价：[[${hr.data.zuidishoujia}]]元/平<b class="junjiaxiajiang"></b></li>
+                                <li>小区：
+                                    <a th:href="@{'/xiaoqu/'+${hr.data.name}}" target="_top" linktype="xqInfo">[[${hr.data.com.loupanbieming}]]</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                </li>
+                                <li>地址：
+                                    <a href="javascript:(0);" class="addmap" linktype="xqmap">[[${hr.data.com.loupandizhi}
+                                        ]]<i></i></a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--置业顾问-->
+
+                    <div class="m-jjr clearfix">
+                        <div class="m-jjrphoto">
+                            <a th:href="@{'/agent/message/'+${hr.data.createuserid}}" target="_top">
+                                <img th:src="@{'http://dev-12.lingke.mobi/UserPhoto/'+${hr.data.user.photos.path}}"
+                                     onerror="javascript:this.src='/yuqiaopc/img/ercun.jpg';" name="mob_jjrImg"></a>
+                        </div>
+                        <div class="m-jjr-nt">
+                            <div class="m-jjr-o clearfix">
+                                <ul>
+                                    <li class="m-jjr-name">
+                                        <a th:href="@{'/agent/message/'+${hr.data.createuserid}}" target="_top">[[${hr.data.createname}]]</a>
+                                    </li>
+                                    <!--<li>区域：铁西区</li>-->
+                                    <li>店铺：
+                                        <a th:href="@{'/shop/'+${hr.data.user.branchshopid}}" target="_top"
+                                           th:text="${hr.data.shop.name == null}?'暂无':${hr.data.shop.name}"></a>
+                                    </li>
+                                    <!--<li></li>-->
+                                    <li>
+                                        <a th:href="@{'/agent/message/'+${hr.data.createuserid}}" target="_top">进入Ta的店铺
+                                            &gt;&gt;</a>
+                                    </li>
+                                    <!--<li class="m-jjr-qianming">签名：专业服务、忠于委托</li>-->
+                                </ul>
+                                <a class="zaixianzixun"><span>在线咨询</span></a>
+                            </div>
+
+                            <div class="j-lvbox" id="_jiaMengNotShowDengJiDiv" style="">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="m-jjr-phone" id="lianxidianhua"><i></i>
+                        <!--	<a href="javascript:" data-id="53627" data-name="蝙蝠侠" class="m-jjr-msg2 zxzx" onclick="setconversation()"></a>
+                            --> [[${hr.data.user.mobile}]]
+                    </div>
+                    <div class="m-jjr-phone" style="text-align: center; display: none;" id="jinrudianpu">
+                        <a style="font-size: 20px; color: rgb(102, 102, 102);" target="_top"
+                           href="https://www.yuqiao.cn/dianmian/3733/">进入茗朗店的店铺</a>
+                    </div>
+                    <!--	<script type="text/javascript">
+                            //加盟显示店铺信息,并且隐藏等级,认证等信息
+                            if(isJiaMeng == "true") {
+                                $("#jinrudianpu").show();
+                            } else {
+                                $("#_jiaMengNotShowDengJiDiv").show();
+                                $("#_jiaMengNotShowRenZhengDiv").show();
+
+                                document.getElementById("lianxidianhua").innerHTML = document.getElementById("lianxidianhua").innerHTML + "<a href=\"javascript:\" data-id=\"53627\" data-name=\"蝙蝠侠\" class=\"m-jjr-msg2 zxzx\"  onclick=\"setconversation()\"><i>&#xe6bc;</i>在线咨询</a>";
+
+                            }
+                            //电话显示加"-"
+                            function updateTeltype(str) {
+                                if(str.length == 11) {
+                                    str = str.substring(0, 3) + "-" + str.substring(3, 7) + "-" + str.substring(7, 11);
+                                }
+                                return str;
+                            }
+                            var str = "13654066172";
+                            if("53627" == "0") {
+                                $('.m-jjr .clearfix').hide();
+                                $('.m-jjr-nt').hide();
+                                $('.agent-info .clearfix').hide();
+                                $("[data-name='蝙蝠侠']").remove();
+                            }
+                            if(str == "") {
+                                str = "96yuqiao";
+                            }
+                            $("#lianxidianhua").append(updateTeltype(str));
+                            //修改电话格式js   参数str 为  字符串格式
+                        </script>
+-->
+                    <p id="ContentPlaceHolder1__jiaMengNotShowJuBaoDiv" class="fangyjubao">
+                        <!--该房源如果存在虚假请-->
+                        <!--<a id="reportLink" onclick="javascript:$(&quot;#jubaobox&quot;).show();" style="cursor: pointer" linktype="report" hid="007007"><i></i>举报</a>，-->
+                        房源编号 <span id="houseId">[[${hr.data.fangyuanbianhao}]]</span></p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="wrapperbox">
+
+            <!--锚点-->
+            <div id="editform1" style="margin-top: 20px;"></div>
+            <!--房源基本信息栏目-->
+            <div class="h-public" style="margin-top: 0px;">
+                <!--房源栏目导航-->
+                <div class="t-h-menu-float" id="fudongnav0">
+                    <ul id="qiehuanview">
+                        <li class="t-h-m-curr" th:if="${hr.data.leixing == '租'}">
+                            <a href="#editform">房源配套</a>
+                        </li>
+                        <li>
+                            <a href="#houseMemo" linktype="info">房源详情</a>
+                        </li>
+                        <li>
+                            <a href="#houseImage" linktype="image">房源照片</a>
+                        </li>
+                        <li style="display: none;" id="licommentinfohouse">
+                            <a href="#commentinfohouse" linktype="info">房源评价</a>
+                        </li>
+                        <!--<li id="ContentPlaceHolder1__jiaMengNotShowZhouBianDiv">-->
+                        <!--<a href="#zbpt" linktype="houseSupporting">周边配套</a>-->
+                        <!--</li>-->
+
+                        <!--<li>-->
+                        <!--<a href="#xiangsifangyuan" linktype="xiangsifangyuan">相似房源</a>-->
+                        <!--</li>-->
+
+                    </ul>
+
+                    <div class="F_T_search t-sbox" searchtype="zufang" style="margin: 0px auto;">
+								<span>
+                            </span>
+                        <!--<div id="ContentPlaceHolder1__jiaMengNotShowXqSearchDiv" class="S-search" style="margin-top: -24px;">-->
+                        <!--<div class="searchinput-text" style="display: none; left: auto; top: 27px; width: 200px;">-->
+                        <!--<ul id="ulSearchResult">-->
+                        <!--</ul>-->
+                        <!--</div>-->
+                        <!--<input name="ctl00$ContentPlaceHolder1$txtSearch" value="请输入您想找的小区" maxlength="12" id="txtSearch" class="searchtextinput_on" onkeydown="if(event.keyCode==13){Webindex.namesearch();}" onfocus="if(this.value=='请输入您想找的小区'){this.className='searchtextinput_on';this.value=''}else{this.className='searchtextinput_on-on';}" onclick="if (this.value == '请输入您想找的小区') { this.className = 'searchtextinput_on'; this.value = '' } else { this.className = 'searchtextinput_on'; }" onblur="if(this.value==''){this.value='请输入您想找的小区';this.className='searchtextinput_on'};" type="text">-->
+                        <!--<input name="" value="搜索" class="searchbutton" type="button">-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <!--房源配套-->
+                <div id="editform" style="margin-top: 10px;" th:if="${hr.data.leixing == '租'}">
+                    <div style="background-color: rgb(246, 246, 246);" class="zulintubiao clearfix">
+                        <ul>
+
+                            <li th:if="${#strings.containsIgnoreCase(hr.data.peitao,'宽带')}"><span class="kuai "
+                                                                                                  style="display: none;"></span><em
+                                    style="display: none;">宽带</em></li>
+                            <li th:if="${#strings.containsIgnoreCase(hr.data.peitao,'电话')}"><span class="dianhua "
+                                                                                                  style="display: none;"></span><em
+                                    style="display: none;">电话</em></li>
+                            <li th:if="${#strings.containsIgnoreCase(hr.data.peitao,'空调')}"><span
+                                    class="kongtiao "></span><em>空调</em></li>
+                            <li th:if="${#strings.containsIgnoreCase(hr.data.peitao,'热水器')}"><span
+                                    class="reshuiqi "></span><em>热水器</em></li>
+                            <li th:if="${#strings.containsIgnoreCase(hr.data.peitao,'床')}"><span class="chuang "></span><em>床</em>
+                            </li>
+                            <li th:if="${#strings.containsIgnoreCase(hr.data.peitao,'家具')}"><span class="yigui "></span><em>衣柜</em>
+                            </li>
+                            <li th:if="${#strings.containsIgnoreCase(hr.data.peitao,'电视')}"><span
+                                    class="dianshi "></span><em>电视</em></li>
+                            <li th:if="${#strings.containsIgnoreCase(hr.data.peitao,'冰箱')}"><span
+                                    class="bingxiang "></span><em>冰箱</em></li>
+                            <li th:if="${#strings.containsIgnoreCase(hr.data.peitao,'洗衣机')}"><span
+                                    class="xiyiji "></span><em>洗衣机</em></li>
+                            <li th:if="${#strings.containsIgnoreCase(hr.data.peitao,'煤气')}"><span class="meiqi "
+                                                                                                  style="display: none;"></span><em
+                                    style="display: none;">煤气</em></li>
+                            <li th:if="${#strings.containsIgnoreCase(hr.data.peitao,'做饭')}"><span
+                                    class="zuofan "></span><em>做饭</em></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $(function () {
+                        var sl = 0;
+                        $.each($("#editform li"), function (i, _i) {
+                            if ($(_i).find("em").attr("style") == "display:none") {
+                                sl++;
+                                if (sl == 11) {
+                                    $("#editform").hide();
+                                    $("#qiehuanview li").eq(0).hide();
+                                }
+                                return true;
+                            } else {
+                                return false;
+                            }
+                        })
+                    })
+                </script>
+                <!--房源自定义信息介绍-->
+                <div class="newwrap baseinform" id="houseMemo">
+                    <h2>
+                        <div class="title" style="margin-top:50px;">房源特色</div>
+                    </h2>
+                    <div class="introContent showbasemore">
+                        <div class="tags clear">
+                            <div class="name">房源标签</div>
+                            <div class="content">
+                                <a class="tag is_see_free" href="#">[[${hr.data.com.biaoqian}]]</a>
+                            </div>
+                        </div>
+                        <div class="baseattribute clear">
+                            <div class="name">户型介绍</div>
+                            <div class="content"
+                                 th:text="${hr.data.woshi}+'室'+${hr.data.ketingcanting}+'厅'+${hr.data.weishengjian}+'卫'">
+                                [[${hr.data.woshi}]] 室 [[${hr.data.ketingcanting}]] 厅 [[${hr.data.weishengjian}]] 卫 。
+                                用途：[[${hr.data.tongtu}]]
+                            </div>
+                        </div>
+                        <div class="baseattribute clear">
+                            <div class="name">小区介绍</div>
+                            <div class="content">
+                                小区建筑面积为[[${hr.data.com.jianzhumianji}]]平方米,占地面积为[[${hr.data.com.zhandimianji}]]平方米。
+                                共有停车位 [[${hr.data.com.tingchewei}]]个 ,绿化率已经达到[[${hr.data.com.lvhualv}]]平方米，预计规划户数：
+                                [[${hr.data.com.guihuahushu}]]
+                            </div>
+                        </div>
+                        <!--<div class="baseattribute clear">-->
+                        <!--<div class="name">适宜人群</div>-->
+                        <!--<div class="content">-->
+                        <!--适合改善客户或者老人带小孩的客户，房子距公园340米，距大润发330米，（百度地图可查），平时散步或者购物都很方便。-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <div class="baseattribute clear">
+                            <div class="name">周边配套</div>
+                            <div class="content">
+                                [[${hr.data.com.zhoubianpeitao}]]
+                            </div>
+                        </div>
+                        <div class="baseattribute clear">
+                            <div class="name">核心卖点</div>
+                            <div class="content">
+                                位处长白岛中间，距离南昌长白岛校区仅一路之隔
+                            </div>
+                        </div>
+                        <!--<div class="viewmore">展开更多信息</div>-->
+                        <div class="disclaimer">注：土地使用起止年限详见业主土地证明材料或查询相关政府部门的登记文件。</div>
+                    </div>
+                </div>
+                <!--房源照片-->
+                <div id="ContentPlaceHolder1__pHouseBigImage" class="contentmenu_s h-t-photo">
+
+                    <h2 id="houseImage"><span>房源相册</span>
+                        <!--<a href="javascript:void(0)" class="showAllImage" linktype="popImage">查看全部相册 &gt;&gt;</a>-->
+                    </h2>
+
+                    <div class="h-t-photolist clearfix">
+                        <div class="grid" style="position: relative; height: 858px;">
+                            <!--201804 张广睿 增加视频附件repeter-->
+
+                            <a data-lightbox="roadtrip" th:title="${hr.data.com.loupanmingcheng}"
+                               th:each="photo:${hr.data.housePhoto}"
+                               th:href="@{'http://dev-12.lingke.mobi/HousePhoto/'+${photo.path}}" index="0" class="imga"
+                               style="width: 355px; position: absolute; margin: 10px; top: 10px; left: 7.5px;">
+                                <span><i></i></span><img name="mob_bigImg" 0=""
+                                                         th:src="@{'http://dev-12.lingke.mobi/HousePhoto/'+${photo.path}}"
+                                                         onerror="javascript:this.src='/yuqiaopc/img/noimg_big.png';">
+                            </a>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--<div class="contentmenu_s h-t-fujin" id="nearby_xq_bottom">-->
+                <!--&lt;!&ndash;横向附近小区列表&ndash;&gt;-->
+                <!--<h2><span id="xqtp">小区图片</span></h2>-->
+                <!--<div class="h-t-xsbox">-->
+                <!--<ul class="clearfix">-->
+
+                <!--<li>-->
+                <!--<div class="h-t-xsimg">-->
+                <!--<a href="../img/ershoufang/noimg_small.png" class="imgaxq" title="实景图" linktype="house">-->
+                <!--<img name="mob_bigImg" alt="实景图" src="../img/dilirebao3.jpg"  width="184" height="140"></a>-->
+                <!--</div>-->
+                <!--&lt;!&ndash;<div class="h-t-xsimg">-->
+                <!--<a href="../img/ershoufang/noimg_small.png" class="imgaxq" title="实景图" linktype="house">-->
+                <!--<img name="mob_bigImg" alt="实景图" src="../img/dilireba1.jpg" onerror="this.src='https://g.yuqiaocdn.com/wwwyuqiaocn/2016v1/images/noimg_big.png'" width="184" height="140"></a>-->
+                <!--</div>&ndash;&gt;-->
+                <!--</li>-->
+
+                <!--</ul>-->
+                <!--</div>-->
+                <!--</div>-->
+
+                <script type="text/javascript" th:src="@{/lib/mango.ttpager.js}"></script>
+                <div class="newwrap contentmenu_s h-t-fujin" id="commentinfohouse"
+                     log-mod="ershoufang_detail_agent-daikan" style="display: none;">
+
+                    <div class="comment_daikan">
+                        <div class="daikan_header clear">
+                            <div class="contentmenu_s" style="margin: 20px 0px 0px;">
+                                <h3 id="house_information"
+                                    style="border: 1px solid rgb(220, 220, 220); height: 62px; line-height: 62px; width: 1098px; background: rgb(248, 248, 248) none repeat scroll 0% 0%; margin-bottom: 0px;">
+                                    <span id="fdjsq"
+                                          style="font-size: 20px; font-weight: bold; line-height: 62px; padding-left: 30px; border-bottom: 0px none;">经纪人带看反馈</span>
+                                    <div class="daikan_filter fr">
+                                        <span class="tag on" id="newestComment" data-bl="typ">最新</span>
+                                        <span class="tag LOGCLICK" id="usefulComment" data-bl="typ">最有用</span>
+                                    </div>
+                                </h3>
+                            </div>
+
+                        </div>
+                        <div style="border-width: 0px 1px 1px; border-style: none solid solid; border-color: currentcolor rgb(220, 220, 220) rgb(220, 220, 220); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none;">
+                            <div class="daikan_content" id="JingPinListDiv" data-pageindex="1">
+
+                                <div class="daikan_content_loading"></div>
+                            </div>
+                            <!--翻页-->
+                            <div class="page-sizebox-960" style="width: 100%;" id="fanye">
+                                <div class="pagesizebox" style="width: 1100px;">
+                                    <div class="pageinfo">
+                                        <p id="ContentPlaceHolder1_WU_ConmentInfoHouse_pageinfo">
+                                        </p>
+                                    </div>
+                                    <div class="pagebtn" id="Pagination" style="margin-right: 550px;">
+                                        <div class="ld-page">
+                                            <div>
+                                                <div class="black2" style="margin: 0px; padding: 2px;"><input
+                                                        style="opacity: 0; width: 1px;" value=""></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <script type="text/javascript">
+                    $("#newestComment").click(function () {
+                        if ($("#newestComment").hasClass("on") == false) {
+                            $("#usefulComment").removeClass("on");
+                            $("#usefulComment").addClass("LOGCLICK");
+                            $("#newestComment").addClass("on");
+                            $("#newestComment").removeClass("LOGCLICK");
+                            toprightclick("lasttime");
+                        }
+                    });
+                    $("#usefulComment").click(function () {
+                        if ($("#usefulComment").hasClass("on") == false) {
+                            $("#newestComment").removeClass("on");
+                            $("#newestComment").addClass("LOGCLICK");
+                            $("#usefulComment").addClass("on");
+                            $("#usefulComment").removeClass("LOGCLICK");
+                            toprightclick("Commentisgood");
+                        }
+                    });
+                    var type = "2";
+                    var shouli = "style='display:none'";
+                    if (shouli == "") {
+                        $("#licommentinfohouse").show();
+                    }
+                    var pageIndex = "1";
+                    var houseid = "007007";
+                    //分页开始
+                    page_index = "1"; //当前页数
+                    yeshu = 0; //总共页数
+                    if (yeshu == 0) {
+                        page_index = 0;
+                    }
+                    videoCount = 0; // 评价总数
+                    var datas = {
+                        list: {
+                            filter: [],
+                            order: {
+                                disorder: 1
+                            },
+                            pager: {
+                                page: page_index,
+                                size: 12
+                            },
+                        },
+                    };
+                    baseTable(page_index, datas.list.pager.size, {
+                        action: "list"
+                    });
+
+                    function baseTable(page, size, opts) {
+                        datas[opts.action].pager.page = page;
+                        datas[opts.action].pager.size = size;
+                        easyTable(page, size, videoCount, baseTable, opts);
+
+                    };
+
+                    function easyTable(defalutpage, pagesize, count) {
+                        var pager = $("<div>");
+
+                        $("#Pagination").html("");
+
+                        $("#Pagination").append($("<div class='ld-page' >").append(pager));
+
+                        if (count != undefined) {
+                            $("#countpage").html(count);
+                        }
+
+                        pager.ttpager({
+                            total: count,
+                            pagesize: 3,
+                            defaultPage: Number(defalutpage),
+                            onChange: function (page, size) {
+                                //var urlpage = "";
+                                //urlpage += "pg" + page;
+                                //window.location.href = "/video/list/" + urlpage;
+                                // pager.hide();
+                                pageIndex = page;
+                                if ($("#usefulComment").hasClass("on") == false) {
+                                    toprightclick("lasttime");
+                                } else {
+                                    toprightclick("Commentisgood");
+                                }
+                                easyTable(page, 3, count);
+                            },
+                            buttonnumber: 3,
+                            sizes: "",
+                            pagesizeinfo: "",
+                            infotext: "",
+                            gototext: null
+                        });
+                        pager.find("select").remove();
+                        var a = $(".black2>a");
+                        for (var i = 0; i < a.length; i++) {
+                            if (i == a.length - 1) {
+                                $(a[i]).remove();
+                            }
+                        }
+                        //$("#ContentPlaceHolder1_pageinfo").html("共找到" + count + "个视频文件");
+                    }
+
+                    //分页结束
+                    function toprightclick(ordername) {
+                        //$("#JingPinListDiv").data("pageindex");
+                        $.post(BaseUrl_IIS_Application_Name + "Ashx/ConmentHandler.ashx", {
+                            action: "conmentinfohouse",
+                            pageIndex: pageIndex,
+                            ordername: ordername,
+                            type: type,
+                            houseid: houseid
+                        }, function (data) {
+                            var bidhouse = data.obj.list;
+                            $("#JingPinListDiv").html("");
+                            $.each(bidhouse, function (_i, i) {
+                                $("#JingPinListDiv").append(domShow(i));
+                            });
+                            //判断显示的数据是否小于3并且大于1并且分页数大于1，给id为JingPinListDiv的div添加高度
+                            if ($(".daikan_list").length < 3 && $(".daikan_list").length >= 1 && yeshu > 1) {
+                                $("#JingPinListDiv").css("height", "340");
+                            }
+                        });
+                    }
+
+                    function CountNum(obj) {
+
+                        var commentid = $(obj).data("commentid");
+                        var ordername = "lasttime";
+                        if ($("#newestComment").hasClass("on") == false) {
+                            ordername = "Commentisgood"
+                        }
+                        $.post(BaseUrl_IIS_Application_Name + "Ashx/ConmentHandler.ashx", {
+                            action: "update",
+                            pageIndex: pageIndex,
+                            ordername: ordername,
+                            commentid: commentid,
+                            type: type,
+                            houseid: houseid
+                        }, function (data) {
+                            if (data != "") {
+                                var bidhouse = data.obj.list;
+                                $("#JingPinListDiv").html("");
+                                $.each(bidhouse, function (_i, i) {
+                                    $("#JingPinListDiv").append(domShow(i));
+                                });
+                            }
+                        });
+                    }
+
+                    function domShow(data) {
+                        var youyong = data.Commentisgood == "0" ? "" : "(" + data.Commentisgood + ")";
+                        var isshow = data.daikancount == "0" ? "style='display:none'" : "";
+                        var dom = $("<div class=\"daikan_list\"><div class=\"item clear\">" +
+                            "<a target=\"_blank\" class=\"item_img fl LOGCLICK\" href=\"/s/" + data.adduserid + "\" style=\"margin-top:25px;margin-left:25px;\">" +
+                            "<img src=\" " + data.img + "\" alt=\"\"></a>" +
+                            "<div class=\"daikan_item_content fr clear\">" +
+                            " <div class=\"fl\"><div class=\"item_title\">" +
+                            "<a target=\"_blank\" style=\"text-decoration:none;\" class=\"itemAgentName \" href=\"/s/" + data.adduserid + "\">" + data.name + "</a>" +
+                            "<div class=\"dy no_f\"><span class=\"dy_tag lj_tag\" style=\"display:none\">誉桥</span></div>" +
+                            " <a class=\"daikan_item_im  LOGCLICKDATA\" style=\"text-decoration:none;\"  title=\"在线咨询\" data-id=\"" + data.adduserid + "\" data-name=\"" + data.name + "\"  onclick=\"setconversationpeople(this)\"><i>&#xe6bc;</i>在线咨询</a>" +
+                            "<span class=\"phone\" >" + data.mobile + "</span > </div >" +
+                            "<div class=\"des\">" + data.CommentMemo + "</div>" +
+                            "<div class=\"daikan_item_record\"" + isshow + " >" + data.lasttime + "带客户看过此房，共带看本房" + data.daikancount + "次</div></div >" +
+                            "  <div class=\"item_useable_btn fr \" data-commentid=\"" + data.CommentID + "\" onclick=\"update(this)\">有用" + youyong + "</div> </div >   </div >  </div >     "
+                        );
+                        return dom;
+                    }
+
+                    //点击有用处理
+                    function update(obj) {
+                        $.getScript("https://mis.yuqiao.cn/a10_Common/a1010_Genjin/Scripts/jquery.cookie.js", function () {
+                            var id = $(obj).data("commentid");
+                            var isPingJia = $.cookie("comment_pingjiapc_" + id);
+                            if (!isPingJia) {
+                                $.cookie("comment_pingjiapc_" + id, 1);
+                                CountNum(obj);
+                            } else {
+                                layer.msg("您已点击过有用");
+                            }
+                        });
+                    }
+                </script>
+
+                <!--周边配套-->
+                <!--	<div class="contentmenu_s h-t-Matching map-content">
+                        <h2 style="border: 1px solid rgb(220, 220, 220); height: 62px; line-height: 62px; width: 1098px; background: rgb(248, 248, 248) none repeat scroll 0% 0%; margin-bottom: 0px;">
+    <span id="zbpt" style="font-size: 20px; font-weight: bold; line-height: 62px; padding-left: 30px; border-bottom: 0px none;">周边配套</span>
+</h2>
+                        <div class="mdMap" style="padding-top: 20px; border-width: 0px 1px 1px; border-style: none solid solid; border-color: currentcolor rgb(220, 220, 220) rgb(220, 220, 220); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none;">
+                            <div id="surroundMap" class="map-box">
+                                <iframe id="iframe_map" name="myframe" src="zhoubianMap.html" scrolling="no" marginwidth="0" marginheight="0" style="margin: 0px; width: 100%;" height="521" frameborder="0"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                <!--<script src="../js/xqmap.js"></script>-->
+                <script>
+                    /*document.domain = window.location.host;*/
+                    var lat = '41.82676700000000',
+                        lng = '123.34714600000000',
+                        xqName = '万科朗润园',
+                        xqId = '6293',
+                        xqPy = 'wankelangrunyuan',
+                        nearXq = [{
+                            id: 310,
+                            name: '重工新村',
+                            py: 'zhonggongxincun',
+                            lng: 123.34316042967000,
+                            lat: 41.83106766763800,
+                            d: 581
+                        }, {
+                            id: 744,
+                            name: '沈阳瑞盛国际汽配城',
+                            py: 'shenyangruishengguojiqipeicheng',
+                            lng: 123.35070400000000,
+                            lat: 41.82499300000000,
+                            d: 354
+                        }, {
+                            id: 1802,
+                            name: '恒大华府',
+                            py: 'hengdahuafu',
+                            lng: 123.34681900000000,
+                            lat: 41.82201900000000,
+                            d: 528
+                        }, {
+                            id: 2088,
+                            name: '瑞京时代汽配广场',
+                            py: 'ruijingshidaiqipeiguangchang',
+                            lng: 123.35032400000000,
+                            lat: 41.82352100000000,
+                            d: 446
+                        }, {
+                            id: 2280,
+                            name: '阳光碧水园一期',
+                            py: 'yangguangbishuiyuanyiqi',
+                            lng: 123.35431316915000,
+                            lat: 41.82663805206900,
+                            d: 594
+                        }, {
+                            id: 2340,
+                            name: '重工小区',
+                            py: 'zhonggongxiaoqu',
+                            lng: 123.34266000000000,
+                            lat: 41.83273300000000,
+                            d: 760
+                        }, {
+                            id: 3834,
+                            name: '瑞盛家园',
+                            py: 'ruishengjiayuan',
+                            lng: 123.35113700000000,
+                            lat: 41.82680400000000,
+                            d: 330
+                        }, {
+                            id: 3928,
+                            name: '蚂蚁精舍',
+                            py: 'mayijingshe',
+                            lng: 123.35050843395000,
+                            lat: 41.82829908173000,
+                            d: 326
+                        }, {
+                            id: 3960,
+                            name: '启工社区',
+                            py: 'qigongshequ',
+                            lng: 123.34322600000000,
+                            lat: 41.83202400000000,
+                            d: 668
+                        }, {
+                            id: 4137,
+                            name: '阳光碧水园二期',
+                            py: 'yangguangbishuiyuanerqi',
+                            lng: 123.35377200000000,
+                            lat: 41.82545500000000,
+                            d: 568
+                        }, {
+                            id: 5478,
+                            name: '电机厂宿舍',
+                            py: 'dianjichangsushe',
+                            lng: 123.35492600000000,
+                            lat: 41.82353500000000,
+                            d: 738
+                        }, {
+                            id: 8539,
+                            name: '瑞盛商务楼',
+                            py: 'rsswl8539',
+                            lng: 123.34781600000000,
+                            lat: 41.82487100000000,
+                            d: 218
+                        }, {
+                            id: 8844,
+                            name: '鑫丰御景庭',
+                            py: 'fyjt8844',
+                            lng: 123.34540800000000,
+                            lat: 41.82231100000000,
+                            d: 515
+                        }, {
+                            id: 9055,
+                            name: '万科润园',
+                            py: 'wkry9055',
+                            lng: 123.35295000000000,
+                            lat: 41.83100200000000,
+                            d: 673
+                        }, {
+                            id: 9119,
+                            name: '兰亭馨居',
+                            py: 'ltj9119',
+                            lng: 123.34919400000000,
+                            lat: 41.82863400000000,
+                            d: 268
+                        }, {
+                            id: 9743,
+                            name: '兰亭馨居二期',
+                            py: 'ltjeq9743',
+                            lng: 123.34843600000000,
+                            lat: 41.82974800000000,
+                            d: 348
+                        }, {
+                            id: 9748,
+                            name: '东药家属楼',
+                            py: 'dyjsl9748',
+                            lng: 123.34159900000000,
+                            lat: 41.82946100000000,
+                            d: 548
+                        }, {
+                            id: 9749,
+                            name: '水泥机械家属楼',
+                            py: 'snjxjsl9749',
+                            lng: 123.34180100000000,
+                            lat: 41.83046500000000,
+                            d: 604
+                        }, {
+                            id: 10170,
+                            name: '维多利亚国际公馆',
+                            py: 'weiduoliyaguojigongguan',
+                            lng: 123.34872800000000,
+                            lat: 41.82391900000000,
+                            d: 342
+                        }, {
+                            id: 10240,
+                            name: '单体楼（启新社区）',
+                            py: 'dtlqxsq10240',
+                            lng: 123.33864900000000,
+                            lat: 41.82684700000000,
+                            d: 704
+                        }];
+                    var init_json = {
+                        lng: lng,
+                        lat: lat,
+                        ak: "NzsPTTgk7sq0pckgN7RIur4HTyYeQaym",
+                        xqName: xqName,
+                        xqId: xqId,
+                        nearXq: nearXq,
+                        xqPy: xqPy,
+                        XqStyleStringCurrent: 0,
+                        XqStyleStringOther: 1,
+                        minZoom: 12,
+                        maxZoom: 19,
+                        root: /website/,
+                        ShowText: "周边配套",
+                        zoomCurrent: 16,
+                        mapPanel: "_pHouseMap",
+                        tabEle: $(".one-level-tab li"),
+                        listContainer: $("#mapListContainer"),
+                        btnDistance: $(".map-calc-distance"),
+                        isShowToolbar: !0
+                    }
+                    var iframe_src = "/website/UserControl/pc/WU_Xq_Map_Content.aspx";
+                    var l = $(".mdMap"),
+                        p = $("#surroundMap"),
+                        f = $(window);
+                    window.param = init_json;
+                    window.currentMapFS = !1,
+                        window.callMapFullScreen = function () {
+                            if (!window.currentMapFS) {
+                                var i = f.width(),
+                                    n = f.height(),
+                                    r = '<div id="fullMapDiv"  style="height: ' + n + "px; width: 100%" + '; position: fixed; left: 0px; top: 0px; background-color: #ffffff; z-index: 10000; opacity: 1;"><iframe id="iframe_map" name="myframe" src="' + iframe_src + '"' + ' frameborder="0" scrolling="no" marginwidth="0" marginheight="0" style="margin:0px;width:100%;height:100%;"></iframe></div>';
+                                p.html(r),
+                                    l.css("zIndex", "1002")
+                            }
+                            window.currentMapFS = !0
+                        },
+                        window.cancelMapFullScreen = function () {
+                            if (window.currentMapFS) {
+                                var i = '<iframe id="iframe_map" name="myframe" src="' + iframe_src + '"' + ' height="592" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" style="margin:0px;width:100%;"></iframe>';
+                                p.html(i),
+                                    l.css("zIndex", "")
+                            }
+                            window.currentMapFS = !1
+                        }
+                </script>
+                <script>
+                    function PoiLevel1(type1) {
+                        document.getElementById("type1_jiaotong").style = "color: #666;background: none;border-top: none;line-height: 40px;";
+                        document.getElementById("type1_jiaoyu").style = "color: #666;background: none;border-top: none;line-height: 40px;";
+                        document.getElementById("type1_yiliao").style = "color: #666;background: none;border-top: none;line-height: 40px;";
+                        document.getElementById("type1_gouwu").style = "color: #666;background: none;border-top: none;line-height: 40px;";
+                        document.getElementById("type1_shenghuo").style = "color: #666;background: none;border-top: none;line-height: 40px;";
+                        document.getElementById("type1_yule").style = "color: #666;background: none;border-top: none;line-height: 40px;";
+                        document.getElementById(type1).style = "color: #009143;background: #fff;border-top: 2px #009143 solid;line-height: 38px;";
+
+                        var ret_count = 0;
+                        var lisdiv = document.getElementsByTagName("div");
+                        for (var i = 0; i < lisdiv.length; i++) {
+                            if (lisdiv[i].hasAttribute("type1")) {
+                                lisdiv[i].style = "color:#666;border-bottom:none;display:inline-block;";
+                                if (lisdiv[i].getAttribute("type1") == type1) {
+                                    if (ret_count == 0) {
+                                        lisdiv[i].style = "color:#009143;border-bottom:1px #009143 solid;display:inline-block;";
+                                        GetNearBy(lisdiv[i].getAttribute("type2key"));
+                                    }
+                                    ret_count = ret_count + 1;
+                                } else {
+                                    lisdiv[i].style = "display:none;";
+                                }
+                            }
+                        }
+                    }
+
+                    function PoiSearch(type1, type2) {
+
+                        var lisdiv = document.getElementsByTagName("div");
+                        for (var i = 0; i < lisdiv.length; i++) {
+                            if (lisdiv[i].hasAttribute("type1")) {
+                                if (lisdiv[i].getAttribute("type1") == type1) {
+                                    lisdiv[i].style = "color:#666;border-bottom:none;display:inline-block;";
+                                    if (lisdiv[i].id == type2) {
+                                        lisdiv[i].style = "color:#009143;border-bottom:1px #009143 solid;display:inline-block;";
+                                        GetNearBy(lisdiv[i].getAttribute("type2key"));
+                                    }
+                                } else {
+                                    lisdiv[i].style = "display:none;";
+                                }
+                            }
+                        }
+                    }
+
+                    function GetNearBy(type2key) {
+
+                        local.searchNearby(type2key, point, 1200);
+                    }
+                </script>
+
+                <!--<script type="text/javascript" th:src="@{/js/highcharts.js}"></script>-->
+
+                <div id="pushContainer" log-mod="ershoufang_detail_recommend-ershoufang" class="">
+                    <div class="push">
+                        <h3 class="pushheader">好房为你推荐</h3>
+                        <ul class="pushList">
+
+                            <li class="pushListItem" th:each="xsHouse:${houseByName.data}">
+                                <div class="pic"><a target="_blank" th:href="@{'/ershoufang/'+${xsHouse.id}}"
+                                                    class="LOGCLICK LOGCLICKDATA xiangqingRecommendList" data-bl="list"
+                                                    data-log_index="1" data-log_id="30001" data-lj_view_evtid="10878"
+                                                    data-lj_evtid="10879" data-lj_action_location="0"
+                                                    data-lj_action_house_code="102100594676"
+                                                    data-lj_action_strategy_id="default"
+                                                    data-lj_action_recommend_module="pc_ershou_xiangqing"
+                                                    data-lj_action_fb_service_id="100002"
+                                                    data-lj_action_fb_context_id="{&quot;req_source_type&quot;:&quot;zhiying_pc&quot;}"
+                                                    data-lj_action_fb_expo_id="r92547240271851520"
+                                                    data-lj_action_fb_strategy_id="10000015"
+                                                    data-lj_action_fb_item_type="ershou_house"
+                                                    data-lj_action_fb_item_detail="102100594676"
+                                                    data-lj_action_fb_item_location="1"
+                                                    data-lj_action_fb_ab_test_flag="reco_rule-100002-default-pc"
+                                                    data-lj_action_fb_response_ts="1536800981"
+                                                    data-lj_action_fb_query_id="010A1A640D8D017AD06501A709E00854">
+                                    <img class="new-default-icon"
+                                         th:src="@{'http://dev-12.lingke.mobi/HousePhoto/'+${xsHouse.housePhoto[0].path}}"
+                                         onerror="javascript:this.src='/yuqiaopc/img/house/linshi_house (3).jpg';"
+                                         height="140" width="184" th:alt="${hr.data.com.loupanmingcheng}"></a>
+                                    <span th:text="${#strings.substringBefore(xsHouse.zuidishoujia ,'.')}+'万'"></span>
+                                </div>
+                                <div class="htitle">
+                                    <span class="name"><a target="_blank"
+                                                          href="#">[[${hr.data.com.loupanmingcheng}]]</a></span>
+                                    <span class="info">[[${xsHouse.woshi}]]室[[${xsHouse.ketingcanting}]]厅[[${xsHouse.weishengjian}]]卫/[[${xsHouse.mianji}]]平米</span>
+                                </div>
+                                <div class="desc">同小区关注度较高房源</div>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+
+                <!--<div id="_pWUPriceTrend" class="contentmenu_s h-t-Trendbox">-->
+                <!--<h2 id="districtPrice">-->
+                <!--<div class="btn-info" style="float: left;" id="erShouFangBtn">二手房走势</div>-->
+                <!--<div class="btn-info active" id="zuFangBtn">租房走势</div>-->
+
+                <!--<a href="https://www.yuqiao.cn/xiaoqu/wankelangrunyuan/" style="display: " target="_top">查看<em>万科朗润园</em>详细信息 &gt;&gt;</a></h2>-->
+                <!--&lt;!&ndash;<div class="h-t-zhoushi">&ndash;&gt;-->
+                <!--<div class="qutu" id="zufangzoushi" data-highcharts-chart="1">-->
+                <!--<div id="highcharts-ebf82n8-4" style="position: relative; overflow: hidden; width: 1100px; height: 300px; text-align: left; line-height: normal; z-index: 0; left: 0.5px; top: 0.800049px;" dir="ltr" class="highcharts-container ">-->
+                <!--<svg version="1.1" class="highcharts-root" style="font-family: &quot;Lucida Grande&quot;,&quot;Lucida Sans Unicode&quot;,Arial,Helvetica,sans-serif; font-size: 12px;" xmlns="http://www.w3.org/2000/svg" width="1100" height="300" viewBox="0 0 1100 300">-->
+                <!--<desc>Created with Highcharts 6.1.1</desc>-->
+                <!--<defs>-->
+                <!--<clipPath id="highcharts-ebf82n8-5">-->
+                <!--<rect x="0" y="0" width="1011" height="209" fill="none"></rect>-->
+                <!--</clipPath>-->
+                <!--</defs>-->
+                <!--<rect fill="#ffffff" class="highcharts-background" x="0" y="0" width="1100" height="300" rx="0" ry="0"></rect>-->
+                <!--<rect fill="none" class="highcharts-plot-background" x="79" y="10" width="1011" height="209"></rect>-->
+                <!--<g class="highcharts-grid highcharts-xaxis-grid " data-z-index="1">-->
+                <!--<path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 88.5 10 L 88.5 219" opacity="1"></path>-->
+                <!--<path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 172.5 10 L 172.5 219" opacity="1"></path>-->
+                <!--<path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 254.5 10 L 254.5 219" opacity="1"></path>-->
+                <!--<path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 338.5 10 L 338.5 219" opacity="1"></path>-->
+                <!--<path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 419.5 10 L 419.5 219" opacity="1"></path>-->
+                <!--<path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 503.5 10 L 503.5 219" opacity="1"></path>-->
+                <!--<path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 588.5 10 L 588.5 219" opacity="1"></path>-->
+                <!--<path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 664.5 10 L 664.5 219" opacity="1"></path>-->
+                <!--<path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 748.5 10 L 748.5 219" opacity="1"></path>-->
+                <!--<path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 829.5 10 L 829.5 219" opacity="1"></path>-->
+                <!--<path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 913.5 10 L 913.5 219" opacity="1"></path>-->
+                <!--<path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 995.5 10 L 995.5 219" opacity="1"></path>-->
+                <!--<path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 1079.5 10 L 1079.5 219" opacity="1"></path>-->
+                <!--</g>-->
+                <!--<g class="highcharts-grid highcharts-yaxis-grid " data-z-index="1">-->
+                <!--<path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1" class="highcharts-grid-line" d="M 79 219.5 L 1090 219.5" opacity="1"></path>-->
+                <!--<path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1" class="highcharts-grid-line" d="M 79 167.5 L 1090 167.5" opacity="1"></path>-->
+                <!--<path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1" class="highcharts-grid-line" d="M 79 115.5 L 1090 115.5" opacity="1"></path>-->
+                <!--<path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1" class="highcharts-grid-line" d="M 79 62.5 L 1090 62.5" opacity="1"></path>-->
+                <!--<path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1" class="highcharts-grid-line" d="M 79 9.5 L 1090 9.5" opacity="1"></path>-->
+                <!--</g>-->
+                <!--<rect fill="none" class="highcharts-plot-border" data-z-index="1" x="79" y="10" width="1011" height="209"></rect>-->
+                <!--<g class="highcharts-axis highcharts-xaxis " data-z-index="2">-->
+                <!--<path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 88.5 219 L 88.5 229" opacity="1"></path>-->
+                <!--<path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 172.5 219 L 172.5 229" opacity="1"></path>-->
+                <!--<path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 254.5 219 L 254.5 229" opacity="1"></path>-->
+                <!--<path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 338.5 219 L 338.5 229" opacity="1"></path>-->
+                <!--<path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 419.5 219 L 419.5 229" opacity="1"></path>-->
+                <!--<path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 503.5 219 L 503.5 229" opacity="1"></path>-->
+                <!--<path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 588.5 219 L 588.5 229" opacity="1"></path>-->
+                <!--<path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 664.5 219 L 664.5 229" opacity="1"></path>-->
+                <!--<path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 748.5 219 L 748.5 229" opacity="1"></path>-->
+                <!--<path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 829.5 219 L 829.5 229" opacity="1"></path>-->
+                <!--<path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 913.5 219 L 913.5 229" opacity="1"></path>-->
+                <!--<path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 995.5 219 L 995.5 229" opacity="1"></path>-->
+                <!--<path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 1079.5 219 L 1079.5 229" opacity="1"></path>-->
+                <!--<path fill="none" class="highcharts-axis-line" stroke="#ccd6eb" stroke-width="1" data-z-index="7" d="M 79 219.5 L 1090 219.5"></path>-->
+                <!--</g>-->
+                <!--<g class="highcharts-axis highcharts-yaxis " data-z-index="2"><text x="25.66666603088379" data-z-index="7" text-anchor="middle" transform="translate(0,0) rotate(270 25.66666603088379 114.5)" class="highcharts-axis-title" style="color: rgb(102, 102, 102); fill: rgb(102, 102, 102);" y="114.5"><tspan>元/平方</tspan></text>-->
+                <!--<path fill="none" class="highcharts-axis-line" data-z-index="7" d="M 79 10 L 79 219"></path>-->
+                <!--</g>-->
+                <!--<g class="highcharts-series-group" data-z-index="3">-->
+                <!--<g data-z-index="0.1" class="highcharts-series highcharts-series-0 highcharts-spline-series highcharts-color-0 " transform="translate(79,10) scale(1 1)" clip-path="url(#highcharts-ebf82n8-5)">-->
+                <!--<path fill="none" d="M 9.9117647058824 94.05000000000001 C 9.9117647058824 94.05000000000001 60.42103142626917 94.05000000000001 94.093875906527 94.05000000000001 C 126.6804995971002 94.05000000000001 142.9738114423868 94.05000000000001 175.56043513296 94.05000000000001 C 209.233279613216 94.05000000000001 226.069701853344 94.05000000000001 259.7425463336 94.05000000000001 C 292.32917002417196 94.05000000000001 308.622481869458 94.05000000000001 341.20910556003 94.05000000000001 C 374.88195004029 94.05000000000001 391.71837228042 114.95 425.39121676068 114.95 C 459.064061240936 114.95 475.90048348106393 114.95 509.57332796132 114.95 C 573.66035455278 114.95 605.70386784851 94.05000000000001 669.79089443997 94.05000000000001 C 702.3775181305421 94.05000000000001 718.670829975828 115.29262295081918 751.2574536664 135.85000000000002 C 784.930298146656 157.09262295081916 801.7667203867841 198.55 835.43956486704 198.55 C 868.0261885576122 198.55 884.3195004028981 198.55 916.90612409347 198.55 C 950.578968573722 198.55 1001.0882352941 177.65 1001.0882352941 177.65" class="highcharts-graph" data-z-index="1" stroke="#7cb5ec" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>-->
+                <!--<path fill="none" d="M -0.08823529411760056 94.05000000000001 L 9.9117647058824 94.05000000000001 C 9.9117647058824 94.05000000000001 60.42103142626917 94.05000000000001 94.093875906527 94.05000000000001 C 126.6804995971002 94.05000000000001 142.9738114423868 94.05000000000001 175.56043513296 94.05000000000001 C 209.233279613216 94.05000000000001 226.069701853344 94.05000000000001 259.7425463336 94.05000000000001 C 292.32917002417196 94.05000000000001 308.622481869458 94.05000000000001 341.20910556003 94.05000000000001 C 374.88195004029 94.05000000000001 391.71837228042 114.95 425.39121676068 114.95 C 459.064061240936 114.95 475.90048348106393 114.95 509.57332796132 114.95 C 573.66035455278 114.95 605.70386784851 94.05000000000001 669.79089443997 94.05000000000001 C 702.3775181305421 94.05000000000001 718.670829975828 115.29262295081918 751.2574536664 135.85000000000002 C 784.930298146656 157.09262295081916 801.7667203867841 198.55 835.43956486704 198.55 C 868.0261885576122 198.55 884.3195004028981 198.55 916.90612409347 198.55 C 950.578968573722 198.55 1001.0882352941 177.65 1001.0882352941 177.65 L 1011.0882352941 177.65" stroke-linejoin="round" visibility="visible" stroke="rgba(192,192,192,0.0001)" stroke-width="22" data-z-index="2" class="highcharts-tracker"></path>-->
+                <!--</g>-->
+                <!--<g data-z-index="0.1" class="highcharts-markers highcharts-series-0 highcharts-spline-series highcharts-color-0 highcharts-tracker" transform="translate(79,10) scale(1 1)">-->
+                <!--<path fill="#7cb5ec" d="M 13 94 A 4 4 0 1 1 12.999998000000167 93.99600000066667 Z" class="highcharts-point highcharts-color-0"></path>-->
+                <!--<path fill="#7cb5ec" d="M 98 94 A 4 4 0 1 1 97.99999800000016 93.99600000066667 Z" class="highcharts-point highcharts-color-0"></path>-->
+                <!--<path fill="#7cb5ec" d="M 179 94 A 4 4 0 1 1 178.99999800000018 93.99600000066667 Z" class="highcharts-point highcharts-color-0"></path>-->
+                <!--<path fill="#7cb5ec" d="M 263 94 A 4 4 0 1 1 262.9999980000002 93.99600000066667 Z" class="highcharts-point highcharts-color-0"></path>-->
+                <!--<path fill="#7cb5ec" d="M 345 94 A 4 4 0 1 1 344.9999980000002 93.99600000066667 Z" class="highcharts-point highcharts-color-0"></path>-->
+                <!--<path fill="#7cb5ec" d="M 429 115 A 4 4 0 1 1 428.9999980000002 114.99600000066667 Z" class="highcharts-point highcharts-color-0"></path>-->
+                <!--<path fill="#7cb5ec" d="M 513 115 A 4 4 0 1 1 512.9999980000001 114.99600000066667 Z" class="highcharts-point highcharts-color-0"></path>-->
+                <!--<path fill="#7cb5ec" d="M 673 94 A 4 4 0 1 1 672.9999980000001 93.99600000066667 Z" class="highcharts-point highcharts-color-0"></path>-->
+                <!--<path fill="#7cb5ec" d="M 755 136 A 4 4 0 1 1 754.9999980000001 135.99600000066667 Z" class="highcharts-point highcharts-color-0"></path>-->
+                <!--<path fill="#7cb5ec" d="M 839 199 A 4 4 0 1 1 838.9999980000001 198.99600000066667 Z" class="highcharts-point highcharts-color-0"></path>-->
+                <!--<path fill="#7cb5ec" d="M 920 199 A 4 4 0 1 1 919.9999980000001 198.99600000066667 Z" class="highcharts-point highcharts-color-0"></path>-->
+                <!--<path fill="#7cb5ec" d="M 1005 178 A 4 4 0 1 1 1004.9999980000001 177.99600000066667 Z" class="highcharts-point highcharts-color-0"></path>-->
+                <!--</g>-->
+                <!--<g data-z-index="0.1" class="highcharts-series highcharts-series-1 highcharts-spline-series highcharts-color-1 " transform="translate(79,10) scale(1 1)" clip-path="url(#highcharts-ebf82n8-5)">-->
+                <!--<path fill="none" d="M 9.9117647058824 31.350000000000023 C 9.9117647058824 31.350000000000023 60.42103142626917 31.350000000000023 94.093875906527 31.350000000000023 C 126.6804995971002 31.350000000000023 142.9738114423868 156.75 175.56043513296 156.75 C 209.233279613216 156.75 226.069701853344 52.25 259.7425463336 52.25 C 326.002014504432 52.25 359.131748589848 92.77782608695587 425.39121676068 114.95 C 459.064061240936 126.21782608695588 475.90048348106393 135.85000000000002 509.57332796132 135.85000000000002 C 539.98751007252 135.85000000000002 555.19460112812 114.95 585.60878323932 114.95 C 651.868251410152 114.95 684.997985495568 135.85000000000002 751.2574536664 135.85000000000002 C 784.930298146656 135.85000000000002 801.7667203867841 98.64114754098286 835.43956486704 73.15 C 868.0261885576122 48.481147540982846 884.3195004028981 10.450000000000017 916.90612409347 10.450000000000017 C 950.578968573722 10.450000000000017 1001.0882352941 31.350000000000023 1001.0882352941 31.350000000000023" class="highcharts-graph" data-z-index="1" stroke="#434348" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>-->
+                <!--<path fill="none" d="M -0.08823529411760056 31.350000000000023 L 9.9117647058824 31.350000000000023 C 9.9117647058824 31.350000000000023 60.42103142626917 31.350000000000023 94.093875906527 31.350000000000023 C 126.6804995971002 31.350000000000023 142.9738114423868 156.75 175.56043513296 156.75 C 209.233279613216 156.75 226.069701853344 52.25 259.7425463336 52.25 C 326.002014504432 52.25 359.131748589848 92.77782608695587 425.39121676068 114.95 C 459.064061240936 126.21782608695588 475.90048348106393 135.85000000000002 509.57332796132 135.85000000000002 C 539.98751007252 135.85000000000002 555.19460112812 114.95 585.60878323932 114.95 C 651.868251410152 114.95 684.997985495568 135.85000000000002 751.2574536664 135.85000000000002 C 784.930298146656 135.85000000000002 801.7667203867841 98.64114754098286 835.43956486704 73.15 C 868.0261885576122 48.481147540982846 884.3195004028981 10.450000000000017 916.90612409347 10.450000000000017 C 950.578968573722 10.450000000000017 1001.0882352941 31.350000000000023 1001.0882352941 31.350000000000023 L 1011.0882352941 31.350000000000023" stroke-linejoin="round" visibility="visible" stroke="rgba(192,192,192,0.0001)" stroke-width="22" data-z-index="2" class="highcharts-tracker"></path>-->
+                <!--</g>-->
+                <!--<g data-z-index="0.1" class="highcharts-markers highcharts-series-1 highcharts-spline-series highcharts-color-1 highcharts-tracker" transform="translate(79,10) scale(1 1)">-->
+                <!--<path fill="#434348" d="M 9 27 L 13 31 9 35 5 31 Z" class="highcharts-point highcharts-color-1"></path>-->
+                <!--<path fill="#434348" d="M 94 27 L 98 31 94 35 90 31 Z" class="highcharts-point highcharts-color-1"></path>-->
+                <!--<path fill="#434348" d="M 175 153 L 179 157 175 161 171 157 Z" class="highcharts-point highcharts-color-1"></path>-->
+                <!--<path fill="#434348" d="M 259 48 L 263 52 259 56 255 52 Z" class="highcharts-point highcharts-color-1"></path>-->
+                <!--<path fill="#434348" d="M 425 111 L 429 115 425 119 421 115 Z" class="highcharts-point highcharts-color-1"></path>-->
+                <!--<path fill="#434348" d="M 509 132 L 513 136 509 140 505 136 Z" class="highcharts-point highcharts-color-1"></path>-->
+                <!--<path fill="#434348" d="M 585 111 L 589 115 585 119 581 115 Z" class="highcharts-point highcharts-color-1"></path>-->
+                <!--<path fill="#434348" d="M 751 132 L 755 136 751 140 747 136 Z" class="highcharts-point highcharts-color-1"></path>-->
+                <!--<path fill="#434348" d="M 835 69 L 839 73 835 77 831 73 Z" class="highcharts-point highcharts-color-1"></path>-->
+                <!--<path fill="#434348" d="M 916 6 L 920 10 916 14 912 10 Z" class="highcharts-point highcharts-color-1"></path>-->
+                <!--<path fill="#434348" d="M 1001 27 L 1005 31 1001 35 997 31 Z" class="highcharts-point highcharts-color-1"></path>-->
+                <!--</g>-->
+                <!--</g><text x="550" text-anchor="middle" class="highcharts-title" data-z-index="4" style="color: rgb(51, 51, 51); font-size: 18px; fill: rgb(51, 51, 51);" y="24"></text><text x="550" text-anchor="middle" class="highcharts-subtitle" data-z-index="4" style="color: rgb(102, 102, 102); fill: rgb(102, 102, 102);" y="24"></text>-->
+                <!--<g class="highcharts-legend" data-z-index="7" transform="translate(451,257)">-->
+                <!--<rect fill="none" class="highcharts-legend-box" rx="0" ry="0" x="0" y="0" width="198" height="28" visibility="visible"></rect>-->
+                <!--<g data-z-index="1">-->
+                <!--<g>-->
+                <!--<g class="highcharts-legend-item highcharts-spline-series highcharts-color-0 highcharts-series-0" data-z-index="1" transform="translate(8,3)">-->
+                <!--<path fill="none" d="M 0 11 L 16 11" class="highcharts-graph" stroke="#7cb5ec" stroke-width="2"></path>-->
+                <!--<path fill="#7cb5ec" d="M 12 11 A 4 4 0 1 1 11.999998000000167 10.996000000666664 Z" class="highcharts-point"></path><text x="21" style="color: rgb(51, 51, 51); font-size: 12px; font-weight: bold; cursor: pointer; fill: rgb(51, 51, 51);" text-anchor="start" data-z-index="2" y="15"><tspan>小区挂牌价</tspan></text></g>-->
+                <!--<g class="highcharts-legend-item highcharts-spline-series highcharts-color-1 highcharts-series-1" data-z-index="1" transform="translate(109,3)">-->
+                <!--<path fill="none" d="M 0 11 L 16 11" class="highcharts-graph" stroke="#434348" stroke-width="2"></path>-->
+                <!--<path fill="#434348" d="M 8 7 L 12 11 8 15 4 11 Z" class="highcharts-point"></path><text x="21" y="15" style="color: rgb(51, 51, 51); font-size: 12px; font-weight: bold; cursor: pointer; fill: rgb(51, 51, 51);" text-anchor="start" data-z-index="2"><tspan>小区成交价</tspan></text></g>-->
+                <!--</g>-->
+                <!--</g>-->
+                <!--</g>-->
+                <!--<g class="highcharts-axis-labels highcharts-xaxis-labels " data-z-index="7"><text x="88.911764705882" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">08月</text><text x="173.09387590653" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">09月</text><text x="254.56043513296" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">10月</text><text x="338.7425463336" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">11月</text><text x="420.20910556003" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">12月</text><text x="504.39121676068" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">01月</text><text x="588.57332796132" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">02月</text><text x="664.60878323932" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">03月</text><text x="748.79089443997" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">04月</text><text x="830.2574536664" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">05月</text><text x="914.43956486704" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">06月</text><text x="995.90612409347" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">07月</text><text x="1077.5500001907349" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">08月</text></g>-->
+                <!--<g class="highcharts-axis-labels highcharts-yaxis-labels " data-z-index="7"><text x="64" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="end" transform="translate(0,0)" y="221" opacity="1">22.5</text><text x="64" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="end" transform="translate(0,0)" y="169" opacity="1">25</text><text x="64" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="end" transform="translate(0,0)" y="117" opacity="1">27.5</text><text x="64" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="end" transform="translate(0,0)" y="64" opacity="1">30</text><text x="64" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="end" transform="translate(0,0)" y="12" opacity="1">32.5</text></g>-->
+                <!--</svg>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="h-t-zhoushi">-->
+                <!--<div class="qutu none" id="ershoufangzoushi" data-highcharts-chart="0" style="">-->
+                <!--<div id="highcharts-ebf82n8-0" style="position: relative; overflow: hidden; width: 1100px; height: 300px; text-align: left; line-height: normal; z-index: 0; left: 0px; top: 0px;" dir="ltr" class="highcharts-container ">-->
+                <!--<svg version="1.1" class="highcharts-root" style="font-family: &quot;Lucida Grande&quot;,&quot;Lucida Sans Unicode&quot;,Arial,Helvetica,sans-serif; font-size: 12px;" xmlns="http://www.w3.org/2000/svg" width="1100" height="300" viewBox="0 0 1100 300">-->
+                <!--<desc>Created with Highcharts 6.1.1</desc>-->
+                <!--<defs>-->
+                <!--<clipPath id="highcharts-ebf82n8-1">-->
+                <!--<rect x="0" y="0" width="997" height="209" fill="none"></rect>-->
+                <!--</clipPath>-->
+                <!--</defs>-->
+                <!--<rect fill="#ffffff" class="highcharts-background" x="0" y="0" width="1100" height="300" rx="0" ry="0"></rect>-->
+                <!--<rect fill="none" class="highcharts-plot-background" x="93" y="10" width="997" height="209"></rect>-->
+                <!--<g class="highcharts-grid highcharts-xaxis-grid " data-z-index="1">-->
+                <!--<path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 102.5 10 L 102.5 219" opacity="1"></path>-->
+                <!--<path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 185.5 10 L 185.5 219" opacity="1"></path>-->
+                <!--<path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 265.5 10 L 265.5 219" opacity="1"></path>-->
+                <!--<path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 348.5 10 L 348.5 219" opacity="1"></path>-->
+                <!--<path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 428.5 10 L 428.5 219" opacity="1"></path>-->
+                <!--<path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 512.5 10 L 512.5 219" opacity="1"></path>-->
+                <!--<path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 595.5 10 L 595.5 219" opacity="1"></path>-->
+                <!--<path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 669.5 10 L 669.5 219" opacity="1"></path>-->
+                <!--<path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 753.5 10 L 753.5 219" opacity="1"></path>-->
+                <!--<path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 833.5 10 L 833.5 219" opacity="1"></path>-->
+                <!--<path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 916.5 10 L 916.5 219" opacity="1"></path>-->
+                <!--<path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 996.5 10 L 996.5 219" opacity="1"></path>-->
+                <!--<path fill="none" data-z-index="1" class="highcharts-grid-line" d="M 1079.5 10 L 1079.5 219" opacity="1"></path>-->
+                <!--</g>-->
+                <!--<g class="highcharts-grid highcharts-yaxis-grid " data-z-index="1">-->
+                <!--<path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1" class="highcharts-grid-line" d="M 93 219.5 L 1090 219.5" opacity="1"></path>-->
+                <!--<path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1" class="highcharts-grid-line" d="M 93 177.5 L 1090 177.5" opacity="1"></path>-->
+                <!--<path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1" class="highcharts-grid-line" d="M 93 135.5 L 1090 135.5" opacity="1"></path>-->
+                <!--<path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1" class="highcharts-grid-line" d="M 93 94.5 L 1090 94.5" opacity="1"></path>-->
+                <!--<path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1" class="highcharts-grid-line" d="M 93 52.5 L 1090 52.5" opacity="1"></path>-->
+                <!--<path fill="none" stroke="#e6e6e6" stroke-width="1" data-z-index="1" class="highcharts-grid-line" d="M 93 9.5 L 1090 9.5" opacity="1"></path>-->
+                <!--</g>-->
+                <!--<rect fill="none" class="highcharts-plot-border" data-z-index="1" x="93" y="10" width="997" height="209"></rect>-->
+                <!--<g class="highcharts-axis highcharts-xaxis " data-z-index="2">-->
+                <!--<path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 102.5 219 L 102.5 229" opacity="1"></path>-->
+                <!--<path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 185.5 219 L 185.5 229" opacity="1"></path>-->
+                <!--<path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 265.5 219 L 265.5 229" opacity="1"></path>-->
+                <!--<path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 348.5 219 L 348.5 229" opacity="1"></path>-->
+                <!--<path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 428.5 219 L 428.5 229" opacity="1"></path>-->
+                <!--<path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 512.5 219 L 512.5 229" opacity="1"></path>-->
+                <!--<path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 595.5 219 L 595.5 229" opacity="1"></path>-->
+                <!--<path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 669.5 219 L 669.5 229" opacity="1"></path>-->
+                <!--<path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 753.5 219 L 753.5 229" opacity="1"></path>-->
+                <!--<path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 833.5 219 L 833.5 229" opacity="1"></path>-->
+                <!--<path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 916.5 219 L 916.5 229" opacity="1"></path>-->
+                <!--<path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 996.5 219 L 996.5 229" opacity="1"></path>-->
+                <!--<path fill="none" class="highcharts-tick" stroke="#ccd6eb" stroke-width="1" d="M 1079.5 219 L 1079.5 229" opacity="1"></path>-->
+                <!--<path fill="none" class="highcharts-axis-line" stroke="#ccd6eb" stroke-width="1" data-z-index="7" d="M 93 219.5 L 1090 219.5"></path>-->
+                <!--</g>-->
+                <!--<g class="highcharts-axis highcharts-yaxis " data-z-index="2"><text x="25.766666412353516" data-z-index="7" text-anchor="middle" transform="translate(0,0) rotate(270 25.766666412353516 114.5)" class="highcharts-axis-title" style="color: rgb(102, 102, 102); fill: rgb(102, 102, 102);" y="114.5"><tspan>元/平方</tspan></text>-->
+                <!--<path fill="none" class="highcharts-axis-line" data-z-index="7" d="M 93 10 L 93 219"></path>-->
+                <!--</g>-->
+                <!--<g class="highcharts-series-group" data-z-index="3">-->
+                <!--<g data-z-index="0.1" class="highcharts-series highcharts-series-0 highcharts-spline-series highcharts-color-0 " transform="translate(93,10) scale(1 1)" clip-path="url(#highcharts-ebf82n8-1)">-->
+                <!--<path fill="none" d="M 9.7745098039216 62.53280000000001 C 9.7745098039216 62.53280000000001 59.58434058554944 63.20160000000001 92.790894439968 63.20160000000001 C 124.92626913779281 63.20160000000001 140.9939564867052 63.20160000000001 173.12933118453 63.20160000000001 C 206.33588503894597 63.20160000000001 222.93916196615402 63.20160000000001 256.14571582057 63.20160000000001 C 288.281090518398 63.20160000000001 304.348777867312 63.20160000000001 336.48415256514 63.20160000000001 C 369.690706419556 63.20160000000001 386.293983346764 63.20160000000001 419.50053720118 63.20160000000001 C 452.7070910556 63.20160000000001 469.31036798281 63.20160000000001 502.51692183723 63.20160000000001 C 532.5099382218659 63.20160000000001 547.506446414184 60.2756 577.49946279882 60.2756 C 610.706016653236 60.2756 627.309293580444 60.2756 660.51584743486 60.2756 C 692.6512221326881 60.2756 708.7189094816019 48.57160000000002 740.85428417943 48.57160000000002 C 774.060838033846 48.57160000000002 790.6641149610541 54.42360000000002 823.87066881547 54.42360000000002 C 856.006043513294 54.42360000000002 872.0737308622062 47.2943016393442 904.20910556003 44.89320000000001 C 937.41565941445 42.412061639344195 987.22549019608 42.21800000000002 987.22549019608 42.21800000000002" class="highcharts-graph" data-z-index="1" stroke="#7cb5ec" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>-->
+                <!--<path fill="none" d="M -0.22549019607840037 62.53280000000001 L 9.7745098039216 62.53280000000001 C 9.7745098039216 62.53280000000001 59.58434058554944 63.20160000000001 92.790894439968 63.20160000000001 C 124.92626913779281 63.20160000000001 140.9939564867052 63.20160000000001 173.12933118453 63.20160000000001 C 206.33588503894597 63.20160000000001 222.93916196615402 63.20160000000001 256.14571582057 63.20160000000001 C 288.281090518398 63.20160000000001 304.348777867312 63.20160000000001 336.48415256514 63.20160000000001 C 369.690706419556 63.20160000000001 386.293983346764 63.20160000000001 419.50053720118 63.20160000000001 C 452.7070910556 63.20160000000001 469.31036798281 63.20160000000001 502.51692183723 63.20160000000001 C 532.5099382218659 63.20160000000001 547.506446414184 60.2756 577.49946279882 60.2756 C 610.706016653236 60.2756 627.309293580444 60.2756 660.51584743486 60.2756 C 692.6512221326881 60.2756 708.7189094816019 48.57160000000002 740.85428417943 48.57160000000002 C 774.060838033846 48.57160000000002 790.6641149610541 54.42360000000002 823.87066881547 54.42360000000002 C 856.006043513294 54.42360000000002 872.0737308622062 47.2943016393442 904.20910556003 44.89320000000001 C 937.41565941445 42.412061639344195 987.22549019608 42.21800000000002 987.22549019608 42.21800000000002 L 997.22549019608 42.21800000000002" stroke-linejoin="round" visibility="visible" stroke="rgba(192,192,192,0.0001)" stroke-width="22" data-z-index="2" class="highcharts-tracker"></path>-->
+                <!--</g>-->
+                <!--<g data-z-index="0.1" class="highcharts-markers highcharts-series-0 highcharts-spline-series highcharts-color-0 highcharts-tracker" transform="translate(93,10) scale(1 1)">-->
+                <!--<path fill="#7cb5ec" d="M 13 63 A 4 4 0 1 1 12.999998000000167 62.99600000066666 Z" class="highcharts-point highcharts-color-0"></path>-->
+                <!--<path fill="#7cb5ec" d="M 96 63 A 4 4 0 1 1 95.99999800000016 62.99600000066666 Z" class="highcharts-point highcharts-color-0"></path>-->
+                <!--<path fill="#7cb5ec" d="M 177 63 A 4 4 0 1 1 176.99999800000018 62.99600000066666 Z" class="highcharts-point highcharts-color-0"></path>-->
+                <!--<path fill="#7cb5ec" d="M 260 63 A 4 4 0 1 1 259.9999980000002 62.99600000066666 Z" class="highcharts-point highcharts-color-0"></path>-->
+                <!--<path fill="#7cb5ec" d="M 340 63 A 4 4 0 1 1 339.9999980000002 62.99600000066666 Z" class="highcharts-point highcharts-color-0"></path>-->
+                <!--<path fill="#7cb5ec" d="M 423 63 A 4 4 0 1 1 422.9999980000002 62.99600000066666 Z" class="highcharts-point highcharts-color-0"></path>-->
+                <!--<path fill="#7cb5ec" d="M 506 63 A 4 4 0 1 1 505.9999980000002 62.99600000066666 Z" class="highcharts-point highcharts-color-0"></path>-->
+                <!--<path fill="#7cb5ec" d="M 581 60 A 4 4 0 1 1 580.9999980000001 59.99600000066666 Z" class="highcharts-point highcharts-color-0"></path>-->
+                <!--<path fill="#7cb5ec" d="M 664 60 A 4 4 0 1 1 663.9999980000001 59.99600000066666 Z" class="highcharts-point highcharts-color-0"></path>-->
+                <!--<path fill="#7cb5ec" d="M 744 49 A 4 4 0 1 1 743.9999980000001 48.99600000066666 Z" class="highcharts-point highcharts-color-0"></path>-->
+                <!--<path fill="#7cb5ec" d="M 827 54 A 4 4 0 1 1 826.9999980000001 53.99600000066666 Z" class="highcharts-point highcharts-color-0"></path>-->
+                <!--<path fill="#7cb5ec" d="M 908 45 A 4 4 0 1 1 907.9999980000001 44.99600000066666 Z" class="highcharts-point highcharts-color-0"></path>-->
+                <!--<path fill="#7cb5ec" d="M 991 42 A 4 4 0 1 1 990.9999980000001 41.99600000066666 Z" class="highcharts-point highcharts-color-0"></path>-->
+                <!--</g>-->
+                <!--<g data-z-index="0.1" class="highcharts-series highcharts-series-1 highcharts-spline-series highcharts-color-1 " transform="translate(93,10) scale(1 1)" clip-path="url(#highcharts-ebf82n8-1)">-->
+                <!--<path fill="none" d="M 9.7745098039216 125.0656 C 9.7745098039216 125.0656 59.58434058554944 125.0656 92.790894439968 125.0656 C 124.92626913779281 125.0656 140.9939564867052 125.0656 173.12933118453 132.2552 C 206.33588503894597 139.4448 222.93916196615402 164.9428 256.14571582057 164.9428 C 288.281090518398 164.9428 304.348777867312 157.62780000000052 336.48415256514 152.4028 C 432.8902766586119 136.7278000000005 481.093338705348 112.6928 577.49946279882 112.6928 C 610.706016653236 112.6928 627.309293580444 133.4428681967221 660.51584743486 141.702 C 692.6512221326881 149.6947081967221 708.7189094816019 153.32240000000002 740.85428417943 153.32240000000002 C 774.060838033846 153.32240000000002 790.6641149610541 95.1368 823.87066881547 83.60000000000001 C 856.006043513294 72.06320000000002 872.0737308622062 72.06320000000002 904.20910556003 72.06320000000002 C 937.41565941445 72.06320000000002 987.22549019608 72.06320000000002 987.22549019608 72.06320000000002" class="highcharts-graph" data-z-index="1" stroke="#434348" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>-->
+                <!--<path fill="none" d="M -0.22549019607840037 125.0656 L 9.7745098039216 125.0656 C 9.7745098039216 125.0656 59.58434058554944 125.0656 92.790894439968 125.0656 C 124.92626913779281 125.0656 140.9939564867052 125.0656 173.12933118453 132.2552 C 206.33588503894597 139.4448 222.93916196615402 164.9428 256.14571582057 164.9428 C 288.281090518398 164.9428 304.348777867312 157.62780000000052 336.48415256514 152.4028 C 432.8902766586119 136.7278000000005 481.093338705348 112.6928 577.49946279882 112.6928 C 610.706016653236 112.6928 627.309293580444 133.4428681967221 660.51584743486 141.702 C 692.6512221326881 149.6947081967221 708.7189094816019 153.32240000000002 740.85428417943 153.32240000000002 C 774.060838033846 153.32240000000002 790.6641149610541 95.1368 823.87066881547 83.60000000000001 C 856.006043513294 72.06320000000002 872.0737308622062 72.06320000000002 904.20910556003 72.06320000000002 C 937.41565941445 72.06320000000002 987.22549019608 72.06320000000002 987.22549019608 72.06320000000002 L 997.22549019608 72.06320000000002" stroke-linejoin="round" visibility="visible" stroke="rgba(192,192,192,0.0001)" stroke-width="22" data-z-index="2" class="highcharts-tracker"></path>-->
+                <!--</g>-->
+                <!--<g data-z-index="0.1" class="highcharts-markers highcharts-series-1 highcharts-spline-series highcharts-color-1 highcharts-tracker" transform="translate(93,10) scale(1 1)">-->
+                <!--<path fill="#434348" d="M 9 121 L 13 125 9 129 5 125 Z" class="highcharts-point highcharts-color-1"></path>-->
+                <!--<path fill="#434348" d="M 92 121 L 96 125 92 129 88 125 Z" class="highcharts-point highcharts-color-1"></path>-->
+                <!--<path fill="#434348" d="M 173 128 L 177 132 173 136 169 132 Z" class="highcharts-point highcharts-color-1"></path>-->
+                <!--<path fill="#434348" d="M 256 161 L 260 165 256 169 252 165 Z" class="highcharts-point highcharts-color-1"></path>-->
+                <!--<path fill="#434348" d="M 336 148 L 340 152 336 156 332 152 Z" class="highcharts-point highcharts-color-1"></path>-->
+                <!--<path fill="#434348" d="M 577 109 L 581 113 577 117 573 113 Z" class="highcharts-point highcharts-color-1"></path>-->
+                <!--<path fill="#434348" d="M 660 138 L 664 142 660 146 656 142 Z" class="highcharts-point highcharts-color-1"></path>-->
+                <!--<path fill="#434348" d="M 740 149 L 744 153 740 157 736 153 Z" class="highcharts-point highcharts-color-1"></path>-->
+                <!--<path fill="#434348" d="M 823 80 L 827 84 823 88 819 84 Z" class="highcharts-point highcharts-color-1"></path>-->
+                <!--<path fill="#434348" d="M 904 68 L 908 72 904 76 900 72 Z" class="highcharts-point highcharts-color-1"></path>-->
+                <!--<path fill="#434348" d="M 987 68 L 991 72 987 76 983 72 Z" class="highcharts-point highcharts-color-1"></path>-->
+                <!--</g>-->
+                <!--</g><text x="550" text-anchor="middle" class="highcharts-title" data-z-index="4" style="color: rgb(51, 51, 51); font-size: 18px; fill: rgb(51, 51, 51);" y="24"></text><text x="550" text-anchor="middle" class="highcharts-subtitle" data-z-index="4" style="color: rgb(102, 102, 102); fill: rgb(102, 102, 102);" y="24"></text>-->
+                <!--<g class="highcharts-legend" data-z-index="7" transform="translate(451,257)">-->
+                <!--<rect fill="none" class="highcharts-legend-box" rx="0" ry="0" x="0" y="0" width="198" height="28" visibility="visible"></rect>-->
+                <!--<g data-z-index="1">-->
+                <!--<g>-->
+                <!--<g class="highcharts-legend-item highcharts-spline-series highcharts-color-0 highcharts-series-0" data-z-index="1" transform="translate(8,3)">-->
+                <!--<path fill="none" d="M 0 11 L 16 11" class="highcharts-graph" stroke="#7cb5ec" stroke-width="2"></path>-->
+                <!--<path fill="#7cb5ec" d="M 12 11 A 4 4 0 1 1 11.999998000000167 10.996000000666664 Z" class="highcharts-point"></path><text x="21" style="color: rgb(51, 51, 51); font-size: 12px; font-weight: bold; cursor: pointer; fill: rgb(51, 51, 51);" text-anchor="start" data-z-index="2" y="15"><tspan>小区挂牌价</tspan></text></g>-->
+                <!--<g class="highcharts-legend-item highcharts-spline-series highcharts-color-1 highcharts-series-1" data-z-index="1" transform="translate(109,3)">-->
+                <!--<path fill="none" d="M 0 11 L 16 11" class="highcharts-graph" stroke="#434348" stroke-width="2"></path>-->
+                <!--<path fill="#434348" d="M 8 7 L 12 11 8 15 4 11 Z" class="highcharts-point"></path><text x="21" y="15" style="color: rgb(51, 51, 51); font-size: 12px; font-weight: bold; cursor: pointer; fill: rgb(51, 51, 51);" text-anchor="start" data-z-index="2"><tspan>小区成交价</tspan></text></g>-->
+                <!--</g>-->
+                <!--</g>-->
+                <!--</g>-->
+                <!--<g class="highcharts-axis-labels highcharts-xaxis-labels " data-z-index="7"><text x="102.77450980392" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">08月</text><text x="185.79089443997" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">09月</text><text x="266.12933118453" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">10月</text><text x="349.14571582057" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">11月</text><text x="429.48415256514" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">12月</text><text x="512.50053720118" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">01月</text><text x="595.51692183723" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">02月</text><text x="670.49946279882" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">03月</text><text x="753.51584743486" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">04月</text><text x="833.85428417943" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">05月</text><text x="916.87066881547" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">06月</text><text x="997.20910556003" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">07月</text><text x="1077.5500001907349" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="middle" transform="translate(0,0)" y="238" opacity="1">08月</text></g>-->
+                <!--<g class="highcharts-axis-labels highcharts-yaxis-labels " data-z-index="7"><text x="78" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="end" transform="translate(0,0)" y="221" opacity="1">8500</text><text x="78" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="end" transform="translate(0,0)" y="179" opacity="1">9000</text><text x="78" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="end" transform="translate(0,0)" y="137" opacity="1">9500</text><text x="78" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="end" transform="translate(0,0)" y="96" opacity="1"><tspan>10 000</tspan></text><text x="78" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="end" transform="translate(0,0)" y="54" opacity="1"><tspan>10 500</tspan></text><text x="78" style="color: rgb(102, 102, 102); cursor: default; font-size: 11px; fill: rgb(102, 102, 102);" text-anchor="end" transform="translate(0,0)" y="12" opacity="1"><tspan>11 000</tspan></text></g>-->
+                <!--</svg>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+
+
+                <script>
+                    if ($(".hide").html() == "2") {
+                        $(".YSzongjia").hide();
+                    }
+                </script>
+
+
+            </div>
+        </div>
+    </div>
+    <!--图片弹出层-->
+    <!--<div style="display: none;">-->
+    <!--<div id="ColorImage">-->
+    <!--<div class="allt_l">-->
+    <!--<div class="noneleft" title="点击查看上一张图片"></div>-->
+    <!--<div id="bigPics" style="border: 1px solid rgb(204, 204, 204); height: 387px; text-align: center; width: 600px;">-->
+    <!--&lt;!&ndash;201804 张广睿 增加视频附件repeter&ndash;&gt;-->
+
+    <!--<a href="#" class="imgad" title="主卧">-->
+    <!--<img name="mob_smallImg" alt="主卧" class="" 0="" src="../img/jinganglang.jpg" style="display: none;" index="0" onerror="this.src='../img/ershoufang/noimg_small.png'"></a>-->
+    <!--<a href="#" class="imgad" title="主卧">-->
+    <!--<img name="mob_smallImg" alt="主卧" class="" 0="" src="../img/jinganglang.jpg" style="display: none;" index="0" onerror="this.src='../img/ershoufang/noimg_small.png'"></a>-->
+    <!--<a href="#" class="imgad" title="主卧">-->
+    <!--<img name="mob_smallImg" alt="主卧" class="" 0="" src="../img/jinganglang.jpg" style="display: none;" index="0" onerror="this.src='../img/ershoufang/noimg_small.png'"></a>-->
+    <!--<a href="#" class="imgad" title="主卧">-->
+    <!--<img name="mob_smallImg" alt="主卧" class="" 0="" src="../img/jinganglang.jpg" style="display: none;" index="0" onerror="this.src='../img/ershoufang/noimg_small.png'"></a>-->
+    <!--<a href="#" class="imgad" title="主卧">-->
+    <!--<img name="mob_smallImg" alt="主卧" class="" 0="" src="../img/jinganglang.jpg" style="display: none;" index="0" onerror="this.src='../img/ershoufang/noimg_small.png'"></a>-->
+    <!--<a href="#" class="imgad" title="主卧">-->
+    <!--<img name="mob_smallImg" alt="主卧" class="" 0="" src="../img/jinganglang.jpg" style="display: none;" index="0" onerror="this.src='../img/ershoufang/noimg_small.png'"></a>-->
+    <!--<a href="#" class="imgad" title="主卧">-->
+    <!--<img name="mob_smallImg" alt="主卧" class="" 0="" src="../img/jinganglang.jpg" style="display: none;" index="0" onerror="this.src='../img/ershoufang/noimg_small.png'"></a>-->
+
+    <!--</div>-->
+    <!--<div class="noneright" title="点击查看下一张图片"></div>-->
+    <!--</div>-->
+    <!--<div class="allt_r">-->
+    <!--<p>-->
+    <!--<a id="ContentPlaceHolder1__hlImgColor"></a>-->
+    <!--</p>-->
+    <!--<dl>-->
+
+    <!--<dd>-->
+    <!--<a href="javascript:void(0)" title="主卧" class="previewLink">-->
+    <!--<img name="mob_bigImg" alt="主卧" src="../img/jinganglang.jpg" 0="" index="0" onerror="this.src='https://g.yuqiaocdn.com/wwwyuqiaocn/2016v1/images/noimg_big.png'"></a>-->
+    <!--</dd>-->
+
+    <!--<dd>-->
+    <!--<a href="javascript:void(0)" title="主卧" class="previewLink">-->
+    <!--<img name="mob_bigImg" alt="主卧" src="../img/jinganglang.jpg" 0="" index="1" onerror="this.src='https://g.yuqiaocdn.com/wwwyuqiaocn/2016v1/images/noimg_big.png'"></a>-->
+    <!--</dd>-->
+
+    <!--<dd>-->
+    <!--<a href="javascript:void(0)" title="卫生间" class="previewLink">-->
+    <!--<img name="mob_bigImg" alt="卫生间" src="../img/jinganglang.jpg" 0="" index="2" onerror="this.src='https://g.yuqiaocdn.com/wwwyuqiaocn/2016v1/images/noimg_big.png'"></a>-->
+    <!--</dd>-->
+    <!--<dd>-->
+    <!--<a href="javascript:void(0)" title="卫生间" class="previewLink">-->
+    <!--<img name="mob_bigImg" alt="卫生间" src="../img/jinganglang.jpg" 0="" index="2" onerror="this.src='https://g.yuqiaocdn.com/wwwyuqiaocn/2016v1/images/noimg_big.png'"></a>-->
+    <!--</dd>-->
+    <!--<dd>-->
+    <!--<a href="javascript:void(0)" title="卫生间" class="previewLink">-->
+    <!--<img name="mob_bigImg" alt="卫生间" src="../img/jinganglang.jpg" 0="" index="2" onerror="this.src='https://g.yuqiaocdn.com/wwwyuqiaocn/2016v1/images/noimg_big.png'"></a>-->
+    <!--</dd>-->
+    <!--<dd>-->
+    <!--<a href="javascript:void(0)" title="卫生间" class="previewLink">-->
+    <!--<img name="mob_bigImg" alt="卫生间" src="../img/jinganglang.jpg" 0="" index="2" onerror="this.src='https://g.yuqiaocdn.com/wwwyuqiaocn/2016v1/images/noimg_big.png'"></a>-->
+    <!--</dd>-->
+    <!---->
+
+    <!--</dl>-->
+    <!--</div>-->
+    <!--<div class="closeend"><span>关闭</span><i></i></div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--房源举报-->
+    <div id="jubaobox" class="jubaobox" style="display: none;">
+        <a onclick="javascript:;" style="cursor: pointer" class="closewinbtn">X</a>
+        <h2>房源举报</h2>
+        <div class="jubaotabs clearfix">
+            <span>已成交</span><span>已下架</span><span>虚假房源</span><span>照片不符</span><span>基本信息有误</span>
+            <span>小区不符</span><span>房源详情有误</span>
+        </div>
+        <div class="jubaocontent">
+            <textarea id="txtReportContent" name="" cols="" rows="" placeholder="请填写举报内容"></textarea>
+        </div>
+        <div class="jubao-p-n">
+            <p>姓名</p>
+            <input id="txtReportUser" name="" value="输入您的称呼"
+                   onfocus="if(this.value=='输入您的称呼'){this.className='jubaotext_on';this.value=''}else{this.className='jubaotext_on';}"
+                   onclick="if (this.value == '输入您的称呼') { this.className = 'jubaotext_on'; this.value = '' } else { this.className = 'jubaotext_on'; }"
+                   onblur="if(this.value==''){this.value='输入您的称呼';this.className='jubaotext'};" class="jubaotext"
+                   type="text">
+            <p>手机</p>
+            <input id="txtReportMobile" name="" value="输入您的常用联系电话"
+                   onfocus="if(this.value=='输入您的常用联系电话'){this.className='jubaotext_on';this.value=''}else{this.className='jubaotext_on';}"
+                   onclick="if (this.value == '输入您的常用联系电话') { this.className = 'jubaotext_on'; this.value = '' } else { this.className = 'jubaotext_on'; }"
+                   onblur="if(this.value==''){this.value='输入您的常用联系
+                电话';this.className='jubaotext'};" class="jubaotext" type="text">
+            <p>如果您的举报属实我们将赠送您100元现金奖励。</p>
+            <input name="" value="举报" class="jubaobtn" id="jubaobtn" type="button">
+        </div>
+    </div>
+    <!--<script type="text/javascript" src="../js/ditu/api_001.dat"></script>-->
+
+    <script type="text/javascript" src="../js/ditu/getscript"></script>
+
+    <script type="text/javascript">
+        //切换js方法   (房源详情--照片--周边配套--相似房源 js切换class)
+        $("#qiehuanview").children().click(function () {
+            $(this).addClass("t-h-m-curr");
+            $("#qiehuanview").children().not(this).each(function () {
+                $(this).removeClass("t-h-m-curr");
+            });
+        });
+
+        //mis员工进入详情链接
+        if ($("#ContentPlaceHolder1_cookiemisuser").val() != "") {
+            if ($("#ContentPlaceHolder1_isJiaMeng").val() == "false") {
+                $("#mis_detail").show();
+                $("#user_span").text($("#ContentPlaceHolder1_userdetail").val());
+                $("#mis_detail a").attr("href", $("#ContentPlaceHolder1_mis_url").val());
+            }
+        }
+
+        //**********************************************************************************************************************************************
+        //搜索小区部分js
+        $(function () {
+
+            var searchTypeUrl = "/" + $(".t-sbox").attr("searchType") + "/";
+            var postId;
+
+            $(".searchbutton").click(function () {
+                var searchname = $.trim($("#txtSearch").val());
+                var searchhref = "/xiaoqu/so" + searchname + "/pg1/";
+                window.open(searchhref);
+                //window.history.pushState({ "html": 11, "pageTitle": "111" }, 'title', searchTypeUrl + "so" + replaceSpecial($("#txtSearch").val()) + "/");
+                //var filter = replaceSpecial($("#txtSearch").val());
+                //$("#ulSearchResult").hide();
+                //baseTable(1, datas.list.pager.size, { action: "list" });
+                //$("#ContentPlaceHolder1_WUCSearch__pConditionShow").show();
+                //$("#ContentPlaceHolder1_WUCSearch__pConditionShow").html("<label>您已经选择：</label>");
+                //$("#ContentPlaceHolder1_WUCSearch__pConditionShow").append("<span>" + filter + "<a onclick=\"seturl('so');return false;\">x</a></span>");
+                // location.href = searchTypeUrl + "so" + replaceSpecial($("#txtSearch").val());
+            });
+
+            $("#txtSearch").keydown(function (event) {
+                if (event.keyCode == 13) {
+                    return false;
+                }
+                return true;
+            });
+
+            $("#txtSearch").keyup(function (event) {
+                var searchText = replaceSpecial($(this).val());
+                if (!searchText) {
+                    $(".searchinput-text").hide();
+                    return false;
+                }
+                var keyCode = event.keyCode;
+                if (keyCode == 27 || keyCode == 13 || keyCode == 38 || keyCode == 40) {
+                    var selectItem;
+                    var selectIndex;
+                    var resultItems;
+                    if (keyCode == 38) {
+                        //向上键
+                        selectItem = $(".searchtext-current");
+                        resultItems = $("#ulSearchResult").find("li");
+                        selectIndex = resultItems.index($(selectItem));
+                        resultItems.removeClass("searchtext-current");
+                        if (selectIndex == 0) {
+                            resultItems.eq(resultItems.length - 1).addClass("searchtext-current");
+                        } else {
+                            selectItem.prev().addClass("searchtext-current");
+                        }
+                    } else if (keyCode == 40) {
+                        //向下键
+                        selectItem = $(".searchtext-current");
+                        resultItems = $("#ulSearchResult").find("li");
+                        selectIndex = resultItems.index($(selectItem));
+                        resultItems.removeClass("searchtext-current");
+                        if (resultItems.length == selectIndex + 1) {
+                            resultItems.eq(0).addClass("searchtext-current");
+                        } else {
+                            selectItem.next().addClass("searchtext-current");
+                        }
+                    } else if (keyCode == 27) {
+                        $(".searchinput-text").hide();
+                    } else if (keyCode == 13) {
+                        //回车键
+                        var selectItemLink = $(".searchtext-current").find("a");
+                        var selectText = selectItemLink.text().replace(selectItemLink.find("em").text(), "");
+                        $(".searchinput-text").hide();
+                        if (!selectText) {
+                            selectText = replaceSpecial($("#txtSearch").val());
+                        } else {
+                            $("#txtSearch").val(selectText);
+                        }
+                        window.open(searchTypeUrl + "so" + selectText);
+                        //location.href = searchTypeUrl + "so" + selectText;
+                    }
+                    return false;
+                }
+                if (postId) {
+                    postId.abort();
+                }
+                postId = $.post(BaseUrl_IIS_Application_Name + "Ashx/DistrictPinYinHandler.ashx", {
+                    "FuzzyContent": encodeURIComponent(searchText)
+                }, function (data) {
+                    var $tag = $("#ulSearchResult").empty();
+                    if (data.data != null && data.data.flag != 0) {
+                        $.each(data.data, function (i, item) {
+                            if (i == 0) {
+                                $($tag).append("<li class=\"searchtext-current\" style=\"width: 100%;line-height: 35px;height: 35px;\"><a target=\"_blank\" style=\"text-align: left; padding: 0 10px;height: 35px;font-size: 10px;line-height: 35px;\"  href=\"" + searchTypeUrl + "so" + item.XqName + "/\">" + item.XqName + "<em>" + item.AreaName + "</em></a></li>");
+                            } else {
+                                $($tag).append("<li style=\"width: 100%;line-height: 35px;height: 35px;\"><a   target=\"_blank\" style=\"text-align: left; padding: 0 10px;font-size: 10px;line-height: 35px;height: 35px;\" href=\"" + searchTypeUrl + "so" + item.XqName + "/\">" + item.XqName + "<em>" + item.AreaName + "</em></a></li>");
+                            }
+                        });
+                        $(".searchinput-text").show();
+                    } else {
+                        $(".searchinput-text").hide();
+                    }
+                });
+                return false;
+            });
+
+            function replaceSpecial(characters) {
+                if (characters) {
+                    return characters.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5\ ]/g, '');
+                }
+                return characters;
+            }
+        });
+
+        var getWechatImg = false;
+        $(function () {
+            var isjiameng = 1;
+            if (isjiameng != 0) {
+
+                var mapihouseid = 007007
+                var mapipuserid = 53627
+                $("#WechatImg_D").attr("src", "https://mis.yuqiao.cn/a10_Common/a1055_QRCode/QRCode.aspx?chl=https://m.yuqiao.cn/zufang/" + mapihouseid + "/" + (mapipuserid == "0" ? "" : "p" + mapipuserid) + "&chs=200x200&cht=qr&chld=|0")
+
+            } else {
+                $("#WechatImg_D").parent().remove();
+            }
+        })
+    </script>
+    <!--<iframe id="counttimes" src="index_3.html" width="0" height="0"></iframe>-->
+
+    <script type="text/javascript" th:src="@{/lib/houseimage_gundong.js}"></script>
+    <script type="text/javascript" th:src="@{/lib/gridify.js}"></script>
+    <script type="text/javascript" th:src="@{/lib/wififlow.js}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var options = {
+                srcNode: 'a', // grid items (class, node)
+                margin: '20px', // margin in pixel, default: 0px
+                width: '355px', // grid item width in pixel, default: 220px
+                max_width: '', // dynamic gird item width if specified, (pixel)
+                resizable: true, // re-layout if window resize
+                transition: 'all 0.5s ease' // support transition for CSS3, default: all 0.5s ease
+            }
+            $('.grid').gridify(options);
+            $(".grid").show();
+            //var max = 0;var items=$(".grid").children(); for(var i=0; i<items.length;i++){var num= items.eq(i).prop("offsetTop")+ items.eq(i).height() ; if(num>max){max = num;}}
+            //$(".grid").css("height",max+"px" );
+
+        });
+    </script>
+
+    <!--<script th:src="@{/js/wxlogin.js}" type="text/javascript" charset="utf-8"></script>-->
+
+    <div style="height: 100% !important;"></div>
+    <div id="Panel1"
+         style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; height: 100%; width: 100%; background-color: rgba(0, 0, 0, 0.4); z-index: 999999; display: none;"></div>
+    <div id="Panel2"
+         style="width: 300px; background-color: white; position: fixed; top: 25%; left: 35%; z-index: 999999; display: none;"></div>
+    <div class="loninContaner">
+        <div class="overlay_bg" style="display: none;"></div>
+        <div class="panel_login animated" id="weixinLogin" style="display: none;">
+            <div class="panel_info" style="height: 400px;">
+                <i class="close_login">×</i>
+                <div class="title">
+                    <div class="fl">
+                        <div style="width: 33px; height: 32px; overflow: hidden; border-radius: 5px;">
+                            <img src="../img/zufang/connect_logo_weixin.jpg">
+                        </div>
+                        <div class="weixintitle">
+                            微信扫一扫
+                        </div>
+                    </div>
+                </div>
+                <div class="qqloginbtn ">
+							<span>
+                    <a href="javascript:void(0)" class="weixinlogin">
+                       <!-- <div id="wxLoginContainer" class="wxlogincontainer" style="all: unset;">
+                            <iframe src="index_4.html" scrolling="no" id="weixinloginifarme" width="300px" height="400px" frameborder="0"></iframe>
+                        </div>-->
+                    </a>
+                </span>
+                </div>
+                <div class="footer-link">
+                    <a href="javascript:;" rel="nofollow" id="CodePwdLogin-weixin" class="tologin weixinbtn">账号密码登录</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel_login animated" id="dialog" style="display: none;">
+            <div class="panel_info">
+                <i class="close_login">×</i>
+                <div class="panel_tab">
+                    <div class="title">
+                        <div class="fl">账号密码登录</div>
+                    </div>
+                    <div class="clear"></div>
+                    <div id="con_login_user">
+
+                        <ul>
+                            <li class="item border-t userName">
+                                <input class="the_input topSpecial users" placeholder="请输入手机号" maxlength="11" value=""
+                                       type="text"></li>
+                            <li class="item border-b pwd">
+                                <input class="the_input password" maxlength="20" placeholder="请输入登录密码"
+                                       type="password"><em class="password-view"></em></li>
+                            <li class="item checkVerimg">
+                                <input class="the_input ver-img" maxlength="6" placeholder="请输入验证码" value=""
+                                       type="text">
+                                <!--<img class="verImg" src="validatecode.ashx" id="vcode" onclick="var sj = Math.random();this.src='/website/Ashx/ValidateCode.ashx?ran='+sj+'';" style="cursor: pointer;" alt="验证码">
+                            -->
+                            </li>
+
+                            <li class="show-error" style="display: none;">
+                                <dd>用户名或密码错误</dd>
+                            </li>
+                            <li class="li_01">
+                                <label class="checkbox-btn">
+                                    <span class="active">
+                                        <input name="remember" value="1" class="mind-login" checked="checked"
+                                               type="checkbox"></span>7天内免登录</label>
+                                <a href="javascript:;" rel="nofollow" id="forgetshow" class="toforget">忘记密码</a>
+                            </li>
+                            <li class="li_btn">
+                                <a class="login-user-btn" id="login-user-btn">登录</a>
+                            </li>
+                            <li class="footer-link">
+                                <a href="javascript:;" rel="nofollow" id="telshow" class="totellogin">手机快捷登录</a>
+                                <a href="javascript:;" rel="nofollow" id="weixinshow" style="float: right;"
+                                   class="totellogin">微信登录</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div class="registered"></div>
+        </div>
+        <div id="dialog_tel" style="display: none;" class="panel_login animated undefined">
+            <div class="panel_info">
+                <i class="close_login">×</i>
+                <div class="panel_tab">
+                    <div class="title">
+                        <div class="fl">手机快捷登录</div>
+                        <div class="register_text_tel">别担心，无账号自动注册不会导致手机号被泄露</div>
+                    </div>
+                    <div class="clear"></div>
+                    <div id="con_login_user_tel">
+                        <form action="https://www.yuqiao.cn/zufang/007007/P53627#" method="post"
+                              class="ng-pristine ng-valid">
+                            <ul>
+                                <li class="item border-t userName">
+                                    <input class="the_input topSpecial users_tel" maxlength="11" placeholder="请输入手机号"
+                                           value="" type="text"></li>
+                                <!-- <li class="item pwd"><input type="password" class="the_input password_tel"  placeholder="请输入短信验证码"/></li> -->
+                                <li class="item checkVerimg">
+                                    <input class="the_input ver-img" maxlength="6" placeholder="请输入验证码" value=""
+                                           type="text">
+                                    <!--<img class="verImg" src="validatecode.ashx" id="vcode" onclick="var sj = Math.random();this.src='/website/Ashx/ValidateCode.ashx?ran='+sj+'';" style="cursor: pointer;" alt="验证码">
+                                -->
+                                </li>
+                                <li class="item border-b Verify">
+                                    <input class="the_input verifycode" maxlength="6" placeholder="请输入短信验证码"
+                                           style="width: 178px;" value="" type="text">
+                                    <a class="send_verify_code" id="VerificationCodeBtn" href="javascript:;"
+                                       rel="nofollow"><em>获取验证码</em></a>
+                                </li>
+                                <li class="send_verify_code_s" id="send_verify_code_tel_s" href="javascript:;"
+                                    rel="nofollow" style="display: none;"><em>没有收到验证码？</em>
+                                    <a class="voice_a">发送语音验证码</a>
+                                </li>
+                                <li class="show-error" style="display: none;">
+                                    <dd>用户名或密码错误</dd>
+                                </li>
+                                <li class="li_01">
+                                    <label class="checkbox-btn">
+                                    <span class="active">
+                                        <input name="remember" value="1" class="mind-login" checked="checked"
+                                               type="checkbox"></span>7天内免登录</label></li>
+                                <li class="li_btn">
+                                    <a class="login-user-tel-btn" id="login-user-tel-btn" href="javascript:;">登录</a>
+                                </li>
+                                <li class="footer-link">
+                                    <a href="javascript:;" rel="nofollow" id="CodePwdLogin" class="tologin">账号密码登录</a>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="registered"></div>
+        </div>
+        <div class="panel_login animated" id="dialog_reg" style="display: none;">
+            <div class="panel_info">
+                <i class="close_login">×</i>
+                <div class="panel_tab">
+                    <div class="title">
+                        <div class="fl">手机号码注册</div>
+                        <label class="fr register_text">已有账号？<a href="javascript:;" rel="nofollow"
+                                                                class="tologin">去登录</a></label>
+                    </div>
+                    <div class="clear"></div>
+                    <div id="con_login_user_reg">
+                        <form action="https://www.yuqiao.cn/zufang/007007/P53627#" method="post"
+                              class="ng-pristine ng-valid">
+                            <ul>
+                                <li class="item border-t userName">
+                                    <input class="the_input topSpecial users_reg" maxlength="11" placeholder="请输入手机号"
+                                           value="" type="text"></li>
+                                <li class="item checkVerimg">
+                                    <input class="the_input ver-img" maxlength="6" placeholder="请输入验证码" value=""
+                                           type="text"><img class="verImg"></li>
+                                <li class="item border-c Verify">
+                                    <input class="the_input verifycode" maxlength="6" placeholder="请输入短信验证码" value=""
+                                           type="text">
+                                    <a class="send_verify_code" id="" href="javascript:;" rel="nofollow"><em>获取验证码</em></a>
+                                </li>
+                                <li class="item border-b pwd">
+                                    <input class="the_input password_reg" maxlength="20" placeholder="请输入密码（最少6位，数字+字母）"
+                                           type="password"><em class="password-view"></em></li>
+                                <li class="send_verify_code_s" id="send_verify_code_reg_s" href="javascript:;"
+                                    rel="nofollow" style="display: none;"><em>没有收到验证码？</em>
+                                    <a class="voice_a">发送语音验证码</a>
+                                </li>
+                                <li class="show-error" style="display: none;">
+                                    <dd>用户名或密码错误</dd>
+                                </li>
+                                <li class="li_01">
+                                    <label class="checkbox-btn">
+                                    <span class="active">
+                                        <input name="read" value="1" class="read-protocol" checked="checked"
+                                               type="checkbox"></span>我已阅读并同意</label>
+                                    <a class="toprotocol" href="https://www.yuqiao.com/zhuanti/protocol"
+                                       target="_top"></a>
+                                </li>
+                                <li class="li_btn">
+                                    <a class="register-user-btn">注册</a>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="registered"></div>
+        </div>
+        <div class="panel_login animated" id="dialog_forget" style="display: none;">
+            <div class="panel_info">
+                <i class="close_login">×</i>
+                <div class="panel_tab">
+                    <div class="title">
+                        <div class="fl">找回密码</div>
+                    </div>
+                    <div class="clear"></div>
+                    <div id="con_forget_user_tel" class="con_forget_user_tel">
+                        <form action="https://www.yuqiao.cn/zufang/007007/P53627#" method="post"
+                              class="ng-pristine ng-valid">
+                            <ul>
+                                <li class="item border-t userName">
+                                    <input class="the_input topSpecial user_forget_phone" placeholder="请输入手机号"
+                                           maxlength="11" value="" type="text"></li>
+                                <li class="item checkVerimg">
+                                    <input class="the_input ver-img" maxlength="6" placeholder="请输入验证码" value=""
+                                           type="text">
+                                    <!--<img class="verImg" src="validatecode.ashx" id="vcode" onclick="var sj = Math.random();this.src='/website/Ashx/ValidateCode.ashx?ran='+sj+'';" style="cursor: pointer;" alt="验证码">
+                                -->
+                                </li>
+                                <li class="item border-b Verify">
+                                    <input class="the_input verifycode" maxlength="6" placeholder="请输入短信验证码" value=""
+                                           type="text">
+                                    <a class="send_verify_code" id="send_verify_code_forget" href="javascript:;"
+                                       rel="nofollow"><em>获取验证码</em></a>
+                                </li>
+                                <li class="item border-t pwd" style="margin-top: -1px;">
+                                    <input class="the_input password_reg" maxlength="20" placeholder="请输入密码（最少6位，数字+字母）"
+                                           type="password"><em class="password-view"></em></li>
+                                <li class="send_verify_code_s" id="send_verify_code_forget_s" style="display: none;">
+                                    <em>没有收到验证码？</em>
+                                    <a class="voice_a">发送语音验证码</a>
+                                </li>
+                                <li class="show-error" style="display: none;">
+                                    <dd>用户名或密码错误</dd>
+                                </li>
+                                <li class="li_btn">
+                                    <a class="user-forget" id="user-forget">修改密码</a>
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="registered"></div>
+        </div>
+    </div>
+</form>
+<script>
+    $(function () {
+        var url = /website/ + "/Ashx/LoginExtend.ashx";
+        //var url = "../Ashx/LoginExtend.ashx";
+        $(".show-error").hide();
+        $(".send_verify_code_s").hide();
+        $("#telshow").click(function () {
+            AllHide();
+            txtClear();
+            $("#dialog_tel").show();
+            weixinClear();
+        });
+        $("#CodePwdLogin-weixin").click(function () {
+            $("#CodePwdLogin").click()
+            weixinClear();
+        });
+        $("#CodePwdLogin").click(function () {
+            AllHide();
+            txtClear();
+            $(".overlay_bg").show();
+            $("#dialog").show()
+            weixinClear();
+        });
+        $("#forgetshow").click(function () {
+            AllHide();
+            txtClear();
+            $("#dialog_forget").show();
+            weixinClear();
+        });
+        $("#weixinshow").click(function () {
+            $("#weixinloginifarme").attr('src', 'https://open.weixin.qq.com/connect/qrconnect?appid=wx01abbccbf09b91a7&scope=snsapi_login&redirect_uri=' + window.location.href + '&state=weixin&login_type=jssdk&self_redirect=default&style=black&href=https://g.yuqiaocdn.com/wwwyuqiaocn/css/main-sn201401-2.css');
+            AllHide();
+            txtClear();
+            $("#weixinLogin").show();
+        });
+        $.each($(".mind-login"), function (i, _i) {
+            $(_i).click(function () {
+                if ($(this).parent().attr("class").indexOf("active") >= 0) {
+                    $(this).parent().removeClass("active");
+                    return;
+                }
+                $(this).parent().addClass("active");
+            })
+        });
+        $(".close_login").click(function () {
+            AllHide();
+            txtClear();
+            $(".overlay_bg").hide();
+            weixinClear();
+        });
+
+        $(".login-user-btn").click(function () {
+            var ul = $(this).parents("ul");
+            var Code = ul.find(".users").val();
+            var Pwd = ul.find(".password").val();
+            var yzm = ul.find(".ver-img").val();
+            ul.find(".checkVerimg").show();
+            if (ul.find(".checkVerimg").css("display") == "block") {
+                if (!isyzm(yzm)) {
+                    ul.find("dd").html("验证码输入错误");
+                    ul.find(".show-error").show();
+                    return;
+                }
+                ;
+            }
+            if ($.cookie("VerifyCode") != yzm) {
+                ul.find("dd").html("验证码输入错误");
+                ul.find(".show-error").show();
+                return;
+            }
+            if (!isPhoneAvailable(Code) || !isPassword(Pwd)) {
+                ul.find("dd").html("用户名或密码错误");
+                ul.find(".show-error").show();
+                return;
+            }
+            ul.find(".show-error").hide();
+            $.post(url, {
+                action: "login",
+                Code: Code,
+                Pwd: Pwd
+            }, function (redata) {
+                if (redata.data > 0) {
+                    layer.open({
+                        content: '登录成功!',
+                        btn: ['确认'],
+                        yes: function (index) {
+                            layer.close(index);
+                        }
+                    });
+                    window.location.href = window.location.href;
+
+                } else {
+                    layer.open({
+                        content: '用户名或密码错误!',
+                        btn: ['确认'],
+                        yes: function (index) {
+                            layer.close(index);
+                        }
+                    });
+                }
+            });
+            weixinClear();
+        });
+        $(".login-user-tel-btn").click(function () {
+            var ul = $(this).parents("ul");
+            var Code = ul.find(".users_tel").val();
+            var dx = ul.find(".verifycode").val();
+            var yzm = ul.find(".ver-img").val();
+            if (ul.find(".checkVerimg").css("display") == "block") {
+                if (!isyzm(yzm)) {
+                    ul.find("dd").html("验证码输入错误");
+                    ul.find(".show-error").show();
+                    return;
+                }
+                ;
+            }
+            if ($.cookie("VerifyCode") != yzm) {
+                ul.find("dd").html("验证码输入错误");
+                ul.find(".show-error").show();
+                return;
+            }
+            if (!isPhoneAvailable(Code) || !isdx(dx)) {
+                ul.find("dd").html("用户名或密码错误");
+                ul.find(".show-error").show();
+                return;
+            }
+            ul.find(".show-error").hide();
+            $.post(url, {
+                action: "phonelogin",
+                Code: Code,
+                yzm: dx
+            }, function (redata) {
+                if (redata.data > 0) {
+                    layer.open({
+                        content: '登录成功!',
+                        btn: ['确认'],
+                        yes: function (index) {
+                            layer.close(index);
+                        }
+                    });
+                    window.location.href = window.location.href;
+                } else {
+                    layer.open({
+                        content: '用户名或密码错误!',
+                        btn: ['确认'],
+                        yes: function (index) {
+                            layer.close(index);
+                        }
+                    });
+                }
+            });
+            weixinClear();
+        });
+
+        function isPhoneAvailable(str) {
+            var myreg = /^[1][3,4,5,7,8][0-9]{9}$/;
+            if (!myreg.test(str)) {
+                return false;
+            } else {
+                return true;
+            }
+        };
+
+        function isPassword(password) {
+            var reg = /[0-9a-zA-Z]{6,16}/;
+            if (!reg.test(password)) {
+                return false;
+            }
+            return true;
+        };
+
+        function isyzm(yzm) {
+            var reg = /[0-9a-zA-Z]{4,6}/;
+            if (!reg.test(yzm)) {
+                return false;
+            }
+            return true;
+        };
+
+        function isdx(yzm) {
+            var reg = /[0-9]{4,6}/;
+            if (!reg.test(yzm)) {
+                return false;
+            }
+            return true;
+        };
+
+        function AllHide() {
+            $(".panel_login").hide();
+        };
+
+        function txtClear() {
+            $(":text").val("");
+        };
+
+        function weixinClear() {
+            $("#weixinloginifarme").attr("href", "");
+            $("#weixinloginifarme").html('');
+        };
+        $("#VerificationCodeBtn").click(function () {
+            getDuanXin(this);
+        });
+        $("#send_verify_code_forget").click(function () {
+            getDuanXin(this);
+        });
+        $("#user-forget").click(function () {
+            var int = setInterval("", 1000);
+            var ul = $(this).parents("ul");
+            var Code = ul.find(".user_forget_phone").val();
+            var yzm = ul.find(".verifycode").val();
+            var Pwd = ul.find(".password_reg").val();
+            if (!isPhoneAvailable(Code)) {
+                ul.find("dd").html("手机号输入错误");
+                ul.find(".show-error").show();
+                return;
+            }
+            if (!isyzm(yzm)) {
+                ul.find("dd").html("验证码输入错误");
+                ul.find(".show-error").show();
+                return;
+            }
+            ;
+            if (!isPassword(Pwd)) {
+                ul.find("dd").html("密码输入错误");
+                ul.find(".show-error").show();
+                return;
+            }
+            $.post(url, {
+                action: "phoneForgotPassword",
+                Code: Code,
+                Pwd: Pwd,
+                yzm: yzm
+            }, function (data) {
+                if (data.data.data > 0) {
+                    layer.open({
+                        content: '修改成功!',
+                        btn: ['确认'],
+                        yes: function (index) {
+                            layer.close(index);
+                            AllHide();
+                            txtClear();
+                            $(".overlay_bg").hide();
+                        }
+                    });
+                } else {
+                    layer.open({
+                        content: '修改失败!',
+                        btn: ['确认'],
+                        yes: function (index) {
+                            layer.close(index);
+                        }
+                    });
+                }
+            });
+        });
+
+        function getDuanXin(seft) {
+            var int = setInterval("", 1000);
+            var ul = $(seft).parents("ul");
+            var Code = ul.find(".users_tel").val() ? ul.find(".users_tel").val() : ul.find(".user_forget_phone").val();
+            var yzm = ul.find(".ver-img").val();
+            $(seft).attr("disabled", "disabled");
+            if (!isPhoneAvailable(Code)) {
+                ul.find("dd").html("手机号输入错误");
+                ul.find(".show-error").show();
+                return;
+            }
+            if (!isyzm(yzm)) {
+                ul.find("dd").html("验证码输入错误");
+                ul.find(".show-error").show();
+                return;
+            }
+            ;
+
+            $.post(url, {
+                action: "aliyunduanxin",
+                mobile: Code
+            }, function (data) {
+                if (data.data.data > 0) {
+                    layer.open({
+                        content: '短信已发送,请确认!',
+                        btn: ['确认'],
+                        yes: function (index) {
+                            layer.close(index);
+                        }
+                    });
+                    timeOut = 60;
+                    var intervalId = setInterval(function () {
+                        timeOut--;
+                        $(seft).find("em").html(timeOut);
+                        if (timeOut == 0) {
+                            $(self).val("重新获取验证码");
+                            $(seft).removeAttr("disabled");
+                            $(seft).find("em").html('获取验证码');
+                            clearInterval(intervalId);
+                        }
+                    }, 1000);
+                } else if (data.data.data < 0 && data.data.flag < 0) {
+                    layer.open({
+                        content: '当前用户不存在!去注册;',
+                        btn: ['确认'],
+                        yes: function (index) {
+                            layer.close(index);
+                            console.log(data);
+                            $(seft).removeAttr("disabled");
+                        }
+                    });
+                } else {
+                    layer.open({
+                        content: '手机号不存在!',
+                        btn: ['确认'],
+                        yes: function (index) {
+                            layer.close(index);
+                            $(seft).removeAttr("disabled");
+                        }
+                    });
+                }
+            });
+        }
+    })
+</script>
+
+<rong-widget>
+    <!--<div id="rong-widget-box" class="rongcloud-container">-->
+    <!--<div ng-show="main.display" class="ng-hide">-->
+    <!--<rong-conversation>-->
+    <!--<div id="rong-conversation" class="rongcloud-kefuChatBox rongcloud-both rongcloud-am-fade-and-slide-top ng-hide" ng-show="showSelf" ng-class="{'rongcloud-fullScreen':resoures.fullScreen}">-->
+    <!--<evaluatedir type="evaluate.type" display="evaluate.showSelf" confirm="evaluate.onConfirm(data)" cancle="evaluate.onCancle()" class="ng-isolate-scope">-->
+    <!--<div class="rongcloud-layermbox ng-hide" ng-show="display">-->
+    <!--<div class="rongcloud-laymshade"></div>-->
+    <!--<div class="rongcloud-layermmain">-->
+    <!--<div class="rongcloud-section">-->
+    <!--<div class="rongcloud-layermchild" ng-show="!end">-->
+    <!--<div class="rongcloud-layermcont">-->
+    <!--<div class="rongcloud-type1" ng-show="type==1">-->
+    <!--<h4>&nbsp;评价客服</h4>-->
+    <!--<div class="rongcloud-layerPanel1">-->
+    <!--<div class="rongcloud-star">-->
+    <!--&lt;!&ndash; ngRepeat: item in stars track by $index &ndash;&gt;<span ng-repeat="item in stars track by $index" class="ng-scope"><span ng-class="{'rongcloud-star-on':$index<data.stars,'rongcloud-star-off':$index>=data.stars}" ng-click="confirm($index+1)" ng-mouseenter="mousehover($index+1)" ng-mouseleave="mousehover(0)" class="rongcloud-star-off"></span></span>-->
+    <!--&lt;!&ndash; end ngRepeat: item in stars track by $index &ndash;&gt;<span ng-repeat="item in stars track by $index" class="ng-scope"><span ng-class="{'rongcloud-star-on':$index<data.stars,'rongcloud-star-off':$index>=data.stars}" ng-click="confirm($index+1)" ng-mouseenter="mousehover($index+1)" ng-mouseleave="mousehover(0)" class="rongcloud-star-off"></span></span>-->
+    <!--&lt;!&ndash; end ngRepeat: item in stars track by $index &ndash;&gt;<span ng-repeat="item in stars track by $index" class="ng-scope"><span ng-class="{'rongcloud-star-on':$index<data.stars,'rongcloud-star-off':$index>=data.stars}" ng-click="confirm($index+1)" ng-mouseenter="mousehover($index+1)" ng-mouseleave="mousehover(0)" class="rongcloud-star-off"></span></span>-->
+    <!--&lt;!&ndash; end ngRepeat: item in stars track by $index &ndash;&gt;<span ng-repeat="item in stars track by $index" class="ng-scope"><span ng-class="{'rongcloud-star-on':$index<data.stars,'rongcloud-star-off':$index>=data.stars}" ng-click="confirm($index+1)" ng-mouseenter="mousehover($index+1)" ng-mouseleave="mousehover(0)" class="rongcloud-star-off"></span></span>-->
+    <!--&lt;!&ndash; end ngRepeat: item in stars track by $index &ndash;&gt;<span ng-repeat="item in stars track by $index" class="ng-scope"><span ng-class="{'rongcloud-star-on':$index<data.stars,'rongcloud-star-off':$index>=data.stars}" ng-click="confirm($index+1)" ng-mouseenter="mousehover($index+1)" ng-mouseleave="mousehover(0)" class="rongcloud-star-off"></span></span>-->
+    <!--&lt;!&ndash; end ngRepeat: item in stars track by $index &ndash;&gt;-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="rongcloud-type2 ng-hide" ng-show="type==2">-->
+    <!--<h4>&nbsp;&nbsp;机器人是否解决了您的问题 ？</h4>-->
+    <!--<div class="rongcloud-layerPanel1">-->
+    <!--<a class="rongcloud-rong-btn rongcloud-btnY" ng-class="{'rongcloud-cur':data.value===true}" href="javascript:void(0);" ng-click="confirm(true)">是</a>-->
+    <!--<a class="rongcloud-rong-btn rongcloud-btnN" ng-class="{'rongcloud-cur':data.value===false}" href="javascript:void(0);" ng-click="confirm(false)">否</a>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="rongcloud-layerPanel2 ng-hide" ng-show="displayDescribe">-->
+    <!--<p>是否有以下情况 ？</p>-->
+    <!--<div class="rongcloud-labels">-->
+    <!--&lt;!&ndash; ngRepeat: item in labels &ndash;&gt;<span ng-repeat="item in labels" class="ng-scope"><a class="rongcloud-rong-btn ng-binding" ng-class="{'rongcloud-cur':item.selected}" ng-click="item.selected=!item.selected" href="https://www.yuqiao.cn/zufang/007007/P53627">答非所问</a></span>-->
+    <!--&lt;!&ndash; end ngRepeat: item in labels &ndash;&gt;<span ng-repeat="item in labels" class="ng-scope"><a class="rongcloud-rong-btn ng-binding" ng-class="{'rongcloud-cur':item.selected}" ng-click="item.selected=!item.selected" href="https://www.yuqiao.cn/zufang/007007/P53627">理解能力差</a></span>-->
+    <!--&lt;!&ndash; end ngRepeat: item in labels &ndash;&gt;<span ng-repeat="item in labels" class="ng-scope"><a class="rongcloud-rong-btn ng-binding" ng-class="{'rongcloud-cur':item.selected}" ng-click="item.selected=!item.selected" href="https://www.yuqiao.cn/zufang/007007/P53627">一问三不知</a></span>-->
+    <!--&lt;!&ndash; end ngRepeat: item in labels &ndash;&gt;<span ng-repeat="item in labels" class="ng-scope"><a class="rongcloud-rong-btn ng-binding" ng-class="{'rongcloud-cur':item.selected}" ng-click="item.selected=!item.selected" href="https://www.yuqiao.cn/zufang/007007/P53627">不礼貌</a></span>-->
+    <!--&lt;!&ndash; end ngRepeat: item in labels &ndash;&gt;-->
+    <!--</div>-->
+    <!--<div class="rongcloud-suggestBox"><textarea name="" placeholder="欢迎给我们的服务提建议~" ng-model="data.describe" class="ng-pristine ng-untouched ng-valid"></textarea></div>-->
+    <!--<div class="rongcloud-subBox">-->
+    <!--<a class="rongcloud-rong-btn" href="https://www.yuqiao.cn/zufang/007007/P53627" ng-click="commit()">提交评价</a>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="rongcloud-layermbtn"><span ng-click="confirm()">跳过</span><span ng-click="cancle()">取消</span></div>-->
+    <!--</div>-->
+    <!--<div class="rongcloud-layermchild rongcloud-feedback ng-hide" ng-show="end">-->
+    <!--<div class="rongcloud-layermcont">感谢您的反馈 ^ - ^ ！</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</evaluatedir>-->
+    <!--<div class="rongcloud-kefuChat">-->
+    <!--<div id="header" class="rongcloud-rong-header rongcloud-blueBg rongcloud-online">-->
+    <!--<div class="rongcloud-infoBar rongcloud-pull-left">-->
+    <!--<div class="rongcloud-infoBarTit"><span class="rongcloud-kefuName ng-binding" ng-bind="conversation.title"></span></div>-->
+    <!--</div>-->
+    <!--<div class="rongcloud-toolBar rongcloud-headBtn rongcloud-pull-right">-->
+    <!--<div ng-show="!config.displayConversationList&amp;&amp;config.voiceNotification" class="rongcloud-voice rongcloud-voice-sound ng-hide" ng-class="{'rongcloud-voice-mute':!data.voiceSound,'rongcloud-voice-sound':data.voiceSound}" ng-click="data.voiceSound=!data.voiceSound"></div>-->
+    <!--<a href="javascript:;" class="rongcloud-kefuChatBoxHide rongcloud-sprite" style="margin-right: 6px;" ng-show="!config.displayConversationList" ng-click="minimize()" title="隐藏"></a>-->
+    <!--<a href="javascript:;" class="rongcloud-kefuChatBoxClose rongcloud-sprite" ng-click="close()" title="结束对话"></a>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="rongcloud-outlineBox ng-hide" ng-hide="data.connectionState">-->
+    <!--<div class="rongcloud-sprite"></div><span>连接断开,请刷新重连</span></div>-->
+    <!--<div id="Messages">-->
+    <!--<div class="rongcloud-emptyBox">暂时没有新消息</div>-->
+    <!--<div class="rongcloud-MessagesInner">-->
+    <!--&lt;!&ndash; ngRepeat: item in messageList &ndash;&gt;-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div id="footer" class="rongcloud-rong-footer" style="display: block;">-->
+    <!--<div class="rongcloud-footer-con">-->
+    <!--<div class="rongcloud-text-layout">-->
+    <!--<div id="funcPanel" class="rongcloud-funcPanel rongcloud-robotMode">-->
+    <!--<div class="rongcloud-mode1" ng-show="_inputPanelState==0">-->
+    <!--<div class="rongcloud-MessageForm-tool" id="expressionWrap"><i class="rongcloud-sprite rongcloud-iconfont-smile" ng-click="showemoji=!showemoji"></i>-->
+    <!--<div class="rongcloud-expressionWrap ng-hide" ng-show="showemoji"><i class="rongcloud-arrow"></i>-->
+    <!--&lt;!&ndash; ngRepeat: item in emojiList &ndash;&gt;-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="rongcloud-MessageForm-tool"><i class="rongcloud-sprite rongcloud-iconfont-upload" id="upload-file" style="position: relative; z-index: 1;"></i></div>-->
+    <!--</div>-->
+    <!--<div class="rongcloud-mode2 ng-hide" ng-show="_inputPanelState==2">-->
+    <!--<a ng-click="switchPerson()" id="chatSwitch" class="rongcloud-chatSwitch">转人工服务</a>-->
+    <!--</div>-->
+    <!--</div><pre id="inputMsg" class="rongcloud-text rongcloud-grey ng-pristine ng-untouched ng-valid ng-isolate-scope" contenteditable-dire="" ng-focus="showemoji=fase" style="background-color: rgba(0, 0, 0, 0); color: black;" ctrl-enter-keys="" fun="send()" ctrlenter="false" placeholder="请输入文字..." ondrop="return false" ng-model="conversation.messageContent" contenteditable=""></pre></div>-->
+    <!--<div class="rongcloud-powBox"><button type="button" style="background-color: rgb(0, 153, 255);" class="rongcloud-rong-btn rongcloud-rong-send-btn" id="rong-sendBtn" ng-click="send()">发送</button></div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</rong-conversation>-->
+    <!--&lt;!&ndash;<rong-conversation-list>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div id="rong-conversation-list" class="rongcloud-kefuListBox rongcloud-both">&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="rongcloud-kefuList">&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="rongcloud-rong-header rongcloud-blueBg">&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="rongcloud-toolBar rongcloud-headBtn">&ndash;&gt;-->
+    <!--&lt;!&ndash;<div ng-show="config.voiceNotification" class="rongcloud-voice rongcloud-voice-sound ng-hide" ng-class="{'rongcloud-voice-mute':!data.voiceSound,'rongcloud-voice-sound':data.voiceSound}" ng-click="data.voiceSound=!data.voiceSound"></div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="rongcloud-sprite rongcloud-people"></div><span class="rongcloud-recent">最近联系人</span>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="rongcloud-sprite rongcloud-arrow-down" style="cursor: pointer;" ng-click="minbtn()"></div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="rongcloud-content">&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="rongcloud-netStatus ng-hide" ng-hide="data.connectionState">&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="rongcloud-sprite"></div><span>连接断开,请刷新重连</span></div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div>&ndash;&gt;-->
+    <!--&lt;!&ndash;&lt;!&ndash; ngRepeat: item in conversationListServer._conversationList &ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</rong-conversation-list>&ndash;&gt;-->
+    <!--</div>-->
+    <!--<div id="rong-widget-minbtn" class="rongcloud-kefuBtnBox rongcloud-blueBg" ng-show="!main.display&amp;&amp;config.displayMinButton" ng-click="showbtn()">-->
+    <!--<a class="rongcloud-kefuBtn" href="javascript:%20void(0);">-->
+    <!--<div class="rongcloud-sprite rongcloud-people"></div><span class="rongcloud-recent ng-binding" ng-show="!data.totalUnreadCount||data.totalUnreadCount==0">最近联系人</span> <span class="rongcloud-recent ng-hide" ng-show="data.totalUnreadCount>0"><span ng-show="twinkle" class="ng-hide">(有未读消息)</span></span>-->
+    <!--</a>-->
+    <!--</div>-->
+    <!--<div id="rong-widget-minbtn-kefu" class="rongcloud-kefuBtnBox rongcloud-blueBg" ng-show="!main.display&amp;&amp;config.displayMinButton" ng-click="showbtn()">-->
+    <!--<a class="rongcloud-kefuBtn" href="javascript:%20void(0);">-->
+    <!--<div class="rongcloud-sprite rongcloud-people rongcloud-sprite-kefu"></div><span class="rongcloud-recent ng-binding">联系客服</span></a>-->
+    <!--</div>-->
+    <!--<audio id="rongcloud-playsound" style="width: 0px; height: 0px; display: none;" src="" controls=""></audio>-->
+    <!--</div>-->
+</rong-widget>
+<!-- jquery angular -->
+<!--<script src="../js/angular-1.4.8.js"></script>-->
+<!-- 融云IMLib -->
+<!--<script src="../js/rongimlib-2.3.2.min.js"></script>
+-->
+<!--<script th:src="@{/js/libamr-2.2.5.min.js}"></script>-->
+<!--<script th:src="@{/js/rongimvoice-2.2.5.min.js}"></script>-->
+<!--&lt;!&ndash; 上传插件 &ndash;&gt;-->
+<!--<script th:src="@{/js/plupload.full.min-2.1.1.js}"></script>-->
+<!--<script th:src="@{/js/qiniu-1.0.17.js}"></script>-->
+<!-- 增强体验插件 -->
+
+<!--<script th:src="@{/js/jquery-rebox-0.1.0.js}"></script>-->
+<!--RongIMWidget-->
+
+<!--<script type="text/javascript" src="../js/rongimwidget.js"></script>-->
+<!--<script th:src="@{/js/base/common.js}"></script>-->
+<!--	<script>
+        var MyAppURl = '/website/' + "/RongCloud/";
+        document.getElementsByTagName('html')[0].setAttribute("ng-app", "DetailHtml");
+        document.getElementsByTagName('body')[0].setAttribute("ng-controller", "Detailbody");
+        var demo = angular.module("DetailHtml", ["RongWebIMWidget"]);
+        var tWebIMWidget;
+        var t$http;
+        var t$scope;
+
+        demo.controller("Detailbody", ["$scope", "WebIMWidget", "$http", function($scope, WebIMWidget, $http) {
+            tWebIMWidget = WebIMWidget;
+            t$http = $http;
+            t$scope = $scope;
+        }])
+
+        var isrong = false;
+
+        function setconversation() {
+            if(isrong) {
+                return;
+            }
+            $.ajax({
+                type: "Get",
+                cache: false,
+                dataType: "json",
+                url: MyAppURl + "/Ashx/RongCloud.ashx?action=getmywebusertoken&M=" + Math.random(),
+                success: function(data) {
+                    if(data.return_code == 1) {
+                        t$scope.targetType = 1;
+                        t$scope.targetId = "4_" + $("#lianxidianhua").find(".zxzx").attr("data-id");
+                        t$scope.targetName = $("#lianxidianhua").find(".zxzx").attr("data-name");
+                        if($(".m-geren-o").html() != undefined) {
+                            t$scope.targetId = "1_" + $(".m-geren-o").find(".zxzx").attr("data-id");
+                            t$scope.targetName = $(".m-geren-o").find(".zxzx").attr("data-name");
+                        }
+                        var config = {
+                            appkey: 'e0x9wycfetgnq',
+                            token: data.Token == undefined ? "" : data.Token,
+                            style: {
+                                right: 40,
+                                bottom: 0,
+                                width: 430,
+                                positionFixed: true
+                            },
+                            conversationListPosition: tWebIMWidget.EnumConversationListPosition.right,
+                            displayMinButton: true,
+                            displayConversationList: true,
+                            onSuccess: function(id) {
+                                t$scope.user = id;
+                                console.log('连接成功：' + id);
+
+                                var extra = "78";
+                                var imageUri = "";
+                                if(document.location.href.indexOf("ershoufang") != -1) {
+                                    extra = "77";
+                                }
+                                if($("#picBox li")[0] != null) {
+                                    imageUri = $($("#picBox li")[0]).find("img").attr("src");
+                                }
+                                if(document.location.href.indexOf("www.yuqiao.cn/s/") == -1 && document.location.href.indexOf("jingjiren") == -1) {
+                                    t$scope.sendRCRichContentMessage($("span .t-h-title").html(), $("a[linktype='xqInfo']").html(), imageUri, extra + '_' + '007007', document.location.href.replace("www.", "m."));
+                                } else {
+                                    t$scope.sendRCTextMessage("您好");
+                                }
+
+                                isrong = true;
+
+                            },
+                            onError: function(error) {
+                                console.log("连接失败：" + error);
+                            }
+                        };
+                        RongDemo.common(tWebIMWidget, config, t$scope, t$http);
+                    } else {
+                        //layer.open({
+                        //    content: '现在去登录吗!'
+                        //    , btn: ['取消</a><a href="../login-res/login.html" target="_blank" class="layui-layer-btn0">现在去登录']
+                        //    , yes: function (index) {
+                        //        layer.close(index);
+                        //    }
+                        //});
+                        //$($(".layui-layer-btn").find("a")[0]).removeClass("layui-layer-btn0").addClass("layui-layer-btn")
+                        $("#CodePwdLogin").click();
+                    }
+                }
+            })
+        }
+        var targetIdList = "";
+
+        function setconversationpeople(obj) {
+            var targetId = $(obj).data("id");
+            var targetName = $(obj).data("name");
+            var sumlist = targetIdList.split(",");
+            for(var i = 0; i < sumlist.length; i++) {
+                if(targetId == sumlist[i]) {
+                    return;
+                }
+            }
+            targetIdList += targetId + ",";
+            $.ajax({
+                type: "Get",
+                cache: false,
+                dataType: "json",
+                url: MyAppURl + "/Ashx/RongCloud.ashx?action=getmywebusertoken&M=" + Math.random(),
+                success: function(data) {
+                    if(data.return_code == 1) {
+                        t$scope.targetType = 1;
+                        t$scope.targetId = "4_" + targetId;
+                        t$scope.targetName = targetName;
+                        var config = {
+                            appkey: 'e0x9wycfetgnq',
+                            token: data.Token == undefined ? "" : data.Token,
+                            style: {
+                                right: 40,
+                                bottom: 0,
+                                width: 430,
+                                positionFixed: true
+                            },
+                            conversationListPosition: tWebIMWidget.EnumConversationListPosition.right,
+                            displayMinButton: true,
+                            displayConversationList: true,
+                            onSuccess: function(id) {
+                                t$scope.user = id;
+                                console.log('连接成功：' + id);
+                                t$scope.sendRCTextMessage("您好");
+
+                            },
+                            onError: function(error) {
+                                console.log("连接失败：" + error);
+                            }
+                        };
+                        RongDemo.common(tWebIMWidget, config, t$scope, t$http);
+                    } else {
+                        $("#CodePwdLogin").click();
+                    }
+                }
+            })
+        }
+    </script>
+-->
+<!--底部-->
+
+<div th:replace="base/footer :: html"></div>
+<!--底部 end-->
+
+<!--浮动广告-->
+<div class="floatleftadimg">
+
+</div>
+<script type="text/javascript">
+    $("a.closefloatAD").click(function () {
+        $("div.floatleftadimg").hide();
+    });
+</script>
+<!--意见反馈-->
+<div id="jianyibox" class="jubaobox" style="display: none;">
+    <a href="javascript:$(&quot;#jianyibox&quot;).hide();" class="closewinbtn">X</a>
+    <h2>意见反馈</h2>
+    <div class="jubaocontent">
+        <textarea id="jubao_txtContent" name="" cols="" rows="" placeholder="请填写意见反馈内容"></textarea>
+    </div>
+    <div class="jubao-p-n">
+        <p>姓名</p>
+        <input id="jubao_txtUser" name="" value="输入您的称呼"
+               onfocus="if(this.value=='输入您的称呼'){this.className='jubaotext_on';this.value=''}else{this.className='jubaotext_on';}"
+               onclick="if (this.value == '输入您的称呼') { this.className = 'jubaotext_on'; this.value = '' } else { this.className = 'jubaotext_on'; }"
+               onblur="if(this.value==''){this.value='输入您的称呼';this.className='jubaotext'};" class="jubaotext"
+               type="text">
+        <p>手机</p>
+        <input id="jubao_txtMobile" name="" value="输入您的常用联系电话"
+               onfocus="if(this.value=='输入您的常用联系电话'){this.className='jubaotext_on';this.value=''}else{this.className='jubaotext_on';}"
+               onclick="if (this.value == '输入您的常用联系电话') { this.className = 'jubaotext_on'; this.value = '' } else { this.className = 'jubaotext_on'; }"
+               onblur="if(this.value==''){this.value='输入您的常用联系电话';this.className='jubaotext'};" class="jubaotext"
+               type="text">
+        <input name="" value="我要反馈" class="jubaobtn" id="jianyibtn" type="button">
+    </div>
+</div>
+
+<div class="aspNetHidden">
+
+    <input name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="8192D785" type="hidden">
+    <input name="__EVENTVALIDATION" id="__EVENTVALIDATION"
+           value="/wEdAAbPfefjoZLclMzgogNqBKIx2p97JVjcGCGa0S+QUrmau+rnwAMvHrwqfr0Too4FP3EPXsM38lHlyyu9CrwhedIikMENghYR2yN1aVfstfURLRoDpEbP8dJ0ILGkO9rI+6oGwbdRJF5K6mwmo8Kj++iNpcgg73QYBnT58/dSWrtyPQ=="
+           type="hidden">
+</div>
+
+<!--<script type="text/javascript" th:src="@{/js/jquery.lazyload.min.js}">-->
+<!--</script>-->
+<!--<script type="text/javascript" th:src="@{/js/ershoufang/ls.js}">-->
+<!--</script>-->
+
+<!--<script type="text/javascript" src="../js/base/quick_links.js"></script>-->
+
+<!--右侧悬浮导航 end-->
+
+<div id="cboxOverlay" style="display: none;"></div>
+<div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;">
+    <div id="cboxWrapper">
+        <div>
+            <div id="cboxTopLeft" style="float: left;"></div>
+            <div id="cboxTopCenter" style="float: left;"></div>
+            <div id="cboxTopRight" style="float: left;"></div>
+        </div>
+        <div style="clear: left;">
+            <div id="cboxMiddleLeft" style="float: left;"></div>
+            <div id="cboxContent" style="float: left;">
+                <div id="cboxTitle" style="float: left;"></div>
+                <div id="cboxCurrent" style="float: left;"></div>
+                <button type="button" id="cboxPrevious"></button>
+                <button type="button" id="cboxNext"></button>
+                <button id="cboxSlideshow"></button>
+                <div id="cboxLoadingOverlay" style="float: left;"></div>
+                <div id="cboxLoadingGraphic" style="float: left;"></div>
+            </div>
+            <div id="cboxMiddleRight" style="float: left;"></div>
+        </div>
+        <div style="clear: left;">
+            <div id="cboxBottomLeft" style="float: left;"></div>
+            <div id="cboxBottomCenter" style="float: left;"></div>
+            <div id="cboxBottomRight" style="float: left;"></div>
+        </div>
+    </div>
+    <div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div>
+</div>
+<div class="layui-layer-move"></div>
+</body>
+
+</html>

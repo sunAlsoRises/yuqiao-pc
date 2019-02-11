@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+<meta name="keywords" content="沈阳二手房贷款,沈阳商业贷款,沈阳公积金贷款,阳组合贷款,沈">
+<meta name="description" content="资金不方便找芒果快易贷，专业提供沈阳二手房贷款、商业贷款、个人公积金贷款、组合贷款、资金拆借、房产解押服务，为您提供全方位融资投资解决方案">
+<title>购房组合计算器_芒果不动产，芒果在线</title>
+<link rel="apple-touch-icon-precomposed" href="https://g.517cdn.com/www517cn/v2014images/app_Logo.png">
+<link rel="shortcut icon" href="favicon.ico">
+
+
+<!--[if IE 6]>
+<script type="text/javascript" src="https://g.517cdn.com/PlugJavascriptJq/DD_belatedPNG.js" ></script>
+<![endif]-->
+<script language="javascript" type="text/javascript" src="lib.js"></script>
+
+<link media="all" href="../css/base.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" href="../css/wenda/wendabase.css" />
+<link rel="stylesheet" href="../css/wenda/jisuan1.css" />
+</head>
+<body>
+<!--顶部导航栏开始-->
+<div th:replace="base/header :: html"></div>
+<!--顶部导航栏结束-->
+    
+
+<script type="text/javascript" src="mainsearch.js"></script> 
+<script type="text/javascript">
+$(document).ready(function(){		
+		//网站地图经过用
+		$(".n-top-mapsite").mouseover(function(){
+			$(".n-top-mapsite").addClass("n-top-mapsite-hover");
+			$(".mapmenu-btn").show();
+		});
+		$(".mapmenu-btn").mouseleave(function(){
+			$(".mapmenu-btn").hide();
+			$(".n-top-mapsite").removeClass("n-top-mapsite-hover");
+		});
+});
+</script>
+
+<div class="mainwrapper"> 
+		<script src="webjsqgoufangzuhe.js"></script>
+		<div class="path-nav"><a href="https://www.517.cn/">芒果在线</a> &gt; 购房组合计算器</div>
+
+
+		<div class="wrapperbox clearfix goufangxuzhibox">
+			<!--credit-contet left start-->
+			<!--左边导航-->
+			<div th:replace="base/wendaLeft :: html"></div>
+			<!--左边导航结束-->
+<script type="text/javascript" language="javascript">
+    function currentPage() {
+        if (!document.getElementById("menu")) return false;/*进行必要的测试，避免没有id为nav时候出错*/
+        var nav = document.getElementById("menu");
+        var links = nav.getElementsByTagName("a");
+        var currenturl = window.location.href;/*获取当前页面的地址*/
+        for (i = 0; i < links.length; i++) {
+            var url = links[i].getAttribute("href");/*获取链接的href值*/
+            if (currenturl.indexOf(url) != -1) {/*如果链接的href值在当前页面地址中有匹配*/
+                links[i].className = "cur2";
+            }
+        }
+    } window.onload = currentPage;/*载入页面时加载*/
+</script>
+			<!--/导航-->
+			<!--credit-contet left end-->
+			<!--credit-contet right start-->
+			<div class="dk-right-page f-r">
+				<div class="main-jsq clearfix">
+					<div class="jsq-nav" id="nav">
+	<ul>
+		<li ><a title="贷款还款计算器" href="../wenda/daikuanjisuan.html"><i class="dkhk-j"></i>贷款还款计算器</a></li>
+		<li class="jsq-menu-off"><a title="购房组合计算器" href="../wenda/daikuanjisuan2.html"><i class="gfzh-j"></i>购房组合计算器</a></li>
+		<li><a title="提前还款计算器" href="../wenda/daikuanjisuan3.html"><i class="tqhk-j"></i>提前还款计算器</a></li>
+		<li><a title="购房能力评估" href="../wenda/daikuanjisuan4.html"><i class="gfnl-j"></i>购房能力评估</a></li>
+	</ul>
+</div>
+<script type="text/javascript" language="javascript">
+    function currentPage() {
+        if (!document.getElementById("nav")) return false;/*进行必要的测试，避免没有id为nav时候出错*/
+        var nav = document.getElementById("nav");
+        var links = nav.getElementsByTagName("li");
+        var currenturl = window.location.href;/*获取当前页面的地址*/
+        for (i = 0; i < links.length; i++) {
+            var url = links[i].getElementsByTagName("a")[0].getAttribute("href");/*获取链接的href值*/
+            if (currenturl.indexOf(url) != -1) {/*如果链接的href值在当前页面地址中有匹配*/
+                links[i].className = "jsq-menu-off";
+            }
+        }
+    } window.onload = currentPage;/*载入页面时加载*/
+</script>
+					<div class="jsq-content clearfix">
+						<div class="jsqbox clearfix">
+						<div class="jsq-text">
+							<h2>请您填写</h2>
+							<table class="dkhk-text" width="100%" cellspacing="0" cellpadding="0" border="0">
+								<tbody>
+								<tr>
+									<td width="38%" nowrap="nowrap" align="right"> 单价： </td>
+									<td width="62%" nowrap="nowrap" align="left"><input size="10" id="h_price" name="h_price" class="jsqText" onchange="WebJSQGouFangZuHe.dk_jisuan()" value="">
+										元/㎡ </td>
+								</tr>
+								<tr>
+									<td nowrap="nowrap" align="right"> 面积： </td>
+									<td nowrap="nowrap" align="left"><input size="10" id="h_area" name="h_area" class="jsqText" onchange="WebJSQGouFangZuHe.dk_jisuan()" value="">
+										㎡ </td>
+								</tr>
+								<tr>
+									<td nowrap="nowrap" align="right"> 是否涉及营业税： </td>
+									<td nowrap="nowrap" align="left"><input name="ISyys" value="1" type="radio">
+										是
+										<input checked="checked" name="ISyys" value="0" type="radio">
+										否 </td>
+								</tr>
+								<tr>
+									<td nowrap="nowrap" align="right"> 个人所得税：</td>
+									<td nowrap="nowrap" align="left"><select id="gs" name="gs">
+										<option value="1" selected="selected">不涉及个税</option>
+										<option value="2">二手房再交易</option>
+										<option value="3">新房首次更名</option>
+									</select></td>
+								</tr>
+								<tr>
+									<td nowrap="nowrap" align="right"> 契税原值： </td>
+									<td nowrap="nowrap" align="left"><input size="10" value="0" id="y_z" name="y_z" class="jsqText">
+										元 </td>
+								</tr>
+								<tr>
+									<td nowrap="nowrap" height="10"></td>
+									<td nowrap="nowrap" height="10"></td>
+								</tr>
+								<tr>
+									<td nowrap="nowrap" align="right"> 商业贷款成数： </td>
+									<td nowrap="nowrap" align="left"><select onchange="WebJSQGouFangZuHe.sydkcs()" id="h_divide2" name="h_divide2">
+										<option value="8">8成</option>
+										<option value="7">7成</option>
+										<option value="6">6成</option>
+										<option value="5">5成</option>
+										<option value="4">4成</option>
+										<option value="3">3成</option>
+										<option value="2">2成</option>
+										<option value="0" selected="selected">0成</option>
+									</select></td>
+								</tr>
+								<tr>
+									<td nowrap="nowrap" align="right"> 银行按掲贷款数额： </td>
+									<td nowrap="nowrap" align="left"><input size="12" value="0" id="h_bank" name="h_bank" class="jsqText" readonly="true">
+										元 </td>
+								</tr>
+								<tr>
+									<td nowrap="nowrap" align="right"> 按掲年数： </td>
+									<td nowrap="nowrap" align="left"><select name="bankyear" id="bankyear">
+										<option value="12">1年(12期)</option>
+										<option value="24">2年(24期)</option>
+										<option value="36">3年(36期)</option>
+										<option value="48">4年(48期)</option>
+										<option value="60">5年(60期)</option>
+										<option value="72">6年(72期)</option>
+										<option value="84">7年(84期)</option>
+										<option value="96">8年(96期)</option>
+										<option value="108">9年(108期)</option>
+										<option value="120" selected="selected">10年(120期)</option>
+										<option value="180">15年(180期)</option>
+										<option value="240">20年(240期)</option>
+										<option value="300">25年(300期)</option>
+										<option value="360">30年(360期)</option>
+									</select></td>
+								</tr>
+								<tr>
+									<td nowrap="nowrap" align="right"> 公积金成数： </td>
+									<td nowrap="nowrap" align="left"><select onchange="WebJSQGouFangZuHe.gjjcs()" name="h_divide1" id="h_divide1">
+										<option value="8">8成</option>
+										<option value="7">7成</option>
+										<option value="6">6成</option>
+										<option value="5">5成</option>
+										<option value="4">4成</option>
+										<option value="3">3成</option>
+										<option value="2">2成</option>
+										<option value="0" selected="selected">0成</option>
+									</select></td>
+								</tr>
+								<tr>
+									<td nowrap="nowrap" align="right"> 公积金贷款数额： </td>
+									<td nowrap="nowrap" align="left"><input size="12" value="0" name="h_fund" id="h_fund" class="jsqText" readonly="true">
+										元 </td>
+								</tr>
+								<tr>
+									<td nowrap="nowrap" align="right"> 公积金还款年数： </td>
+									<td nowrap="nowrap" align="left"><select name="fundyear" id="fundyear">
+										<option value="1" selected="selected">请选择</option>
+										<option value="12">1年(12期)</option>
+										<option value="24">2年(24期)</option>
+										<option value="36">3年(36期)</option>
+										<option value="48">4年(48期)</option>
+										<option value="60">5年(60期)</option>
+										<option value="72">6年(72期)</option>
+										<option value="84">7年(84期)</option>
+										<option value="96">8年(96期)</option>
+										<option value="108">9年(108期)</option>
+										<option value="120" selected="selected">10年(120期)</option>
+										<option value="180">15年(180期)</option>
+										<option value="240">20年(240期)</option>
+										<option value="300">25年(300期)</option>
+										<option value="360">30年(360期)</option>
+									</select></td>
+								</tr>
+								<tr class="jsqbtn">
+									<td colspan="2" valign="middle" align="center"><input name="button" onclick="WebJSQGouFangZuHe.calculator()" value="开始计算" class="btn_jsq" type="button">
+										&nbsp;
+										<input name="reset" value="重新计算" class="btn_jsq" type="reset"></td>
+								</tr>
+								<tr class="red">
+									<td colspan="2" valign="middle" nowrap="nowrap" align="center" height="20"><strong>备注：</strong>建议不要使用实际成交价,应使用房产局的评估价 </td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="jsq-jieguo jsq-zhjsq">
+							<h2> 计算结果</h2>
+							<ul>
+								<li><strong class="orange">贷款手续还款计算</strong></li>
+								<li>房款总额：
+									<input size="10" id="fkze" class="jsqText2" value="">
+									元</li>
+								<li>首期付款：
+									<input size="10" id="sqfk" class="jsqText2" value="">
+									元</li>
+								<li>贷款总额：
+									<input size="10" id="dkze" class="jsqText2" value="">
+									元</li>
+								<li>月均总还款：
+									<input size="10" id="yjzhk" class="jsqText2" value="">
+									元</li>
+								<li>总还款额：
+									<input size="10" id="zhke" class="jsqText2" value="">
+									元</li>
+								<li>总支付息款：
+									<input size="10" id="zzfxk" class="jsqText2" value="">
+									元</li>
+								<li><strong>其中商业贷款部分</strong></li>
+								<li>--月均还款：
+									<input size="10" id="s_yjhk" class="jsqText2" value="">
+									元</li>
+								<li>--还款总额：
+									<input size="10" id="s_hkze" class="jsqText2" value="">
+									元</li>
+								<li>--支付息款：
+									<input size="10" id="s_zfxk" class="jsqText2" value="">
+									元</li>
+								<li><strong>其中公积金部分</strong></li>
+								<li>--月均还款：
+									<input size="10" id="g_yjhk" class="jsqText2" value="">
+									元</li>
+								<li>--还款总额：
+									<input size="10" id="g_hkze" class="jsqText2" value="">
+									元</li>
+								<li>--支付息款：
+									<input size="10" id="g_zfxk" class="jsqText2" value="">
+									元</li>
+								<li><strong class="orange">二手房交易贷款手续费用</strong></li>
+								<li>每件：
+									<input size="10" id="mj" class="jsqText2" value="">
+									元</li>
+								<li>公积金贷款代办费500元</li>
+							</ul>
+						</div>
+						<div class="jsq-jieguo jsq-zhjsq">
+							<h2>&nbsp; </h2>
+							<ul>
+								<li><strong class="orange">二手房产权交易费用</strong></li>
+								<li>契税：
+									<input size="10" id="qs" class="jsqText2" value="">
+									元</li>
+								<li>交易费：
+									<input id="jyf" size="10" class="jsqText2" value="">
+									元</li>
+								<li>查档费：
+									<input id="cdf" size="10" class="jsqText2" value="">
+									元</li>
+								<li>工本费：
+									<input id="gbf" size="10" class="jsqText2" value="">
+									元</li>
+								<li>鉴定费：
+									<input id="jdf" size="10" class="jsqText2" value="">
+									元</li>
+								<li>印花税：
+									<input id="yhs" size="10" class="jsqText2" value="">
+									元</li>
+								<li>交易表格：
+									<input id="jybg" size="10" class="jsqText2" value="">
+									元</li>
+								<li>营业税：
+									<input id="yys" size="10" class="jsqText2" value="">
+									元</li>
+								<li>个人所得税：
+									<input id="grsds" size="10" class="jsqText2" value="">
+									元</li>
+								<li>交易费用合计：
+									<input id="jyfyhj" size="10" class="jsqText2" value="">
+									元</li>
+								<li><strong>中介费：</strong>
+									<input id="zjf" size="10" class="jsqText2" value="">
+									元</li>
+								<li style="height: auto; line-height: 30px;"><strong>手续费合计：</strong>
+									<input id="sxfhj" size="10" class="jsqText2" value="">
+									元<br>
+									交易费＋贷款手续费＋中介费</li>
+								<li style="height: auto; line-height: 30px;"><strong>二手购房款合计：</strong>
+									<input id="esgfkhj" size="10" class="jsqText2" value="">
+									元<br>
+									房款＋交易费＋贷款手续费＋中介费</li>
+								<li style="height: auto; line-height: 30px;"><strong>最低购房资金需求：</strong>
+									<input id="zdgfzjxq" size="10" class="jsqText2" value="">
+									元<br>
+									注:就是最少需要准备多少钱可以买到这个房子,按6成贷款计算。</li>
+							</ul>
+							<p> *以上计算结果仅供参考！</p>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--credit-contet right end-->
+		</div>
+
+</div>
+
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div></div></body>
+			<!--底部-->
+
+<div th:replace="base/footer :: html"></div>
+
+			<!--底部 end-->
+
+</html>

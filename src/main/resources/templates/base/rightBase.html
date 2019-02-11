@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>右侧贴边</title>
+    <script type="text/javascript" th:src="@{/js/newself/myself_quick_link.js}"></script>
+
+</head>
+<body>
+
+<!--右侧贴边导航quick_links.js控制-->
+<div id="right_tabs" class="mui-mbar-tabs" style="width: 0px;">
+
+    <div class="quick_links_wrap">
+        <div class="quick_link_mian">
+            <div class="quick_links_panel">
+                <div id="quick_links" class="quick_links">
+                    <li>
+                        <a href="javascript:void(0)" class="my_qlinks"><i class="setting"></i></a>
+                        <div class="ibar_login_box status_login clearfix">
+                            <div class="avatar_box clearfix">
+                                <p class="avatar_imgbox">
+                                    <img th:src="@{/img/tou.png}">
+                                </p>
+                                <ul class="user_info" id="LoginUserInfo">
+                                    <li th:if="${session.loginUser != null}">用户名：[[${#strings.substring(session.loginUser,0,2)}]]*******[[${#strings.substring(session.loginUser,9)}]]</li>
+                                    <li th:if="${session.loginUser == null}">用户名：您还未登录</li>
+                                    <li>
+                                        <a th:if="${session.loginUser != null}" th:href="@{/login/user}">进入会员中心</a>
+                                        <a th:if="${session.loginUser == null}" th:href="@{/login-res/login/}">[登陆]</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="login_btnbox clearfix">
+                                <a th:href="@{/helphouse/maifang}">委托买房</a>
+                                <a th:href="@{/helphouse/maifang}">委托租房</a>
+                                <!--<a href="#">我要投资</a>
+                        <a href="#">我要借款</a>-->
+                            </div>
+                            <i class="icon_arrow_white"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="mpbtn_histroy"><i class="zuji"></i></a>
+                        <div class="mp_tooltip">我的浏览<i class="icon_arrow_right_black"></i></div>
+                    </li>
+                    <li>
+                        <a th:href="@{/login/user/attentionHouse/}"  class="mpbtn_wdsc"><i class="wdsc"></i></a>
+                        <div class="mp_tooltip">我的收藏<i class="icon_arrow_right_black"></i></div>
+                    </li>
+                </div>
+                <div class="quick_toggle">
+                    <li>
+                        <a th:href="@{http://dev-20.lingke.mobi/index.html}" onclick="openwindowindex()"><i class="kfzx"></i></a>
+                        <div class="mp_tooltip mp_tooltip2">
+                            <!--onclick="openwindowindex()" href="javascript:void(0)"-->
+                            <a style="color: rgb(255, 255, 255); width: 100%; line-height: 41px;" th:href="@{http://dev-20.lingke.mobi/index.html}">在线客服</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#"><i class="kfzx"></i></a>
+                        <div class="mp_tooltip mp_tooltip2" onclick="qimoChatClick()">
+                            客服电话<br> 还没有电话
+                            <i class="icon_arrow_right_black"></i>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#" class="return_top"><i class="top"></i></a>
+                    </li>
+                </div>
+            </div>
+            <div id="quick_links_pop" class="quick_links_pop hide"></div>
+        </div>
+    </div>
+</div>
+<!--右侧贴边导航quick_links.js控制 end-->
+<!--右侧悬浮 start-->
+
+<div id="pop-compare" data-load="true" class="pop-compare" style="bottom: 0px; left: 0px; right: 0px; margin: auto; display: none;">
+    <div class="pop-wrap">
+        <p class="pop-compare-tips"></p>
+        <div class="pop-inner">
+            <div class="diff-hd">
+                <ul class="tab-btns clearfix">
+                    <li class="ui-switchable-item current"><a href="javascript:;">对比栏</a></li>
+                    <!--<li class="ui-switchable-item"><a href="javascript:;">最近浏览</a></li>-->
+                </ul>
+                <div class="operate"><a href="javascript:;" class="hide-me">隐藏</a></div>
+            </div>
+            <div class="diff-bd tab-cons">
+                <div class="tab-con ui-switchable-panel ui-switchable-panel-selected" style="display: block;">
+                    <div id="diff-items" class="diff-items clearfix compareList">
+
+
+                    </div>
+
+                    <div class="diff-operate"><a target="_blank" id="goto-contrast" class="btn-compare-b compare-active">对比</a><a class="del-items">清空对比栏</a></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--右侧悬浮 end-->
+
+</body>
+</html>

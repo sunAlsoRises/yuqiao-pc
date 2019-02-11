@@ -1,0 +1,1228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+		<!--<script charset="utf-8" src="v.js"></script>-->
+		<script th:src="@{/js/hm.js}"></script>
+        <script type="text/javascript" th:src="@{/js/jquery-3.2.1.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/jquery.cookie.js}"></script>
+        <script type="text/javascript" th:src="@{/js/common_001.js}"></script>
+        <script th:src="@{/js/newself/filter_myself.js}"></script>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/address.css}" />
+        <script type="text/javascript" th:src="@{/js/newself/myself_quick_link.js}"></script>
+        <script type="text/javascript" language="javascript">
+            var projecImgtName = "yuqiaopc";
+            var pathName = window.document.location.pathname;
+            var projectName = pathName.substring(0,pathName.substr(1).indexOf('/')+1);
+            var BaseUrl_IIS_Application_Name = "/website/";
+			var pageSize = "20";
+			var XqPhoto = "";
+			var HousePhoto = "";
+			var UserPhoto = "";
+			var tongjiurl = "";
+			var isJiaMeng = "false";
+			var onimgurl_small = "../img/ershoufang/noimg_small.png";
+			var onimgurl_big = "../img/ershoufang/noimg_big.png";
+			var onimgurl_jjr = "../img/ershoufang/noimg_jjr.png";
+		</script>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="renderer" content="ie-stand">
+		<meta name="chinaz-site-verification" content="f48e24b0-224b-4aed-92c5-2c711f7e3590">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<title>
+			沈阳二手房| 二手房信息|二手房价格--渔樵在线
+		</title>
+		<link id="str_ico" rel="shortcut icon" href="../favicon.ico">
+		<link rel="apple-touch-icon-precomposed" href="#">
+		<script type="text/javascript" th:src="@{/js/lib.js}">
+		</script>
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+		<meta name="renderer" content="ie-stand">
+
+		<meta http-equiv="X-UA-Compatible" ie="EmulateIE9">
+		<!--<script type="text/javascript" th:src="@{/js/layer.js}"></script>-->
+		<!--<script type="text/javascript" th:src="@{/js/ershoufang/jquery.imagepreview.1.0.js}"></script>-->
+		<!--<script type="text/javascript" th:src="@{/js/ershoufang/houseshow.js}"></script>-->
+		<script type="text/javascript" th:src="@{/js/base/ispc.js}"></script>
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			var _hmt = _hmt || [];
+			if(document.cookie.indexOf('mis_userid') > 0) {
+				_hmt.push(['_setCustomVar', 1, "userType", "misUser", 1]);
+			} else {
+				_hmt.push(['_setCustomVar', 1, "userType", "visitor", 1]);
+			}(function() {
+				var hm = document.createElement("script");
+				hm.src = "https://hm.baidu.com/hm.js?1f8e83330039496a701d7ae44836ed10";
+				var s = document.getElementsByTagName("script")[0];
+				s.parentNode.insertBefore(hm, s);
+			})();
+		</script>
+
+		<!-- <script src="untitled" type="text/javascript"></script>-->
+		<!--<script src="untitled_001.dat" type="text/javascript"></script>-->
+		<!--<script src="untitled_002.dat" type="text/javascript"></script>-->
+		<link rel="stylesheet" type="text/css" th:href="@{/css/help-house/buy.css}"/>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/base.css}" />
+		<link rel="stylesheet" type="text/css" th:href="@{/css/house-base.css}" />
+	</head>
+
+	<body>
+		<!--<div id="cnzz_stat_icon_1272232378" style="display: none;">
+		<a href="#" target="_top" title="站长统计">站长统计</a>
+	</div>       
+	<script src="z_stat.php" language="JavaScript"></script>
+	<script src="core.php" charset="utf-8" type="text/javascript"></script>  -->
+
+		<script type="text/javascript">
+			function openwindowindex(aa) {
+				layer.open({
+					type: 2,
+					area: ['360px', '500px'],
+					offset: 'rb',
+					shade: 0,
+					content: ['//webchat.7moor.com/wapchat.html?accessId=477a8f70-4a00-11e8-9b91-a74aa30cfb04&amp;fromUrl=www.yqgs.cn&amp;urlTitle=%E8%8A%92%E6%9E%9C%E5%9C%A8%E7%BA%BFPc%E7%89%88', 'no']
+				});
+			}
+		</script>
+
+		<!--添加了 容联七陌  的客服-->
+
+		<meta name="description" content="渔樵在线沈阳二手房频道:是最专业的沈阳二手房网,为您提供最新、最真实的沈阳二手房信息及沈阳二手房价格,找沈阳二手房请来沈阳二手房中介-渔樵在线:真房源,零距离。">
+		<meta name="keywords" content="沈阳二手房，沈阳 二手房，沈阳二手房网，沈阳二手房信息，沈阳二手房价格，沈阳二手房中介">
+
+
+		<!--顶部导航栏开始-->
+		<div th:replace="base/header :: html"></div>
+		<!--顶部导航栏结束-->
+    
+<!--中间部分开始-->
+	    <div class="c-w-content">
+        <!--tosell start-->
+        
+        <div class="tosell-buy-main width960 clearfix">
+            <div class="to-s-b-page" id="last_div">
+                <div class="to-menu">
+                    <ul>
+                        <li class="to-menu-1"><span class="to-ment-ing">第一步、填写基本信息</span></li>
+                        <li class="to-menu-2"><span>第二步、确认发布</span></li>
+                        <li class="to-menu-3"><span>经纪人制定</span></li>
+                    </ul>
+                </div>
+                <div class="to-tishi">
+                    <span><i></i>友情提示：</span><br>
+                    1、提交后我们会有专人帮您完善房源资料。<br>
+                    <em>2、我们承诺：您的联系信息不对外显示。</em>
+                </div>
+                <div class="FormTab">
+                    <h2 class="Tit_Required">1、必填信息</h2>
+                    <div>
+                        <h3 name="fangshi">选择方式：</h3>
+                        <ul>
+                            <li>
+                                <label>
+                                    <input upto="saveto" id="_rdbuy" name="fangshi" value="1" checked="checked" type="radio">买房</label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input upto="saveto" id="_rdRent" name="fangshi" value="2" type="radio">租房</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 id="h3didian" name="didian">房屋座落：</h3>
+                        <ul>
+                            <li>
+                                <select name="ctl00$ContentPlaceHolder1$_Areas" id="_Areas">
+	<option selected="selected" value="0">请选择区域</option>
+	<option value="5">铁西区</option>
+	<option value="7">浑南区</option>
+	<option value="4">大东区</option>
+	<option value="9">于洪区</option>
+	<option value="6">皇姑区</option>
+	<option value="2">和平区</option>
+	<option value="1">沈河区</option>
+	<option value="11">沈北新区</option>
+	<option value="75">经济开发区</option>
+	<option value="8">东陵区</option>
+	<option value="10">苏家屯</option>
+	<option value="67">新民</option>
+	<option value="174">法库</option>
+	<option value="215">康平县</option>
+	<option value="229">辽中</option>
+	<option value="12">其他</option>
+
+</select>
+                            </li>
+                        </ul>
+                        <div class="tishiinfo" id="divArea" style="display: none;">
+                            <div id="divAr"><b></b>
+                                <p id="pArea"></p>
+                                <i></i><em></em></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 id="h3mianji" name="mianji">需求面积：</h3>
+                        <ul>
+                            <li>
+                                <input id="mianji_begin" upto="saveto" maxlength="7" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" name="mianji" size="12" value="" type="text">到
+                                <input id="mianji_end" upto="saveto" maxlength="7" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" name="mianji" size="12" value="" type="text">平方米
+                            </li>
+                        </ul>
+                        <div class="tishiinfo" id="divMianji" style="display: none;">
+                            <div id="divMj"><b></b>
+                                <p id="pMianji"></p>
+                                <i></i><em></em></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 id="h3jiage" name="jiage">价格：</h3>
+                        <ul>
+                            <li>
+                                <input id="price_begin" upto="saveto" maxlength="7" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" name="jiage" size="12" value="" type="text">到
+                                <input id="price_end" upto="saveto" maxlength="7" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" name="jiage" size="12" value="" type="text"><span id="rentsell">万/套</span>
+                            </li>
+                        </ul>
+                        <div class="tishiinfo" id="divPrice" style="display: none;">
+                            <div id="divPc"><b></b>
+                                <p id="price"></p>
+                                <i></i><em></em></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 id="h3lxren" name="lxren">您的称呼：</h3>
+                        <ul>
+                            <li>
+                                <input id="clientName" upto="saveto" maxlength="7" name="lxren" size="18" onkeyup="value=value.replace(/[\d]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\d]/g,''))" value="" type="text">
+                            </li>
+                        </ul>
+                        <div class="tishiinfo" id="divUserName" style="display: none;">
+                            <div id="divUn"><b></b>
+                                <p id="pUserName"></p>
+                                <i></i><em></em></div>
+                        </div>
+                    </div>
+                    <input name="ctl00$ContentPlaceHolder1$isLogin" id="ContentPlaceHolder1_isLogin" value="0" type="hidden">
+                    <div id="telephone">                                                                           
+                  <ul>
+                    
+                    <li>
+                        <h3 id="h3telephone" name="telephone">手机号：</h3>
+                        <input name="ctl00$ContentPlaceHolder1$_txtUserMobile" id="_txtUserMobile" title="11位手机号码" class="r_t_input" placeholder="请输入11位手机号码" defval="请输入11位手机号码" regular="^0{0,1}1[0-9]{10}" pname="userMobile" value="" type="text">
+                       
+                    </li>                                    
+                </ul>                                                                                                                                            
+                    </div>
+       
+                    <!--<div id="yanzhengma">-->
+                        <!--<h3 id="h3yanzhengma" name="yanzhengma">验证码：</h3>-->
+                        <!--<ul>-->
+                        <!--<li>-->
+                       <!---->
+                        <!--<input class="phoneyanzhengma" name="ctl00$ContentPlaceHolder1$_txtValidationCode" id="_txtValidationCode" class="r_t_input" placeholder="请输入手机收到的验证码" value="" type="text">                                             -->
+                    <!--</li>-->
+                         <!--</ul>-->
+                    <!--</div>-->
+                   
+                    <h2 class="Tit_Required">
+                        <span>2、选填信息</span></h2>
+                    
+                    <div>
+                        <h3>其他说明：</h3>
+                        <ul>
+                            <li>
+                                <textarea id="memo" upto="saveto" ittype="uncheck" name="beizhu" class="area1"></textarea>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--<div class="yanzhengma">-->
+                        <!--<h3>验证码：</h3>-->
+                        <!--<ul>-->
+                            <!--<li>-->
+                                <!--<img src="../img/buyandshop/validatecode.ashx" id="vcode" onclick="var sj = Math.random();this.src='/website/Ashx/ValidateCode.ashx?ran='+sj+'';" style="cursor: pointer;" alt="验证码">-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<input id="vcodeText" maxlength="10" value="" type="text"><a href="javascript:void(0)" onclick="var sj = Math.random();document.getElementById('vcode').src='/website/Ashx/ValidateCode.ashx?ran='+sj+'';">看不清?换一张</a>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                        <!--<div class="tishiinfo" id="divCode" style="display: none;">-->
+                            <!--<div id="divCodeOne"><b></b>-->
+                                <!--<p id="pCode"></p>-->
+                                <!--<i></i><em></em></div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="btn">
+                        <h3>&nbsp;</h3>
+                        <ul>
+                            <li>
+                                <input id="bt_next" name="Submit" value="下一步" class="btn_next" onclick="tijiaoHouse()" type="button">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="to-s-b-page" id="next_div" style="display: none;">
+                <div class="to-menu">
+                    <ul>
+                        <li class="to-menu-1"><span class="to-ment-done">第一步、填写基本信息</span></li>
+                        <li class="to-menu-2"><span class="to-ment-ing2">第二步、确认发布</span></li>
+                        <li class="to-menu-3"><span>发布成功</span></li>
+                    </ul>
+                </div>
+                <div class="to-tishi">
+                    <span><i></i>友情提示：</span><br>
+                    1、提交后我们会有专人帮您完善房源资料。<br>
+                    <em>2、我们承诺：您的联系信息不对外显示。</em>
+                </div>
+                <div class="FormTab">
+                    <h2 class="Tit_Required">1、必填信息</h2>
+                    <div>
+                        <h3 name="fangshi">选择方式：</h3>
+                        <p>
+                            <span id="_dealType"></span>
+                        </p>
+                    </div>
+                    <div>
+                        <h3 id="h1" name="didian">房屋座落：</h3>
+                        <p>
+                            <span id="_Area"></span>
+                        </p>
+                    </div>
+                    <div>
+                        <h3 id="h3" name="mianji">需求面积：</h3>
+                        <p>
+                            <span id="_Mianji_begin"></span>到<span id="_Mianji_end"></span>平方米
+                        </p>
+                    </div>
+                    <div>
+                        <h3 id="h4" name="jiage">价格：</h3>
+                        <p>
+                            <span id="_PriceSum_begin"></span>到<span id="_PriceSum_end"></span><span id="jgInfo">万/套</span>
+                        </p>
+                    </div>
+                    <div>
+                        <h3 id="h5" name="lxren">您的称呼：</h3>
+                        <p>
+                            <span id="_Lxrname"></span>
+                        </p>
+                    </div>
+                    <div>
+                        <h3 id="h6" name="telephone">手机：</h3>
+                        <p>
+                            <span id="_Phone"></span>
+                        </p>
+                    </div>
+                    <h2 class="Tit_Required">
+                        <span>2、选填信息</span></h2>
+                    <div>
+                        <h3>委托人员：</h3>
+                        <p id="_WTR"></p>
+                    </div>
+                    <div>
+                        <h3>其他说明：</h3>
+                        <p id="_Qtsmsp"></p>
+                    </div>
+                    <div class="btn">
+                        <h3>&nbsp;</h3>
+                        <ul>
+                            <li>
+                                <input id="bt_last" name="Submit" value="上一步" class="btn_next" onclick="showPre()" type="button">
+                            </li>
+                            <li>
+                                <input id="_btSubmit" name="Submit" value="下一步" class="btn_next" onclick="submitHouse()" type="button">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="to-s-b-page" id="subit_div" style="display: none;">
+                <div class="to-menu">
+                    <ul>
+                        <li class="to-menu-1"><span class="to-ment-done">第一步、填写基本信息</span></li>
+                        <li class="to-menu-2"><span class="to-ment-done2">第二步、确认发布</span></li>
+                        <li class="to-menu-3"><span class="to-ment-ing2" id="spanCg">发布成功</span></li>
+                    </ul>
+                </div>
+                <div class="to-tishi-done clearfix">
+                    <div class="to-t-d-text">
+                       
+                        <p style="width: 760px;">
+                             <span class="doneicon1"></span>
+                            您已登记成功，感谢您的信任！<br>
+                            24小时内（工作日9:00-17:00期间）将有呼叫专员通过96yuqiao服务热线与您联系，核实具体信息！<br>
+                            <a id="ContentPlaceHolder1_lnkPublish" title="继续发布" href="https://www.yuqiao.cn/buy/">继续发布</a>
+                            <a href="https://www.yuqiao.cn/">返回首页</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript" th:src="@{/js/ditu/jquery-1.8.3-min.js}"></script>
+    <!--<script type="text/javascript" th:src="@{/js/buyandshop/layer_001.js}"></script>-->
+   <script type="text/javascript" charset="utf‐8" th:src="@{/js/buyandshop/index.js}"></script>
+    <script th:src="@{/js/buyandshop/ydbonline.js}" type="text/javascript"></script>
+          
+	   
+    
+    <!--<script type="text/javascript">-->
+
+        <!--var nc = new noCaptcha();-->
+        <!--var nc_appkey = 'FFFF000000000168F8BC';  // 应用标识,不可更改-->
+        <!--var nc_scene = 'register';  //场景,不可更改-->
+        <!--var nc_token = [nc_appkey, (new Date()).getTime(), Math.random()].join(':');-->
+        <!--var nc_option = {-->
+            <!--renderTo: '#dom_id',//渲染到该DOM ID指定的Div位置-->
+            <!--appkey: nc_appkey,-->
+            <!--scene: nc_scene,-->
+            <!--token: nc_token,-->
+            <!--//trans: '{"name1":"code100"}',//测试用，特殊nc_appkey时才生效，正式上线时请务必要删除；code0:通过;code100:点击验证码;code200:图形验证码;code300:恶意请求拦截处理-->
+            <!--callback: function (data) {// 校验成功回调-->
+
+                <!--var userMobile = $("#_txtUserMobile").val();-->
+                <!--if (!(/^0{0,1}1[0-9]{10}$/.test(userMobile))) {-->
+                    <!---->
+                    <!--layer.msg('请输入正确的手机号码');-->
+                    <!--nc.reload();-->
+                    <!--return;-->
+                <!--}-->
+
+                <!--console.log(data.csessionid);-->
+                <!--console.log(data.sig);-->
+                <!--console.log(nc_token);-->
+
+                <!--document.getElementById('csessionid').value = data.csessionid;-->
+                <!--document.getElementById('sig').value = data.sig;-->
+                <!--document.getElementById('token').value = nc_token;-->
+                <!--document.getElementById('scene').value = nc_scene;-->
+
+                <!--//$("#btnSendCode").attr("class", "mobileYZM").removeAttr("disabled"); // 用户完成拖动之后再启用提交按钮-->
+
+                <!--var self = $("#resend");-->
+                <!--var timeOut = 60;-->
+                <!--var userMobile = $("#_txtUserMobile").val();-->
+
+                <!--//阿里云盾二次验证码-->
+                <!--var strCsessionid = $("#csessionid").val();-->
+                <!--var strSig = $("#sig").val();-->
+                <!--var strToken = $("#token").val();-->
+                <!--var strScene = $("#scene").val();-->
+
+                <!--$(self).val("(" + timeOut + ")重新滑动");-->
+                <!--$.post(BaseUrl_IIS_Application_Name + "Ashx/UserCenter/Account.ashx", { action: "yanzheng", mobile: userMobile, csessionid: strCsessionid, sig: strSig, token: strToken, scene: strScene }, function (data) {-->
+
+                    <!--if (data.data.flag > 0) {-->
+                        <!--//alert(data.data.msg, " ");-->
+                        <!--layer.msg(data.data.msg);-->
+                        <!--$(self).val("(" + timeOut + ")重新滑动");-->
+                        <!--var intervalId = setInterval(function () {-->
+                            <!--timeOut&#45;&#45;;-->
+                            <!--if (timeOut == 0) {-->
+                                <!--nc.reload();-->
+                                <!--$(self).val("");-->
+                                <!--clearInterval(intervalId);-->
+                            <!--} else {-->
+                                <!--$(self).val("(" + timeOut + ")重新滑动");-->
+                            <!--}-->
+                        <!--}, 1000);-->
+                    <!--}-->
+                    <!--else {-->
+                        <!--layer.msg(data.data.msg);-->
+                        <!--nc.reload();-->
+                        <!--$(self).val("");-->
+                    <!--}-->
+
+                <!--});-->
+            <!--}-->
+        <!--};-->
+        <!--nc.init(nc_option);-->
+
+            <!---->
+
+
+            <!--$(document).ready(function () {-->
+
+            <!--var userId = $.cookie("web_userId");-->
+            <!--var flag = $("#ContentPlaceHolder1_isLogin").val();-->
+            <!--if (flag == 0) {-->
+
+            <!--} else {-->
+                <!--$("#telephone").hide();-->
+                <!--/*$("#huakuai").hide();*/-->
+                <!--$("#yanzhengma").hide();-->
+            <!--}-->
+            <!--if (userId != null && userId != "") {-->
+                <!--$.getJSON("/website/Ashx/GetWebUserHandler.ashx", { "userId": userId }, function (json) {-->
+                    <!--if (json.data != null) {-->
+                        <!--if (json.data.RealName != "null") {-->
+                            <!--$("#clientName").val(json.data.RealName);-->
+                        <!--}-->
+                        <!--if (json.data.Phone != "null") {-->
+                            <!--$("#phone").val(json.data.Phone);-->
+                        <!--}-->
+                    <!--}-->
+                <!--});-->
+            <!--}-->
+            <!--var url = document.URL;-->
+            <!--if (url.indexOf("buy") > -1) {-->
+                <!--$("#_rdbuy").attr("checked", "checked");-->
+                <!--$("#rentsell").text("万/套");-->
+                <!--$("#jgInfo").text("万/套");-->
+            <!--} else if (url.indexOf("hire") > -1) {-->
+                <!--$("#_rdRent").attr("checked", "checked");-->
+                <!--$("#rentsell").text("元/月");-->
+                <!--$("#jgInfo").text("元/月");-->
+            <!--} else {-->
+                <!--$("#_rdbuy").attr("checked", "checked");-->
+                <!--$("#rentsell").text("万/套");-->
+                <!--$("#jgInfo").text("万/套");-->
+            <!--}-->
+            <!---->
+            <!--if (url.indexOf("radiotype=1") > -1) {-->
+                <!--$("#_rdbuy").attr("checked", "checked");-->
+                <!--$("#rentsell").text("万/套");-->
+                <!--$("#jgInfo").text("万/套");-->
+            <!--} else if (url.indexOf("radiotype=2") > -1) {-->
+                <!--$("#_rdRent").attr("checked", "checked");-->
+                <!--$("#rentsell").text("元/月");-->
+                <!--$("#jgInfo").text("元/月");-->
+            <!--} else {-->
+                <!--$("#_rdbuy").attr("checked", "checked");-->
+                <!--$("#rentsell").text("万/套");-->
+                <!--$("#jgInfo").text("万/套");-->
+            <!--}-->
+
+            <!--$("#_rdbuy").change(function () {-->
+                <!--$(this).attr("checked", "checked");-->
+                <!--$("#rentsell").text("万/套");-->
+                <!--$("#jgInfo").text("万/套");-->
+            <!--});-->
+            <!--$("#_rdRent").change(function () {-->
+                <!--$(this).attr("checked", "checked");-->
+                <!--$("#rentsell").text("元/月");-->
+                <!--$("#jgInfo").text("元/月");-->
+            <!--});-->
+
+            <!--$("#_Areas").change(function () {-->
+                <!--var area = $(this).find("option:selected").val();-->
+                <!--if (area == "0") {-->
+                    <!--$("#divArea").show();-->
+                    <!--$("#divAr").attr("class", "TsError");-->
+                    <!--$("#pArea").text("请选择区域");-->
+                <!--} else {-->
+                    <!--$("#divArea").show();-->
+                    <!--$("#divAr").attr("class", "TsTrue");-->
+                    <!--$("#pArea").text("");-->
+                <!--}-->
+            <!--});-->
+
+            <!--$("#mianji_begin").focus(function () {-->
+                <!--var mianji = $.trim($(this).val());-->
+                <!--if (isNaN(mianji * 1)) {-->
+                    <!--$("#pMianji").text("请填写数字");-->
+                    <!--$("#divMianji").show();-->
+                    <!--$("#divMj").attr("class", "Tsdivbox");-->
+                    <!--return false;-->
+                <!--}-->
+                <!--if (mianji.length == 0) {-->
+                    <!--$("#divMianji").show();-->
+                    <!--$("#divMj").attr("class", "Tsdivbox");-->
+                    <!--$("#pMianji").text("请填写需求面积");-->
+                <!--} else {-->
+                    <!--checkMianji();-->
+                <!--}-->
+            <!--});-->
+
+            <!--$("#mianji_begin").blur(function () {-->
+                <!--checkMianji();-->
+            <!--});-->
+
+            <!--$("#mianji_end").focus(function () {-->
+                <!--var mianji = $.trim($(this).val());-->
+                <!--if (isNaN(mianji * 1)) {-->
+                    <!--$("#divMianji").show();-->
+                    <!--$("#divMj").attr("class", "Tsdivbox");-->
+                    <!--$("#pMianji").text("请填写数字");-->
+                    <!--return false;-->
+                <!--}-->
+                <!--if (mianji.length == 0 ) {-->
+                    <!--$("#divMianji").show();-->
+                    <!--$("#divMj").attr("class", "Tsdivbox");-->
+                    <!--$("#pMianji").text("请填写需求面积");-->
+                <!--} else {-->
+                    <!--checkMianji();-->
+                <!--}-->
+            <!--});-->
+
+            <!--$("#mianji_end").blur(function () {-->
+                <!--checkMianji();-->
+            <!--});-->
+
+            <!--$("#price_begin").focus(function () {-->
+                <!--var price = $.trim($(this).val());-->
+                <!--if (isNaN(price * 1)) {-->
+                    <!--$("#divPrice").show();-->
+                    <!--$("#divPc").attr("class", "Tsdivbox");-->
+                    <!--$("#price").text("请填写数字");-->
+                    <!--return false;-->
+                <!--}-->
+                <!--if (price.length == 0 ) {-->
+                    <!--$("#divPrice").show();-->
+                    <!--$("#divPc").attr("class", "Tsdivbox");-->
+                    <!--$("#price").text("请填写价格");-->
+                <!--} else {-->
+                    <!--checkPrice();-->
+                <!--}-->
+            <!--});-->
+
+            <!--$("#price_begin").blur(function () {-->
+                <!--checkPrice();-->
+            <!--});-->
+
+            <!--$("#price_end").focus(function () {-->
+                <!--var price = $.trim($(this).val());-->
+                <!--if (isNaN(price * 1)) {-->
+                    <!--$("#divPrice").show();-->
+                    <!--$("#divPc").attr("class", "Tsdivbox");-->
+                    <!--$("#price").text("请填写数字");-->
+                    <!--return false;-->
+                <!--}-->
+                <!--if (price.length == 0 ) {-->
+                    <!--$("#divPrice").show();-->
+                    <!--$("#divPc").attr("class", "Tsdivbox");-->
+                    <!--$("#price").text("请填写价格");-->
+                <!--} else {-->
+                    <!--checkPrice();-->
+                <!--}-->
+            <!--});-->
+
+            <!--$("#price_end").blur(function () {-->
+                <!--checkPrice();-->
+            <!--});-->
+
+            <!--$("#clientName").focus(function () {-->
+                <!--var username = $.trim($(this).val());-->
+                <!--if (username.length == 0) {-->
+                    <!--$("#divUserName").show();-->
+                    <!--$("#divUn").attr("class", "Tsdivbox");-->
+                    <!--$("#pUserName").text("请填写您的称呼");-->
+                <!--} else {-->
+                    <!--checkUserName(username);-->
+                <!--}-->
+            <!--});-->
+
+            <!--$("#clientName").blur(function () {-->
+                <!--checkUserName($.trim($(this).val()));-->
+            <!--});-->
+
+            <!--$("#phone").focus(function () {-->
+                <!--var phone = $.trim($(this).val());-->
+                <!--if (phone.length == 0) {-->
+                    <!--$("#divMobile").show();-->
+                    <!--$("#divMb").attr("class", "Tsdivbox");-->
+                    <!--$("#pMobile").text("请填写手机");-->
+                <!--} else {-->
+                    <!--checkPhone(phone);-->
+                <!--}-->
+            <!--});-->
+            <!--$("#phone").blur(function () {-->
+                <!--var phone = $.trim($(this).val());-->
+                <!--checkPhone(phone);-->
+            <!--});-->
+
+            <!--$("#vcodeText").focus(function () {-->
+                <!--var code = $.trim($(this).val());-->
+                <!--if (code.length == 0) {-->
+                    <!--$("#divCode").show();-->
+                    <!--$("#divCodeOne").attr("class", "Tsdivbox");-->
+                    <!--$("#pCode").text("请填写验证码");-->
+                <!--} else {-->
+                    <!--checkCode(code);-->
+                <!--}-->
+            <!--});-->
+
+            <!--$("#vcodeText").blur(function () {-->
+                <!--var code = $.trim($(this).val());-->
+                <!--checkCode(code);-->
+            <!--});-->
+
+        <!--});-->
+
+        <!--function checkMianji() {-->
+            <!--var mianjiBegin = $.trim($("#mianji_begin").val());-->
+            <!--var mianjiEnd = $.trim($("#mianji_end").val());-->
+            <!--$("#divMianji").show();-->
+            <!--$("#divMj").attr("class", "TsError");-->
+            <!--if (mianjiBegin.length == 0 ) {-->
+                <!--$("#pMianji").text("请填写需求面积");-->
+                <!--return false;-->
+            <!--}-->
+            <!--if (isNaN(mianjiBegin * 1)) {-->
+                <!--$("#pMianji").text("请填写数字");-->
+                <!--return false;-->
+            <!--}-->
+            <!--if (mianjiEnd.length == 0) {-->
+                <!--$("#pMianji").text("请填写需求面积");-->
+                <!--return false;-->
+            <!--}-->
+            <!--if (isNaN(mianjiEnd * 1)) {-->
+                <!--$("#pMianji").text("请填写数字");-->
+                <!--return false;-->
+            <!--}-->
+            <!--if (parseInt(mianjiBegin) > parseInt(mianjiEnd)) {-->
+                <!--$("#pMianji").text("开始面积不能大于结束面积");-->
+                <!--return false;-->
+            <!--}-->
+            <!--$("#divMj").attr("class", "TsTrue");-->
+            <!--$("#pMianji").text("");-->
+            <!--return true;-->
+        <!--}-->
+
+        <!--function checkPrice() {-->
+            <!--var priceBegin = $.trim($("#price_begin").val());-->
+            <!--var priceEnd = $.trim($("#price_end").val());-->
+            <!--$("#divPrice").show();-->
+            <!--$("#divPc").attr("class", "TsError");-->
+            <!--if (priceBegin.length == 0 ) {-->
+                <!--$("#price").text("请填写价格");-->
+                <!--return false;-->
+            <!--}-->
+            <!--if (isNaN(priceBegin * 1)) {-->
+                <!--$("#price").text("请填写数字");-->
+                <!--return false;-->
+            <!--}-->
+            <!--if (priceEnd.length == 0 ) {-->
+                <!--$("#price").text("请填写价格");-->
+                <!--return false;-->
+            <!--}-->
+            <!--if (isNaN(priceEnd * 1)) {-->
+                <!--$("#price").text("请填写数字");-->
+                <!--return false;-->
+            <!--}-->
+            <!--if (parseInt(priceBegin) > parseInt(priceEnd)) {-->
+                <!--$("#price").text("开始价格不能大于结束价格");-->
+                <!--return false;-->
+            <!--}-->
+            <!--$("#divPc").attr("class", "TsTrue");-->
+            <!--$("#price").text("");-->
+            <!--return true;-->
+        <!--}-->
+
+        <!--function checkUserName(username) {-->
+            <!--$("#divUserName").show();-->
+            <!--$("#divUn").attr("class", "TsError");-->
+            <!--if (username.length == 0) {-->
+                <!--$("#pUserName").text("请填写您的称呼");-->
+                <!--return false;-->
+            <!--}-->
+            <!--$("#divUn").attr("class", "TsTrue");-->
+            <!--$("#pUserName").text("");-->
+            <!--return true;-->
+        <!--}-->
+
+        <!--function checkPhone(phone) {-->
+            <!--$("#divMobile").show();-->
+            <!--$("#divMb").attr("class", "TsError");-->
+            <!--if (phone.length == 0) {-->
+                <!--$("#pMobile").text("请填写手机");-->
+                <!--return false;-->
+            <!--}-->
+            <!--if (!/^0{0,1}1[0-9]{10}$/g.test(phone)) {-->
+                <!--$("#pMobile").text("输入的手机格式不正确，请重新输入");-->
+                <!--return false;-->
+            <!--}-->
+            <!--$("#divMb").attr("class", "TsTrue");-->
+            <!--$("#pMobile").text("");-->
+            <!--return true;-->
+        <!--}-->
+
+        <!--function checkCode(code) {-->
+            <!--$("#divCode").show();-->
+            <!--$("#divCodeOne").attr("class", "TsError");-->
+            <!--if (code.length == 0) {-->
+                <!--$("#pCode").text("请填写验证码");-->
+                <!--return false;-->
+            <!--}-->
+            <!--if (code.length != 4 || !/^[a-zA-Z0-9]+$/g.test(code)) {-->
+                <!--$("#pCode").text("请填写4位的字母验证码");-->
+                <!--return false;-->
+            <!--}-->
+            <!--if ($.cookie("VerifyCode") == code) {-->
+                <!--$("#divCodeOne").attr("class", "TsTrue");-->
+                <!--$("#pCode").text("");-->
+                <!--return true;-->
+            <!--} else {-->
+                <!--$("#pCode").text("验证码错误,请重新填写");-->
+                <!--return false;-->
+            <!--}-->
+        <!--}-->
+
+        <!--function tijiaoHouse() {-->
+            <!--//判断是否有用户登录-->
+            <!--var flags = $("#ContentPlaceHolder1_isLogin").val();-->
+            <!--var phone;-->
+            <!--if (flags == 0) {-->
+                 <!--phone = $.trim($("#_txtUserMobile").val());-->
+            <!--} else {-->
+                <!--phone = flags;-->
+            <!--}-->
+            <!--var fangshi = $('input:radio[name="fangshi"]:checked').val();-->
+            <!--var areaId = $("#_Areas").find("option:selected").val();-->
+            <!--var mianji_begin = $.trim($("#mianji_begin").val());-->
+            <!--var mianji_end = $.trim($("#mianji_end").val());-->
+            <!--var price_begin = $.trim($("#price_begin").val());-->
+            <!--var price_end = $.trim($("#price_end").val());-->
+            <!--var clientName = $.trim($("#clientName").val());-->
+            <!---->
+            <!--var memo = $.trim($("#memo").val());-->
+            <!--var userName = $.trim($("#lnkUserName").text());-->
+            <!--var code = $.trim($("#vcodeText").val());-->
+            <!--var telephonecode = $.trim($("#_txtValidationCode").val());//输入的短信验证码-->
+            <!--if (areaId == "0") {-->
+                <!--$("#divArea").show();-->
+                <!--$("#divAr").attr("class", "TsError");-->
+                <!--$("#pArea").text("请选择区域");-->
+                <!--return;-->
+            <!--}-->
+            <!--$("#divAr").attr("class", "TsTrue");-->
+            <!--$("#pArea").text("");-->
+            <!--if (!checkMianji()) {-->
+                <!--return;-->
+            <!--}-->
+            <!--if (!checkPrice()) {-->
+                <!--return;-->
+            <!--}-->
+            <!--if (!checkUserName(clientName)) {-->
+                <!--return;-->
+            <!--}-->
+            <!---->
+            <!--if (!checkCode(code)) {-->
+                <!--return;-->
+            <!--}-->
+            <!--var step_switch = function () {-->
+                <!--var fsInfo = "";-->
+                <!--switch (fangshi) {-->
+                    <!--case "1":-->
+                        <!--fsInfo = "买房";-->
+                        <!--break;-->
+                    <!--case "2":-->
+                        <!--fsInfo = "租房";-->
+                        <!--break;-->
+                    <!--default:-->
+                        <!--fsInfo = "买房";-->
+                        <!--break;-->
+                <!--}-->
+                <!--$("#_dealType").text(fsInfo);-->
+                <!--$("#_Area").text($("#_Areas").find("option:selected").text());-->
+                <!--$("#_Mianji_begin").text(mianji_begin);-->
+                <!--$("#_Mianji_end").text(mianji_end);-->
+                <!--$("#_PriceSum_begin").text(price_begin);-->
+                <!--$("#_PriceSum_end").text(price_end);-->
+                <!--$("#_Lxrname").text(clientName);-->
+                <!--$("#_Phone").text(phone);-->
+
+                <!--if (userName != "如需指定专人为您服务请点击这里") {-->
+                    <!--userName == "" ? $("#_WTR").parent().hide() : $("#_WTR").parent().show();-->
+                    <!--$("#_WTR").text(userName);-->
+
+                <!--} else {-->
+                    <!--$("#_WTR").text("无");-->
+                <!--}-->
+                <!--$("#_Qtsmsp").text(memo);-->
+                <!--$("#last_div").hide();-->
+                <!--$("#next_div").show();-->
+            <!--}-->
+           <!---->
+            <!--if (flags == 0) {-->
+                <!--$.post(BaseUrl_IIS_Application_Name + "Ashx/UserCenter/Account.ashx", { action: "maifangcheckcode", telephonecode: telephonecode }, function (data) {-->
+
+                    <!--if (data.data.flag == 11) {-->
+                        <!--layer.msg(data.data.msg);                        -->
+                        <!--return;-->
+                    <!--}-->
+                    <!--step_switch();-->
+                <!--});-->
+            <!--}-->
+            <!--else {-->
+                <!--step_switch();-->
+            <!--}-->
+            <!---->
+            <!---->
+        <!--}-->
+
+        <!--function submitHouse() {-->
+            <!--//判断是否有用户登录-->
+            <!--var flag = $("#ContentPlaceHolder1_isLogin").val();-->
+            <!--var phone;-->
+            <!--if (flag == 0) {-->
+                <!--phone = $.trim($("#_txtUserMobile").val());-->
+            <!--} else {-->
+                <!--phone = flag;-->
+            <!--}-->
+            <!--var fangshi = $('input:radio[name="fangshi"]:checked').val();-->
+            <!--var areaId = $("#_Areas").find("option:selected").val();-->
+            <!--var mianji_begin = $.trim($("#mianji_begin").val());-->
+            <!--var mianji_end = $.trim($("#mianji_end").val());-->
+            <!--var price_begin = $.trim($("#price_begin").val());-->
+            <!--var price_end = $.trim($("#price_end").val());-->
+            <!--var clientName = $.trim($("#clientName").val());-->
+           <!--// var phone = $.trim($("#_txtUserMobile").val());-->
+            <!--var memo = $.trim($("#memo").val());-->
+            <!--var userId = $.trim($("#_hfUserId").val());-->
+            <!--var code = $.trim($("#vcodeText").val());-->
+
+            <!--$.post("/website/Ashx/Web_Publish_tobuy.ashx",-->
+                <!--{ "clientType": fangshi, "areaId": areaId, "mianji1": mianji_begin, "mianji2": mianji_end, "pricesum1": price_begin, "pricesum2": price_end, "clientName": encodeURIComponent(clientName), "clientTel": phone, "userId": userId, "memo": encodeURIComponent(memo), "code": code },-->
+                <!--function (json) {-->
+                <!--if (json.data.flag > 0) {-->
+                    <!--$("#last_div").hide();-->
+                    <!--$("#next_div").hide();-->
+                    <!--$("#subit_div").show();-->
+                    <!--reset_client();-->
+                <!--} else {-->
+                    <!--$("#last_div").show();-->
+                    <!--$("#next_div").hide();-->
+                    <!--$("#subit_div").hide();-->
+                    <!--if (json.data.flag == -2) {-->
+                        <!--$("#divArea").show();-->
+                        <!--$("#divAr").attr("class", "TsError");-->
+                        <!--$("#pArea").text("请选择区域");-->
+                    <!--} else if (json.data.flag == -3 || json.data.flag == -4) {-->
+                        <!--$("#divMianji").show();-->
+                        <!--$("#divMj").attr("class", "TsError");-->
+                        <!--$("#pMianji").text(json.data.msg);-->
+                    <!--} else if (json.data.flag == -5 || json.data.flag == -6) {-->
+                        <!--$("#divPrice").show();-->
+                        <!--$("#divPc").attr("class", "TsError");-->
+                        <!--$("#price").text(json.data.msg);-->
+                    <!--} else if (json.data.flag == -7) {-->
+                        <!--$("#divUserName").show();-->
+                        <!--$("#divUn").attr("class", "TsError");-->
+                        <!--$("#pUserName").text("请填写您的称呼");-->
+                    <!--} else if (json.data.flag == -8 || json.data.flag == -9) {-->
+                        <!--$("#divMobile").show();-->
+                        <!--$("#divMb").attr("class", "TsError");-->
+                        <!--$("#pMobile").text(json.data.msg);-->
+                    <!--} else if (json.data.flag == -10) {-->
+                        <!--$("#divCode").show();-->
+                        <!--$("#divCodeOne").attr("class", "TsError");-->
+                        <!--$("#pCode").text(json.data.msg);-->
+                    <!--}-->
+                    <!--else {-->
+                        <!--$("#last_div").hide();-->
+                        <!--$("#next_div").hide();-->
+                        <!--$("#subit_div").show();-->
+                        <!--$("#spanCg").text("发布失败");-->
+                        <!--$("#sCg").text("发布失败");-->
+                    <!--}-->
+                <!--}-->
+            <!--});-->
+        <!--}-->
+
+        <!--function showPre() {-->
+            <!--$("#last_div").show();-->
+            <!--$("#next_div").hide();-->
+        <!--}-->
+
+        <!--function reset_client() {-->
+            <!--$("#mianji_begin").val("");-->
+            <!--$("#mianji_end").val("");-->
+            <!--$("#price_begin").val("");-->
+            <!--$("#price_end").val("");-->
+            <!--$("#clientName").val("");-->
+            <!--$("#phone").val("");-->
+            <!--$("#memo").val("");-->
+            <!--$("#vcodeText").val("");-->
+        <!--}-->
+
+    <!--</script>-->
+    
+<!--中间部分结束-->
+
+		<div class="loginLayer" style="display: none;">
+			<h3><span>会员登录</span><a href="javascript:void(0)" class="btnCloseLogin">x</a></h3>
+			<div class="loginwrapper">
+				<div class="loginboxtitle">
+					<a href="javascript:void(0)" class="loginbtncurr">登录</a>
+					<a href="https://www.yqgs.cn/usercenter/reg/" target="_top">注册</a>
+				</div>
+				<!--登录内容-->
+				<div class="loginboxinput">
+					<span>
+                    <input pname="userName" onblur="this.style.color='#aaa';if(this.value=='') {this.value='输入用户名称';};" onfocus="this.style.color='#333';if(this.value=='输入用户名称') this.value='';" value="输入用户名称" class="logintext1" type="text"></span>
+					<span>
+                    <input pname="password" onblur="this.style.color='#aaa';if(this.value=='') {this.value='输入密码';};" onfocus="this.style.color='#333';if(this.value=='输入密码') this.value='';" value="输入密码" class="logintext1" type="password"></span>
+					<span><a href="javascript:void(0)" class="logintextbtn">立刻登录</a></span>
+					<span class="loginWJpass"><a href="#" target="_top">忘记密码</a></span>
+				</div>
+			</div>
+		</div>
+
+		<form method="post" action="https://www.yqgs.cn/ershoufang/" id="form1">
+
+			<!--右侧贴边导航quick_links.js控制-->
+			<div th:replace="base/rightBase :: html"></div>
+			<!--右侧贴边导航quick_links.js控制 end-->
+			<div id="goTop" class="n-top-div">
+				<!--顶部导航-->
+				<div class="n-top-wrapper">
+					<div class="n-topNav">
+						<div class="n-topLeft f-l">
+							<ul>
+
+								<li></li>
+								<li></li>
+
+								<li></li>
+								<li>客服电话<em>4001-024-yqgs</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em id="yijian" style="cursor: pointer;">意见反馈</em></li>
+
+							</ul>
+						</div>
+						<div class="n-topRight f-r">
+
+							<!--登录前样式-->
+
+							<!--登陆后样式-->
+
+							<div class="n-top-r-l" id="_LoginUser">
+
+								<i></i>
+								<a rel="nofollow" href="#" class="logintopbtn" target="_top">登录</a>
+								<a rel="nofollow" href="#" target="_top">注册</a>
+							</div>
+
+							<div class="n-top-mapsite">
+								<a href="#"><span>网站地图<i></i></span></a>
+								<!--网站地图弹出-->
+								<div class="mapmenu-btn clearfix">
+									<h1><a href="https://www.yqgs.cn/ershoufang/" title="沈阳二手房">沈阳二手房</a></h1>
+									<ul>
+										<li>
+											<a href="#" title="沈河区二手房" target="_top">沈河区</a>
+										</li>
+										<li>
+											<a href="#" title="皇姑区二手房" target="_top">皇姑区</a>
+										</li>
+										<li>
+											<a href="#" title="铁西区二手房" target="_top">铁西区</a>
+										</li>
+										<li>
+											<a href="#" title="大东区二手房" target="_top">大东区</a>
+										</li>
+										<li>
+											<a href="#" title="和平区二手房" target="_top">和平区</a>
+										</li>
+										<li>
+											<a href="#" title="浑南新区二手房" target="_top">浑南新区</a>
+										</li>
+									</ul>
+									<h2><a href="#" title="沈阳地图找房">沈阳地图找房</a></h2>
+									<h2><a href="#" title="沈阳小区">沈阳小区</a></h2>
+									<ul>
+										<li>
+											<a href="#" title="沈河区小区" target="_top">沈河区</a>
+										</li>
+										<li>
+											<a href="#" title="皇姑区小区" target="_top">皇姑区</a>
+										</li>
+										<li>
+											<a href="#" title="铁西区小区" target="_top">铁西区</a>
+										</li>
+										<li>
+											<a href="#" title="大东区小区" target="_top">大东区</a>
+										</li>
+										<li>
+											<a href="#" title="和平区小区" target="_top">和平区</a>
+										</li>
+										<li>
+											<a href="#" title="浑南新区小区" target="_top">浑南新区</a>
+										</li>
+									</ul>
+									<h2><a href="#" title="沈阳门市房，厂房，土地，别墅买卖">沈阳商用房</a></h2>
+									<ul>
+										<li>
+											<a href="#" title="沈阳二手别墅买卖" target="_top">别墅</a>
+										</li>
+										<li>
+											<a href="#" title="沈阳二手门市房买卖" target="_top">门市</a>
+										</li>
+										<li>
+											<a href="#" title="沈阳二手商住综合买卖" target="_top">商住综合</a>
+										</li>
+										<li>
+											<a href="#" title="沈阳二手车库买卖" target="_top">车库</a>
+										</li>
+										<li>
+											<a href="#" title="沈阳二手厂房仓库买卖" target="_top">厂房仓库</a>
+										</li>
+										<li>
+											<a href="#" title="沈阳二手库房买卖" target="_top">库房</a>
+										</li>
+									</ul>
+									<h2><a href="#" title="沈阳二手房经纪人">沈阳网络经纪人</a></h2>
+									<h2><a href="#" title="沈阳二手房贷款，问答指南">问答指南</a></h2>
+									<h2><a href="#" title="沈阳房产资讯">沈阳房产资讯</a></h2>
+									<h2><a rel="nofollow" href="#" title="关于我们">关于我们</a></h2>
+									<h2><a href="#" title="">渔樵专题</a></h2>
+								</div>
+								<!--网站地图弹出 end-->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--网站主导航-->
+				<div id="_pMainNav" class="n-mainNav-wrapper">
+
+					<div class="n-mainNav">
+						<div class="main-logo">
+							<a href="#" title="渔樵在线，渔樵不动产，渔樵中介，沈阳房产网" alt="渔樵在线，渔樵不动产，渔樵中介，沈阳房产网"><em class="l-t">真房源|零距离</em><em class="r-t">yqgs.CN</em></a>
+						</div>
+						<div class="city-menu" style="display: none;">
+							<span class="city-m-b"><i></i></span>
+							<!--城市选择弹出-->
+							<div class="city-list-n">
+								<ul class="clearfix">
+
+									<li>
+										<a href="# title=" 沈阳渔樵 " target="_top ">沈阳渔樵</a></li>
+                                    
+                                        <li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                    
+                                        <li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                    
+                                        <li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                    
+                                        <li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                    
+                                        <li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                        
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                        
+                                    
+                            </ul>
+                        </div>
+                        <!--城市选择弹出 end-->
+                    </div>
+                    <!--网站主导航-->
+                    <div class="main-menu ">
+                        <ul>
+                            
+                        </ul>
+                    </div>
+                    <!--网站主导航 end-->
+                    <div class="h-r-ad "><a href="# " title=" " target="_top " rel="nofollow "></a></div>
+                </div>
+            
+</div>
+            
+        </div>
+
+
+
+
+
+			<!--底部-->
+
+			<div th:replace="base/footer :: html"></div>
+			<!--底部 end-->
+
+   
+
+      
+        <!--浮动广告-->
+        <div class="floatleftadimg ">
+            
+        </div>
+        <script type="text/javascript ">
+            $("a.closefloatAD ").click(function () {
+                $("div.floatleftadimg ").hide();
+            });
+        </script>
+		</form>
+
+    <script type="text/javascript " th:src="@{/js/ershoufang/jquery.lazyload.min.js}"> </script>
+    <script type="text/javascript " th:src="@{/js/ershoufang/ls.js}"> </script>
+
+
+    <script type="text/javascript " th:src="@{/js/ershoufang/webmaster.js}"></script>
+
+    <script type="text/javascript " th:src="@{/js/base/common.js}"></script>
+    <script type="text/javascript " th:src="@{/js/base/quick_links.js}"></script>
+
+
+    
+
+
+
+
+
+<div id="cboxOverlay " style="display: none; "></div>
+<div id="colorbox " class=" " role="dialog " tabindex="-1 " style="display: none; ">
+	<div id="cboxWrapper "><div><div id="cboxTopLeft " style="float: left; "></div>
+	<div id="cboxTopCenter " style="float: left; "></div>
+	<div id="cboxTopRight " style="float: left; "></div>
+	</div>
+	<div style="clear: left; ">
+		<div id="cboxMiddleLeft " style="float: left; "></div>
+		<div id="cboxContent " style="float: left; ">
+			<div id="cboxTitle " style="float: left; "></div>
+			<div id="cboxCurrent " style="float: left; "></div>
+			<button type="button " id="cboxPrevious "></button>
+			<button type="button " id="cboxNext "></button>
+			<button id="cboxSlideshow "></button>
+			<div id="cboxLoadingOverlay " style="float: left; "></div>
+			<div id="cboxLoadingGraphic " style="float: left; "></div>
+		</div>
+		<div id="cboxMiddleRight " style="float: left; "></div></div>
+		<div style="clear: left; ">
+			<div id="cboxBottomLeft " style="float: left; "></div>
+			<div id="cboxBottomCenter " style="float: left; "></div>
+			<div id="cboxBottomRight " style="float: left; "></div>
+		</div>
+	</div>
+	<div style="position: absolute; width: 9999px; visibility: hidden; display: none; ">
+		
+	</div>
+</div>
+<div id="Div720Cotent " style="display: none; width: 100%; height: 90%; ">
+	<div id="top720iframe " style="position: fixed; top: 0px; margin: 20px; z-index: 1000; ">
+		<div id="hideiframe " onclick="javascript:this.parentNode.parentNode.style.display='none' ; " style="position: absolute; width: 30px; height: 30px; top: 0px; left: 100%; padding: 3px; font-size: 26px; line-height: 26px; text-align: center; border-width: 1px 1px 1px medium; border-style: solid solid solid none; border-color: rgb(136, 136, 136) rgb(136, 136, 136) rgb(136, 136, 136) currentcolor; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px; border-top-left-radius: unset; cursor: pointer; background-color: rgb(136, 136, 136); z-index: 1; "><i class="fontfaceicon " style="color: white; "></i></div><iframe id="720imgiframe " src="index_1.html " scrolling="no " style="border: 0px none; display: inline; background-color: black; z-index: 1000; " height="90% " width="100% "></iframe><div id="bg "></div><div id="show " style="position: absolute; color: rgb(191, 191, 191); font-size: 16px; width: 250px; padding: 8px; right: 0px; bottom: 0px; opacity: 0.7; border-radius: 6px; background-color: black; overflow: auto; z-index: 10; display: none; ">您当前浏览器未允许使用flash插件，无法体验全景最佳展示，请手动允许使用flash插件，开启之后，效果更佳<br><div style="text-align: right; font-size: 18px; "><hr><span onclick="javascript:this.parentNode.parentNode.style.display='none' ; ">关闭</span></div></div></div><div class="quanjingShowbg "></div></div></body>
+</html>

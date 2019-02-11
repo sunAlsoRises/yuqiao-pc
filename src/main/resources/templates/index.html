@@ -1,0 +1,1033 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org" class=" js ">
+
+	<head id="Head1">
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript" th:src="@{/lib/jquery-3.2.1.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/base/vue.min.js}"></script>
+		<!--<script  th:src="@{/js/hm.js}"></script>-->
+		<link th:href="@{/css/base.css}"  rel="stylesheet"/>
+		<link rel="stylesheet"  th:href="@{/css/address.css}" />
+		<link rel="stylesheet"   th:href="@{/css/index.css}"/>
+		<link rel="stylesheet" th:href="@{/css/index2.css}" />
+		<link rel="stylesheet" th:href="@{/css/wenzhang/articleBase.css}"/>
+		<!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">-->
+		<script th:href="@{js/newself/lunbo.js}"></script>
+		<link rel="stylesheet" th:href="@{/css/base/lunbo.css}" />
+		<script type="text/javascript" language="javascript">
+			var projecImgtName = "yuqiaopc";
+            var pathName=window.document.location.pathname;
+            var projectName=pathName.substring(0,pathName.substr(1).indexOf('/')+1);
+			var BaseUrl_IIS_Application_Name = "http://dev-12.lingke.mobi";
+			var SecondaryPath = "HousePhoto";
+            var NewHousePath = "NewHousePhoto";
+            var CommunityPhoto ="CommunityPhoto";
+			var pageSize = "20";
+			var XqPhoto = "";
+			var HousePhoto = "";
+			var UserPhoto = "";
+			var tongjiurl = "";
+			var isJiaMeng = "false";
+			var onimgurl_small = "../img/ershoufang/noimg_small.png";
+			var onimgurl_big = "../img/ershoufang/noimg_big.png";
+			var onimgurl_jjr = "../img/ershoufang/noimg_jjr.png";
+            var pathName=window.document.location.pathname;
+            var projectName=pathName.substring(0,pathName.substr(1).indexOf('/')+1);
+		</script>
+		<script type="text/javascript" th:src="@{/js/index/getParent.js}"></script>
+		<script type="text/javascript">
+		</script>
+		<script type="text/javascript" th:src="@{/js/index/indexsearch.js}"></script>
+		<script th:inline="javascript">
+            $(document).ready(function () {
+                // 搜索
+                indexsearch();
+            });
+		</script>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<script type="text/javascript" th:src="@{/lib/jquery.cookie.js}"></script>
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			var _hmt = _hmt || [];
+			if(document.cookie.indexOf('mis_userid') > 0) {
+				_hmt.push(['_setCustomVar', 1, "userType", "misUser", 1]);
+			} else {
+				_hmt.push(['_setCustomVar', 1, "userType", "visitor", 1]);
+			}(function() {
+				var hm = document.createElement("script");
+				hm.src = "https://hm.baidu.com/hm.js?1f8e83330039496a701d7ae44836ed10";
+				var s = document.getElementsByTagName("script")[0];
+				s.parentNode.insertBefore(hm, s);
+			})();
+		</script>
+
+	</head>
+
+	<body>
+
+		<!-- <script src="z_stat.php" language="JavaScript"></script><script src="core.php" charset="utf-8" type="text/javascript"></script> -->
+		<script type="text/javascript">
+			function openwindowindex(aa) {
+				layer.open({
+					type: 2,
+					area: ['360px', '500px'],
+					offset: 'rb',
+					shade: 0,
+					content: ['//webchat.7moor.com/wapchat.html?accessId=477a8f70-4a00-11e8-9b91-a74aa30cfb04&amp;fromUrl=#&amp;urlTitle=%E8%8A%92%E6%9E%9C%E5%9C%A8%E7%BA%BFPc%E7%89%88', 'no']
+				});
+			}
+		</script>
+
+		<!--添加了 容联七陌  的客服-->
+
+		<title>
+			沈阳二手房|沈阳租房|沈阳房产|沈阳房价—誉桥不动产、誉桥中介官网、誉桥在线
+		</title>
+		<meta name="description" content="誉桥在线:最专业的沈阳房产网、沈阳二手房网、沈阳租房网，为您提供100%真实的沈阳二手房信息及沈阳租房信息，让您足不出户了解沈阳二手房价格、沈阳租房价格,是您了解沈阳房价首选的沈阳房产信息网站。誉桥在线,真房源|零距离!">
+		<meta name="keywords" content="沈阳二手房，沈阳租房，沈阳房产，沈阳房产网，沈阳房产信息网，沈阳房价，沈阳不动产，沈阳在线">
+
+		<form method="post" action="" id="form1">
+		<div id="abcde"></div>
+			<div class="aspNetHidden">
+				<input name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJODI5MjM5MTQzZGRGytsfuehRXwPV4NO+BuJDgtIzjlgQ0hiseWOLWqj8mg==" type="hidden">
+			</div>
+	<!--右侧导航-->
+			<div th:replace="base/rightBase :: html"></div>
+			<link rel="stylesheet" type="text/css"  th:href="@{/css/modify/modify.css}"/>
+			<div class="topbox" id="NewgoTop" >
+				<div class="topnav">
+					<div class="fl">
+						<a href="index.html" title="誉桥不动产" class="logo" target="_self">
+							<h1 class="index_h1">誉桥网</h1></a><span class="exchange"><i class="iconfont  icon-dibiaotianchong" aria-hidden="true"></i>沈阳</span></div>
+					<div class="city-change animated"><span class="close"></span>
+						<div class="title">选择城市<span class="city-tab"><span class="code1">热门城市:</span>
+							<a href="#" title="北京房产网" target="_top">北京</a>
+							<a href="#" title="上海房产网" target="_top">上海</a>
+							<a href="#" title="深圳房产网" target="_top">深圳</a>
+							</span>
+						</div>
+						<div class="title-line"></div>
+						<div class="fc-main clear">
+							<div class="fl citys-l">
+
+							</div>
+							<div class="fl citys-r">
+
+							</div>
+						</div>
+					</div>
+					<!--网站主导航-->
+					<div class="main-menu f-l">
+						<ul>
+
+							<!--<li>-->
+								<!--<a target="_self" title="首页" th:href="@{/index}" class="">首页</a>-->
+							<!--</li>-->
+
+							<li>
+								<a target="_self" title="沈阳二手房" th:href="@{/ershoufang/ershoufangs/}"  class="menuhover">二手房</a>
+								<div class="main-m-2j"><i></i>
+									<!--<span>-->
+									<!--<a th:href="@{/ershoufang/ershoufangs/}">个人房源</a></span>-->
+									<span><a th:href="@{/newHouse/newhouses/}">新房</a></span>
+									<span><a th:href="@{/xiaoqu/xiaoqu}">找小区</a></span>
+									<!--	<span><a href="https://www.yqgs.cn/daikuan/gongju/daikuan/">贷款计算</a></span>
+            --><span class="m-m-2j-btn"><a th:href="@{/helphouse/maifang}">我要卖房</a></span></div>
+							</li>
+
+							<li>
+								<a target="_self" title="沈阳新房" th:href="@{/newHouse/newhouses/}" class="">新房团购</a>
+							</li>
+
+							<li>
+								<a target="_self" title="沈阳租房" th:href="@{/ershoufang/zufang}" class="">租房</a>
+								<div class="main-m-2j"><i></i>
+									<!--<span><a href="../ershoufang/ershoufang.html" targer="_blank">誉桥整租</a></span>-->
+									<!--<span><a href="../ershoufang/ershoufang.html">个人房源</a></span>-->
+									<span><a href="../ershoufang/ershoufang.html">找小区</a></span>
+									<!--<span><a href="../ershoufang/ershoufang.html">房屋管家</a></span>-->
+									<span class="m-m-2j-btn"><a th:href="@{/helphouse/chuzu}">免费出租</a></span>
+								</div>
+							</li>
+
+							<li>
+								<a target="_self" title="沈阳找经纪人" th:href="@{/jingjiren/jingjiren/}" class="">找经纪人</a>
+							</li>
+
+							<li>
+								<a target="_self" title="沈阳海外房产，沈阳门市房" href="#" class="">海外房产</a>
+								<div class="main-m-2j"><i></i><span><a href="#">房产买卖</a></span><span><a href="#">房产租赁</a></span></div>
+							</li>
+
+							<li>
+								<a target="_self" title="沈阳地图找房" th:href="@{/maptohouse/ditu}" class="">地图找房</a>
+							</li>
+
+							<li>
+								<a target="_self" title="沈阳二手房贷款问答指南" th:href="@{/wenda/wenda}" class="">问答指南</a>
+								<div class="main-m-2j"><i></i><span><a th:href="@{/wenda/wenda}">贷款知识</a></span><span><a th:href="@{/wenda/wenda}">权证知识</a></span><span><a th:href="@{/wenda/wenda}">贷款计算</a></span></div>
+							</li>
+
+							<li>
+								<a title="沈阳房产网资讯" th:href="@{/xiaoqu/xiaoqu}" class="">小区</a>
+							</li>
+
+							<li>
+								<a target="_self" title="沈阳发布房源" th:href="@{/helphouse/maifang}" class="">发布房源</a>
+								<!--<div class="main-m-2j"><i></i><span><a th:href="@{/helphouse/maifang}"> 卖房 </a></span><span><a th:href="@{/helphouse/buy}"> 买房 </a></span>-->
+								<!--<span><a th:href="@{/helphouse/chuzu}"> 出租 </a></span>-->
+								<!--<span><a th:href="@{/helphouse/chuzu}"> 求租 </a></span>-->
+								<!--</div>-->
+							</li>
+
+							<li>
+								<a target="_self" title="沈阳移动APP" href="#" class="">移动APP</a>
+								<div class="main-m-2j hearerweima"><i></i>
+									<div class="h_erweima"></div>
+								</div>
+							</li>
+
+						</ul>
+					</div>
+					<div class="loginbox f-l">
+						<div>
+							<span class="photo">
+								<i class="iconfont  icon-geren2"></i>
+							</span>
+							<a rel="nofollow" th:href="@{/login-res/login/}" class="logintopbtn" target="_top">登录</a><i>|</i>
+							<a rel="nofollow" th:href="@{/login-res/resgist/}" target="_top">注册</a>
+						</div>
+					</div>
+					<script type="text/javascript" th:src="@{/js/newself/loginCookie.js}"></script>
+					<script>
+                        var login = new LoginCookie($(".loginbox").find("a").eq(0),$(".loginbox").find("a").eq(1));
+                        login.init();
+					</script>
+
+				</div>
+			</div>
+			<!--固定定位广告-->
+			<div class="guanggao">
+				<a href="javascript:void(0);">
+					<img th:src="@{/img/index/adver.jpg}" alt=""/>
+				</a>
+			</div>
+			<div class="play">
+				<img th:src="@{/img/play/02-text2.png}" alt=""/>
+			</div>
+			<script type="text/javascript">
+				$(".guanggao").click(function(){
+                        $(this).hide();
+                                    }
+                );
+			</script>
+			<!--顶部开始-->
+			<div class="header" data-stellar-background-ratio="0.07" style="background-position-y: 0px;">
+				<div class="wrapper">
+
+
+					<script type="text/javascript" th:src="@{/js/newself/loginCookie.js}"></script>
+					<script>
+
+                        var login = new LoginCookie($(".loginbox").find("a").eq(0),$(".loginbox").find("a").eq(1));
+                        login.init();
+					</script>
+					<!--[if lte IE 8]><div class="old-browser-popup" id="old" >亲，您当前正在使用旧版本的IE浏览器，为了保证您的浏览体验，誉桥网建议您使用：<label class="chrome-borwser-ico"></label><a href="//rj.baidu.com/soft/detail/14744.html?ald" target="_blank">谷歌浏览器</a>&nbsp;或&nbsp;&nbsp;<label class="firefox-borwser-ico"></label><a href="//rj.baidu.com/soft/detail/11843.html?ald" target="_blank">火狐浏览器</a><span id="oldclose"></span></div><![endif]-->
+					<div class="clear"></div>
+					<div class="header-wrap">
+						<div class="download">
+							<div class="title">
+								<span>下载app </span>
+								<span> / 手机找房更方便</span>
+							</div>
+							<div class="erweima-app clear">
+								<div class="erweima" style="background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;">
+									<img style="width: 100%;" src="/yuqiaopc/img/linshierweima.png">
+								</div>
+								<div class="hand-app">
+									<a href="#" class="ios" target="_top" rel="nofollow">
+										<img th:src="@{/img/index/android.jpg}" alt=""/>
+									</a>
+									<a href="#" class="android" rel="nofollow" target="_top">
+										<img th:src="@{/img/index/ios.jpg}" alt=""/>
+									</a>
+								</div>
+							</div>
+
+						</div>
+						<div class="wrap-ico">
+							<p>信誉房产的桥梁</p>
+						</div>
+						<div class="house-num">
+							<p>二手房/新房/租房,  随时随地任性找房</p>
+							<!--<p>二手房/租房/新房</p>-->
+						</div>
+						<div class="search-box-wrap" log-mod="search">
+							<div class="search-box-con">
+								<div class="menu">
+									<ul>
+										<li value="1" class="tab check" actdata="channel=ershoufang" data-type="请输入区域、商圈或小区名开始找房" formact="/ershoufang/rs"><span>找二手房</span></li>
+										<li value="3" class="tab " actdata="channel=xinfang" data-type="请输入楼盘名称开始找房" formact="/loupan/rs"><span>找新房</span></li>
+										<li value="2" class="tab " actdata="channel=zufang" data-type="请输入区域、商圈或小区名开始找房" formact="/zufang/rs"><span>找租房</span></li>
+										<li value="4" class="tab " actdata="channel=xiaoqu" data-type="请输入小区名开始查找小区" formact="/xiaoqu/rs"><span>找小区</span></li>
+										<!--<li class="tab " actdata="channel=wenda" data-type="房产知识有疑问？来搜搜看吧~" formact="/wenda/rs"><span>搜新闻</span></li>-->
+									</ul><i></i></div>
+								<div class="search clear">
+									<div class="box">
+										<div class="clear searchBox" data-action="/ershoufang/rs"><input class="text left txt searchVal autoSuggest" name="keyword" autocomplete="off" placeholder="请输入区域、商圈或小区名开始找房" id="keyword-box" value=""><input class="btn home-ico ico-search left" id="findHouse" value="开始找房" daty-id="210100" type="button">
+											<div id="userNews" class="savesearch">
+
+											</div>
+										</div>
+										<div id="suggest-cont" class="suggest-wrap" data-bl="sug" data-el="sug" style="width: 646px;"></div>
+									</div>
+									<div class="sug-tips" style="display: none;">
+										<ul id="ershoufang" data-bl="sug" data-el="history">
+											<li class="hot-name"><span class="hot-tips">热门搜索</span><span class="del">清空</span></li>
+											<div class="list">
+												<li>
+													<a href="#tiexiqu/" data-log_index="1" data-log_value="铁西区" target="_top">铁西区</a>
+												</li>
+												<li>
+													<a href="#heping1/" data-log_index="2" data-log_value="和平区" target="_top">和平区</a>
+												</li>
+												<li>
+													<a href="#shenhe/" data-log_index="3" data-log_value="沈河区" target="_top">沈河区</a>
+												</li>
+												<li>
+													<a href="#hunnanxinqu/" data-log_index="4" data-log_value="浑南新区" target="_top">浑南新区</a>
+												</li>
+												<li>
+													<a href="#dadong/" data-log_index="5" data-log_value="大东区" target="_top">大东区</a>
+												</li>
+												<li>
+													<a href="#huanggu/" data-log_index="6" data-log_value="皇姑区" target="_top">皇姑区</a>
+												</li>
+												<li>
+													<a href="#yuhong/" data-log_index="7" data-log_value="于洪区" target="_top">于洪区</a>
+												</li>
+												<li>
+													<a href="#sujiatun/" data-log_index="8" data-log_value="苏家屯区" target="_top">苏家屯区</a>
+												</li>
+											</div>
+										</ul>
+										<ul id="loupan" data-bl="sug" data-el="history">
+											<li class="hot-name"><span class="hot-tips">推荐搜索</span><span class="del">清空</span></li>
+											<div class="list"></div>
+										</ul>
+										<ul id="zufang" data-bl="sug" data-el="history">
+											<li class="hot-name"><span class="hot-tips">热门搜索</span><span class="del">清空</span></li>
+											<div class="list">
+												<li>
+													<a href="#tiexiqu/" data-log_index="1" data-log_value="铁西区" target="_top">铁西区</a>
+												</li>
+												<li>
+													<a href="#heping1/" data-log_index="2" data-log_value="和平区" target="_top">和平区</a>
+												</li>
+												<li>
+													<a href="#shenhe/" data-log_index="3" data-log_value="沈河区" target="_top">沈河区</a>
+												</li>
+												<li>
+													<a href="#hunnanxinqu/" data-log_index="4" data-log_value="浑南新区" target="_top">浑南新区</a>
+												</li>
+												<li>
+													<a href="#dadong/" data-log_index="5" data-log_value="大东区" target="_top">大东区</a>
+												</li>
+												<li>
+													<a href="#huanggu/" data-log_index="6" data-log_value="皇姑区" target="_top">皇姑区</a>
+												</li>
+												<li>
+													<a href="#yuhong/" data-log_index="7" data-log_value="于洪区" target="_top">于洪区</a>
+												</li>
+												<li>
+													<a href="#sujiatun/" data-log_index="8" data-log_value="苏家屯区" target="_top">苏家屯区</a>
+												</li>
+											</div>
+										</ul>
+										<ul id="xiaoqu" data-bl="sug" data-el="history">
+											<li class="hot-name"><span class="hot-tips">热门搜索</span><span class="del">清空</span></li>
+											<div class="list"></div>
+										</ul>
+										<ul id="wenda" data-bl="sug" data-el="history">
+											<li class="hot-name"><span class="hot-tips">热门搜索</span><span class="del">清空</span></li>
+											<div class="list">
+												<li>
+													<a href="wenda/daikuan.html" data-log_index="1" data-log_value="购房建议" target="_top">购房建议</a>
+												</li>
+												<li>
+													<a href="wenda/daikuan.html" data-log_index="2" data-log_value="过户流程" target="_top">过户流程</a>
+												</li>
+												<li>
+													<a href="wenda/daikuan.html" data-log_index="3" data-log_value="买房风险" target="_top">买房风险</a>
+												</li>
+											</div>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!--顶部结束-->
+			<!--真伪查询-->
+			<!--<div class="s-truth">
+				<div class="wrapper">
+					<div class="fl" style="float: left;">
+						<div class="truth-txt">
+							<p>享誉天下 沟通桥梁</p>
+							<p>真实查询 誉桥为您真诚服务</p>
+						</div>
+					</div>
+					<div class="truth-search">
+						<p>真实存在，真实在售，真实价格，真实图片！<br>誉桥郑重向用户承诺：真实房源，假一赔百元！</p>
+						<div class="search-box">
+							<div class="serach-inp"><input class="tex" id="truth" placeholder="请输入誉桥编号查询真伪..." value="" type="text"><span class="sub" id="searchHouse"></span></div>
+							<div class="result-box" daty-id="210100" style="display: none;"></div>
+						</div>
+					</div>
+				</div>
+			</div>-->
+
+			<!--工具-->
+			<div class="newtool">
+				<div class="newtoolnr">
+					<div class="td">
+						<div class="s3">
+							<a th:href="@{/helphouse/maifang}" target="_top">买房</a>
+						</div>
+						<div class="s2">
+
+							<a th:href="@{ershoufang/ershoufangs}" target="_top">二手房<b><img src="img/100.png"></b></a>
+						</div>
+						<div class="s2">
+							<a th:href="@{/newHouse/newhouses/}" target="_top">新房团购</a>
+							<a th:href="@{/helphouse/buy}" target="_top">委托买房</a>
+						</div>
+					</div>
+					<div class="td">
+						<div class="s3">
+							<a th:href="@{/helphouse/maifang}" target="_top">租房</a>
+						</div>
+						<div class="s2">
+							<a th:href="@{/helphouse/maifang}" target="_top">找租房<i style="right: 15px;"><img th:src="@{/img/new.gif}"></i></a>
+							<a th:href="@{/helphouse/maifang}" target="_top">房屋管家<i><img th:src="@{/img/new.gif}"></i></a>
+						</div>
+						<div class="s2">
+							<a th:href="@{/helphouse/maifang}" target="_top">我要租房</a>
+							<a th:href="@{/helphouse/maifang}" target="_top">我要出租</a>
+						</div>
+					</div>
+					<div class="td w20">
+						<div class="s3">
+							<a th:href="@{/newHouse/newhouses/}" target="_top">新房</a>
+						</div>
+						<div class="s2">
+							<a th:href="@{/newHouse/newhouses/}" target="_top">新房团购</a>
+						</div>
+
+					</div>
+					<div class="td nob">
+						<div class="s3">
+							<a href="#" target="_top">其他</a>
+						</div>
+						<div class="s2">
+							<a th:href="@{/maptohouse/ditu}" target="_top">地图找房</a>
+							<a th:href="@{/maptohouse/ditu}" target="_top">找小区</a>
+						</div>
+						<div class="s2">
+							<a th:href="@{/jingjiren/jingjiren}" target="_top">经纪人</a>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="wrapper text">
+				<text>真房源、 真信息、 真服务</text>
+				<text> 旨在誉桥不动产</text>
+			</div>
+			<!--广告位-->
+			<div class="showmango">
+				<div class="comiis_wrapad" id="slideContainer">
+					<div id="frameHlicAe" class="frame">
+						<ul class="slideshow" id="slidesImgs">
+							<li style="display: none;">
+								<a href="#" target="_top" title="买房买房不需要中介了！个人房源频道">
+									<img src="img/7_1537187191.jpg" alt="买房买房不需要中介了！个人房源频道"></a>
+							</li>
+
+							<li style="display: none;">
+								<a href="#" target="_top" title="沈城本土企业，15年品牌积淀">
+									<img src="img/7_1546063021.png" alt="沈城本土企业，15年品牌积淀"></a>
+							</li>
+
+							<li style="display: none;">
+								<a href="#" target="_top" title="一次收费一次要件">
+									<img src="img/ershoufang/noimg_small.png" alt="一次收费一次要件"></a>
+							</li>
+
+							<li style="display: block;">
+								<a href="#" target="_top" title="5+2誉桥保障服务">
+									<img src="img/ershoufang/noimg_small.png" alt="5+2誉桥保障服务"></a>
+							</li>
+
+							<li style="display: none;">
+								<a href="#" target="_top" title="海外房产事业部，专业团队保驾护航">
+									<img src="img/ershoufang/noimg_small.png" alt="海外房产事业部，专业团队保驾护航"></a>
+							</li>
+
+							<li style="display: none;">
+								<a href="#" target="_top" title="托管空置房屋找誉桥房管，更省心">
+									<img src="img/ershoufang/noimg_small.png" alt="托管空置房屋找誉桥房管，更省心"></a>
+							</li>
+
+							<li style="display: none;">
+								<a href="#" target="_top" title="誉桥集团与辽宁省建行正式签署全面合作协议">
+									<img src="img/ershoufang/noimg_small.png" alt="誉桥集团与辽宁省建行正式签署全面合作协议"></a>
+							</li>
+
+							<li style="display: none;">
+								<a href="#" target="_top" title="誉桥精品楼盘推介—意大利风情小镇">
+									<img src="img/ershoufang/noimg_small.png" alt="誉桥精品楼盘推介—意大利风情小镇"></a>
+							</li>
+						</ul>
+					</div>
+					<div class="slidebar" id="slideBar">
+						<ul>
+							<li class="">1</li>
+							<li class="">2</li>
+							<li class="">3</li>
+							<li class="on">4</li>
+							<li class="">5</li>
+							<li class="">6</li>
+							<li class="">7</li>
+							<li class="">8</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!--广告位-->
+
+			<!--房源推荐-->
+			<div class="ershoufang" style="display: none;">
+				<div class="wrapper">
+					<div class="fl">
+						<div class="name"></div>
+						<p>好房源那么多，我们为你精选，誉桥网会越来越懂你
+							<a href="#" target="_top">更多北京二手房</a>
+						</p>
+					</div>
+					<div class="clear"></div>
+					<ul>
+						<div class="clear"></div>
+					</ul>
+				</div>
+			</div>
+			<div class="new-house">
+				<div class="wrapper">
+					<div class="fl">
+						<div class="name">
+							<p>| 优选新房</p>
+						</div>
+						<p>真实信息准确同步，楼盘动态一手掌握
+							<a th:href="@{/newHouse/newhouses}" target="_top">更多沈阳新房</a>
+						</p>
+					</div>
+					<!-- <div class="fr">
+                <span class="goleft"></span>
+                <span class="goright"></span>
+            </div> -->
+					<div class="newhose-list">
+						<ul>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="ershoufang" id="ershoufanglist" log-mod="site_ershoufang">
+				<!--<script type="text/template" id="ershoufangs">-->
+
+				<div class="wrapper">
+					<div class="fl">
+						<div class="name">
+							<p >| 二手好房</p>
+						</div>
+						<p>好房源那么多，我们为你精选，誉桥不动产会越来越懂你
+							<a th:href="@{/ershoufang/ershoufangs}">更多 沈阳二手房
+							</a>
+						</p>
+					</div>
+					<div class="clear"></div>
+					<ul class="clearfix">
+					</ul>
+				</div>
+
+				<!--</script>-->
+				<div node-tpye="aa"></div>
+			</div>
+
+			<!--新闻中心-->
+			<div class="news">
+				<div class="wrapper">
+					<div class="fl">
+						<div class="name">
+							<p >| 新闻中心</p>
+						</div>
+						<p>最新房产动态，新闻资讯，一手掌握
+							<a th:href="@{/article/ar}">更多 新闻资讯
+							</a>
+						</p>
+					</div>
+					<div class="clear"></div>
+					<div class="clearfix container">
+						<!--轮播-->
+						<div id="container">
+							<div id="list" style="left: -500px;">
+								<img th:src="@{/img/2-1ppg60634524.jpg}" alt="1" />
+								<img th:src="@{/img/2-1ppq53t45t.jpg}" alt="1" />
+								<img th:src="@{/img/2-1ppq53z3o5.jpg}" alt="2" />
+								<img th:src="@{/img/2-1ppq53923g9.jpg}" alt="3" />
+								<img th:src="@{/img/2-1ppq53942q3.jpg}" alt="4" />
+								<img th:src="@{/img/7_1537187191.jpg}" alt="5" />
+								<img th:src="@{/img/7_1546063021.png}" alt="5" />
+							</div>
+							<div id="buttons">
+								<span index="1" class="on"></span>
+								<span index="2"></span>
+								<span index="3"></span>
+								<span index="4"></span>
+								<span index="5"></span>
+							</div>
+							<a href="javascript:;" id="prev" class="arrow">&lt;</a>
+							<a href="javascript:;" id="next" class="arrow">&gt;</a>
+						</div>
+						<!--誉桥动态-->
+						<div class="dynamic">
+							<div class="dynamic-news">
+								<div class="title"><span>誉桥动态</span></div>
+								<ul id="yuqiaoDynamic">
+									<li v-for="art in article">誉桥动态| {{art.title}}</li>
+								</ul>
+							</div>
+							<div class="dynamic-finish">
+								<div class="title"><span>装饰装修</span></div>
+								<ul id="zhuangxiu">
+									<li v-for="art in article">装饰装修| {{art.title}}</li>
+								</ul>
+							</div>
+						</div>
+						<div class="dynamic right">
+							<div class="dynamic-yenei">
+								<div class="title"><span>业内动态</span>
+									<a th:href="@{'/article/ar?type=业内动态'}" target="_top">更多&gt;&gt;</a>
+								</div>
+								<ul id="yeneiArticle">
+									<li v-for="art in article">业内动态| {{art.title}}</li>
+								</ul>
+							</div>
+						<div class="dynamic-house">
+							<div class="title"><span>房产政策</span>
+								<a th:href="@{'/article/ar?type=房产政策'}" target="_top">更多&gt;&gt;</a>
+							</div>
+							<ul id="houseArticle">
+								<li v-for="art in article">房产政策| {{art.title}}</li>
+							</ul>
+
+						</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+<script type="text/javascript" th:src="@{/js/newself/lunbo.js}"></script>
+			<div class="xiaoqu-list" id="modXiaoqu" style="">
+				<div class="wrapper">
+					<div class="fl">
+						<div class="name">
+							<p >小区</p>
+						</div>
+						<p>纵览小区，恋上这座城
+							<a th:href="@{/xiaoqu/xiaoqu}" target="_top">更多沈阳小区</a>
+						</p>
+					</div>
+					<div class="xiaoqu-list">
+						<ul id="xiaoqulist">
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--<script type="text/template" id="xiaoqu_tpl">-->
+
+			<!--<%for(var i = 0 ,len = data.length;i< len;i++){%>-->
+
+			<!--</script>-->
+			<div class="new-house">
+				<div class="wrapper">
+					<div class="fl">
+						<div class="name">
+							<p>海外房产</p>
+						</div>
+						<p>真实信息准确同步，楼盘动态一手掌握
+							<a href="newHouse/newhouse.html" target="_top">更多沈阳新房</a>
+						</p>
+					</div>
+					<!-- <div class="fr">
+                <span class="goleft"></span>
+                <span class="goright"></span>
+            </div> -->
+
+					<div class="newhose-list">
+						<ul>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!--房源编号查询-->
+			<div class="huosenumber">
+				<div class="h-n-search">
+
+					<input id="txtCheck" value="请输入6-7位房源编号进行查询" onfocus=" if (this.value == '请输入6-7位房源编号进行查询') {this.value = '';} " onclick=" if (this.value == '请输入6-7位房源编号进行查询') { this.value = ''; } " onblur=" if (this.value == '') {this.value = '请输入6-7位房源编号进行查询';}; " class="h-n-t" type="text"><input id="HChaxun" value="查询" class="h-n-b" type="button">
+					<div id="pIllegal" class="h-n-s-house" style="display: none;">
+						<em class="arrow-up"></em>
+						<div class="h-n-s-box">
+							<p></p>
+						</div>
+					</div>
+
+					<!--悬浮显示编号显示房源-->
+					<div id="pCheckFailed" class="h-n-s-house" style="display: none;">
+						<em class="arrow-up"></em>
+
+						<div class="h-n-s-box clearfix">
+							<a id="HimgUrl" href="#" class="h-n-s-img" target="_top">
+								<img id="Himg" src="#" alt=""></a>
+							<div class="h-n-s-info">
+								<p>该房源真实在售</p>
+								<a id="Htitle" target="_blank"></a>
+								<span>业主报价<em id="Hprice"></em></span>
+								<a href="ershoufang/ershoufang.html" target="_top" id="Hxq">查看更多该小区房源</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<p class="h-n-s-text">
+					从客户登记一刻起就将“真实”进行到底。<br> 真实的价格、真实的房源、真实的信息。
+				</p>
+			</div>
+
+			<!--4个标记-->
+			<div class="b-four">
+				<ul>
+					<li class="b-f-1"><span></span>
+						<div>
+							<h5>房源全面</h5>
+							涵盖全市大部分在售二手房源
+						</div>
+					</li>
+					<li class="b-f-2"><span></span>
+						<div>
+							<h5>真实可信</h5>
+							房源信息真实有效，假一罚百
+						</div>
+					</li>
+					<li class="b-f-3"><span></span>
+						<div>
+							<h5>专业服务</h5>
+							最优秀的置业顾问，为您提供最直接服务
+						</div>
+					</li>
+					<li class="b-f-4"><span></span>
+						<div>
+							<h5>忠于委托</h5>
+							诚信经营，为买卖双方公平交易而努力
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!--新闻资讯-->
+
+			<!--沈阳房价走势-->
+			<div class="fangjiazoushi clearfix">
+				<div class="wrapper">
+					<div class="esfzs" style="width: 800px;">
+						<div class="esfzs-child">
+							<h4>本月房屋市场行情</h4>
+							<div class="fangjiazoushi-message">
+								<ul id="hangqing">
+									<li>
+										<div>
+											<p>成交套数</p>
+											<span></span>套
+										</div>
+									</li>
+
+									<li>
+										<div>
+											<p>购房需求 </p>
+											<span></span> 套
+										</div>
+									</li>
+
+									<li>
+										<div>
+											<p>新开盘数</p>
+											<span></span> 套
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+					<div class="loushifenxi">
+						<div class="lsfx-t"><span><b>文化信息</b></span>
+							<a th:href="@{/article/ar}" target="_top">更多&gt;&gt;</a>
+						</div>
+						<div class="lsfxlist">
+							<ul>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--4项信息-->
+			<!--<div class="b-four">
+				<ul>
+					<li class="b-f-1"><span></span>
+						<div>
+							<h5>房源全面</h5> 涵盖全市大部分在售二手房源
+						</div>
+					</li>
+					<li class="b-f-2"><span></span>
+						<div>
+							<h5>真实可信</h5> 房源信息真实有效，假一罚百
+						</div>
+					</li>
+					<li class="b-f-3"><span></span>
+						<div>
+							<h5>专业服务</h5> 最优秀的置业顾问，为您提供最直接服务
+						</div>
+					</li>
+					<li class="b-f-4"><span></span>
+						<div>
+							<h5>忠于委托</h5> 诚信经营，为买卖双方公平交易而努力
+						</div>
+					</li>
+				</ul>
+			</div>-->
+
+			<!--底部-->
+
+			<div th:replace="base/footer :: html"></div>
+			<!--底部 end-->
+
+			<!--quxian js-->
+
+
+			<!--quxian js end-->
+			<!--tab js-->
+
+			<!--<script type="text/javascript" src="js/waypoints.min.js"></script>-->
+			<!--<script type="text/javascript" src="js/waypoints-sticky.min.js"></script>-->
+
+		<!-- 	<script src="js/initializers.js"></script> -->
+			<!--<script>-->
+				<!--$('.tabs').tabslet({-->
+					<!--mouseevent: 'hover',-->
+					<!--autorotate: true,-->
+					<!--delay: 3000-->
+				<!--});-->
+			<!--</script>-->
+			<!--tab js end-->
+			<!--js move-->
+			<!--<script src="js/jquery.hislider.min.js"></script>-->
+			<!--<script>-->
+				<!--$('.hiSlider1').hiSlider();-->
+			<!--</script>-->
+			<!--js move end-->
+			<!--<script src="js/slideshow.js"></script>-->
+			<!--<script type="text/javascript">-->
+				<!--SlideShow(3000);-->
+			<!--</script>-->
+			<!--<script>-->
+				<!--$(function() {-->
+					<!--var ltlPriceTrendJson_Month = ['9月', '10月', '11月', '12月', '1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月'];-->
+					<!--ltlPriceTrendJson_Month = ltlPriceTrendJson_Month ? ltlPriceTrendJson_Month : [];-->
+					<!--$('#container').highcharts({-->
+						<!--chart: {-->
+							<!--type: 'line'-->
+						<!--},-->
+						<!--credits: {-->
+							<!--enabled: false-->
+						<!--},-->
+						<!--title: {-->
+							<!--text: ''-->
+						<!--},-->
+						<!--subtitle: {-->
+							<!--text: ''-->
+						<!--},-->
+						<!--xAxis: {-->
+							<!--categories: ltlPriceTrendJson_Month-->
+						<!--},-->
+						<!--yAxis: {-->
+							<!--title: {-->
+								<!--text: ''-->
+							<!--}-->
+						<!--},-->
+						<!--tooltip: {-->
+							<!--enabled: true,-->
+							<!--formatter: function() {-->
+								<!--var tongbi_var = "";-->
+								<!--var huanbi_var = "";-->
+								<!--if(this.point.tb > 0) {-->
+									<!--tongbi_var = "<span style='fill:red'>+" + this.point.tb + "%</span>";-->
+								<!--} else {-->
+									<!--tongbi_var = "<span style='fill:green'>" + this.point.tb + "%</span>";-->
+								<!--}-->
+								<!--if(this.point.hb > 0) {-->
+									<!--huanbi_var = "<span style='fill:red'>+" + this.point.hb + "%</span>";-->
+								<!--} else {-->
+									<!--huanbi_var = "<span style='fill:green'>" + this.point.hb + "%</span>";-->
+								<!--}-->
+
+								<!--return '<b>' + this.series.name + '</b><br/>' + this.x + ': ' + this.y + '元<br>同比: ' + tongbi_var + ' 环比: ' + huanbi_var + '';-->
+							<!--}-->
+						<!--},-->
+						<!--plotOptions: {-->
+							<!--line: {-->
+								<!--dataLabels: {-->
+									<!--enabled: false-->
+								<!--},-->
+								<!--enableMouseTracking: true-->
+							<!--}-->
+						<!--},-->
+						<!--series: [{-->
+							<!--name: '成交均价',-->
+							<!--data: [{-->
+								<!--tb: 5.89,-->
+								<!--hb: 0.48,-->
+								<!--y: 7563-->
+							<!--}, {-->
+								<!--tb: 6.24,-->
+								<!--hb: 1.38,-->
+								<!--y: 7667-->
+							<!--}, {-->
+								<!--tb: 0.87,-->
+								<!--hb: 1.79,-->
+								<!--y: 7804-->
+							<!--}, {-->
+								<!--tb: 6.66,-->
+								<!--hb: 0.77,-->
+								<!--y: 7864-->
+							<!--}, {-->
+								<!--tb: 0.77,-->
+								<!--hb: -0.52,-->
+								<!--y: 7823-->
+							<!--}, {-->
+								<!--tb: 7.39,-->
+								<!--hb: 0.63,-->
+								<!--y: 7872-->
+							<!--}, {-->
+								<!--tb: 7.39,-->
+								<!--hb: -0.89,-->
+								<!--y: 7802-->
+							<!--}, {-->
+								<!--tb: 6.08,-->
+								<!--hb: 1.12,-->
+								<!--y: 7889-->
+							<!--}, {-->
+								<!--tb: 9.64,-->
+								<!--hb: 0.93,-->
+								<!--y: 7962-->
+							<!--}, {-->
+								<!--tb: 8.28,-->
+								<!--hb: 1.07,-->
+								<!--y: 8047-->
+							<!--}, {-->
+								<!--tb: 9.03,-->
+								<!--hb: 1.59,-->
+								<!--y: 8175-->
+							<!--}, {-->
+								<!--tb: 10.6,-->
+								<!--hb: 1.83,-->
+								<!--y: 8325-->
+							<!--}],-->
+							<!--color: '#3c9'-->
+						<!--}, {-->
+							<!--name: '本月新增房源挂牌均价',-->
+							<!--data: [{-->
+								<!--tb: -2.93,-->
+								<!--hb: 0.38,-->
+								<!--y: 7739-->
+							<!--}, {-->
+								<!--tb: 1.66,-->
+								<!--hb: 0.35,-->
+								<!--y: 7818-->
+							<!--}, {-->
+								<!--tb: 3.04,-->
+								<!--hb: 1.3,-->
+								<!--y: 7920-->
+							<!--}, {-->
+								<!--tb: 6.12,-->
+								<!--hb: 2.98,-->
+								<!--y: 8156-->
+							<!--}, {-->
+								<!--tb: 6.39,-->
+								<!--hb: -2.48,-->
+								<!--y: 7954-->
+							<!--}, {-->
+								<!--tb: 5.34,-->
+								<!--hb: 0.88,-->
+								<!--y: 8024-->
+							<!--}, {-->
+								<!--tb: 4.25,-->
+								<!--hb: 0.25,-->
+								<!--y: 8044-->
+							<!--}, {-->
+								<!--tb: 6.67,-->
+								<!--hb: 0.76,-->
+								<!--y: 8105-->
+							<!--}, {-->
+								<!--tb: 6.77,-->
+								<!--hb: 1.57,-->
+								<!--y: 8232-->
+							<!--}, {-->
+								<!--tb: 8.27,-->
+								<!--hb: 1.79,-->
+								<!--y: 8379-->
+							<!--}, {-->
+								<!--tb: 9.42,-->
+								<!--hb: 1.31,-->
+								<!--y: 8489-->
+							<!--}, {-->
+								<!--tb: 10.35,-->
+								<!--hb: 1.51,-->
+								<!--y: 8617-->
+							<!--}],-->
+							<!--color: '#00bbff'-->
+						<!--}]-->
+					<!--});-->
+				<!--});-->
+			<!--</script>-->
+<div class="imp_item" style="display: none;"></div>
+			<script type="text/javascript" src="js/base/common.js"></script>
+			<!--<script type="text/javascript" src="js/base/quick_links.js"></script>-->
+			<script type="text/javascript" th:src="@{js/newself/myself_quick_link.js}"></script>
+			<div class="aspNetHidden">
+
+				<input name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="2237A756" type="hidden">
+			</div>
+		</form>
+
+	</body>
+
+</html>

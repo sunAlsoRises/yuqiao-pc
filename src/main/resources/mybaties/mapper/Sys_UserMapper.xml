@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mapper.jingjiren.JingJiRenMapper" >
+  <resultMap id="BaseResultMap" type="com.model.Sys_User" >
+    <id column="Id" property="id" jdbcType="NVARCHAR" />
+    <result column="UserName" property="username" jdbcType="NVARCHAR" />
+    <result column="Name" property="name" jdbcType="NVARCHAR" />
+    <result column="PassWord" property="password" jdbcType="NVARCHAR" />
+    <result column="CardNumber" property="cardnumber" jdbcType="NVARCHAR" />
+    <result column="Mobile" property="mobile" jdbcType="NVARCHAR" />
+    <result column="Mail" property="mail" jdbcType="NVARCHAR" />
+    <result column="QQ" property="qq" jdbcType="NVARCHAR" />
+    <result column="Sex" property="sex" jdbcType="NVARCHAR" />
+    <result column="HomeAddress" property="homeaddress" jdbcType="NVARCHAR" />
+    <result column="BirthDate" property="birthdate" jdbcType="TIMESTAMP" />
+    <result column="Education" property="education" jdbcType="NVARCHAR" />
+    <result column="DutiesId" property="dutiesid" jdbcType="NVARCHAR" />
+    <result column="Remarks" property="remarks" jdbcType="NVARCHAR" />
+    <result column="PhotoId" property="photoid" jdbcType="NVARCHAR" />
+    <result column="BranchShopId" property="branchshopid" jdbcType="NVARCHAR" />
+    <result column="CompanyId" property="companyid" jdbcType="NVARCHAR" />
+    <result column="CreateUser" property="createuser" jdbcType="NVARCHAR" />
+    <result column="CreateTime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="LastUpdateUser" property="lastupdateuser" jdbcType="NVARCHAR" />
+    <result column="LastUpdateTime" property="lastupdatetime" jdbcType="TIMESTAMP" />
+    <result column="IsDel" property="isdel" jdbcType="VARCHAR" />
+    <!--职务表-->
+    <association property="zhiwu" javaType="com.model.Dic_Duties">
+      <id column="Id" property="id" jdbcType="NVARCHAR" />
+      <result column="duname" property="name" jdbcType="NVARCHAR" />
+      <result column="OrderBy" property="orderby" jdbcType="INTEGER" />
+      <result column="CreateTime" property="createtime" jdbcType="TIMESTAMP" />
+      <result column="CreateUser" property="createuser" jdbcType="NVARCHAR" />
+      <result column="LastUpdateTime" property="lastupdatetime" jdbcType="TIMESTAMP" />
+      <result column="LastUpdateUser" property="lastupdateuser" jdbcType="NVARCHAR" />
+      <result column="CompanyId" property="companyid" jdbcType="NVARCHAR" />
+    </association>
+    <!--图片表-->
+    <association property="photos" javaType="com.model.Sys_UserPhoto">
+      <id column="Id" property="id" jdbcType="NVARCHAR" />
+      <result column="FileName" property="filename" jdbcType="NVARCHAR" />
+      <result column="Path" property="path" jdbcType="NVARCHAR" />
+      <result column="CreateTime" property="createtime" jdbcType="TIMESTAMP" />
+    </association>
+    <!--店铺表-->
+    <association property="shop" javaType="com.model.Sys_BranchShop">
+      <id column="Id" property="id" jdbcType="NVARCHAR" />
+      <result column="bsname" property="name" jdbcType="NVARCHAR" />
+      <result column="quyu" property="quyu" jdbcType="NVARCHAR" />
+      <result column="Province" property="province" jdbcType="NVARCHAR" />
+      <result column="City" property="city" jdbcType="NVARCHAR" />
+      <result column="Address" property="address" jdbcType="NVARCHAR" />
+      <result column="ShopownerName" property="shopownername" jdbcType="NVARCHAR" />
+      <result column="ShopownerMobile" property="shopownermobile" jdbcType="NVARCHAR" />
+      <result column="ShopownerCardNum" property="shopownercardnum" jdbcType="NVARCHAR" />
+      <result column="Remarks" property="remarks" jdbcType="NVARCHAR" />
+      <result column="CompanyId" property="companyid" jdbcType="NVARCHAR" />
+      <result column="CreateUser" property="createuser" jdbcType="NVARCHAR" />
+      <result column="CreateTime" property="createtime" jdbcType="TIMESTAMP" />
+      <result column="LastUpdateUser" property="lastupdateuser" jdbcType="NVARCHAR" />
+      <result column="LastUpdateTime" property="lastupdatetime" jdbcType="TIMESTAMP" />
+    </association>
+    <!--房源表-->
+    <!--<collection  property="houses" ofType="com.model.FK_House">-->
+      <!--<id property="id" column="id"/>-->
+      <!--<result property="leixing" column="leixing"/>-->
+      <!--<result property="zhuangtai" column="zhuangtai"/>-->
+      <!--<result property="tongtu" column="tongtu"/>-->
+      <!--<result property="isshow" column="isshow"/>-->
+      <!--<result property="name" column="name"/>-->
+      <!--<result property="dongzuo" column="dongzuo"/>-->
+      <!--<result property="danyuan" column="danyuan"/>-->
+      <!--<result property="fanghao" column="fanghao"/>-->
+      <!--<result property="louceng" column="louceng"/>-->
+      <!--<result property="gongjiceng" column="gongjiceng"/>-->
+      <!--<result property="mianji" column="mianji"/>-->
+      <!--<result property="woshi" column="woshi"/>-->
+      <!--<result property="ketingcanting" column="ketingcanting"/>-->
+      <!--<result property="weishengjian" column="weishengjian"/>-->
+      <!--<result property="chufang" column="chufang"/>-->
+      <!--<result property="yangtai" column="yangtai"/>-->
+      <!--<result property="zhuangxiu" column="zhuangxiu"/>-->
+      <!--<result property="chaoxiang" column="chaoxiang"/>-->
+      <!--<result property="louxing" column="louxing"/>-->
+      <!--<result property="chewei" column="chewei"/>-->
+      <!--<result property="createname" column="createname"/>-->
+      <!--<result property="zuidishoujia" column="zuidishoujia"/>-->
+      <!--<result property="peitao" column="peitao"/>-->
+      <!--<result property="quyu" column="quyu"/>-->
+
+      <!--<result property="huxing" column="huxing"/>-->
+      <!--<result property="createtime" column="createtime"/>-->
+      <!--<result property="zuigaoshoujia" column="zuigaoshoujia"/>-->
+      <!--<result property="yajinleixing" column="yajinleixing"/>-->
+      <!--<result property="shuxing" column="shuxing"/>-->
+      <!--<result property="zuidizujin" column="zuidizujin"/>-->
+      <!--<result property="zuigaozujin" column="zuigaozujin"/>-->
+    <!--</collection>-->
+  </resultMap>
+
+  <sql id="dianpu" >
+    b.name as bsname , b.quyu ,b.address
+  </sql>
+  <sql id="zhiwei" >
+    d.name as duname
+  </sql>
+  <!--分页条件-->
+  <sql id="pageFenYe" >
+
+  </sql>
+  <!--类型-->
+  <sql id="leixing">
+    <if test="searchName !=null and searchName !=''">
+      and (b.quyu like CONCAT('%','${searchName}','%' ) or u.name like CONCAT('%','${searchName}','%' )
+      or u.mobile like CONCAT('%','${searchName}','%' ) or b.name like CONCAT('%','${searchName}','%' ))
+    </if>
+  </sql>
+  <!--通过经纪人id获取经纪人信息-->
+  <select id="findJjrById" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT u.*,photo.*,
+    <include refid="dianpu"/> ,
+    <include refid="zhiwei"/>
+    FROM Sys_User u
+    left JOIN Dic_Duties d ON u.dutiesid = d.Id
+    left join Sys_BranchShop b ON u.branchshopid = b.id
+    left  join Sys_UserPhoto photo on u.photoid = photo.id
+    where u.id = #{id}
+  </select>
+  <!--分页根据实体类queryVo查询经纪人结果-->
+  <select id="findJjrByPage" parameterType="com.util.JingJiRenQueryVo" resultMap="BaseResultMap">
+    SELECT u.*,photo.*,
+    <include refid="dianpu"/> ,
+    <include refid="zhiwei"/>
+    FROM (
+    SELECT TOP ${pageSize} * FROM Sys_User WHERE ID NOT IN
+    (SELECT TOP ${start} ID FROM Sys_User)
+    )u
+    left JOIN Dic_Duties d ON u.dutiesid = d.Id
+    left join Sys_BranchShop b ON u.branchshopid = b.id
+    left  join Sys_UserPhoto photo on u.photoid = photo.id
+    where 1= 1
+    <include refid="leixing"/>
+  </select>
+  <!--根据实体类queryVo查询数据条数-->
+  <select id="queryCountByPage" parameterType="com.util.JingJiRenQueryVo" resultType="int">
+    SELECT count(*) FROM Sys_User
+    u
+    left join Sys_BranchShop b ON u.branchshopid = b.id
+    where 1= 1
+    <include refid="leixing"/>
+  </select>
+  <!--通过门店id获取经纪人-->
+  <select id="findJjrByShopId"  parameterType="java.lang.String" resultMap="BaseResultMap" >
+    select * from Sys_User
+    where branchshopid = #{id}
+  </select>
+
+</mapper>

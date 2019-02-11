@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mapper.LoginRegist.Login_RegistMapper" >
+  <resultMap id="BaseResultMap" type="com.model.Login_Regist" >
+    <id column="id" property="id" jdbcType="NVARCHAR" />
+    <result column="phone" property="phonenumber" jdbcType="NVARCHAR" />
+    <result column="SendNumberTime" property="sendnumbertime" jdbcType="TIMESTAMP" />
+    <result column="smsEndTime" property="smsendtime" jdbcType="TIMESTAMP" />
+    <result column="Verification" property="verification" jdbcType="VARCHAR" />
+    <result column="account" property="account" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="hopearea" property="hopearea" jdbcType="VARCHAR" />
+    <result column="unionid" property="unionid" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="VARCHAR" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, PhoneNumber, SendNumberTime, smsEndTime, Verification
+  </sql>
+  <sql id="tiaojian">
+    <if test="sendnumbertime != null ">
+      and #{sendnumbertime}
+      between sendnumbertime and smsEndTime
+    </if>
+    <if test="verification != null and verification != '' ">
+      and Verification = #{verification}
+    </if>
+    <if test="smsendtime != null ">
+      and smsEndTime > #{smsendtime}
+    </if>
+  </sql>
+  <!--根据手机号查询-->
+  <select id="selectCountBySql" parameterType="com.model.Login_Regist" resultType="int">
+    select count (*) from FK_User where phone = #{phonenumber}
+    <include refid="tiaojian"></include>
+  </select>
+  <!--插入用户信息-->
+  <insert id="insert" parameterType="com.model.Login_Regist" >
+    insert into FK_User (id, phone, SendNumberTime,
+      smsEndTime, Verification)
+    values (#{id,jdbcType=NVARCHAR}, #{phonenumber,jdbcType=NVARCHAR}, #{sendnumbertime,jdbcType=TIMESTAMP},
+      #{smsendtime,jdbcType=TIMESTAMP}, #{verification,jdbcType=VARCHAR})
+  </insert>
+  <update id="update" parameterType="com.model.Login_Regist">
+      update FK_User set SendNumberTime = #{sendnumbertime} ,
+      smsEndTime = #{smsendtime} , Verification = #{verification}
+      where phone = #{phonenumber}
+  </update>
+  <!--插入用户注册信息-->
+  <insert id="updateRegister" parameterType="com.model.Login_Regist" >
+    update FK_User set
+       hopearea = #{hopearea,jdbcType=VARCHAR},
+       name = #{name,jdbcType=VARCHAR},
+       sex =  #{sex,jdbcType=VARCHAR},
+       createtime =  GetDate(),
+      unionid =   #{unionid,jdbcType=VARCHAR}
+      where phone = #{phonenumber}
+
+</insert>
+
+  <!--根据用户的手机号获取意向区域-->
+  <select id="getQuYuByMobile" parameterType="String" resultType="String">
+    select hopearea from FK_User where phone = #{action}
+  </select>
+</mapper>

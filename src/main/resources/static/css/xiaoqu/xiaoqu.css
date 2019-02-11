@@ -1,0 +1,82 @@
+.t-xq-menu-float {height:50px;background:#fafafa;position:relative;border-bottom:1px #009143 solid}
+.t-xq-menu-float ul li {display:inline-block;height:50px;float:left}
+.t-xq-menu-float ul li a {display:block;font-size:16px;color:#333;line-height:50px;text-align:center;padding:0 20px;text-decoration:none}
+.t-xq-menu-float ul li a:hover,.t-xq-menu-float ul li.t-h-m-curr a {background:#009143;line-height:50px;color:#fff}
+.mainwrappernoneborder {border:none}
+.login-reg-wrapper,.wrapperbox {width:1100px;overflow:hidden;margin:0 auto}
+.xqtitle {font-size:24px;color:#333;line-height:40px;margin:10px 0 0;position:relative}
+.xqtitle .t-h-button {height:40px;margin:0;border-left:1px #e4e4e4 dotted;padding:0 10px;position:absolute;top:0;right:0}
+.xqtitle .t-h-button a {display:inline-block;padding:0;text-decoration:none;cursor:pointer;margin:0;line-height:40px}
+.xqtitle .t-h-button a i {font-family:iconfont;font-size:15px;padding:0 5px 0 0;color:#999;vertical-align:middle}
+.width960 {width:auto;margin:0 10px}
+.width960 {width:1100px;margin:0 auto}
+.H-Lbox,.J-Lbox,.jjr-house-info,.path-nav,.storewidthbox {width:1100px;margin:0 auto;padding:20px 0;position:relative}
+.path-nav {color:#999}
+.path-nav a {color:#666}
+.path-nav a:hover {text-decoration:underline}
+.path-nav code {color:#333;padding:0 4px;font-family:"Microsoft Yahei","黑体"}
+.xq-junjia {padding:0 0 10px;border-bottom:1px #f1f1f1 solid;margin:0 0 10px}
+.xq-junjia ul li {display:block;color:#333;line-height:24px;font-size:20px}
+.xq-junjia ul li em {color:#F33}
+.xq-junjia ul li.bordernone {border:none}
+.xq-junjia ul li.sj-zj {position:relative}
+.xq-junjia ul li.sj-zj i {position:absolute;top:-10px;right:10px;font-size:12px;color:#009143}
+.xq-junjia ul li.huanbi {color:#999;font-size:12px}
+.o-info-xq ul li {width:100%;line-height:24px}
+.o-info-xq ul li.o-info5 {width:50%;float:left}
+.o-info-xq ul li a {color:#3C9}
+.o-info-xq ul li a.addmap {font-size:12px;color:#999}
+.o-info-xq ul li a.addmap i {display:inline-block;vertical-align:middle;margin:-2px 4px 0 0;background:url(../images/icon_all_home.png) no-repeat -121px -111px;width:13px;height:16px}
+.x-r-mapbox {width:220px;margin:0 auto 10px;padding:0 0 20px;border-bottom:1px #e4e4e4 solid}
+.x-r-mapshow {width:220px;height:160px;background:#fafafa}
+.x-r-mapbox p {text-align:right;padding:10px 0 0}
+.x-r-mapbox p a {color:#3C9}
+.clearfix:after {content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearfix {display:inline-block}
+.clearfix {display:block}
+.m-jjr,.xq-r-map-store {width:220px;border:none;padding:0}
+.h-about,.m-jjr,.xq-r-map-store {width:509px;border-right:1px #e4e4e4 solid;padding:0 20px 0 0;position:relative;float:left;margin:0 0 0 20px;min-height:306px}
+.m-jjr {float:none;border:none;padding:5px 10px 0;margin:0;width:100%;min-height:0}
+.m-jjrphoto {width:auto;height:auto;position:relative;float:left;margin:0 20px 0 0}
+.m-jjrphoto a {display:block;border-radius:2px;overflow:hidden}
+.m-jjrphoto a img {width:90px;height:auto}
+.m-jjrphoto i {display:inline-block;width:36px;height:36px;position:absolute;bottom:0;right:0}
+.m-jjr-nt {padding:0;position:relative;float:left;width:69%}
+.m-jjr-nt p,.m-jjr-nt span {text-align:center;font-size:18px;color:#333}
+.m-jjr-nt p {text-align:left;padding:0 0 0 28px}
+.m-jjr-nt .j-lvbox {position:absolute;right:100px;top:-10px}
+.m-jjr-nt .j-lv {margin:20px 0 0;width:100px;height:12px;position:relative;float:left}
+.m-jjr-nt .j-lv .j-lv-jd {width:77px;height:12px;}
+.m-jjr-nt .j-lv .j-lv-tishi {width:32px;height:16px;position:absolute;top:-16px;left:61px;text-align:center;line-height:14px;color:#fff}
+.m-jjr-nt .j-lv-help {width:16px;height:16px;float:left;cursor:pointer;position:relative;margin:17px 0 0 5px}
+.m-jjr-nt .j-lv-help a {display:block;height:16px;width:16px;text-decoration:none;cursor:pointer}
+.m-jjr-nt .j-lv-help a span {display:none}
+.m-jjr-nt .j-lv-help a:hover span {display:block;width:140px;font-size:12px;text-align:left;height:auto;border:1px #eacaa0 solid;background:#fdf6e3;padding:8px;color:#666;border-radius:3px;position:absolute;right:0;bottom:0;z-index:3;cursor:pointer}
+.m-jjr-nt span {display:block;padding:10px 0 0;color:#666}
+.m-jjr-nt span i {display:inline-block;width:19px;height:19px;vertical-align:middle;margin:0 10px 0 0}
+.m-jjr-nt span.j-tel-btn a {display:inline-block;height:26px;line-height:26px;font-size:14px;color:#fff;background:#e50;text-align:center;border-radius:5px;width:160px}
+.m-jjr-o ul li {display:block;line-height:24px;width:50%;float:left}
+.m-jjr-o ul li.m-jjr-msg,.m-jjr-o ul li.m-jjr-name,.m-jjr-o ul li.m-jjr-qianming {width:100%;float:none}
+.m-jjr-o ul li.m-jjr-msg {padding:10px 0 0;clear:both}
+.m-jjr-o ul li.m-jjr-msg a {display:inline-block;border-radius:3px;border:1px #009143 solid;color:#009143;padding:0 5px 0 0;font-size:12px;height:20px;text-decoration:none;line-height:20px}
+.m-jjr-o ul li.m-jjr-msg a i {display:inline-block;height:20px;width:20px;background:#009143;text-align:center;line-height:20px;color:#fff;margin:0 5px 0 0;font-size:16px;font-family:iconfont}
+.m-jjr-o ul li.m-jjr-qianming {height:48px;overflow:hidden;line-height:24px}
+.m-jjr-o ul li.m-jjr-name a {font-size:20px;color:#333;padding-bottom:10px;display:inline-block}
+.m-jjr-o ul li.m-jjr-name a:hover {color:#009143;text-decoration:none}
+.m-jjr-o ul li a {line-height:24px}
+.m-jjr-phone {padding:8px 70px 8px 10px;text-align:center;border:1px #eacaa0 solid;background:#fdf6e3;font-size:24px;color:#B76800;border-radius:100px;margin:5px 35px 0;position:relative}
+.m-jjr-phone i {font-family:iconfont;font-size:32px;color:#B76800;padding:0 15px 0 0}
+.m-jjr-phone a.m-jjr-msg2 {position:absolute;top:15px;right:20px;background:#fff}
+.m-jjr-phone a.m-jjr-msg2 {display:inline-block;border-radius:3px;border:1px #FD962A solid;color:#FD962A;padding:0 5px 0 0;font-size:12px;height:20px;text-decoration:none;line-height:20px}
+.m-jjr-phone a.m-jjr-msg2 i {display:inline-block;height:20px;width:20px;background:#FD962A;text-align:center;line-height:20px;color:#fff;margin:0 5px 0 0;font-size:16px;font-family:iconfont;padding:0}
+.xq-r-map-store{
+    position: absolute !important;
+    top: 0px;
+    right: 270px;
+    width: 220px;
+    height: 360px;
+}
+.h-public{
+    position: relative !important;
+    height: 160px;
+}

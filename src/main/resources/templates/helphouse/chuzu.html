@@ -1,0 +1,515 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+		<!--<script charset="utf-8" src="v.js"></script>-->
+		<script src="../js/hm.js"></script>
+		<script type="text/javascript" language="javascript">
+			var BaseUrl_IIS_Application_Name = "/website/";
+			var pageSize = "20";
+			var XqPhoto = "";
+			var HousePhoto = "";
+			var UserPhoto = "";
+			var tongjiurl = "";
+			var isJiaMeng = "false";
+			var onimgurl_small = "../img/ershoufang/noimg_small.png";
+			var onimgurl_big = "../img/ershoufang/noimg_big.png";
+			var onimgurl_jjr = "../img/ershoufang/noimg_jjr.png";
+		</script>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="renderer" content="ie-stand">
+		<meta name="chinaz-site-verification" content="f48e24b0-224b-4aed-92c5-2c711f7e3590">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<title>
+			沈阳二手房| 二手房信息|二手房价格--渔樵在线
+		</title>
+		<link id="str_ico" rel="shortcut icon" href="../favicon.ico">
+		<link rel="apple-touch-icon-precomposed" href="#">
+
+		<script type="text/javascript" src="../js/lib.js">
+		</script>
+
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+		<meta name="renderer" content="ie-stand">
+
+		<meta http-equiv="X-UA-Compatible" ie="EmulateIE9">
+		<script type="text/javascript" src="../js/layer.js"></script>
+		<script type="text/javascript" src="../js/ershoufang/jquery.imagepreview.1.0.js"></script>
+		<script type="text/javascript" src="../js/ershoufang/houseshow.js"></script>
+		<script type="text/javascript" src="../js/base/ispc.js"></script>
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			var _hmt = _hmt || [];
+			if(document.cookie.indexOf('mis_userid') > 0) {
+				_hmt.push(['_setCustomVar', 1, "userType", "misUser", 1]);
+			} else {
+				_hmt.push(['_setCustomVar', 1, "userType", "visitor", 1]);
+			}(function() {
+				var hm = document.createElement("script");
+				hm.src = "https://hm.baidu.com/hm.js?1f8e83330039496a701d7ae44836ed10";
+				var s = document.getElementsByTagName("script")[0];
+				s.parentNode.insertBefore(hm, s);
+			})();
+		</script>
+
+		<!-- <script src="untitled" type="text/javascript"></script>-->
+		<!--<script src="untitled_001.dat" type="text/javascript"></script>-->
+		<!--<script src="untitled_002.dat" type="text/javascript"></script>-->
+		<link rel="stylesheet" type="text/css" href="../css/base.css" />
+		<link rel="stylesheet" type="text/css" href="../css/house-base.css" />
+		<link rel="stylesheet" type="text/css" href="../css/help-house/shopbase.css"/>
+	</head>
+
+	<body>
+		<!--<div id="cnzz_stat_icon_1272232378" style="display: none;">
+		<a href="#" target="_top" title="站长统计">站长统计</a>
+	</div>       
+	<script src="z_stat.php" language="JavaScript"></script>
+	<script src="core.php" charset="utf-8" type="text/javascript"></script>  -->
+
+		<script type="text/javascript">
+			function openwindowindex(aa) {
+				layer.open({
+					type: 2,
+					area: ['360px', '500px'],
+					offset: 'rb',
+					shade: 0,
+					content: ['//webchat.7moor.com/wapchat.html?accessId=477a8f70-4a00-11e8-9b91-a74aa30cfb04&amp;fromUrl=www.yqgs.cn&amp;urlTitle=%E8%8A%92%E6%9E%9C%E5%9C%A8%E7%BA%BFPc%E7%89%88', 'no']
+				});
+			}
+		</script>
+
+		<!--添加了 容联七陌  的客服-->
+
+		<meta name="description" content="渔樵在线沈阳二手房频道:是最专业的沈阳二手房网,为您提供最新、最真实的沈阳二手房信息及沈阳二手房价格,找沈阳二手房请来沈阳二手房中介-渔樵在线:真房源,零距离。">
+		<meta name="keywords" content="沈阳二手房，沈阳 二手房，沈阳二手房网，沈阳二手房信息，沈阳二手房价格，沈阳二手房中介">
+		<!--右侧贴边导航quick_links.js控制-->
+		<div th:replace="base/rightBase :: html"></div>
+		<!--右侧贴边导航quick_links.js控制 end-->
+
+		<!--顶部导航栏开始-->
+		<div th:replace="base/header :: html"></div>
+		<!--顶部导航栏结束-->
+    
+<!--中间部分开始-->
+				<div class="g-main">
+			<div class="m-jumbotron">
+				<div class="tit">发布出租房源</div>
+				<div class="sub-tit">享誉天下，做沟通的桥梁，誉桥正成为您服务</div>
+			</div>
+			<div class="m-form">
+				<div class="box-l m-entry">
+					<dl class="compact">
+						<dt>小区所在城市</dt>
+						<dd>
+							<div>沈阳</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt>小区</dt>
+						<dd class="wrap-sug">
+							<div class="u-sug" id="u-sug">
+								<input class="sugInput" name="resblock" autocomplete="off" placeholder="请输入小区名" value="" type="text">
+								<ul style="display: none;"></ul>
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt>房屋地址</dt>
+						<dd>
+							<div class="u-select u-select-build" name="building">
+								<input placeholder="楼栋号" class="u-select-selected" value="" type="text">
+								<ul class="u-select-options hide" style="display: none;"></ul>
+							</div>
+							<div class="u-select u-select-build" name="unit">
+								<input placeholder="单元号" class="u-select-selected" value="" type="text">
+								<ul class="u-select-options hide" style="display: none;"></ul>
+							</div>
+							<div class="u-select u-select-build" name="house">
+								<input placeholder="门牌号" class="u-select-selected" value="" type="text">
+								<ul class="u-select-options hide" style="display: none;"></ul>
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt>期望租金</dt>
+						<dd>
+							<input name="expect_price" value="" placeholder="请输入您期望租出的价格" autocomplete="off" style="width: 210px;" type="text">
+							<div class="unit fl">元/月</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt>称呼</dt>
+						<dd>
+							<input name="owner_name" value="" placeholder="我们应该如何称呼您" autocomplete="off" style="width: 250px;" type="text">
+						</dd>
+					</dl>
+					<dl>
+						<dt>手机号码</dt>
+						<dd>
+							<input name="owner_mobile" id="user_mobile" value="" placeholder="您的联系方式，方便我们及时与您联系" autocomplete="off" style="width: 250px;" type="text">
+						</dd>
+					</dl>
+				<!--	<dl class="sms-dl">
+						<dt>图形验证码</dt>
+						<dd>
+							<input name="verify_code" id="verify_pic" class="actVerifyInput" value="" placeholder="请输入图形验证码中的结果" autocomplete="off" style="width: 170px;" type="text">
+							 <div class="btn-getcode-voice">获取语音验证码</div> 
+							<div class="btn-getcode-sms">获取短信验证码</div> 
+							<div class="btn-getcode-sms"><img src="generatepictureupgrade" style="width: 100%; height: 100%;"></div>
+						</dd>
+					</dl>
+					<dl class="sms-dl">
+						<dt>短信验证码</dt>
+						<dd>
+							<input name="verify_sms" value="" placeholder="请输入短信验证码中的结果" autocomplete="off" style="width: 170px;" type="text">
+							<button class="btn-get-sms">获取短信验证码</button>
+						</dd>
+					</dl>
+				-->
+				</div>
+			</div>
+
+			<div class="m-submit">
+				<div class="wrap">
+					<div class="btn-submit">提交委托</div>
+				</div>
+			</div>
+			<div class="m-success">
+				<div class="marsk"></div>
+	<!--			<div class="box">
+					<div class="box-l">
+						<div class="icon-weituo-success"></div>
+						<div class="tit">提交委托成功！</div>
+						<div class="sub-tit">周一至周日9:00-20:00，10109666客服会及时给您回电，请耐心等待</div>
+						<div class="btn-confirm">确定</div>
+					</div>
+					<div class="box-r">
+						<div class="icon-qrcode"></div>
+						<div class="txt">扫一扫·下载掌上誉桥</div>
+					</div>
+					<div class="icon-close"></div>
+				</div>
+			-->
+			</div>
+		</div>
+		
+<!--中间部分结束-->
+		<div class="loginLayer" style="display: none;">
+			<h3><span>会员登录</span><a href="javascript:void(0)" class="btnCloseLogin">x</a></h3>
+			<div class="loginwrapper">
+				<div class="loginboxtitle">
+					<a href="javascript:void(0)" class="loginbtncurr">登录</a>
+					<a href="https://www.yqgs.cn/usercenter/reg/" target="_top">注册</a>
+				</div>
+				<!--登录内容-->
+				<div class="loginboxinput">
+					<span>
+                    <input pname="userName" onblur="this.style.color='#aaa';if(this.value=='') {this.value='输入用户名称';};" onfocus="this.style.color='#333';if(this.value=='输入用户名称') this.value='';" value="输入用户名称" class="logintext1" type="text"></span>
+					<span>
+                    <input pname="password" onblur="this.style.color='#aaa';if(this.value=='') {this.value='输入密码';};" onfocus="this.style.color='#333';if(this.value=='输入密码') this.value='';" value="输入密码" class="logintext1" type="password"></span>
+					<span><a href="javascript:void(0)" class="logintextbtn">立刻登录</a></span>
+					<span class="loginWJpass"><a href="#" target="_top">忘记密码</a></span>
+				</div>
+			</div>
+		</div>
+		<!--右侧悬浮 start-->
+
+		<div id="pop-compare" data-load="true" class="pop-compare" style="display: none; bottom: 0px; left: 0px; right: 0px; margin: auto;">
+			<div class="pop-wrap">
+				<p class="pop-compare-tips"></p>
+		<!--		<div class="pop-inner">
+					<div class="diff-hd">
+						<ul class="tab-btns clearfix">
+							<li class="ui-switchable-item current">
+								<a href="javascript:;">对比栏</a>
+							</li>
+							
+						</ul>
+						<div class="operate">
+							<a href="javascript:;" class="hide-me">隐藏</a>
+						</div>
+					</div>
+					<div class="diff-bd tab-cons">
+						<div class="tab-con ui-switchable-panel ui-switchable-panel-selected" style="display: block;">
+							<div id="diff-items" class="diff-items clearfix compareList">
+
+							</div>
+							<div class="diff-operate">
+								<a target="_blank" id="goto-contrast" class="btn-compare-b compare-active">对比</a>
+								<a class="del-items">清空对比栏</a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			-->
+			</div>
+		</div>
+		<!--右侧悬浮 end-->
+		<form method="post" action="https://www.yqgs.cn/ershoufang/" id="form1">
+			
+
+			<div id="goTop" class="n-top-div">
+				<!--顶部导航-->
+				<div class="n-top-wrapper">
+					<div class="n-topNav">
+						<div class="n-topLeft f-l">
+							<ul>
+
+								<li></li>
+								<li></li>
+
+								<li></li>
+								<li>客服电话<em>4001-024-yqgs</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em id="yijian" style="cursor: pointer;">意见反馈</em></li>
+
+							</ul>
+						</div>
+						<div class="n-topRight f-r">
+
+							<!--登录前样式-->
+
+							<!--登陆后样式-->
+
+							<div class="n-top-r-l" id="_LoginUser">
+
+								<i></i>
+								<a rel="nofollow" href="#" class="logintopbtn" target="_top">登录</a>
+								<a rel="nofollow" href="#" target="_top">注册</a>
+							</div>
+
+							<div class="n-top-mapsite">
+								<a href="#"><span>网站地图<i></i></span></a>
+								<!--网站地图弹出-->
+								<div class="mapmenu-btn clearfix">
+									<h1><a href="https://www.yqgs.cn/ershoufang/" title="沈阳二手房">沈阳二手房</a></h1>
+									<ul>
+										<li>
+											<a href="#" title="沈河区二手房" target="_top">沈河区</a>
+										</li>
+										<li>
+											<a href="#" title="皇姑区二手房" target="_top">皇姑区</a>
+										</li>
+										<li>
+											<a href="#" title="铁西区二手房" target="_top">铁西区</a>
+										</li>
+										<li>
+											<a href="#" title="大东区二手房" target="_top">大东区</a>
+										</li>
+										<li>
+											<a href="#" title="和平区二手房" target="_top">和平区</a>
+										</li>
+										<li>
+											<a href="#" title="浑南新区二手房" target="_top">浑南新区</a>
+										</li>
+									</ul>
+									<h2><a href="#" title="沈阳地图找房">沈阳地图找房</a></h2>
+									<h2><a href="#" title="沈阳小区">沈阳小区</a></h2>
+									<ul>
+										<li>
+											<a href="#" title="沈河区小区" target="_top">沈河区</a>
+										</li>
+										<li>
+											<a href="#" title="皇姑区小区" target="_top">皇姑区</a>
+										</li>
+										<li>
+											<a href="#" title="铁西区小区" target="_top">铁西区</a>
+										</li>
+										<li>
+											<a href="#" title="大东区小区" target="_top">大东区</a>
+										</li>
+										<li>
+											<a href="#" title="和平区小区" target="_top">和平区</a>
+										</li>
+										<li>
+											<a href="#" title="浑南新区小区" target="_top">浑南新区</a>
+										</li>
+									</ul>
+									<h2><a href="#" title="沈阳门市房，厂房，土地，别墅买卖">沈阳商用房</a></h2>
+									<ul>
+										<li>
+											<a href="#" title="沈阳二手别墅买卖" target="_top">别墅</a>
+										</li>
+										<li>
+											<a href="#" title="沈阳二手门市房买卖" target="_top">门市</a>
+										</li>
+										<li>
+											<a href="#" title="沈阳二手商住综合买卖" target="_top">商住综合</a>
+										</li>
+										<li>
+											<a href="#" title="沈阳二手车库买卖" target="_top">车库</a>
+										</li>
+										<li>
+											<a href="#" title="沈阳二手厂房仓库买卖" target="_top">厂房仓库</a>
+										</li>
+										<li>
+											<a href="#" title="沈阳二手库房买卖" target="_top">库房</a>
+										</li>
+									</ul>
+									<h2><a href="#" title="沈阳二手房经纪人">沈阳网络经纪人</a></h2>
+									<h2><a href="#" title="沈阳二手房贷款，问答指南">问答指南</a></h2>
+									<h2><a href="#" title="沈阳房产资讯">沈阳房产资讯</a></h2>
+									<h2><a rel="nofollow" href="#" title="关于我们">关于我们</a></h2>
+									<h2><a href="#" title="">渔樵专题</a></h2>
+								</div>
+								<!--网站地图弹出 end-->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--网站主导航-->
+				<div id="_pMainNav" class="n-mainNav-wrapper">
+
+					<div class="n-mainNav">
+						<div class="main-logo">
+							<a href="#" title="渔樵在线，渔樵不动产，渔樵中介，沈阳房产网" alt="渔樵在线，渔樵不动产，渔樵中介，沈阳房产网"><em class="l-t">真房源|零距离</em><em class="r-t">yqgs.CN</em></a>
+						</div>
+						<div class="city-menu" style="display: none;">
+							<span class="city-m-b"><i></i></span>
+							<!--城市选择弹出-->
+							<div class="city-list-n">
+								<ul class="clearfix">
+
+									<li>
+										<a href="# title=" 沈阳渔樵 " target="_top ">沈阳渔樵</a></li>
+                                    
+                                        <li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                    
+                                        <li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                    
+                                        <li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                    
+                                        <li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                    
+                                        <li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                        
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                         
+                                    	<li><a href="# " title="沈阳渔樵 " target="_top " rel="nofollow ">沈阳渔樵</a></li>
+                                        
+                                    
+                            </ul>
+                        </div>
+                        <!--城市选择弹出 end-->
+                    </div>
+                    <!--网站主导航-->
+                    <div class="main-menu ">
+                        <ul>
+                            
+                        </ul>
+                    </div>
+                    <!--网站主导航 end-->
+                    <div class="h-r-ad "><a href="# " title=" " target="_top " rel="nofollow "></a></div>
+                </div>
+            
+</div>
+            
+        </div>
+
+
+
+
+
+
+
+
+
+			<!--底部-->
+
+			<div th:replace="base/footer :: html"></div>
+			<!--底部 end-->
+
+        <!--浮动广告-->
+        <div class="floatleftadimg ">
+            
+        </div>
+        <script type="text/javascript ">
+            $("a.closefloatAD ").click(function () {
+                $("div.floatleftadimg ").hide();
+            });
+        </script>
+		</form>
+
+    <script type="text/javascript " src="../js/ershoufang/jquery.lazyload.min.js "> </script>
+    <script type="text/javascript " src="../js/ershoufang/ls.js "> </script>
+
+
+    <script type="text/javascript " src="../js/ershoufang/webmaster.js "></script>
+
+    <script type="text/javascript " src="../js/base/common.js "></script>
+    <script type="text/javascript " src="../js/base/quick_links.js "></script>
+
+
+    
+
+
+
+
+
+<div id="cboxOverlay " style="display: none; "></div>
+<div id="colorbox " class=" " role="dialog " tabindex="-1 " style="display: none; ">
+	<div id="cboxWrapper "><div><div id="cboxTopLeft " style="float: left; "></div>
+	<div id="cboxTopCenter " style="float: left; "></div>
+	<div id="cboxTopRight " style="float: left; "></div>
+	</div>
+	<div style="clear: left; ">
+		<div id="cboxMiddleLeft " style="float: left; "></div>
+		<div id="cboxContent " style="float: left; ">
+			<div id="cboxTitle " style="float: left; "></div>
+			<div id="cboxCurrent " style="float: left; "></div>
+			<button type="button " id="cboxPrevious "></button>
+			<button type="button " id="cboxNext "></button>
+			<button id="cboxSlideshow "></button>
+			<div id="cboxLoadingOverlay " style="float: left; "></div>
+			<div id="cboxLoadingGraphic " style="float: left; "></div>
+		</div>
+		<div id="cboxMiddleRight " style="float: left; "></div></div>
+		<div style="clear: left; ">
+			<div id="cboxBottomLeft " style="float: left; "></div>
+			<div id="cboxBottomCenter " style="float: left; "></div>
+			<div id="cboxBottomRight " style="float: left; "></div>
+		</div>
+	</div>
+	<div style="position: absolute; width: 9999px; visibility: hidden; display: none; ">
+		
+	</div>
+</div>
+<div id="Div720Cotent " style="display: none; width: 100%; height: 90%; ">
+	<div id="top720iframe " style="position: fixed; top: 0px; margin: 20px; z-index: 1000; ">
+		<div id="hideiframe " onclick="javascript:this.parentNode.parentNode.style.display='none' ; " style="position: absolute; width: 30px; height: 30px; top: 0px; left: 100%; padding: 3px; font-size: 26px; line-height: 26px; text-align: center; border-width: 1px 1px 1px medium; border-style: solid solid solid none; border-color: rgb(136, 136, 136) rgb(136, 136, 136) rgb(136, 136, 136) currentcolor; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px; border-top-left-radius: unset; cursor: pointer; background-color: rgb(136, 136, 136); z-index: 1; "><i class="fontfaceicon " style="color: white; "></i></div><iframe id="720imgiframe " src="index_1.html " scrolling="no " style="border: 0px none; display: inline; background-color: black; z-index: 1000; " height="90% " width="100% "></iframe><div id="bg "></div><div id="show " style="position: absolute; color: rgb(191, 191, 191); font-size: 16px; width: 250px; padding: 8px; right: 0px; bottom: 0px; opacity: 0.7; border-radius: 6px; background-color: black; overflow: auto; z-index: 10; display: none; ">您当前浏览器未允许使用flash插件，无法体验全景最佳展示，请手动允许使用flash插件，开启之后，效果更佳<br><div style="text-align: right; font-size: 18px; "><hr><span onclick="javascript:this.parentNode.parentNode.style.display='none' ; ">关闭</span></div></div></div><div class="quanjingShowbg "></div></div></body>
+</html>

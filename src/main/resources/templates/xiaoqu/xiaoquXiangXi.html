@@ -1,0 +1,1407 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="renderer" content="ie-stand" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="chinaz-site-verification" content="f48e24b0-224b-4aed-92c5-2c711f7e3590" /><meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" /><title>
+
+</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/base.css}" />
+    <link th:href="@{/css/xiaoqu/listfilter.css}"  rel="stylesheet" />
+    <link th:href="@{/css/xiaoqu/xiaoqu.css}"  rel="stylesheet" />
+    <script th:src="@{/js/jquery-3.2.1.min.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/address.css}" />
+    <script type="text/javascript" th:src="@{/js/jquery.cookie.js}"></script>
+    <script type="text/javascript" th:src="@{/js/common_001.js}"></script>
+    <script type="text/javascript" th:src="@{/js/newself/myself_quick_link.js}"></script>
+
+
+
+    <!--<script type="text/javascript" src="static/js/jquery-1.9.0.min.js"></script>-->
+    <!--<script src="static/js/jquery.colorbox.js"></script>-->
+    <!--<script type="text/javascript" src="static/js/lib.js"> </script>  -->
+    <!--<script type="text/javascript" src="static/js/layer.js"></script>-->
+    <!--<script type="text/javascript" src="static/js/jquery.imagepreview.1.0.js"></script>-->
+    <!--<script type="text/javascript" src="static/js/houseshow.js"></script>-->
+    <!--<script type="text/javascript" src="static/js/ispc.js"></script>-->
+    <!--<script type="text/javascript" src="static/js/houselistpagesize.js"></script>-->
+    <!--<script type="text/javascript" src="static/js/pagefenye.js"></script>-->
+    
+<meta http-equiv="X-UA-Compatible" ie="EmulateIE9" />
+
+
+    
+    <!--<script type="text/javascript" src="static/js/p.js"></script>-->
+    
+
+    <script type="text/javascript">
+        var projecImgtName = "yuqiaopc";
+        var pathName = window.document.location.pathname;
+        var projectName = pathName.substring(0,pathName.substr(1).indexOf('/')+1);
+
+        var BaseUrl_IIS_Application_Name = "http://dev-12.lingke.mobi";
+        var SecondaryPath = "CommunityPhoto";
+
+        var _gaq = _gaq || [];         var _hmt = _hmt || [];         if (document.cookie.indexOf('mis_userid') > 0) {             _hmt.push(['_setCustomVar', 1, "userType", "misUser", 1]);         } else {             _hmt.push(['_setCustomVar', 1, "userType", "visitor", 1]);         }         (function () {             var hm = document.createElement("script");             hm.src = "https://hm.baidu.com/hm.js?1f8e83330039496a701d7ae44836ed10";             var s = document.getElementsByTagName("script")[0];             s.parentNode.insertBefore(hm, s);         })();</script>
+
+
+    <script type="text/javascript">
+        function openwindowindex(aa) {
+            layer.open({
+                type: 2,
+                area: ['360px', '500px'],
+                offset: 'rb',
+                shade: 0,
+                content: ['//webchat.7moor.com/wapchat.html?accessId=477a8f70-4a00-11e8-9b91-a74aa30cfb04&amp;fromUrl=www.517.cn&amp;urlTitle=%E8%8A%92%E6%9E%9C%E5%9C%A8%E7%BA%BFPc%E7%89%88', 'no']
+            });
+        }
+
+    </script>
+    <style>
+        .main-menu span a {
+            position: relative;
+        }
+
+            .main-menu span a p {
+                position: absolute;
+                background: RGB(249,164,73);
+                color: white;
+                height: 15px;
+                line-height: 15px; /* left: -10px; */
+                right: -15px;
+                top: 0px;
+                width: 30px;
+                font-size: 8px;
+                border-radius: 3px;
+            }
+
+        .c-e-px #order a {
+            height: 99.5% !important;
+        }
+
+        .chooseblock-p .c-area-block a.curr {
+            display: inline-block;
+            line-height: 30px !important;
+            color: #f74;
+            font-weight: 700;
+        }
+
+        #fanye2 .pageleft {
+            font-family: '正常';
+        }
+
+        @font-face {
+            font-family: 'iconfont';
+            src: url('//g.517cdn.com/PlugJavascriptJq/tamlliconfont/iconfont.eot');
+            src: url('//g.517cdn.com/PlugJavascriptJq/tamlliconfont/iconfont.eot?#iefix') format('embedded-opentype'), url('//g.517cdn.com/PlugJavascriptJq/tamlliconfont/iconfont.woff') format('woff'), url('//g.517cdn.com/PlugJavascriptJq/tamlliconfont/iconfont.ttf') format('truetype'), url('//g.517cdn.com/PlugJavascriptJq/tamlliconfont/iconfont.svg#iconfont') format('svg');
+        }
+
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .pagebtnfenye i {
+            line-height: 45px;
+        }
+
+        .ClearBorder {
+            border: 0;
+        }
+
+        .tabsmenu2 .current a {
+            position: relative;
+            color: #333;
+            border-bottom: 1px solid #fff;
+            z-index: 1;
+        }
+
+        #LoginUser {
+            position: relative;
+        }
+
+        .login-tc-menu {
+            z-index: 1;
+        }
+
+        .contentmenu_s {
+            margin: 20px 0 0 0 !important;
+        }
+
+        .loninContaner ul li {
+            width: 100%;
+        }
+    </style>
+    <!--添加了 容联七陌  的客服-->
+    
+</head>
+<body>
+<!--右侧贴边导航quick_links.js控制-->
+<div th:replace="base/rightBase :: html"></div>
+<!--右侧贴边导航quick_links.js控制 end-->
+
+    <!--顶部导航栏开始-->
+    <div th:replace="base/header :: html"></div>
+    <!--顶部导航栏结束-->
+    
+
+    <div class="loginLayer" style="display: none">
+        <h3><span>会员登录</span><a href="javascript:void(0)" class="btnCloseLogin">x</a></h3>
+        <div class="loginwrapper">
+            <div class="loginboxtitle"><a href="javascript:void(0)" class="loginbtncurr">登录</a><a href="/usercenter/reg/" target="_blank">注册</a></div>
+            <!--登录内容-->
+            <div class="loginboxinput">
+                <span>
+                    <input type="text" pname="userName" onblur="this.style.color='#aaa';if(this.value=='') {this.value='输入用户名称';};" onfocus="this.style.color='#333';if(this.value=='输入用户名称') this.value='';" value="输入用户名称" class="logintext1" /></span>
+                <span>
+                    <input type="password" pname="password" onblur="this.style.color='#aaa';if(this.value=='') {this.value='输入密码';};" onfocus="this.style.color='#333';if(this.value=='输入密码') this.value='';" value="输入密码" class="logintext1" /></span>
+                <span><a href="javascript:void(0)" class="logintextbtn">立刻登录</a></span>
+                <span class="loginWJpass"><a href="/usercenter/findpwd/" target="_blank">忘记密码</a></span>
+            </div>
+        </div>
+    </div>
+    <!--右侧悬浮 start-->
+
+    <!--右侧悬浮 end-->
+    <form method="post" action="./?py=chenghuijiayuan&amp;Condition=1" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUIMjY0MzQwNTNkZO6ArVBXt5KZprBol7fafPt7YOVHO8u/BU8nLC3Zs4Lw" />
+</div>
+
+
+        <div id="goTop" class="n-top-div">
+            <!--顶部导航-->
+            <!--<div class="n-top-wrapper">-->
+                <!--<div class="n-topNav">-->
+                    <!--<div class="n-topLeft f-l">-->
+                        <!--<ul>-->
+                            <!---->
+                                    <!--<li><li></li></li>-->
+                                <!---->
+                                    <!--<li><li>客服电话<em>4001-024-517</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em id='yijian' style="cursor:pointer">意见反馈</em></li></li>-->
+                                <!---->
+                        <!--</ul>-->
+                    <!--</div>-->
+                    <!--<div class="n-topRight f-r">-->
+
+
+
+                        <!--&lt;!&ndash;登录前样式&ndash;&gt;-->
+                        <!---->
+
+                        <!--&lt;!&ndash;登陆后样式&ndash;&gt;-->
+                        <!---->
+
+
+
+
+                        <!--<div class="n-top-r-l" id="_LoginUser">-->
+                            <!---->
+                            <!--<i></i><a rel="nofollow" href="//usercenter/login/" class="logintopbtn" target="_blank">登录</a>-->
+                            <!--<a rel="nofollow" href="//usercenter/reg/" target="_blank">注册</a>-->
+                        <!--</div>-->
+
+
+
+                        <!--<div class="n-top-mapsite">-->
+                            <!--<a href="#"><span>网站地图<i></i></span></a>-->
+                            <!--&lt;!&ndash;网站地图弹出&ndash;&gt;-->
+                            <!--<div class="mapmenu-btn clearfix">-->
+                                <!--<h1><a href="/ershoufang/" title="沈阳二手房">沈阳二手房</a></h1>-->
+                                <!--<ul>-->
+                                    <!--<li><a href="/ershoufang/a1/" title="沈河区二手房" target="_blank">沈河区</a></li>-->
+                                    <!--<li><a href="/ershoufang/a6/" title="皇姑区二手房" target="_blank">皇姑区</a></li>-->
+                                    <!--<li><a href="/ershoufang/a5/" title="铁西区二手房" target="_blank">铁西区</a></li>-->
+                                    <!--<li><a href="/ershoufang/a4/" title="大东区二手房" target="_blank">大东区</a></li>-->
+                                    <!--<li><a href="/ershoufang/a2/" title="和平区二手房" target="_blank">和平区</a></li>-->
+                                    <!--<li><a href="/ershoufang/a7/" title="浑南新区二手房" target="_blank">浑南新区</a></li>-->
+                                <!--</ul>-->
+                                <!--<h2><a href="/map/" title="沈阳地图找房">沈阳地图找房</a></h2>-->
+                                <!--<h2><a href="/xiaoqu/" title="沈阳小区">沈阳小区</a></h2>-->
+                                <!--<ul>-->
+                                    <!--<li><a href="/xiaoqu/a1/" title="沈河区小区" target="_blank">沈河区</a></li>-->
+                                    <!--<li><a href="/xiaoqu/a6/" title="皇姑区小区" target="_blank">皇姑区</a></li>-->
+                                    <!--<li><a href="/xiaoqu/a5/" title="铁西区小区" target="_blank">铁西区</a></li>-->
+                                    <!--<li><a href="/xiaoqu/a4/" title="大东区小区" target="_blank">大东区</a></li>-->
+                                    <!--<li><a href="/xiaoqu/a2/" title="和平区小区" target="_blank">和平区</a></li>-->
+                                    <!--<li><a href="/xiaoqu/a7/" title="浑南新区小区" target="_blank">浑南新区</a></li>-->
+                                <!--</ul>-->
+                                <!--<h2><a href="/shangyongfang/" title="沈阳门市房，厂房，土地，别墅买卖">沈阳商用房</a></h2>-->
+                                <!--<ul>-->
+                                    <!--<li><a href="/shangyongfang/lx28/" title="沈阳二手别墅买卖" target="_blank">别墅</a></li>-->
+                                    <!--<li><a href="/shangyongfang/lx24/" title="沈阳二手门市房买卖" target="_blank">门市</a></li>-->
+                                    <!--<li><a href="/shangyongfang/lx25/" title="沈阳二手商住综合买卖" target="_blank">商住综合</a></li>-->
+                                    <!--<li><a href="/shangyongfang/lx30/" title="沈阳二手车库买卖" target="_blank">车库</a></li>-->
+                                    <!--<li><a href="/shangyongfang/lx29/" title="沈阳二手厂房仓库买卖" target="_blank">厂房仓库</a></li>-->
+                                    <!--<li><a href="/shangyongfang/lx27/" title="沈阳二手库房买卖" target="_blank">库房</a></li>-->
+                                <!--</ul>-->
+                                <!--<h2><a href="/s/" title="沈阳二手房经纪人">沈阳网络经纪人</a></h2>-->
+                                <!--<h2><a href="/daikuan/" title="沈阳二手房贷款，购房须知">购房须知</a></h2>-->
+                                <!--<h2><a href="/xinwen/" title="沈阳房产资讯">沈阳房产资讯</a></h2>-->
+                                <!--<h2><a rel="nofollow" href="/关于我们/" title="关于我们">关于我们</a></h2>-->
+                                <!--<h2><a href="https://zhuanti.517.cn/" title=''>芒果专题</a></h2>-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash;网站地图弹出 end&ndash;&gt;-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--网站主导航-->
+            <!--<div id="_pMainNav" class="n-mainNav-wrapper">-->
+	<!---->
+                <!--<div class="n-mainNav">-->
+                    <!--<div class="main-logo"><a href="/" title="芒果在线，芒果不动产，芒果中介，沈阳房产网" alt="芒果在线，芒果不动产，芒果中介，沈阳房产网"><em class="l-t">真房源|零距离</em><em class="r-t">517.CN</em></a></div>-->
+                    <!--<div class="city-menu" style="display: none;">-->
+                        <!--<span class="city-m-b"><i></i></span>-->
+                        <!--&lt;!&ndash;城市选择弹出&ndash;&gt;-->
+                        <!--<div class="city-list-n">-->
+                            <!--<ul class="clearfix">-->
+
+
+                                        <!--<li><a href="https://www.517.cn/" title='沈阳芒果' target="_blank" >沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://sy.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://bj.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://dl.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://as.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://fs.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://yk.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://jz.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://bx.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://dd.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://hld.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://ly.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://tl.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://fx.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://cy.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://cc.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://th.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://0438.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://ps.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://lys.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://dq.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://qqhe.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://tls.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://wlht.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://kf.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://qhd.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://pj.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://zmd.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://lf.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+
+                                        <!--<li><a href="https://cz.517.cn/" title='沈阳芒果' target="_blank" rel="nofollow">沈阳芒果</a></li>-->
+
+                            <!--</ul>-->
+                        <!--</div>-->
+                        <!--&lt;!&ndash;城市选择弹出 end&ndash;&gt;-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash;网站主导航&ndash;&gt;-->
+                    <!--<div class="main-menu">-->
+                        <!--<ul>-->
+
+                        <!--</ul>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash;网站主导航 end&ndash;&gt;-->
+                    <!--<div class="h-r-ad"><a href="https://app.517.cn" title='' target="_blank" rel="nofollow"></a></div>-->
+                <!--</div>-->
+
+<!--</div>-->
+
+        </div>
+
+
+        
+    <div class="mainwrapper">
+
+        <input name="ctl00$ContentPlaceHolder1$tongji_json" type="hidden" id="ContentPlaceHolder1_tongji_json" />
+        <!--面包屑-->
+        <div class="path-nav">
+            <a href="/" title="" linktype="index">在线</a><code title="">&gt;</code><a href="/xiaoqu/" title="" linktype="search">小区</a><code title="">&gt;</code>
+        </div>
+
+
+
+        <!--房源栏目导航-->
+        <div class="t-xq-menu-float width960" id="fudongnav0" style="cursor: pointer;">
+            <ul>
+                <li class="t-h-m-curr"><a linktype="info" href="#districtInfo">小区概况</a></li>
+                
+                <li>
+                    <a id="ContentPlaceHolder1__hlSellHouseLink" linkType="ershoufang" th:href="@{'/ershoufang/xq/'+${hr.data.id}+'/'}" target="_blank">二手房（[[${hr.data.esfCount}]]）</a></li>
+                <li>
+                    <a id="ContentPlaceHolder1__hlRentHouseLink" linkType="zufang" th:href="@{'/zufang/xq/'+${hr.data.id}+'/'}" target="_blank">租房（[[${hr.data.zfCount}]]）</a></li>
+                <!--<li><a href="#districtPrice" linktype="price">小区房价</a></li>-->
+                <!--<li><a href="#zbpt" linktype="supporting">周边配套</a></li>-->
+            </ul>
+        </div>
+
+
+        <!--房源信息-->
+        <div class="wrapperbox">
+            <div id="mis_detail" style="display: none;">
+                <span id="user_span"></span>你好,<a href="#">点击这里打开房源后台详情</a>，如果房源联系人显示的不正常，请<a href="#">点击这里进行修复。</a>
+                <input type="hidden" name="ctl00$ContentPlaceHolder1$cookiemisuser" id="ContentPlaceHolder1_cookiemisuser" />
+                <input type="hidden" name="ctl00$ContentPlaceHolder1$userdetail" id="ContentPlaceHolder1_userdetail" />
+                <input type="hidden" name="ctl00$ContentPlaceHolder1$mis_url" id="ContentPlaceHolder1_mis_url" />
+            </div>
+
+            <!--小区名称-->
+            <div id="districtInfo" class="xqtitle">
+                [[${hr.data.loupanmingcheng}]]
+                <div class="t-h-button">
+                    <a id="ContentPlaceHolder1__hlFavLink" class="t-h-fav-b btnFavDistrict" linktype="fav" dataid="1172" href="javascript:void(0)"><i>&#xe668;</i>收藏</a><a href="javascript:void(0)" class="t-h-gz-b" style="display: none"><i><input name="guanzhu" id="guanzhu" type="checkbox" value="" /></i><label for="guanzhu">关注</label></a>
+                </div>
+            </div>
+            <!--房源基本信息内容-->
+            <div class="h-public marginleft-20 clearfix">
+                <!--小区图片滚动-->
+                
+                
+                <!--小区基本简介-->
+                <div class="xq-about" style=" width: 530px; height: 216px; margin-right: 0px">
+                    
+                            <div class="xq-junjia">
+                                <!--<ul>-->
+                                    <!--<li class="sj-zj">9月均价<em>7870</em>元/平米</li>-->
+                                    <!--<li class="huanbi" id="Monthhuanbi">比8月<em>↑0.00%</em></li>-->
+                                <!--</ul>-->
+                            </div>
+                            <div class="o-info-xq clearfix" >
+                                <ul>
+                                    <li class="o-info5"><a th:href="@{'/ershoufang/xq/' + ${hr.data.id}+ '/'}" target="_blank" linktype="ershoufang">二手房[[${hr.data.esfCount}]]套</a></li>
+                                    <li class="o-info5"><a th:href="@{'/zufang/xq/' + ${hr.data.id}+ '/'}" target="_blank" linktype="zufang">租房[[${hr.data.zfCount}]]套</a></li>
+                                    <li class="o-info5">物业类型：[[${hr.data.yongtu}]]</li>
+                                    <!--<li class="o-info5">容积率：</li>-->
+                                    <li class="o-info5">建筑面积：[[${hr.data.jianzhumianji}]]</li>
+                                    <li class="o-info5">总户数：[[${hr.data.guihuahushu}]]户</li>
+                                    
+                                      <li class="o-info5">停车位：[[${hr.data.tingchewei}]]</li>
+                                    <li class="o-info5">绿化率：[[${hr.data.lvhualv}]]</li>
+
+                                    <li>开发商：[[${hr.data.kaifagongsi}]]</li>
+                                    <li>地址：[[${hr.data.loupandizhi}]]
+                                        <!--<a th:href="@{'/maptohouse/'+${hr.data.longitude}+'/'+${hr.data.latitude}}" class="addmap"><i></i>地图</a></li>-->
+                                    <li>物业公司：[[${hr.data.wuyegongsi}]]</li>
+                                    <li>物业费用：[[${hr.data.zhuwufeiyong}]]元/㎡/月</li>
+                                    <li>建筑年代：[[${hr.data.jungongniandai}]]年</li>
+                                    <li>周边配套：[[${hr.data.zhoubianpeitao}]]</li>
+                                </ul>
+                            </div>
+                            
+                            
+                        
+                </div>
+                <!--地图or店铺-->
+                <div class="xq-r-map-store">
+                    <div id="img_map" class="x-r-mapbox">
+                        <div class="x-r-mapshow">
+                            <img id="ContentPlaceHolder1__imgStaticMap" onerror="ImgMapOnError()" src="static/picture/6a4fed3a65444ecc87cf49cfe7186bfe.gif" alt="城卉家园地图" />
+                        </div>
+                        <p>
+                            <a id="ContentPlaceHolder1__hlXqMapLink" href="#zbpt" linkType="supporting"></a>
+                        </p>
+                    </div>
+                    <script type="text/javascript">
+                        function ImgMapOnError() { $("#img_map").hide(); }
+                    </script>
+
+                    
+                    
+
+                </div>
+
+            </div>
+
+            <!--房源基本信息栏目-->
+            <div class="h-public">
+                <!--最新出售房源-->
+                <div id="tjfy_outer" class="contentmenu_s h-t-xiangshi">
+                    <h2>
+                        <span id="ContentPlaceHolder1__labXqName"></span></h2>
+                    <div class="h-t-xsbox">
+                        <ul id="tjfy_ul" class="clearfix">
+                            
+                        </ul>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                        if (!$("#tjfy_ul>li").length > 0) { $("#tjfy_outer").hide(); }
+                </script>
+                
+                
+                
+                <!--小区照片-->
+                
+                
+
+
+
+
+<!--周边配套-->
+<div id="mapShow" class="contentmenu_s h-t-Matching map-content" style="display:none">
+    <h2 style="border:1px solid #dcdcdc;height:62px;line-height:62px;width:1098px;background:#f8f8f8;margin-bottom:0px;">
+        <span id="zbpt" style="font-size:20px;font-weight:bold;line-height:62px;padding-left:30px;border-bottom:0px;">周边配套</span>
+    </h2>
+    <div class="mdMap" style="padding-top:20px;border:1px solid #dcdcdc;border-top:0px;">
+        <div id="surroundMap" class="map-box">
+            <div class="contentmenu_s h-t-Matching map-content" style="margin:0;margin-top:20px;">
+                    <div class="h-t-mapbtn" style="padding-left: 20px; margin-top: -15px;">
+                        <a href="javascript:void(0)" class="btn-xq-map h-t-mapbtnCurr staticMap" id="staticMap">小区平面地图</a>
+                        <a href="javascript:void(0)" class="btn-xq-real housePanoramaMap" id="PanoramaMap">小区实景地图</a>
+                        <div class="h-t-cbtn" style="float: right; margin-right: 10px;">
+                            <a href="javascript:void(0)" class="map-full-screen" id="fullstatus">全屏</a>
+                            <a href="javascript:void(0)" class="map-calc-dist">测距</a>
+                            <a href="javascript:void(0)" class="map-drive-bus">公交</a>
+                            <a href="javascript:void(0)" class="map-drive-car">驾车</a>
+                        </div>
+                    </div>
+
+                    <div id="baidumap" class="h-t-Map-v-2">
+                        <div class="house-near-map" id="_pHouseMap"></div>
+                        <div class="near-map-box" style="box-shadow: none;height:500px;">
+                            <ul class="one-level-tab"></ul>
+                            <div class="two-level-tab curr_wrap" style="display: none"></div>
+                            <div class="map-nav-title" style="display: none">
+                                <h2></h2>
+                            </div>
+                            <div class="addr-list curr_wrap" id="mapListContainer" style="display: none;">
+                                <ul class="itemBox"></ul>
+                            </div>
+                            <ul class="map_ipt" style="display: none;" id="bus_ipt">
+                                <li>
+                                    <input type="text" class="ipt_txt" name="" id="sstartname" value="" placeholder="请输入起点"></li>
+                                <li class="btn-no-bottom">
+                                    <input type="text" class="ipt_txt" name="" id="sendname" value="" placeholder="请输入终点"></li>
+                                <li>
+                                    <input type="button" class="ipt_btn" id="btn_hqxl" value="获取线路"></li>
+                                <li class="change"><a id="changeStartEnd" href="javascript:void(0)"></a></li>
+                            </ul>
+                            <div class="traffic_result" style="display: none;" id="bus_wrap"></div>
+                            <div class="traffic_result" style="display: none;" id="drive_wrap"></div>
+                            <div class="loading" style="display: none;">
+                                <img src="" class="loadingImg">
+                                <span class="loadingText">努力加载中...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="housePanoramaMap" class="h-t-Map" style="display: none;">
+                       
+                    </div>
+                </div>
+
+        </div>
+        <div id="bigMap" class="map-box"></div>
+    </div>
+</div>
+
+
+<!--<script type="text/javascript" src="static/js/distancetool_min.js"></script>-->
+<!--<script type="text/javascript" src="static/js/xqmap.js"></script>-->
+<!--<script>-->
+    <!--document.domain = window.location.host;-->
+    <!--var lat = '',lng = '',xqName = '',xqId = '0',xqPy = '',nearXq = [];-->
+    <!--var init_json = {-->
+        <!--lng: lng, lat: lat, ak: "NzsPTTgk7sq0pckgN7RIur4HTyYeQaym",-->
+        <!--xqName: xqName,xqId:xqId,nearXq:nearXq,xqPy:xqPy,-->
+        <!--XqStyleStringCurrent:0,-->
+        <!--XqStyleStringOther:1,-->
+        <!--minZoom:12, maxZoom:19,-->
+        <!--root:/website/,-->
+        <!--ShowText:"周边配套",-->
+        <!--zoomCurrent:16,mapPanel: "_pHouseMap",-->
+        <!--tabEle: $(".one-level-tab li"),listContainer: $("#mapListContainer"),-->
+        <!--btnDistance:$(".map-calc-distance"),isShowToolbar: !0-->
+    <!--}-->
+    <!--var iframe_src = BaseUrl_IIS_Application_Name + "UserControl/pc/WU_Xq_Map_Content.aspx";-->
+    <!--var l = $(".mdMap"), p = $("#bigMap"), f = $(window);-->
+    <!--window.param = init_json;-->
+    <!--window.currentMapFS = !1,-->
+    <!--window.callMapFullScreen = function () {-->
+        <!--if (!window.currentMapFS) {-->
+            <!--$("#surroundMap").hide();-->
+            <!--var i = f.width()-->
+              <!--, n = f.height()-->
+                <!--, r = '<div id="fullMapDiv"  style="height: ' + n + "px; width: 100%" + '; position: fixed; left: 0px; top: 0px; background-color: #ffffff; z-index: 10000; opacity: 1;"><iframe id="iframe_map" name="myframe" src="' + iframe_src + '"' + ' frameborder="0" scrolling="no" marginwidth="0" marginheight="0" style="margin:0px;width:100%;height:100%;"></iframe></div>';-->
+            <!--p.html(r),-->
+            <!--l.css("zIndex", "1002")-->
+        <!--}-->
+        <!--window.currentMapFS = !0-->
+    <!--}-->
+    <!--,-->
+    <!--window.cancelMapFullScreen = function () {-->
+        <!--if (window.currentMapFS) {-->
+            <!--$("#fullMapDiv").remove();-->
+            <!--$("#surroundMap").show();-->
+            <!--window.map.reset();-->
+        <!--}-->
+        <!--window.currentMapFS = !1-->
+        <!--}-->
+<!--</script>-->
+<!--<script>-->
+    <!--document.domain = window.location.host;-->
+
+    <!--function map_item_box(ele) {-->
+        <!--var e = $(ele).data("index").split(",");-->
+        <!--var d = $(ele).data("key").split(",");-->
+        <!--var l = $(ele).data("length").split(",");-->
+        <!--var i = 0;-->
+        <!--var n = '<div class="tagStyle LOGCLICK select" data-bl="' + e[i] + '" data-log_evtid="10242" data-index="' + e[i] + '" data-length="' + l[i] + '">' + d[i] + '</div>';-->
+        <!--for (i = 1; i < d.length; i++) {-->
+            <!--n += '<div class="tagStyle LOGCLICK" data-bl="' + e[i] + '" data-log_evtid="10242" data-index="' + e[i] + '" data-length="' + l[i] + '">' + d[i] + '</div>';-->
+        <!--}-->
+        <!--$(".two-level-tab").html(n);-->
+        <!--var str = $(ele).html();-->
+    <!--}-->
+
+    <!--function map_tab_box() {-->
+        <!--var type = [-->
+            <!--{ html: "交通", bl: "traffic", key: "公交站,地铁站", index: "bus,subway", num: "30,30" },-->
+            <!--{ html: "教育", bl: "education", key: "幼儿园,小学,中学,大学", index: "kindergarten,primary-school,middle-school,University", num: "10,10,10,10" },-->
+            <!--{ html: "医疗", bl: "medical", key: "医院,药店", index: "hospital,pharmacy", num: "10,10" },-->
+            <!--{ html: "购物", bl: "medical", key: "商场,超市,市场", index: "mall,supermarket,market", num: "10,10,10" },-->
+            <!--{ html: "生活", bl: "medical", key: "银行,ATM,餐厅,咖啡馆", index: "bank,atm,restaurant,coffee", num: "10,10,10,10" },-->
+            <!--{ html: "娱乐", bl: "medical", key: "公园,电影院,健身房,体育馆", index: "park,cinema,gym,sport", num: "10,10,10,10" }-->
+        <!--];-->
+        <!--var n = "";-->
+        <!--for (var i = 0; i < type.length; i++) {-->
+            <!--n += '<li class="LOGCLICK" data-log_evtid="10242" data-bl="' + type[i].bl + '" data-key="' + type[i].key + '" data-index="' + type[i].index + '" data-length="' + type[i].num + '">' + type[i].html + '</li>';-->
+        <!--}-->
+        <!--$(".one-level-tab").html(n);-->
+        <!--$($("#surroundMap .LOGCLICK")[0]).addClass("selectTag");-->
+        <!--map_item_box($("#surroundMap .LOGCLICK")[0]);-->
+    <!--}-->
+
+    <!--$(function () {-->
+        <!--var pParent = window.parent;-->
+        <!--var init_json = pParent.param;-->
+        <!--//验证是否有百度的实景地图，没有将隐藏小区实景地图-->
+            <!--var point = new BMap.Point(init_json.lng, init_json.lat);-->
+            <!--var service = new BMap.PanoramaService();-->
+            <!--service.getPanoramaByLocation(point, function (anoramaData) {-->
+                <!--if (anoramaData == null) {-->
+                    <!--$("#PanoramaMap").hide();-->
+                <!--}-->
+                <!--var isShow = "False";-->
+                <!--if (isShow == "True") {-->
+                    <!--$("#mapShow").show();-->
+                    <!--MapShowStare();-->
+                <!--}-->
+            <!--});-->
+        <!--function MapShowStare() {-->
+            <!--$(".map-content").ready(function () {-->
+                <!--map_tab_box();-->
+                <!--init_json.tabEle = $(".one-level-tab li"), init_json.listContainer = $("#mapListContainer"), init_json.btnDistance = $(".map-calc-dist");-->
+                <!--//$("#houseSupporting").find("span").html(init_json.houseSupporting);-->
+                <!--baidu_map(init_json);-->
+
+                <!--$("#houseSupporting").find("span").html(init_json.ShowText);-->
+
+                <!--$(".loadingImg").attr("src", init_json.root + "UserControl/pc/baidumap/img/loading.gif");-->
+                <!--var fullstatus = $('#fullstatus');-->
+                <!--if (pParent.currentMapFS) {-->
+                    <!--fullstatus.html("取消全屏");-->
+                    <!--n = "innerHeight" in window ? window.innerHeight : f.height()-->
+                    <!--$("#baidumap").height(n - 92);-->
+                <!--}-->
+                <!--else {-->
+                    <!--fullstatus.html("全屏");-->
+                <!--}-->
+                <!--$("#fullstatus").click(function () {-->
+                    <!--var fullstatus = $('#fullstatus');-->
+                    <!--var fshtml = fullstatus.html();-->
+                    <!--if ('全屏' == fshtml) {-->
+                        <!--pParent.callMapFullScreen();-->
+                    <!--} else {-->
+                        <!--pParent.cancelMapFullScreen();-->
+                    <!--}-->
+                    <!--window.map.reset();-->
+                <!--});-->
+
+            <!--/////////////////////////////////////////////////////////////-->
+            <!--//平面图、实景图切换-->
+            <!--$("#staticMap").click(function () {-->
+                <!--$("#PanoramaMap").removeClass("h-t-mapbtnCurr");-->
+                <!--$("#staticMap").addClass("h-t-mapbtnCurr");-->
+                <!--$("#baidumap").removeAttr("style");-->
+                <!--$("#housePanoramaMap").attr("style", "display:none;");-->
+                <!--if ($("#staticMap").attr("class").indexOf("h-t-mapbtnCurr") == -1) {-->
+                    <!--window.map.reset();-->
+                <!--}-->
+            <!--});-->
+            <!--$("#PanoramaMap").click(function () {-->
+                <!--var point = new BMap.Point(init_json.lng, init_json.lat);-->
+                <!--var service = new BMap.PanoramaService();-->
+                <!--var panorama = new BMap.Panorama('housePanoramaMap');-->
+                <!--service.getPanoramaByLocation(point, function (anoramaData) {-->
+                    <!--$("#staticMap").removeClass("h-t-mapbtnCurr");-->
+                    <!--$("#PanoramaMap").addClass("h-t-mapbtnCurr");-->
+                    <!--$("#housePanoramaMap").removeAttr("style");-->
+                    <!--$("#housePanoramaMap").css("z-index", "1");-->
+                    <!--$("#baidumap").attr("style", "display:none;");-->
+                    <!--if (anoramaData == null) {-->
+
+                        <!--$("#housePanoramaMap").html("当前小区实景暂未找到，可尝试拖动小区平面地图中的红点后再试。");-->
+                    <!--} else {-->
+                        <!--panorama.setId(anoramaData.id); //根据经纬度坐标展示全景图-->
+                        <!--panorama.setPov({ heading: -40, pitch: 6 });-->
+                    <!--}-->
+                <!--});-->
+            <!--});-->
+
+                <!--//////////////////////////////////////////////////////////////////////////////////////////-->
+                <!--//交通导航-->
+                <!--var transit_type = 0;-->
+                <!--$(".map-drive-bus,.map-drive-car").click(function () {-->
+                    <!--$(".curr_wrap").removeClass("curr_wrap");-->
+                    <!--$("#bus_ipt").addClass("curr_wrap");-->
+                    <!--$("#sstartname").val(init_json.xqName);-->
+                    <!--$("#sendname").val("");-->
+                    <!--$(".map-nav-title").addClass("curr_wrap");-->
+                    <!--$(".map-nav-title").find("h2").html($(this).html());-->
+                    <!--$(".selectTag").removeClass("selectTag");-->
+                    <!--if ($(this).html() == "公交") {-->
+                        <!--transit_type = 0;-->
+                    <!--}-->
+                    <!--else {-->
+                        <!--transit_type = 1;-->
+                    <!--}-->
+                <!--});-->
+                <!--$("#changeStartEnd").click(function () {-->
+                    <!--var s = $("#sstartname"), e = $("#sendname"), start = s.val(), end = e.val();-->
+                    <!--s.val(end), e.val(start);-->
+                <!--})-->
+
+                <!--$("#btn_hqxl").click(function () {-->
+                    <!--var s = $("#sstartname"), e = $("#sendname"), start = s.val(), end = e.val();-->
+                    <!--if (start == undefined || start == null || start == "") {-->
+                        <!--alert("起点不能为空!");-->
+                        <!--return;-->
+                    <!--}-->
+                    <!--if (end == undefined || end == null || end == "") {-->
+                        <!--alert("终点不能为空!");-->
+                        <!--return;-->
+                    <!--}-->
+                    <!--$(".curr_wrap").removeClass("curr_wrap");-->
+                    <!--window.map.clearOverlays();-->
+                    <!--if (transit_type == 0) {-->
+                        <!--$("#bus_wrap").addClass("curr_wrap");-->
+                        <!--var transit = new BMap.TransitRoute(window.map, { renderOptions: { map: window.map, panel: "bus_wrap" } });-->
+                        <!--transit.search(start, end);-->
+                        <!--return;-->
+                    <!--}-->
+                    <!--if (transit_type == 1) {-->
+                        <!--$("#drive_wrap").addClass("curr_wrap");-->
+                        <!--var driving = new BMap.DrivingRoute(window.map, { renderOptions: { map: window.map, panel: "drive_wrap", autoViewport: true } });-->
+                        <!--driving.search(start, end);-->
+                        <!--return;-->
+                    <!--}-->
+                <!--});-->
+            <!--});-->
+        <!--}-->
+        <!---->
+    <!--});-->
+<!--</script>-->
+<!--<script>-->
+    <!--function PoiLevel1(type1) {-->
+        <!--document.getElementById("type1_jiaotong").style = "color: #666;background: none;border-top: none;line-height: 40px;";-->
+        <!--document.getElementById("type1_jiaoyu").style = "color: #666;background: none;border-top: none;line-height: 40px;";-->
+        <!--document.getElementById("type1_yiliao").style = "color: #666;background: none;border-top: none;line-height: 40px;";-->
+        <!--document.getElementById("type1_gouwu").style = "color: #666;background: none;border-top: none;line-height: 40px;";-->
+        <!--document.getElementById("type1_shenghuo").style = "color: #666;background: none;border-top: none;line-height: 40px;";-->
+        <!--document.getElementById("type1_yule").style = "color: #666;background: none;border-top: none;line-height: 40px;";-->
+        <!--document.getElementById(type1).style = "color: #009143;background: #fff;border-top: 2px #009143 solid;line-height: 38px;";-->
+
+        <!--var ret_count = 0;-->
+        <!--var lisdiv = document.getElementsByTagName("div");-->
+        <!--for (var i = 0; i < lisdiv.length; i++) {-->
+            <!--if (lisdiv[i].hasAttribute("type1")) {-->
+                <!--lisdiv[i].style = "color:#666;border-bottom:none;display:inline-block;";-->
+                <!--if (lisdiv[i].getAttribute("type1") == type1) {-->
+                    <!--if (ret_count == 0) {-->
+                        <!--lisdiv[i].style = "color:#009143;border-bottom:1px #009143 solid;display:inline-block;";-->
+                        <!--GetNearBy(lisdiv[i].getAttribute("type2key"));-->
+                    <!--}                   -->
+                    <!--ret_count = ret_count + 1;-->
+                <!--}-->
+                <!--else {-->
+                    <!--lisdiv[i].style = "display:none;";-->
+                <!--}-->
+            <!--}-->
+        <!--}-->
+    <!--}-->
+
+    <!--function PoiSearch(type1,type2) {-->
+
+        <!--var lisdiv = document.getElementsByTagName("div");-->
+        <!--for (var i = 0; i < lisdiv.length; i++) {-->
+            <!--if (lisdiv[i].hasAttribute("type1")) {-->
+                <!--if (lisdiv[i].getAttribute("type1") == type1) {-->
+                    <!--lisdiv[i].style = "color:#666;border-bottom:none;display:inline-block;";-->
+                    <!--if (lisdiv[i].id == type2) {-->
+                        <!--lisdiv[i].style = "color:#009143;border-bottom:1px #009143 solid;display:inline-block;";-->
+                        <!--GetNearBy(lisdiv[i].getAttribute("type2key"));-->
+                    <!--} -->
+                <!--}-->
+                <!--else {-->
+                    <!--lisdiv[i].style = "display:none;";-->
+                <!--}                -->
+            <!--}-->
+        <!--}-->
+    <!--}-->
+
+    <!--function GetNearBy(type2key) {-->
+
+        <!--local.searchNearby(type2key, point, 1200);-->
+    <!--}-->
+<!--</script>-->
+
+
+
+                <!--均价走势-->
+                
+<!--<script type="text/javascript" src="static/js/highcharts.js"></script>-->
+<style>
+    .active {
+        border-bottom: 1px #6C9 solid;
+    }
+
+        .active:hover {
+            border-bottom: 1px #6C9 solid;
+        }
+
+    .none {
+        display: none;
+    }
+
+    .btn-info {
+        display: inline-block;
+        float: left;
+        line-height: 36px;
+        font-size: 15px;
+        color: #333;
+        background: 0;
+        position: relative;
+        cursor: pointer;
+        padding: 0 20px;
+    }
+</style>
+<!--<div id="_pWUPriceTrend" class="contentmenu_s h-t-Trendbox">-->
+    <!--<h2 id="districtPrice">-->
+        <!--<div class="btn-info" style="float:left"  id="erShouFangBtn">二手房走势</div>-->
+        <!--<div class="btn-info" id="zuFangBtn">租房走势</div>-->
+
+        <!--<a href="/xiaoqu//" style='display: none' target="_blank">查看<em></em>详细信息 &gt;&gt;</a></h2>-->
+    <!--<div class="h-t-zhoushi">-->
+        <!--<div class="qutu" id="zufangzoushi"></div>-->
+    <!--</div>-->
+    <!--<div class="h-t-zhoushi">-->
+        <!--<div class="qutu" id="ershoufangzoushi"></div>-->
+    <!--</div>-->
+<!--</div>-->
+<!--<script> -->
+    <!--//最近的成交情况(最近30天),-->
+    <!--//带看情况(最近30天)-->
+    <!--//,价格统计情况(最近7个月),-->
+    <!--//【1.cj】=成交-->
+    <!--//【t=time签约时间;-->
+    <!--//l=类别买卖租赁;-->
+    <!--//c=chaoxiang朝向字典ID;-->
+    <!--//z=装修程度字典ID;-->
+    <!--//u=userid;-->
+    <!--//m=mianji;-->
+    <!--//p=pricesum房价总价;-->
+    <!--//f=floor楼层;-->
+    <!--//s=几室;-->
+    <!--//r=几厅;-->
+    <!--//h=houseid】，-->
+    <!--//【2.dk】=带看-->
+    <!--//【t=time带看时间;-->
+    <!--//l=类别买卖租赁;-->
+    <!--//c=chaoxiang朝向字典ID;-->
+    <!--//z=装修程度字典ID;-->
+    <!--//u=userid;-->
+    <!--//m=mianji;-->
+    <!--//p=pricesum房价总价;-->
+    <!--//f=floor楼层;-->
+    <!--//s=几室;-->
+    <!--//r=几厅;-->
+    <!--//h=houseid】，-->
+    <!--//【3.jjmm】=成交均价买卖-->
+    <!--//【t=统计月份;-->
+    <!--//p=统计价格(单位:元);-->
+    <!--//n=由多少房子统计得到的数据】，-->
+    <!--//【4.jjzl】=成交均价租赁-->
+    <!--//【t=统计月份;-->
+    <!--//p=统计价格(单位:元每平);-->
+    <!--//n=由多少房子统计得到的数据;-->
+    <!--//c=2为挂牌价去掉最高最低百分之十,4为成交价去掉最高最低百分之十】，-->
+    <!--//5.示例数据】={chengjiao:[{timeuse:"2015/02/09",DicName:"一手房",useridinput:19992,Mianji:0,housepricesum:54,Floor:0,CountRoom:0,CountHall:0,houseid:0}],cj:[{t:"2015/02/09",l:"一手房",u:19992,m:0,c:0,z:0,p:54,f:0,s:0,r:0,h:0}],daikan:[{AddTime:"2015/01/30",DicName:"卖房",userid:19614,Mianji:77,housepricesum:54,Floor:9,CountRoom:2,CountHall:2,houseid:1683585}],dk:[{t:"2015/01/30",l:"卖房",u:19614,m:77,c:10,z:47,p:54,f:9,s:2,r:2,h:1683585}],jjmm:[{t:"2015/01/01",p:5400,n:20,c:2}],jjzl:[{t:"2015/01/01",p:5400,n:20,c:4}]}-->
+    <!--var xq_total_data = [];-->
+    <!--var area_total_data =[];-->
+    <!--var hosuetype =0;-->
+    <!--//便利获取信息-->
+    <!--if (hosuetype == 78) {-->
+        <!--$('#zuFangBtn').addClass('active');-->
+        <!--$('#ershoufangzoushi').addClass('none');-->
+    <!--} else {-->
+        <!--$('#erShouFangBtn').addClass('active');-->
+        <!--$('#zufangzoushi').addClass('none');-->
+    <!--}-->
+    <!--$('#erShouFangBtn').click(function () {-->
+        <!--$('.active').removeClass('active');-->
+        <!--$(this).addClass('active');-->
+        <!--$('#ershoufangzoushi').removeClass('none');-->
+        <!--$('#zufangzoushi').addClass('none');-->
+    <!--});-->
+    <!--$('#zuFangBtn').click(function () {-->
+        <!--$('.active').removeClass('active');-->
+        <!--$(this).addClass('active');-->
+        <!--$('#zufangzoushi').removeClass('none');-->
+        <!--$('#ershoufangzoushi').addClass('none');-->
+    <!--})-->
+    <!--var gplist = [];-->
+    <!--var cjlist = [];-->
+    <!--var xzqgplist = [];-->
+    <!--var xzqcjlist = [];-->
+    <!--var series = [];-->
+    <!--var series2 = [];-->
+    <!--houseErshoufangDataBind();-->
+    <!--houseZuFangDataBind();-->
+
+
+    <!--function houseErshoufangDataBind() {-->
+        <!--if (xq_total_data.jjmm) {-->
+            <!--for (var i = xq_total_data.jjmm.length - 1; i >= 0; i&#45;&#45;) {-->
+                <!--var _i = xq_total_data.jjmm[i];-->
+                <!--var date = new Date(_i.t).getTime() + 8 * 60 * 60 * 1000;-->
+                <!--var itemData = [date, _i.p];-->
+                <!--if (_i.c == 2) {-->
+                    <!--gplist.push(itemData);-->
+                <!--}-->
+                <!--if (_i.c == 4) {-->
+                    <!--cjlist.push(itemData);-->
+                <!--}-->
+            <!--};-->
+            <!--//补成交的头-->
+            <!--if (cjlist.length != 0 && gplist.length != 0 && gplist[0][0] < cjlist[0][0]) {-->
+                <!--cjlist.splice(0, 0, [cjlist[0][0], cjlist[0][1]]);-->
+                <!--cjlist[0][0] = gplist[0][0];-->
+            <!--}-->
+            <!--//补成交的尾-->
+            <!--if (cjlist.length != 0 && gplist.length != 0 && gplist[gplist.length - 1][0] > cjlist[cjlist.length - 1][0]) {-->
+                <!--cjlist[cjlist.length] = [cjlist[cjlist.length - 1][0], cjlist[cjlist.length - 1][1]];-->
+                <!--cjlist[cjlist.length - 1][0] = gplist[gplist.length - 1][0];-->
+            <!--}-->
+
+        <!--}-->
+        <!--if (area_total_data.jjmm) {-->
+            <!--for (var i = area_total_data.jjmm.length - 1; i >= 0; i&#45;&#45;) {-->
+                <!--var _i = area_total_data.jjmm[i];-->
+                <!--var date = new Date(_i.t).getTime() + 8 * 60 * 60 * 1000;-->
+                <!--var itemData = [date, _i.p];-->
+                <!--if (_i.c == 2) {-->
+                    <!--xzqgplist.push(itemData);-->
+                <!--}-->
+                <!--if (_i.c == 4) {-->
+                    <!--xzqcjlist.push(itemData);-->
+                <!--}-->
+            <!--};-->
+            <!--//补成交的头-->
+            <!--if (xzqcjlist.length != 0 && xzqgplist[0][0] < xzqcjlist[0][0]) {-->
+                <!--xzqcjlist.splice(0, 0, [xzqcjlist[0][0], xzqcjlist[0][1]]);-->
+                <!--xzqcjlist[0][0] = xzqgplist[0][0];-->
+            <!--}-->
+            <!--//补成交的尾-->
+            <!--if (xzqcjlist.length != 0 && xzqgplist[xzqgplist.length - 1][0] > xzqcjlist[xzqcjlist.length - 1][0]) {-->
+                <!--xzqcjlist[xzqcjlist.length] = [xzqcjlist[xzqcjlist.length - 1][0], xzqcjlist[xzqcjlist.length - 1][1]];-->
+                <!--xzqcjlist[xzqcjlist.length - 1][0] = xzqgplist[xzqgplist.length - 1][0];-->
+            <!--}-->
+        <!--}-->
+        <!--var isGuaPai =  true;-->
+        <!--if (gplist.length > 0 && isGuaPai) {-->
+            <!--series.push({ name: '小区挂牌价', data: gplist, color: "" })-->
+        <!--}-->
+        <!--var isChengJaio = true;-->
+        <!--if (cjlist.length > 0 && isChengJaio) {-->
+            <!--series.push({ name: '小区成交价', data: cjlist, color: "" })-->
+        <!--}-->
+        <!--var isGuaPai_Area = true;-->
+        <!--if (xzqgplist.length > 0 && isGuaPai_Area) {-->
+            <!--series.push({ name: '行政区挂牌价', data: xzqgplist, color: "" })-->
+        <!--}-->
+        <!--var isChengJiao =true;-->
+        <!--if (xzqcjlist.length > 0 && isChengJiao) {-->
+            <!--series.push({ name: '行政区成交价', data: xzqcjlist, color: "" })-->
+        <!--}-->
+        <!--if (series.length == 0) {-->
+            <!--$("#_pWUPriceTrend").hide();-->
+        <!--}-->
+        <!--$("#ershoufangzoushi").highcharts({-->
+            <!--chart: {-->
+                <!--height: 300,-->
+                <!--width: 1100,-->
+                <!--type: 'spline'-->
+            <!--},-->
+            <!--title: {-->
+                <!--text: null-->
+            <!--},-->
+            <!--credits: {-->
+                <!--enabled: false-->
+            <!--},-->
+            <!--xAxis: {-->
+                <!--type: 'datetime',-->
+                <!--dateTimeLabelFormats: {-->
+                    <!--month: '%m月',-->
+                    <!--year: '%b'-->
+                <!--}-->
+            <!--},-->
+            <!--yAxis: {-->
+                <!--title: {-->
+                    <!--text: "元/平方"-->
+                <!--}-->
+            <!--},-->
+            <!--tooltip: {-->
+                <!--crosshairs: false,-->
+                <!--xDateFormat: '%Y年%m月',-->
+                <!--valueSuffix: "元/平方"-->
+            <!--},-->
+            <!--series: series-->
+        <!--});-->
+    <!--}-->
+    <!--function houseZuFangDataBind() {-->
+        <!--var gplist = [];-->
+        <!--var cjlist = [];-->
+        <!--var xzqgplist = [];-->
+        <!--var xzqcjlist = [];-->
+        <!--var series = [];-->
+        <!--if (xq_total_data.jjzl) {-->
+            <!--for (var i = xq_total_data.jjzl.length - 1; i >= 0; i&#45;&#45;) {-->
+                <!--var _i = xq_total_data.jjzl[i];-->
+                <!--var date = new Date(_i.t).getTime() + 8 * 60 * 60 * 1000;-->
+                <!--var itemData = [date, _i.p];-->
+                <!--if (_i.c == 2) {-->
+                    <!--gplist.push(itemData);-->
+                <!--}-->
+                <!--if (_i.c == 4) {-->
+                    <!--cjlist.push(itemData);-->
+                <!--}-->
+            <!--};-->
+            <!--//补成交的头-->
+            <!--if (cjlist.length != 0 && gplist.length != 0 && gplist[0][0] < cjlist[0][0]) {-->
+                <!--cjlist.splice(0, 0, [cjlist[0][0], cjlist[0][1]]);-->
+                <!--cjlist[0][0] = gplist[0][0];-->
+            <!--}-->
+            <!--//补成交的尾-->
+            <!--if (cjlist.length != 0 && gplist.length != 0 && gplist[gplist.length - 1][0] > cjlist[cjlist.length - 1][0]) {-->
+                <!--cjlist[cjlist.length] = [cjlist[cjlist.length - 1][0], cjlist[cjlist.length - 1][1]];-->
+                <!--cjlist[cjlist.length - 1][0] = gplist[gplist.length - 1][0];-->
+            <!--}-->
+
+        <!--}-->
+        <!--if (area_total_data.jjzl) {-->
+            <!--for (var i = area_total_data.jjzl.length - 1; i >= 0; i&#45;&#45;) {-->
+                <!--var _i = area_total_data.jjzl[i];-->
+                <!--var date = new Date(_i.t).getTime() + 8 * 60 * 60 * 1000;-->
+                <!--var itemData = [date, _i.p];-->
+                <!--if (_i.c == 2) {-->
+                    <!--xzqgplist.push(itemData);-->
+                <!--}-->
+                <!--if (_i.c == 4) {-->
+                    <!--xzqcjlist.push(itemData);-->
+                <!--}-->
+            <!--};-->
+            <!--//补成交的头-->
+            <!--if (xzqcjlist.length != 0 && xzqgplist[0][0] < xzqcjlist[0][0]) {-->
+                <!--xzqcjlist.splice(0, 0, [xzqcjlist[0][0], xzqcjlist[0][1]]);-->
+                <!--xzqcjlist[0][0] = xzqgplist[0][0];-->
+            <!--}-->
+            <!--//补成交的尾-->
+            <!--if (xzqcjlist.length != 0 && xzqgplist[xzqgplist.length - 1][0] > xzqcjlist[xzqcjlist.length - 1][0]) {-->
+                <!--xzqcjlist[xzqcjlist.length] = [xzqcjlist[xzqcjlist.length - 1][0], xzqcjlist[xzqcjlist.length - 1][1]];-->
+                <!--xzqcjlist[xzqcjlist.length - 1][0] = xzqgplist[xzqgplist.length - 1][0];-->
+            <!--}-->
+        <!--}-->
+        <!--var isGuaPai =  true;-->
+        <!--if (gplist.length > 0 && isGuaPai) {-->
+            <!--series.push({ name: '小区挂牌价', data: gplist, color: "" })-->
+        <!--}-->
+        <!--var isChengJaio = true;-->
+        <!--if (cjlist.length > 0 && isChengJaio) {-->
+            <!--series.push({ name: '小区成交价', data: cjlist, color: "" })-->
+        <!--}-->
+        <!--var isGuaPai_Area = true;-->
+        <!--if (xzqgplist.length > 0 && isGuaPai_Area) {-->
+            <!--series.push({ name: '行政区挂牌价', data: xzqgplist, color: "" })-->
+        <!--}-->
+        <!--var isChengJiao =true;-->
+        <!--if (xzqcjlist.length > 0 && isChengJiao) {-->
+            <!--series.push({ name: '行政区成交价', data: xzqcjlist, color: "" })-->
+        <!--}-->
+        <!--if (series.length == 0) {-->
+            <!--$("#_pWUPriceTrend").hide();-->
+        <!--}-->
+        <!--$("#zufangzoushi").highcharts({-->
+            <!--chart: {-->
+                <!--height: 300,-->
+                <!--width: 1100,-->
+                <!--type: 'spline'-->
+            <!--},-->
+            <!--title: {-->
+                <!--text: null-->
+            <!--},-->
+            <!--credits: {-->
+                <!--enabled: false-->
+            <!--},-->
+            <!--xAxis: {-->
+                <!--type: 'datetime',-->
+                <!--dateTimeLabelFormats: {-->
+                    <!--month: '%m月',-->
+                    <!--year: '%b'-->
+                <!--}-->
+            <!--},-->
+            <!--yAxis: {-->
+                <!--title: {-->
+                    <!--text: "元/平方"-->
+                <!--}-->
+            <!--},-->
+            <!--tooltip: {-->
+                <!--crosshairs: false,-->
+                <!--xDateFormat: '%Y年%m月',-->
+                <!--valueSuffix: "元/平方"-->
+            <!--},-->
+            <!--series: series-->
+        <!--});-->
+    <!--}-->
+<!--</script>-->
+
+                
+<!--成交记录-->
+
+
+<script>
+    if ($(".hide").html() == "2") {
+        $(".YSzongjia").hide();
+    }
+
+</script>
+
+            </div>
+        </div>
+    </div>
+    <!--图片弹出层-->
+    <div style="display: none">
+        <div id="ColorImage">
+            <div class="allt_l">
+                <div class="noneleft" title="点击查看上一张图片"></div>
+                <div id="bigPics" style="border: 1px solid #ccc; height: 387px; text-align: center; width: 600px;">
+                    
+                </div>
+                <div class="noneright" title="点击查看下一张图片"></div>
+            </div>
+            <div class="allt_r">
+                <p>
+                    <a id="ContentPlaceHolder1__hlImgColor"></a>
+                </p>
+                <dl>
+                    
+                </dl>
+            </div>
+            <div class="closeend"><span>关闭</span><i></i></div>
+        </div>
+    </div>
+
+    <!--房源举报-->
+    <div id="jubaobox" class="jubaobox" style="display: none">
+        <a href="javascript:void(0)" class="closewinbtn">X</a>
+        <h2>房源举报</h2>
+        <div class="jubaocontent">
+            <textarea id="txtReportContent" name="" cols="" rows="" placeholder="请填写举报内容"></textarea>
+        </div>
+        <div class="jubao-p-n">
+            <p>姓名</p>
+            <input id="txtReportUser" name="" type="text" value="输入您的称呼" onfocus="if(this.value=='输入您的称呼'){this.className='jubaotext_on';this.value=''}else{this.className='jubaotext_on';}" onclick="if (this.value == '输入您的称呼') { this.className = 'jubaotext_on'; this.value = '' } else { this.className = 'jubaotext_on'; }" onblur="if(this.value==''){this.value='输入您的称呼';this.className='jubaotext'};" class="jubaotext" />
+            <p>手机</p>
+            <input id="txtReportMobile" name="" type="text" value="输入您的常用联系电话" onfocus="if(this.value=='输入您的常用联系电话'){this.className='jubaotext_on';this.value=''}else{this.className='jubaotext_on';}" onclick="if (this.value == '输入您的常用联系电话') { this.className = 'jubaotext_on'; this.value = '' } else { this.className = 'jubaotext_on'; }" onblur="if(this.value==''){this.value='输入您的常用联系电话';this.className='jubaotext'};" class="jubaotext" />
+            <input name="" type="button" value="举报" class="jubaobtn" />
+        </div>
+    </div>
+  <!--<script type="text/javascript" src="static/js/fe9a9b3d9ddc402c9374eb9cab5b0fb4.js"></script>-->
+    <style type="text/css">
+        .anchorBL {
+            display: none;
+        }
+        /**Popup**/
+
+        .alltcc {
+            background: #fff;
+            border: 3px solid #969696;
+            border-radius: 5px;
+            height: 512px;
+            left: 50%;
+            margin-left: -493px;
+            position: absolute;
+            top: 10%;
+            width: 984px;
+            z-index: 99999;
+        }
+
+        .allt_l {
+            float: left;
+            padding: 31px 0 0 39px;
+            position: relative;
+        }
+
+            .allt_l img {
+                height: auto;
+                max-height: 100%;
+                max-width: 100%;
+                padding: 1px;
+                width: auto;
+            }
+
+        .allt_r {
+            float: left;
+            padding: 28px 0 0 36px;
+            position: relative;
+            width: 285px;
+        }
+
+            .allt_r p {
+                height: 44px;
+            }
+
+                .allt_r p a:link, .allt_r p a:visited {
+                    color: #0041d9;
+                    font: bold 14px/22px SimSun;
+                    text-decoration: none;
+                }
+
+                .allt_r p a:hover {
+                    color: #f50;
+                    text-decoration: underline;
+                }
+
+            .allt_r dl {
+                border: 1px solid #bebebe;
+                height: 346px;
+                overflow: auto;
+                width: 285px;
+            }
+
+                .allt_r dl dd a:link img, .allt_r dl dd a:visited img {
+                    border: 1px solid #cac8c4;
+                    float: left;
+                    height: 55px;
+                    margin: 12px 7px;
+                    width: 73px;
+                }
+
+                .allt_r dl dd a:hover img {
+                    border: 1px solid #6fa738;
+                }
+
+                .allt_r dl dd a:active img {
+                    border: 1px solid #ff8830;
+                }
+
+        .closeend {
+            color: #888;
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 5px;
+        }
+
+            .closeend span {
+                float: left;
+            }
+
+            .closeend i {
+                background: url(static/images/icon.png) no-repeat -62px -352px;
+                display: inline-block;
+                float: left;
+                height: 10px;
+                margin: 3px 0 0 8px;
+                width: 10px;
+            }
+
+        .noneleft {
+            background: url(static/images/noneleft.gif) no-repeat 30px 186px;
+            cursor: pointer;
+            display: block;
+            height: 446px;
+            left: 41px;
+            position: absolute;
+            top: 33px;
+            width: 298px;
+        }
+
+        .noneright {
+            background: url(static/images/noneright.gif) no-repeat 233px 186px;
+            cursor: pointer;
+            display: block;
+            height: 446px;
+            left: 338px;
+            position: absolute;
+            top: 33px;
+            width: 298px;
+        }
+
+        .junfeng, .junfeng1, .junfeng3 {
+            height: 10px;
+            left: 0;
+            position: absolute;
+            top: -30px;
+            top: -40px\9;
+            width: 10px;
+        }
+
+        .junfeng1 {
+            top: -12px;
+            top: -25px\9;
+        }
+
+        .junfeng3 {
+            top: -5px;
+            top: -20px\9;
+        }
+
+        body:nth-of-type(1) .junfeng {
+            top: -40px;
+        }
+
+        body:nth-of-type(1) .junfeng1 {
+            top: -20px;
+        }
+    </style>
+    <iframe id="counttimes" src="" width="0" height="0"></iframe>
+    <script type="text/javascript">
+        var arr = location.href.split('/');
+        var id = 0;
+        if (arr.length > 0) {
+            if (!isNaN(arr[arr.length - 1])) {
+                id = arr[arr.length - 1];
+            } else if (!isNaN(arr[arr.length - 2])) {
+                id = arr[arr.length - 2];
+            }
+        }
+        if (id)
+            document.getElementById("counttimes").src = "/viewtime.aspx?classid=3&mapid=1172";
+
+
+        //mis员工进入详情链接
+        if ($("#ContentPlaceHolder1_cookiemisuser").val() != "") {
+            $("#mis_detail").show();
+            $("#user_span").text($("#ContentPlaceHolder1_userdetail").val());
+            $("#mis_detail a").attr("href", $("#ContentPlaceHolder1_mis_url").val());
+        }
+    </script>
+
+
+
+        <!--底部-->
+
+        <div th:replace="base/footer :: html"></div>
+        <!--底部 end-->
+        <script type="text/javascript">
+            $("a.closefloatAD").click(function () {
+                $("div.floatleftadimg").hide();
+            });
+        </script>
+        <!--意见反馈-->
+        <div id="jianyibox" class="jubaobox" style="display: none">
+            <a href='javascript:$("#jianyibox").hide();' class="closewinbtn">X</a>
+            <h2>意见反馈</h2>
+            <div class="jubaocontent">
+                <textarea id="jubao_txtContent" name="" cols="" rows="" placeholder="请填写意见反馈内容"></textarea>
+            </div>
+            <div class="jubao-p-n">
+                <p>姓名</p>
+                <input id="jubao_txtUser" name="" type="text" value="输入您的称呼" onfocus="if(this.value=='输入您的称呼'){this.className='jubaotext_on';this.value=''}else{this.className='jubaotext_on';}" onclick="if (this.value == '输入您的称呼') { this.className = 'jubaotext_on'; this.value = '' } else { this.className = 'jubaotext_on'; }" onblur="if(this.value==''){this.value='输入您的称呼';this.className='jubaotext'};" class="jubaotext" />
+                <p>手机</p>
+                <input id="jubao_txtMobile" name="" type="text" value="输入您的常用联系电话" onfocus="if(this.value=='输入您的常用联系电话'){this.className='jubaotext_on';this.value=''}else{this.className='jubaotext_on';}" onclick="if (this.value == '输入您的常用联系电话') { this.className = 'jubaotext_on'; this.value = '' } else { this.className = 'jubaotext_on'; }" onblur="if(this.value==''){this.value='输入您的常用联系电话';this.className='jubaotext'};" class="jubaotext" />
+                <input name="" type="button" value="我要反馈" class="jubaobtn" id="jianyibtn" />
+            </div>
+        </div>
+    
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="043E70A2" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAXuMn+S2Vn5cITo1bGSQBUEmiPAfPLRRA9kbQ2B1iv8W9qfeyVY3BghmtEvkFK5mrvq58ADLx68Kn69E6KOBT9xD17DN/JR5csrvQq8IXnSIvYMHMrk7KjULOw2mIgIHxfCqB+UtbFRGIPize/aOERf" />
+</div></form>
+
+    <!--<script type="text/javascript" src="static/js/jquery.lazyload.min.js"> </script>-->
+    <!--<script type="text/javascript" src="static/js/ls.js"> </script>-->
+
+
+    <!--<script type="text/javascript" src="static/js/webmaster.js"></script>-->
+
+    <!--<script type="text/javascript" src="static/js/common.js"></script>-->
+    <!--<script type="text/javascript" src="static/js/quick_links.js"></script>-->
+
+    <!--右侧悬浮导航 end-->
+
+    
+</body>
+</html>

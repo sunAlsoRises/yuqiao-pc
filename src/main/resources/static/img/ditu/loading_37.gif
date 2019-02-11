@@ -1,0 +1,737 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><script type='text/javascript' language="javascript">
+var BaseUrl_IIS_Application_Name="/website/";
+var pageSize="20";
+var XqPhoto="https://img73.517cdn.com/";
+var HousePhoto="https://img76.517cdn.com";
+var UserPhoto="https://img73.517cdn.com/";
+var tongjiurl="https://tongji.517.cn/"
+var isJiaMeng="false"
+var onimgurl_small="https://g.517cdn.com/www517cn/2016v1/images/noimg_small.png"
+var onimgurl_big="https://g.517cdn.com/www517cn/2016v1/images/noimg_big.png"
+var onimgurl_jjr="https://g.517cdn.com/www517cn/2016v1/images/noimg_jjr.png"
+</script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta name="renderer" content="ie-stand" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="chinaz-site-verification" content="f48e24b0-224b-4aed-92c5-2c711f7e3590" /><meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" /><title>
+	二手房||租房 房源下架提示,404页面丢失
+</title><link id="str_ico" rel="shortcut icon" href="https://g.517cdn.com/www517cn/v2014images/favicon.ico" /><link rel="stylesheet" type="text/css" href="https://g.517cdn.com/www517cn/css/main-sn201401-2.css?V=1" /><link rel="stylesheet" type="text/css" href="https://g.517cdn.com/mis/css/lib.css?V=1?V=1" /><link rel="apple-touch-icon-precomposed" href="https://g.517cdn.com/www517cn/v2014images/app_Logo.png" /> 
+   
+    
+    <script type="text/javascript" src="https://g.517cdn.com/mis/js/lib.js"> </script>
+    
+    <style type="text/css">
+        .SimilarHouse {
+            border: 1px solid #eee;
+            width: 730px;
+            float: left;
+            height: 500px;
+            background: white;
+            margin-left: 10px;
+        }
+
+            .SimilarHouse .mt {
+                margin: 10px;
+                color: #999;
+                overflow: hidden;
+            }
+
+            .SimilarHouse .mt {
+                font-size: 12px;
+                font-weight: 400;
+            }
+
+            .SimilarHouse .mc {
+                height: 535px;
+                position: relative;
+            }
+
+        .SimilarHouseTuiJian {
+            width: 640px;
+            float: left;
+        }
+
+            .SimilarHouseTuiJian ul {
+                width: 640px;
+                height: 436px;
+                overflow: hidden;
+            }
+
+                .SimilarHouseTuiJian ul li {
+                    float: left;
+                    display: inline-block;
+                    width: 190px;
+                    margin-left: 20px;
+                }
+
+        .XQInfo {
+            display: block;
+            margin-left: 10px;
+            padding: 7px;
+        }
+
+        .o-info-xq ul li {
+            line-height: 35px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#prev").click(function () {
+                $($(".SimilarHouseTuiJian ul")[0]).toggle();
+                if ($($(".SimilarHouseTuiJian ul")[0]).css("display")=="none") {
+                    $($(".SimilarHouseTuiJian ul")[1]).show();
+                    $("#bianhao").html(2);
+                    $("#tip").html("此房源已下架,系统为你匹配本小区附近小区");
+                } else {
+                    $($(".SimilarHouseTuiJian ul")[1]).hide();
+                    $("#tip").html("此房源已下架,系统为你匹配本小区房源");
+                    $("#bianhao").html(1);
+                }
+            })
+            $("#next").click(function () {
+                $($(".SimilarHouseTuiJian ul")[0]).toggle();
+                if ($($(".SimilarHouseTuiJian ul")[0]).css("display") == "none") {
+                    $($(".SimilarHouseTuiJian ul")[1]).show();
+                    $("#tip").html("此房源已下架,系统为你匹配本小区附近小区");
+                    $("#bianhao").html(2);
+                } else {
+                    $($(".SimilarHouseTuiJian ul")[1]).hide();
+                    $("#tip").html("此房源已下架,系统为你匹配本小区房源");
+                    $("#bianhao").html(1);
+                }
+            })
+
+        })
+    </script>
+<meta http-equiv="X-UA-Compatible" ie="EmulateIE9" />
+    <script type="text/javascript" src="/website/Scripts/layer/layer.js"></script>
+    <script type="text/javascript" src="/website/Scripts/image-big-show/jquery.imagePreview.1.0.js"></script>
+    <script type="text/javascript" src="/website/Scripts/ContentPage/HouseShow.js?v=20180602"></script>
+    <script type="text/javascript" src="/website/Scripts/new2015/IsPc.js?v=2016063001"></script>
+     <script type="text/javascript">                  var _gaq = _gaq || [];         var _hmt = _hmt || [];         if (document.cookie.indexOf('mis_userid') > 0) {             _hmt.push(['_setCustomVar', 1, "userType", "misUser", 1]);         } else {             _hmt.push(['_setCustomVar', 1, "userType", "visitor", 1]);         }         (function () {             var hm = document.createElement("script");             hm.src = "https://hm.baidu.com/hm.js?1f8e83330039496a701d7ae44836ed10";             var s = document.getElementsByTagName("script")[0];             s.parentNode.insertBefore(hm, s);         })();</script>       <div id="cnzz_stat_icon_1272232378" style="display:none">  </div>       <script src="https://s22.cnzz.com/z_stat.php?id=1272232378&web_id=1272232378" language="JavaScript"></script>  
+
+
+      <script type="text/javascript">
+        function openwindowindex(aa) 
+        {
+            layer.open({
+                type: 2,
+                area: ['360px', '500px'],
+                offset: 'rb',
+                shade: 0,
+                content: ['//webchat.7moor.com/wapchat.html?accessId=477a8f70-4a00-11e8-9b91-a74aa30cfb04&amp;fromUrl=www.517.cn&amp;urlTitle=%E8%8A%92%E6%9E%9C%E5%9C%A8%E7%BA%BFPc%E7%89%88', 'no']
+            });
+          }
+        
+    </script>
+
+    <!--添加了 容联七陌  的客服-->
+
+<meta name="description" content="誉桥在线沈阳小区频道:是最专业的沈阳小区信息网,为您提供最新、最真实的沈阳小区信息及沈阳小区房价,找沈阳小区请来沈阳誉桥不动产中介-誉桥在线:真房源,零距离。" /><meta name="keywords" content="沈阳小区，沈阳 小区，沈阳小区信息，沈阳小区房价" /></head>
+<body>
+    <!--右侧贴边导航quick_links.js控制-->
+    <div id="right_tabs" class="mui-mbar-tabs" style="width: 0px;">
+        <div class="quick_link_mian">
+            <div class="quick_links_panel">
+                <div id="quick_links" class="quick_links">
+                    <li>
+                        <a href="javascript:void(0)" class="my_qlinks"><i class="setting">&#xe78b;</i></a>
+                        <div class="ibar_login_box status_login clearfix">
+                            <div class="avatar_box clearfix">
+                                <p class="avatar_imgbox">
+                                    <img src="https://g.517cdn.com/www517cn/2016v1/images/tou.png" />
+                                </p>
+                                <ul class="user_info" id="LoginUserInfo">
+                                    <li>用户名：您还未登录</li>
+                                    <li><a href="/usercenter/login/">[登陆]</a></li>
+                                </ul>
+                            </div>
+                            <div class="login_btnbox clearfix">
+                                <a href="/buy/">委托买房</a>
+                                <a href="/rent/">委托租房</a>
+                                <a href="/wangdai/deals/">我要投资</a>
+                                <a href="/wangdai/borrow/">我要借款</a>
+                            </div>
+                            <i class="icon_arrow_white"></i>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="mpbtn_histroy"><i class="zuji">&#xe65f;</i></a>
+                        <div class="mp_tooltip">我的浏览<i class="icon_arrow_right_black"></i></div>
+                    </li>
+                    <li>
+                        <a href="/usercenter/shoucang/ershoufang/" class="mpbtn_wdsc"><i class="wdsc">&#xe64c;</i></a>
+                        <div class="mp_tooltip">我的收藏<i class="icon_arrow_right_black"></i></div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="mpbtn_fydb" id="fydb"><i class="fydb">&#xe682;</i></a>
+                        <div class="mp_tooltip fydbTip">房源对比<i class="icon_arrow_right_black"></i></div>
+                    </li>
+                </div>
+                <div class="quick_toggle">
+                     <style>
+                            .mp_tooltip2 {
+                                cursor: pointer;
+                                line-height: 19px;
+                            }
+                        </style>
+                       <li>
+                             <span style="cursor: pointer; display: block; line-height: 200px; width: 40px; height: 38px; text-decoration: none; color: #d8d8d8; font-size: 12px; overflow: hidden; background-color: #444851; position: relative; top: 0; left: 0; *left: -15px; z-index: 1; margin: 0; padding: 0;"
+                                onclick="openwindowindex()"><i class="kfzx">&#xe667;</i></span>
+                            <div class="mp_tooltip mp_tooltip2" style="cursor: pointer;">
+                                <span style="color: #ffffff; width: 100%; line-height: 41px; cursor: pointer;" onclick="openwindowindex()">在线客服</span>
+                            </div>
+                        </li>
+                   <li>
+                            <a href="#" ><i class="kfzx">&#xe6ff;</i></a>
+                            <div class="mp_tooltip mp_tooltip2" onclick="qimoChatClick()">
+                                客服电话<br>
+                                96517<i class="icon_arrow_right_black"></i>
+                            </div>
+                        </li>
+                    <li>
+                        <a href="#none"><i class="mpbtn_qrcode">&#xe6b0;</i></a>
+                        <div class="mp_qrcode" style="display: none;">
+                            <img src="https://g.517cdn.com/www517cn/2016v1/images/erweima.png" width="175" height="175" /><i class="icon_arrow_white"></i>
+                        </div>
+                    </li>
+                    <li><a href="#top" class="return_top"><i class="top">&#xe69e;</i></a></li>
+                </div>
+            </div>
+            <div id="quick_links_pop" class="quick_links_pop hide"></div>
+        </div>
+    </div>
+    <!--右侧贴边导航quick_links.js控制 end-->
+    
+    <div class="topbox" id="NewgoTop">
+        <div class="topnav">
+            <h1 class="f-l"><a href="/" title="誉桥在线"></a></h1>
+            <!--网站主导航-->
+            <div class="main-menu f-l">
+                <ul>
+                    
+                            <li><a target="_self" title="首页" href="/" class="">首页</a></li>
+                        
+                            <li><a target="_self" title="沈阳二手房" href="/ershoufang/" class="">二手房</a><div class="main-m-2j"><i></i><span><a href = "/ershoufang/tt5">全景看房</a></span><span><a href = "/ershoufanggr/">个人房源</a></span><span><a href = "/shangyongfang/lx28/">别墅</a></span><span><a href = "/xiaoqu/">找小区</a></span><span><a href = "/daikuan/gongju/daikuan/">贷款计算</a></span><span class="m-m-2j-btn"><a href="/sell/">我要卖房</a></span></div></li>
+                        
+                            <li><a target="_self" title="沈阳新房" href="/xinfang/" class="">新房团购</a></li>
+                        
+                            <li><a target="_self" title="沈阳租房" href="/zufang/" class="">租房</a><div class="main-m-2j"><i></i><span><a href = "/guanjia/index/" targer="_blank">誉桥整租</a></span><span><a href = "/zufang/tt5/">全景看房</a></span><span><a href = "/zufanggr/">个人房源</a></span><span><a href = "/xiaoqu/">找小区</a></span><span><a href = "/zufang/tt6/">房屋管家</a></span><span class="m-m-2j-btn"><a href="/rent/">免费出租</a></span></div></li>
+                        
+                            <li><a target="_self" title="沈阳找经纪人" href="/s/" class="">找经纪人</a></li>
+                        
+                            <li><a target="_self" title="沈阳商用房，沈阳门市房" href="/shangyongfang/" class="">商用房</a><div class="main-m-2j"><i></i><span><a href = "/shangyongfang/">商用房买卖</a></span><span><a href = "/shangyongfang/jy78/">商用房租赁</a></span></div></li>
+                        
+                            <li><a target="_self" title="沈阳地图找房" href="/map/" class="">地图找房</a></li>
+                        
+                            <li><a target="_self" title="沈阳二手房贷款购房须知" href="/daikuan/" class="">购房须知</a><div class="main-m-2j"><i></i><span><a href = "/daikuan/zhishi/">贷款知识</a></span><span><a href = "/daikuan/quanzhengzs/">权证知识</a></span><span><a href = "/daikuan/gongju/daikuan/">贷款计算</a></span></div></li>
+                        
+                            <li><a target="_self" title="沈阳房产网资讯" href="/xinwen/" class="">资讯</a><div class="main-m-2j"><i></i><span><a href = "/xinwen/dongtai/">誉桥动态</a></span><span><a href = "/xinwen/zhengce/">房产政策</a></span><span><a href = "/xinwen/yena/">业内动态</a></span><span><a href = "https://zhuanti.517.cn/">誉桥专题</a></span><span><a href = "/xinwen/mangguobaike/">誉桥百科</a></span><span><a href = "/xinwen/maifangbaodian/">买房宝典</a></span><span><a href = "/xinwen/huodong/">誉桥公益</a></span></div></li>
+                        
+                            <li><a target="_self" title="沈阳在线委托" href="/sell/" class="">在线委托</a><div class="main-m-2j"><i></i><span><a href = "/sell/"> 卖房 </a></span><span><a href = "/buy/"> 买房 </a></span><span><a href = "/rent/"> 出租 </a></span><span><a href = "/hire/"> 求租 </a></span></div> </li>
+                        
+                            <li><a target="_self" title="沈阳移动APP" href="https://app.517.cn/" class="">移动APP</a><div class="main-m-2j hearerweima"><i></i><div class='h_erweima'></div></div> </li>
+                        
+                </ul>
+            </div>
+            <div class="loginbox f-r" id="LoginUser">
+                <!--登录前-->
+                <a rel="nofollow" href="/usercenter/login/" class="logintopbtn" target="_blank">登录</a><i>|</i><a rel="nofollow" href="/usercenter/reg/" target="_blank">注册</a>
+                <!--登录后-->
+                <!--<span>用户名称</span><i>|</i><a href="javascript:void(0);">管理</a>-->
+            </div>
+
+        </div>
+    </div>
+    
+
+    <div id="pageflip">
+        <a href="javascript:void(0)" target="_blank">
+            <img src="/website/ad/page_flip.png" style="width: 50px; display: block; height: 52px;" alt="誉桥不动产微信二维码" /></a>
+        <div class="msg_block" style="width: 50px; display: block; height: 50px;"></div>
+    </div>
+    <div class="loginLayer" style="display: none">
+        <h3><span>会员登录</span><a href="javascript:void(0)" class="btnCloseLogin">x</a></h3>
+        <div class="loginwrapper">
+            <div class="loginboxtitle"><a href="javascript:void(0)" class="loginbtncurr">登录</a><a href="/usercenter/reg/" target="_blank">注册</a></div>
+            <!--登录内容-->
+            <div class="loginboxinput">
+                <span>
+                    <input type="text" pname="userName" onblur="this.style.color='#aaa';if(this.value=='') {this.value='输入用户名称';};" onfocus="this.style.color='#333';if(this.value=='输入用户名称') this.value='';" value="输入用户名称" class="logintext1" /></span>
+                <span>
+                    <input type="password" pname="password" onblur="this.style.color='#aaa';if(this.value=='') {this.value='输入密码';};" onfocus="this.style.color='#333';if(this.value=='输入密码') this.value='';" value="输入密码" class="logintext1" /></span>
+                <span><a href="javascript:void(0)" class="logintextbtn">立刻登录</a></span>
+                <span class="loginWJpass"><a href="/usercenter/findpwd/" target="_blank">忘记密码</a></span>
+            </div>
+        </div>
+    </div>
+    <!--右侧悬浮 start-->
+
+
+
+    
+    <div id="pop-compare" data-load="true" class="pop-compare" style="display: none; bottom: 0; left: 0; right: 0; margin: auto;">
+        <div class="pop-wrap">
+            <p class="pop-compare-tips"></p>
+            <div class="pop-inner">
+                <div class="diff-hd">
+                    <ul class="tab-btns clearfix">
+                        <li class="ui-switchable-item current"><a href="javascript:;">对比栏</a></li>
+                        <!--<li class="ui-switchable-item"><a href="javascript:;">最近浏览</a></li>-->
+                    </ul>
+                    <div class="operate"><a href="javascript:;" class="hide-me">隐藏</a></div>
+                </div>
+                <div class="diff-bd tab-cons">
+                    <div class="tab-con ui-switchable-panel ui-switchable-panel-selected" style="display: block;">
+                        <div id="diff-items" class="diff-items clearfix compareList">
+                            
+                        </div>
+                        <div class="diff-operate"><a target="_blank" id="goto-contrast" class="btn-compare-b compare-active">对比</a><a class="del-items">清空对比栏</a></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--右侧悬浮 end-->
+    <form method="post" action="./" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE4OTQyMzQ2MjBkZBCUDxYw6QuHV8pfTj5AzgZsMDqA4oGBybyUXzPILTvC" />
+</div>
+
+
+        <div id="goTop" class="n-top-div">
+            <!--顶部导航-->
+            <div class="n-top-wrapper">
+                <div class="n-topNav">
+                    <div class="n-topLeft f-l">
+                        <ul>
+                            
+                                    <li><li></li></li>
+                                
+                                    <li><li>客服电话<em>4001-024-517</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em id='yijian' style="cursor:pointer">意见反馈</em></li></li>
+                                
+                        </ul>
+                    </div>
+                    <div class="n-topRight f-r">
+
+
+
+                        <!--登录前样式-->
+                        
+
+                        <!--登陆后样式-->
+                        
+
+
+
+
+                        <div class="n-top-r-l" id="_LoginUser">
+                            
+                            <i></i><a rel="nofollow" href="/usercenter/login/" class="logintopbtn" target="_blank">登录</a>
+                            <a rel="nofollow" href="/usercenter/reg/" target="_blank">注册</a>
+                        </div>
+
+
+
+                        <div class="n-top-mapsite">
+                            <a href="#"><span>网站地图<i></i></span></a>
+                            <!--网站地图弹出-->
+                            <div class="mapmenu-btn clearfix">
+                                <h1><a href="/ershoufang/" title="沈阳二手房">沈阳二手房</a></h1>
+                                <ul>
+                                    <li><a href="/ershoufang/a1/" title="沈河区二手房" target="_blank">沈河区</a></li>
+                                    <li><a href="/ershoufang/a6/" title="皇姑区二手房" target="_blank">皇姑区</a></li>
+                                    <li><a href="/ershoufang/a5/" title="铁西区二手房" target="_blank">铁西区</a></li>
+                                    <li><a href="/ershoufang/a4/" title="大东区二手房" target="_blank">大东区</a></li>
+                                    <li><a href="/ershoufang/a2/" title="和平区二手房" target="_blank">和平区</a></li>
+                                    <li><a href="/ershoufang/a7/" title="浑南新区二手房" target="_blank">浑南新区</a></li>
+                                </ul>
+                                <h2><a href="/map/" title="沈阳地图找房">沈阳地图找房</a></h2>
+                                <h2><a href="/xiaoqu/" title="沈阳小区">沈阳小区</a></h2>
+                                <ul>
+                                    <li><a href="/xiaoqu/a1/" title="沈河区小区" target="_blank">沈河区</a></li>
+                                    <li><a href="/xiaoqu/a6/" title="皇姑区小区" target="_blank">皇姑区</a></li>
+                                    <li><a href="/xiaoqu/a5/" title="铁西区小区" target="_blank">铁西区</a></li>
+                                    <li><a href="/xiaoqu/a4/" title="大东区小区" target="_blank">大东区</a></li>
+                                    <li><a href="/xiaoqu/a2/" title="和平区小区" target="_blank">和平区</a></li>
+                                    <li><a href="/xiaoqu/a7/" title="浑南新区小区" target="_blank">浑南新区</a></li>
+                                </ul>
+                                <h2><a href="/shangyongfang/" title="沈阳门市房，厂房，土地，别墅买卖">沈阳商用房</a></h2>
+                                <ul>
+                                    <li><a href="/shangyongfang/lx28/" title="沈阳二手别墅买卖" target="_blank">别墅</a></li>
+                                    <li><a href="/shangyongfang/lx24/" title="沈阳二手门市房买卖" target="_blank">门市</a></li>
+                                    <li><a href="/shangyongfang/lx25/" title="沈阳二手商住综合买卖" target="_blank">商住综合</a></li>
+                                    <li><a href="/shangyongfang/lx30/" title="沈阳二手车库买卖" target="_blank">车库</a></li>
+                                    <li><a href="/shangyongfang/lx29/" title="沈阳二手厂房仓库买卖" target="_blank">厂房仓库</a></li>
+                                    <li><a href="/shangyongfang/lx27/" title="沈阳二手库房买卖" target="_blank">库房</a></li>
+                                </ul>
+                                <h2><a href="/s/" title="沈阳二手房经纪人">沈阳网络经纪人</a></h2>
+                                <h2><a href="/daikuan/" title="沈阳二手房贷款，购房须知">购房须知</a></h2>
+                                <h2><a href="/xinwen/" title="沈阳房产资讯">沈阳房产资讯</a></h2>
+                                <h2><a rel="nofollow" href="/关于我们/" title="关于我们">关于我们</a></h2>
+                                <h2><a href="https://zhuanti.517.cn/" title=''>誉桥专题</a></h2>
+                            </div>
+                            <!--网站地图弹出 end-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--网站主导航-->
+            <div id="_pMainNav" class="n-mainNav-wrapper">
+	
+                <div class="n-mainNav">
+                    <div class="main-logo"><a href="/" title="誉桥在线，誉桥不动产，誉桥中介，沈阳房产网" alt="誉桥在线，誉桥不动产，誉桥中介，沈阳房产网"><em class="l-t">真房源|零距离</em><em class="r-t">517.CN</em></a></div>
+                    <div class="city-menu" style="display: none;">
+                        <span class="city-m-b"><i></i></span>
+                        <!--城市选择弹出-->
+                        <div class="city-list-n">
+                            <ul class="clearfix">
+                                
+                                        <li><a href="https://www.517.cn/" title='沈阳誉桥'  target="_blank" >沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://sy.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://bj.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://dl.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://as.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://fs.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://yk.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://jz.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://bx.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://dd.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://hld.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://ly.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://tl.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://fx.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://cy.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://cc.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://th.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://0438.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://ps.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://lys.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://dq.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://qqhe.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://tls.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://wlht.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://kf.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://qhd.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://pj.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://zmd.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                                        <li><a href="https://lf.517.cn/" title='沈阳誉桥'  target="_blank" rel="nofollow">沈阳誉桥</a></li>
+                                    
+                            </ul>
+                        </div>
+                        <!--城市选择弹出 end-->
+                    </div>
+                    <!--网站主导航-->
+                    <div class="main-menu">
+                        <ul>
+                            
+                        </ul>
+                    </div>
+                    <!--网站主导航 end-->
+                    <div class="h-r-ad"><a href="https://app.517.cn" title='' target="_blank" rel="nofollow"></a></div>
+                </div>
+            
+</div>
+            
+        </div>
+
+
+        
+
+
+    <div id="ContentPlaceHolder1_fourorfour" class="page404-1">
+        <div class="img404">
+            <img src="https://g.517cdn.com/www517cn/v2014images/404.png" />
+        </div>
+        <p>您查找的信息已经失效..</p>
+        <div class="img404btn">
+            <a href="/">返回首页</a><br>
+            <i>客服电话：96517</i>
+        </div>
+    </div>
+    
+    <div class="downhousebox" style="height: 490px; text-align: left">
+
+        
+                <div class="contentmenu_s h-t-xiangshi">
+                    <h2><span>推荐房源</span></h2>
+                    <div class="h-t-xsbox">
+                        <ul class="clearfix">
+            
+                <li>
+                    <div class="h-t-xsimg">
+                        <span>11图</span><span class="imgyy"></span>
+                        <a href="#"><a href="/ershoufang/2777919/" title="天和人家 南北标户 婚装">
+                            <img src="https://img76.517cdn.com//up2017/zy/2018/4/1/house/viewimg/fid2777919_uid48635_20180401182628597199.jpg.2911.201x153.0.jpg" width="184" height="140" alt="天和人家 南北标户 婚装" /></a></a>
+                    </div>
+                    <div class="h-t-f-text">
+                        <b><a href="/ershoufang/2777919/">天和人家 南北标户 婚装</a></b>
+                        <p><em>101万</em>/<i>2室2厅1卫</i>/<i>101㎡</i><i>南北</i>/<i>中等装修</i>/<i>10029元/㎡</i></p>
+                    </div>
+                </li>
+            
+                <li>
+                    <div class="h-t-xsimg">
+                        <span>19图</span><span class="imgyy"></span>
+                        <a href="#"><a href="/ershoufang/2890001/" title="天和人家多层顶楼带阁楼，楼上同等面积">
+                            <img src="https://img76.517cdn.com//up2017/zy/2018/7/15/house/viewimg/fid2890001_uid48635_20180715193637608771.jpg.2911.201x153.0.jpg" width="184" height="140" alt="天和人家多层顶楼带阁楼，楼上同等面积" /></a></a>
+                    </div>
+                    <div class="h-t-f-text">
+                        <b><a href="/ershoufang/2890001/">天和人家多层顶楼带阁楼，楼上同等面积</a></b>
+                        <p><em>107万</em>/<i>3室2厅2卫</i>/<i>91㎡</i><i>南北</i>/<i>中等装修</i>/<i>11811元/㎡</i></p>
+                    </div>
+                </li>
+            
+                <li>
+                    <div class="h-t-xsimg">
+                        <span>10图</span><span class="imgyy"></span>
+                        <a href="#"><a href="/ershoufang/2920888/" title="铁路实验134  精装修  拎包入住">
+                            <img src="https://img76.517cdn.com//up2017/zy/2018/8/16/house/viewimg/fid2920888_uid52220_20180816102030161888.jpg.2911.201x153.0.jpg" width="184" height="140" alt="铁路实验134  精装修  拎包入住" /></a></a>
+                    </div>
+                    <div class="h-t-f-text">
+                        <b><a href="/ershoufang/2920888/">铁路实验134  精装修  拎包入住</a></b>
+                        <p><em>88万</em>/<i>2室1厅1卫</i>/<i>79㎡</i><i>东西</i>/<i>高级装修</i>/<i>11139元/㎡</i></p>
+                    </div>
+                </li>
+            
+                <li>
+                    <div class="h-t-xsimg">
+                        <span>13图</span><span class="imgyy"></span>
+                        <a href="#"><a href="/ershoufang/2875859/" title="1室，南向，126总校。没用过学区">
+                            <img src="https://img76.517cdn.com//up2017/zy/2018/7/1/house/viewimg/fid2875859_uid42647_20180701182411459980.jpg.2911.201x153.0.jpg" width="184" height="140" alt="1室，南向，126总校。没用过学区" /></a></a>
+                    </div>
+                    <div class="h-t-f-text">
+                        <b><a href="/ershoufang/2875859/">1室，南向，126总校。没用过学区</a></b>
+                        <p><em>52万</em>/<i>1室1厅1卫</i>/<i>36㎡</i><i>南</i>/<i>简单装修</i>/<i>14444元/㎡</i></p>
+                    </div>
+                </li>
+            
+                <li>
+                    <div class="h-t-xsimg">
+                        <span>18图</span><span class="imgyy"></span>
+                        <a href="#"><a href="/ershoufang/2880634/" title="简单装修 南朝向 商圈繁华">
+                            <img src="https://img76.517cdn.com//up2017/zy/2018/7/9/house/viewimg/fid2880634_uid42647_20180709175432626761.jpg.2911.201x153.0.jpg" width="184" height="140" alt="简单装修 南朝向 商圈繁华" /></a></a>
+                    </div>
+                    <div class="h-t-f-text">
+                        <b><a href="/ershoufang/2880634/">简单装修 南朝向 商圈繁华</a></b>
+                        <p><em>55万</em>/<i>2室1厅1卫</i>/<i>71㎡</i><i>南</i>/<i>简单装修</i>/<i>7755元/㎡</i></p>
+                    </div>
+                </li>
+            
+                <li>
+                    <div class="h-t-xsimg">
+                        <span>14图</span><span class="imgyy"></span>
+                        <a href="#"><a href="/ershoufang/2884833/" title="2室 5楼，126总校，没用过学区">
+                            <img src="https://img76.517cdn.com//up2017/zy/2018/7/10/house/viewimg/fid2884833_uid42647_20180710175508221263.jpg.2911.201x153.0.jpg" width="184" height="140" alt="2室 5楼，126总校，没用过学区" /></a></a>
+                    </div>
+                    <div class="h-t-f-text">
+                        <b><a href="/ershoufang/2884833/">2室 5楼，126总校，没用过学区</a></b>
+                        <p><em>63万</em>/<i>2室1厅1卫</i>/<i>69㎡</i><i>南北</i>/<i>简单装修</i>/<i>9113元/㎡</i></p>
+                    </div>
+                </li>
+            
+                <li>
+                    <div class="h-t-xsimg">
+                        <span>15图</span><span class="imgyy"></span>
+                        <a href="#"><a href="/ershoufang/2898043/" title="1室，中等装修，126总校，商圈繁华">
+                            <img src="https://img76.517cdn.com//up2017/zy/2018/7/24/house/viewimg/fid2898043_uid42647_20180724203056435816.jpg.2911.201x153.0.jpg" width="184" height="140" alt="1室，中等装修，126总校，商圈繁华" /></a></a>
+                    </div>
+                    <div class="h-t-f-text">
+                        <b><a href="/ershoufang/2898043/">1室，中等装修，126总校，商圈繁华</a></b>
+                        <p><em>45万</em>/<i>1室1厅1卫</i>/<i>50㎡</i><i>南</i>/<i>中等装修</i>/<i>9000元/㎡</i></p>
+                    </div>
+                </li>
+            
+                <li>
+                    <div class="h-t-xsimg">
+                        <span>12图</span><span class="imgyy"></span>
+                        <a href="#"><a href="/ershoufang/2904733/" title="3室，126总校，没用过学区，南北">
+                            <img src="https://img76.517cdn.com//up2017/zy/2018/7/30/house/viewimg/fid2904733_uid42647_20180730194221342030.jpg.2911.201x153.0.jpg" width="184" height="140" alt="3室，126总校，没用过学区，南北" /></a></a>
+                    </div>
+                    <div class="h-t-f-text">
+                        <b><a href="/ershoufang/2904733/">3室，126总校，没用过学区，南北</a></b>
+                        <p><em>120万</em>/<i>2室2厅1卫</i>/<i>104㎡</i><i>南北</i>/<i>老式装修</i>/<i>11538元/㎡</i></p>
+                    </div>
+                </li>
+            
+                </ul>
+                </div>
+            </div>
+            
+
+        
+
+        
+
+        
+
+
+        
+
+        
+
+
+        
+
+
+    </div>
+
+
+        <!--底部-->
+        <div id="ZY_Foot">
+	
+            <div class="b-link">
+                <div class="bottomlinks clearfix">
+                    <div class="b-l">
+                        <div class="b-pub1 b-yl">
+                            <div class="b-pub1-t b-yl-t"><span><b>友情链接及合作伙伴</b></span></div>
+                            <ul class="clearfix">
+                                
+                            </ul>
+                        </div>
+                        <div class="b-pub1 b-rm">
+                            <div class="b-pub1-t b-rm-t"><span><b>热门区域二手房</b></span></div>
+                            <ul class="clearfix">
+                                <li><a href="/ershoufang/a5/">铁西区二手房</a></li>
+                                <li><a href="/ershoufang/a4/">大东区二手房</a></li>
+                                <li><a href="/ershoufang/a1/">沈河区二手房</a></li>
+                                <li><a href="/ershoufang/a9/">于洪区二手房</a></li>
+                                <li><a href="/ershoufang/a7/">浑南新区二手房</a></li>
+                                <li><a href="/ershoufang/a2/">和平区二手房</a></li>
+                                <li><a href="/ershoufang/a6/">皇姑区二手房</a></li>
+                                <li><a href="/ershoufang/a229/">辽中二手房</a></li>
+                                <li><a href="/ershoufang/a11/">沈北新区二手房</a></li>
+                                <li><a href="/ershoufang/a75/">经济开发区二手房</a></li>
+                            </ul>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="b-c f-r">
+                        <div class="b-c-t"><b>真房源，假一罚百，我承诺，我做到</b><span>服务热线  96517</span></div>
+                        <div class="erweima"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footerbox clearfix">
+                <div class="f-c f-l">
+                    <div class="f-c-link">
+                        <a rel="nofollow" title="关于我们" href="/Aboutus/" target="_blank">关于我们</a>-
+            <a rel="nofollow" title="联系我们" href="/Contact/" target="_blank">联系我们</a>-
+            <a title="店铺名录" href="/dianmian/" target="_blank">店铺名录</a>-
+            <a rel="nofollow" title="组织架构" href="/Org/" target="_blank">组织架构</a>-
+            <!--a rel="nofollow" title="资质荣誉" href="/资质荣誉/" target="_blank">资质荣誉</a-->
+                        <a rel="nofollow" title="隐私保护" href="/Privacy/" target="_blank">隐私保护</a>-
+            <a title="网站地图" href="/Sitemap/" target="_blank">网站地图</a>
+                    </div>
+                    <div class="f-c-t">
+                        ICP:辽B2-20150153-1&nbsp;&nbsp;Copyright © 2003-2018&nbsp;&nbsp;辽宁誉桥网络股份有限公司, All&nbsp;&nbsp;Rights&nbsp;&nbsp;Reserved.&nbsp;&nbsp;E-mail:master@517.cn
+                    </div>
+                    <span class="clearfix" style="display: inline-block;">
+    <a target="_blank" href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=21010302000323" style="display:inline-block;text-decoration:none;"><img src="https://g.517cdn.com/www517cn/2016v1/images/gonganbeianimg.png" style="float:left;"/><i style="float:left;margin: 0 0 0 5px; color:#939393;font-size: 12px;line-height: 20px;display: inline-block;font-style: normal;">辽公网安备 21010302000323号</i></a>
+</span>
+                </div>
+                <div class="f-o f-r">
+                    <a key="567ca408efbfb00c17b60e21" logo_size="124x47" logo_type="business" href="https://www.anquan.org/authenticate/cert/?site=www.517.cn&amp;at=business" target="_blank">
+                        <img src="https://static.anquan.org/static/outer/image/hy_124x47.png?id=www.517.cn" alt="安全联盟认证" width="124" height="47" style="border: none;">
+                    </a>
+                    <a href="https://wljg.lngs.gov.cn/iciaicweb/dzbscheck.do?method=change&amp;id=E2012091800023341" target="_blank">
+                        <img alt="网络经济主体信息" border="0" dragover="true" src="https://img73.517cdn.com/images/dianzigongshangbiaoshi-logo.png" onerror="this.src='https://g.517cdn.com/images/none.png'"></a>
+
+
+                    
+                </div>
+            </div>
+
+
+        
+</div>
+
+
+
+        
+
+
+
+
+        <input style="display: none" />
+        <!--底部 end-->
+
+        <!--浮动广告-->
+        <div class="floatleftadimg">
+            
+        </div>
+        <script type="text/javascript">
+            $("a.closefloatAD").click(function () {
+                $("div.floatleftadimg").hide();
+            });
+        </script>
+        <!--意见反馈-->
+        <div id="jianyibox" class="jubaobox" style="display: none">
+            <a href='javascript:$("#jianyibox").hide();' class="closewinbtn">X</a>
+            <h2>意见反馈</h2>
+            <div class="jubaocontent">
+                <textarea id="jubao_txtContent" name="" cols="" rows="" placeholder="请填写意见反馈内容"></textarea>
+            </div>
+            <div class="jubao-p-n">
+                <p>姓名</p>
+                <input id="jubao_txtUser" name="" type="text" value="输入您的称呼" onfocus="if(this.value=='输入您的称呼'){this.className='jubaotext_on';this.value=''}else{this.className='jubaotext_on';}" onclick="if (this.value == '输入您的称呼') { this.className = 'jubaotext_on'; this.value = '' } else { this.className = 'jubaotext_on'; }" onblur="if(this.value==''){this.value='输入您的称呼';this.className='jubaotext'};" class="jubaotext" />
+                <p>手机</p>
+                <input id="jubao_txtMobile" name="" type="text" value="输入您的常用联系电话" onfocus="if(this.value=='输入您的常用联系电话'){this.className='jubaotext_on';this.value=''}else{this.className='jubaotext_on';}" onclick="if (this.value == '输入您的常用联系电话') { this.className = 'jubaotext_on'; this.value = '' } else { this.className = 'jubaotext_on'; }" onblur="if(this.value==''){this.value='输入您的常用联系电话';this.className='jubaotext'};" class="jubaotext" />
+                <input name="" type="button" value="我要反馈" class="jubaobtn" id="jianyibtn" />
+            </div>
+        </div>
+    
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="29DC4B75" />
+</div></form>
+
+    <script type="text/javascript" src="/website/Scripts/jquery.lazyload.min.js"> </script>
+    <script type="text/javascript" src="/website/Scripts/ls.js"> </script>
+
+
+    <script type="text/javascript" src="/website/Scripts/WebMaster.js?v=20180629"></script>
+
+    <script type="text/javascript" src="/website/Scripts/common.js"></script>
+    <script type="text/javascript" src="/website/Scripts/quick_links.js?v=2016062201"></script>
+
+    <!--右侧悬浮导航 end-->
+
+    
+
+
+
+</body>
+</html>

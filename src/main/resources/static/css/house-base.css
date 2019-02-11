@@ -1,0 +1,170 @@
+
+/* .mui-mbar-tabs { display: none; }*/
+/*搜索栏开始*/
+.width960 { width: 1100px; margin: 0px auto; }
+
+.t-search-wrapper, .topSearchFloat { border-top: 1px solid rgb(219, 219, 219); }
+.topSearchFloat { border: medium none; }
+.t-search-wrapper { width: 1100px; margin: 0px auto; border: medium none; }
+.t-sbox { width: 540px; margin: 0px; padding: 24px 0px; position: relative; z-index: 18; float: left; }
+.searchtextinput, .searchtextinput_on { height: 25px; width: 71.8%; padding: 8px 10px 8px 40px; border: 1px solid rgb(219, 219, 219); line-height: 25px; font-size: 14px; box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1) inset; overflow: visible; background: rgb(255, 255, 255) url('../img/icon_all_home.png') no-repeat scroll -322px -210px; float: left; color: rgb(153, 153, 153); }
+.searchtextinput_on { color: rgb(51, 51, 51); }
+.searchbutton { height: 43px; line-height: 43px; width: 19.2%; background: #C30D23 none repeat scroll 0% 0%; font-size: 18px; border: medium none; color: rgb(255, 255, 255); cursor: pointer; }
+.searchbutton {  }
+.searchinput-text { position: absolute; top: 61px; left: 26px; width: 468px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border-width: medium 1px 1px; border-style: none solid solid; border-color: currentcolor rgb(245, 245, 245) rgb(245, 245, 245); -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; border-image: none; box-shadow: 0px -2px 3px rgba(0, 0, 0, 0.1) inset; z-index: 234565; }
+.searchinput-text-2j { top: 67px; left: -2px; width: 440px; }
+
+.btnleftbox {
+	width: 199px; height: 67px; 
+	background: url(../img/ershoufang/logo-max.png) no-repeat; 
+	float: right; 
+	/*padding: 24px 0px 0px; */
+	margin: 24px 20px 0px 0px;
+	}
+/*.btnleftbox a { display: inline-block; height: 43px; line-height: 43px; padding: 0px 10px; border: 1px solid rgb(238, 238, 238); box-sizing: border-box; font-size: 14px; background: rgb(249, 249, 249) none repeat scroll 0% 0%; border-radius: 2px; margin: 0px 0px 0px 6px; }
+*/
+.btnleftbox a{
+	display: inline-block; height: 100%; width: 100%;
+	text-indent: -111px;
+	overflow: hidden;
+}
+/*搜索栏结束*/
+/*右侧广告*/
+.ad220 { width: 220px; margin: 0px 0px 10px; }
+.ad220 a img { width: 220px; height: auto; }
+/*主导航*/
+.n-top-div { height: 112px; position: relative; display: none; }
+.n-top-wrapper { height: 32px; background: rgba(0, 0, 0, 0) url('../img/ershoufang/header_tm_bg.png') repeat-x scroll 0px 0px; }
+.n-topNav { width: 1100px; height: 32px; margin: 0px auto; }
+.n-topLeft, .n-topRight { height: 32px; }
+.n-topLeft ul li { display: inline-block; float: left; line-height: 32px; color: rgb(233, 224, 200); margin: 0px 8px 0px 0px; }
+.n-topLeft ul li em { color: rgb(233, 224, 200); font-weight: bold; font-family: Tahoma,Geneva,sans-serif; padding: 0px 0px 0px 5px; }
+.n-top-r-l { float: left; line-height: 32px; margin: 0px 4px 0px 0px; position: relative; z-index: 2; }
+.n-top-r-l i { display: inline-block; vertical-align: middle; width: 16px; height: 14px; margin: -2px 5px 0px 0px; background: rgba(0, 0, 0, 0) url('../img/icon_all_home.png') no-repeat scroll left -49px; }
+.n-top-r-l a { display: inline-block; line-height: 32px; padding: 0px 5px; color: rgb(233, 224, 200); }
+.n-top-r-l a.logintopbtn { color: rgb(255, 110, 0); }
+.n-top-r-l a:hover { text-decoration: underline; }
+.n-top-mapsite { float: left; line-height: 32px; padding: 0px 5px; position: relative; display: none; }
+.n-top-mapsite a { display: inline-block; line-height: 32px; height: 32px; }
+.n-top-mapsite a:hover { text-decoration: underline; color: rgb(233, 224, 200); }
+.n-top-mapsite a span { display: block; margin: 9px 0px 0px; padding: 0px 16px 0px 6px; color: rgb(233, 224, 200); position: relative; z-index: 100; }
+.n-top-mapsite a span i { position: absolute; z-index: 10; right: 0px; top: 6px; border-color: rgb(233, 224, 200) transparent transparent; border-style: solid dashed dashed; border-width: 4px 4px 0px; font-size: 0px; height: 0px; width: 0px; line-height: 0; }
+.n-top-mapsite a:hover span i { transform: rotate(180deg); transition: all 0.25s ease 0s; }
+/*网站地图弹出开始*/
+.mapmenu-btn { position: absolute; top: 34px; right: 0px; border: 1px solid rgb(204, 204, 204); padding: 10px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3); width: 260px; display: none; z-index: 100; }
+.mapmenu-btn h1 a, .mapmenu-btn h2 a { display: block; line-height: 30px; font-size: 14px; color: rgb(68, 151, 87); border-bottom: 1px dotted rgb(238, 238, 238); }
+.mapmenu-btn ul { display: block; }
+.mapmenu-btn ul li { display: inline; }
+.mapmenu-btn ul li a { color: rgb(102, 102, 102); }
+.mapmenu-btn ul li a:hover { color: rgb(51, 51, 51); text-decoration: underline; }
+
+/*网站地图弹出结束*/
+/*不知道是干吗的 网站主导航*/
+.loginLayer { position: absolute; top: 36px; right: 0px; width: 320px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; z-index: 101; border: 1px solid rgb(228, 228, 228); box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2); }
+.loginLayer h3 { height: 40px; background: rgb(234, 234, 234) none repeat scroll 0% 0%; }
+.loginLayer h3 span { float: left; display: inline-block; line-height: 40px; font-size: 16px; color: rgb(51, 51, 51); padding: 0px 12px; }
+.loginLayer h3 a { display: inline-block; float: right; line-height: 40px; width: 40px; padding: 0px; font-size: 20px; color: rgb(153, 153, 153); text-align: center; }
+.loginwrapper { padding: 20px; }
+.loginboxtitle { height: 40px; margin: 0px 0px 20px; }
+.loginboxtitle a { display: inline-block; float: left; width: 140px; line-height: 40px; text-align: center; font-size: 16px; color: rgb(153, 153, 153); padding: 0px; border-bottom: 1px solid rgb(234, 234, 234); }
+.loginboxtitle a.loginbtncurr { background: rgb(51, 204, 153) none repeat scroll 0% 0%; color: rgb(255, 255, 255); border-bottom: 1px solid rgb(51, 204, 153); }
+.loginboxinput span { display: block; height: 40px; padding: 0px 0px 10px; }
+.loginboxinput span .logintext1, .loginboxinput span .logintext2 { padding: 5px 10px; font-size: 14px; color: rgb(170, 170, 170); border: 1px solid rgb(234, 234, 234); height: 28px; line-height: 28px; width: 258px; }
+.loginboxinput span a.logintextbtn { display: inline-block; line-height: 40px; width: 140px; padding: 0px; text-align: center; font-size: 16px; color: rgb(255, 255, 255); background: rgb(255, 102, 0) none repeat scroll 0% 0%; text-decoration: none; }
+.loginboxinput span.loginWJpass { height: auto; padding: 0px; margin: 0px; }
+.loginboxinput span.loginWJpass a { display: inline-block; color: rgb(153, 153, 153); font-weight: normal; }
+.n-mainNav-wrapper { height: 80px; width: 100%; margin: 0px auto; background: rgba(0, 0, 0, 0) url('../../img/ershoufang/header_tm_bg.png') repeat-x scroll 0px -32px; }
+.main-logo, .main-logo-517 { width: 130px; height: 50px; margin: 15px 0px 0px; float: left; }
+.main-logo a { background: rgba(0, 0, 0, 0) url('icon_all_home.png') no-repeat scroll left 3px; display: block; width: 130px; height: auto; padding: 36px 0px 0px; }
+.main-logo a em, .main-logo-517 a em { color: rgb(68, 68, 68); }
+.main-logo a em.l-t, .main-logo-517 a em.l-t { float: left; }
+.main-logo a em.r-t, .main-logo-517 a em.r-t { float: right; padding: 0px 2px 0px 0px; }
+
+.city-menu { float: left; min-width: 45px; margin: 36px 0px 0px 14px; position: relative; z-index: 99; }
+.city-m-b { display: inline-block; position: relative; padding: 0px 10px 0px 0px; cursor: pointer; }
+.city-m-b i { position: absolute; z-index: 10; right: -3px; top: 6px; border-color: rgb(51, 51, 51) transparent transparent; border-style: solid dashed dashed; border-width: 4px 4px 0px; font-size: 0px; height: 0px; width: 0px; line-height: 0; }
+.city-m-b:hover i { transform: rotate(180deg); transition: all 0.25s ease 0s; }
+.city-list-n { background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 1px solid rgb(204, 204, 204); padding: 10px; box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3); width: 260px; z-index: 100; position: absolute; top: 26px; left: 0px; display: none; }
+.city-list-n ul { display: block; }
+.city-list-n ul li { float: left; display: inline-block; width: 65px; }
+.city-list-n ul li a { display: inline-block; color: rgb(73, 146, 128); line-height: 24px; height: 24px; overflow: hidden; }
+.city-list-n ul li a:hover { color: rgb(51, 51, 51); text-decoration: underline; }
+/*面包屑*/
+.path-nav, .H-Lbox, .J-Lbox, .jjr-house-info, .storewidthbox { width: 1100px; margin: 0px auto; padding: 20px 0px; position: relative; }
+.path-nav { color: rgb(153, 153, 153); }
+.path-nav a { color: rgb(102, 102, 102); }
+.path-nav a:hover { text-decoration: underline; }
+.path-nav code { color: rgb(51, 51, 51); padding: 0px 4px; font-family: "Microsoft Yahei","黑体"; }
+.t-sbox .searchbutton { width: 17%; background: #C30D23 none repeat scroll 0% 0%; font-size: 14px; border: medium none; color: rgb(255, 255, 255); cursor: pointer; }
+.choose-wrapper { width: 1100px; margin: 0px auto; }
+.chooseblock { border-bottom: 1px solid rgb(238, 238, 238); }
+.choose-Condition-show { border-bottom: 1px dashed rgb(238, 238, 238); padding: 0px 0px 7px; }
+.choose-Condition-show label { float: left; padding: 13px 0px 0px 6px; color: rgb(153, 153, 153); }
+.choose-Condition-show span, .all-clear { display: inline-block; float: left; overflow: visible; height: 24px; line-height: 24px; margin: 7px 0px 0px 6px; border: 1px solid rgb(234, 234, 234); padding: 0px 6px; color: rgb(255, 119, 68); white-space: nowrap; cursor: pointer; }
+.chooseblock-p { height: 36px; border-bottom: 1px dashed rgb(238, 238, 238); }
+.chooseblock-p .c-area { float: left; display: inline-block; line-height: 36px; padding: 0px 6px; }
+.chooseblock-p .c-tab { float: left; }
+.chooseblock-p .c-tab a { display: inline-block; line-height: 36px; height: 36px; padding: 0px 7px; }
+
+
+.c-e-px {  }
+.c-e-sx span, .c-e-px span { display: inline-block; float: left; line-height: 44px; padding: 0px 6px; }
+.b-selectbox span:hover em, .c-e-px p a:hover em { color: rgb(255, 119, 68); }
+.c-e-px p a { display: inline-block; float: left; text-align: center; min-width: 40px; height: 24px; line-height: 24px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 1px solid rgb(212, 212, 212); position: relative; cursor: pointer; z-index: 8; margin: 10px 2px 0px 0px; text-decoration: none; }
+.c-e-px p a em { display: inline-block; margin: 0px 25px 0px 6px; text-align: center; height: 24px; line-height: 24px; }
+.c-e-px p a.normal em { margin: 0px 6px; }
+.c-e-px p a i.arrup { position: absolute; z-index: 10; right: 10px; top: 3px; border-color: transparent transparent rgb(153, 153, 153); border-style: solid; border-width: 4px; font-size: 0px; height: 0px; width: 0px; line-height: 0; }
+.c-e-px p a i.arrdown { position: absolute; z-index: 10; right: 10px; top: 14px; border-color: rgb(153, 153, 153) transparent transparent; border-style: solid; border-width: 4px; font-size: 0px; height: 0px; width: 0px; line-height: 0; }
+/*新房列表*/
+.ListBox-I { padding: 26px 0px; border-bottom: 1px solid rgb(238, 238, 238); position: relative; z-index: 1; }
+.LB-f-img { width: 161px; height: 121px; float: left; margin: 0px 18px 0px 0px; position: relative; }
+
+.details { float: left; }
+
+.details h3 { padding: 0px 0px 10px; }
+.details h3 a { display: inline-block; font-size: 20px; color: rgb(0, 0, 0); overflow: hidden; max-width: 400px; height: 24px; position: relative; }
+.details h3 a:hover { color: #C30D23; }
+.details .details-o a { color: #C30D23; line-height: 24px; font-size: 14px; }
+.details .details-o a.mapYL { display: inline-block; height: 20px; line-height: 20px; margin: 0px 0px 0px 8px; }
+.details .details-o a.mapYL i { display: inline-block; vertical-align: middle; margin: -2px 4px 0px 0px; background: rgba(0, 0, 0, 0) url('icon_all_home.png') no-repeat scroll -121px -111px; width: 13px; height: 16px; }
+
+/*莫名其妙*/
+@media screen and (max-width: 480px) {
+  body { width: 100%; min-width: 100%; }
+  .topbox, .r-float, #ZY_Foot, .floatleftadimg { display: none; }
+  .showtime-img { width: auto; margin: 0px 0px 10px; }
+  .showtime-img a { width: auto; height: auto; }
+  .showtime-img a img { width: 100%; }
+  .width960 { width: auto; margin: 0px 10px; }
+  .to-menu { height: auto; }
+  .to-menu::after { content: "."; display: block; height: 0px; clear: both; visibility: hidden; }
+  .to-menu ul li { height: 50px; width: 33.3%; background: rgb(241, 241, 241) none repeat scroll 0% 0%; position: inherit; float: left; }
+  .to-menu ul li span { font-size: 12px; line-height: 25px; padding: 0px 2%; }
+  .to-menu ul li span.to-ment-ing { background: rgb(51, 204, 153) none repeat scroll 0% 0%; width: auto; height: auto; }
+  .to-menu ul li.to-menu-3 span { line-height: 50px; }
+  .to-tishi { border-radius: 3px; margin: 10px 0px; }
+
+ 
+  .t-search-wrapper, .newsNavBox, .path-nav, .rightside, .n-keyword, .n-tjlist, .n-share { display: none; }
+  .newsListBox { width: auto; margin: 0px auto; overflow: hidden; }
+  .n-Content { width: auto; margin: 0px; float: none; padding: 10px; }
+  .n-content-s p img { width: 100% !important; height: auto !important; }
+  .n-info span:nth-child(3) { display: none; }
+  .n-list { width: auto; margin: 0px; float: none; }
+  .n-l-box { padding: 0px 10px; }
+  .n-listTitle { padding: 10px 0px; border-bottom: 2px solid #C30D23; margin: 0px; }
+  .n-l-s1 p { line-height: 20px; height: 60px; }
+  .n-l-s1 p a img { width: 110px; height: auto; }
+  .pagesizebox-news { width: auto; margin: 20px 0px 10px; padding: 0px 10px; }
+  .pagebtn { float: none; height: auto; }
+  .pagebtn a, .pagebtn span { display: inline-block; float: none; border: 1px solid rgb(238, 238, 238); height: 28px; line-height: 28px; padding: 0px 12px; margin: 0px 2px 10px; }
+}
+ 
+  .FormTab div input[type="text"] { width: 50%; }
+  .FormTab div span.cilianxiang { float: none; }
+  .area1 { width: 100%; border: 1px solid rgb(204, 204, 204); box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1) inset; }
+  .FormTab div ul { float: none; }
+  .FormTab div ul li { float: none; display: inline-block; }
+  .FormTab div.btn h3 { display: none; }
+  .FormTab div.btn ul li { display: block; text-align: center; }
+  

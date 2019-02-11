@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mapper.Article.ArticleMapper" >
+  <resultMap id="BaseResultMap" type="com.model.Sys_Article" >
+    <id column="Id" property="id" jdbcType="NVARCHAR" />
+    <result column="Title" property="title" jdbcType="NVARCHAR" />
+    <result column="Type" property="type" jdbcType="NVARCHAR" />
+    <result column="Status" property="status" jdbcType="NVARCHAR" />
+    <result column="HtmlContent" property="htmlcontent" jdbcType="NVARCHAR" />
+    <result column="ArticleContent" property="articlecontent" jdbcType="NVARCHAR" />
+    <result column="CompanyId" property="companyid" jdbcType="NVARCHAR" />
+    <result column="CreateUserId" property="createuserid" jdbcType="NVARCHAR" />
+    <result column="CreateName" property="createname" jdbcType="NVARCHAR" />
+    <result column="CreateTime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="LastUpdateUserId" property="lastupdateuserid" jdbcType="NVARCHAR" />
+    <result column="LastUpdateName" property="lastupdatename" jdbcType="NVARCHAR" />
+    <result column="LastUpdateTime" property="lastupdatetime" jdbcType="TIMESTAMP" />
+    <result column="BranchShopId" property="branchshopid" jdbcType="NVARCHAR" />
+    <result column="IsDel" property="isdel" jdbcType="NVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    Id, Title, Type, Status, HtmlContent, ArticleContent, CompanyId, CreateUserId, CreateName, 
+    CreateTime, LastUpdateUserId, LastUpdateName, LastUpdateTime, BranchShopId, IsDel
+  </sql>
+  <sql id="tiaojian">
+    <if test="type !=null and type !=''">
+      and h.type like #{type}
+    </if>
+  </sql>
+  <!--分页根据实体类queryVo查询文章结果-->
+  <select id="findArticleByPage" parameterType="com.util.article.QueryArticle" resultMap="BaseResultMap">
+    SELECT * FROM (
+    SELECT TOP ${pageSize} * FROM Sys_Article WHERE ID NOT IN
+    (SELECT TOP ${start} ID FROM Sys_Article)
+    ) h
+    where  h.status = '显示'
+    <include refid="tiaojian"/>
+  </select>
+  <!--根据实体类queryVo查询数据条数-->
+  <select id="queryCountByPage" parameterType="com.util.article.QueryArticle" resultType="int">
+    SELECT count(*) FROM Sys_Article h
+    where h.status = '显示'
+    <include refid="tiaojian"/>
+  </select>
+<!--根据id查询文章-->
+  <select id="findArticleById" parameterType="java.lang.String"  resultMap="BaseResultMap">
+    SELECT * FROM Sys_Article
+    where id = #{id}
+  </select>
+
+</mapper>

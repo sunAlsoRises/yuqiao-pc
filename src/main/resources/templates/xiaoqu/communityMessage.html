@@ -1,0 +1,932 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta http-equiv="Content-language" content="zh-CN"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="applicable-device" content="pc">
+    <link rel="alternate" media="only screen and (max-width: 640px)"
+          href="https://m.lianjia.com/sy/xiaoqu/3111053388449/">
+    <meta name="mobile-agent" content="format=html5;url=https://m.lianjia.com/sy/xiaoqu/3111053388449/">
+    <script>
+        var projecImgtName = "yuqiaopc";
+        var pathName = window.document.location.pathname;
+        var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
+
+        var BaseUrl_IIS_Application_Name = "http://dev-12.lingke.mobi";
+        var SecondaryPath = "CommunityPhoto";
+
+        ljConf = {
+            city_id: '210100',
+            city_abbr: 'sy',
+            city_name: '沈阳',
+            channel: 'xiaoqu',
+            page: 'xiaoqu_detail',
+            pageConfig: {
+                "ajaxroot": "\/\/ajax.api.lianjia.com\/",
+                "imAppid": "LIANJIA_WEB_20160624",
+                "imAppkey": "6dfdcee27d78b1107fceeca55d80b7bd"
+            },
+            feroot: '//s1.yuqiao.com/feroot/',
+            ucid: '',
+            cdn: '0',
+        };
+    </script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/lj/common.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/lj/iframe.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/lj/lianjiaim.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/lj/list.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/lj/main.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/lj/index.css}"/>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/base.css}"/>
+    <link th:href="@{/css/xiaoqu/listfilter.css}" rel="stylesheet"/>
+    <link th:href="@{/css/xiaoqu/xiaoqu.css}" rel="stylesheet"/>
+    <script th:src="@{/lib/jquery-3.2.1.min.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/address.css}"/>
+
+    <script type="text/javascript" th:src="@{/js/newself/myself_quick_link.js}"></script>
+    <script type="text/javascript" th:src="@{/lib/jquery.qrcode.min.js}"></script>
+
+    <!-- 2017.11.8 市场需求加上新的统计 -->
+    <!-- 2017.7.18 开放全国 -->
+    <!--<script>-->
+    <!--var _hmt = _hmt || [];-->
+    <!--(function() {-->
+    <!--var hm = document.createElement("script");-->
+    <!--hm.src = "https://hm.baidu.com/hm.js?9152f8221cb6243a53c83b956842be8a";-->
+    <!--var s = document.getElementsByTagName("script")[0];-->
+    <!--s.parentNode.insertBefore(hm, s);-->
+    <!--})();-->
+    <!--</script>-->
+    <!--<script src="static/js/tingyun-rum_1.js"></script>-->
+    <title>SR国际新城|SR国际新城二手房,房价(沈阳誉桥网)</title>
+    <meta name="description"
+          content="沈阳SR国际新城位于浑南新区商圈,本月参考均价9073元,在售房源67套,已有470人关注本小区,SR国际新城建筑年代:2009年建成年,物业公司：爱斯阿尔(沈阳)房产开发有限公司."/>
+    <meta name="keywords" content="SR国际新城,SR国际新城二手房,SR国际新城房价,SR国际新城租房"/>
+    <link href="/favicon.ico" type="image/x-icon" rel=icon>
+    <link href="/favicon.ico" type="image/x-icon" rel="shortcut icon">
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" th:src="@{/js/lj/html5_1.js}"></script><![endif]-->
+    <script>
+        function RESIZEIMG(b, k, l, m) {
+            var c = b.parentNode;
+            var d = parseInt(c.offsetWidth) || k;
+            var e = parseInt(c.offsetHeight) || l;
+            var f = d / e;
+            var g = b.naturalWidth || b.width;
+            var h = b.naturalHeight || b.height;
+            var i = g / h;
+            var j = "width";
+            if (f < i) {
+                j = "height";
+                try {
+                    b.style["left"] = "-" + parseInt(Math.abs((d - (g * e / h)) / 2)) + "px"
+                } catch (e) {
+                }
+            } else if (m) {
+                try {
+                    b.style["top"] = "-" + parseInt(Math.abs((e - (h * d / g)) / 2)) + "px"
+                } catch (e) {
+                }
+            }
+            ;b.style[j] = "100%";
+        };
+    </script>
+    <script>
+        var _czc = _czc || [];
+        _czc.push(["_setAccount", "1254525948"]);
+    </script>
+
+    <!--<script type="text/javascript">-->
+        <!--var _smq = _smq || [];-->
+        <!--_smq.push(['_setAccount', '41331c2', new Date()]);-->
+        <!--_smq.push(['_setDomainName', 'lianjia.com']);-->
+        <!--_smq.push(['pageview']);-->
+        <!--(function () {-->
+            <!--var sm = document.createElement('script');-->
+            <!--sm.type = 'text/javascript';-->
+            <!--sm.async = true;-->
+            <!--sm.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdnmaster.com/sitemaster/collect.js';-->
+            <!--var s = document.getElementsByTagName('script')[0];-->
+            <!--s.parentNode.insertBefore(sm, s);-->
+        <!--})();-->
+    <!--</script>-->
+</head>
+<body>
+<script>
+    __STAT_LJ_CONF = {
+        params: {
+            ljweb_group: ['SEARCH', 'BIGDATA_PC'],
+            ljweb_id: '',
+            ljweb_mod: '',
+            ljweb_bl: '',
+            ljweb_el: '',
+            ljweb_sl: '',
+            ljweb_index: '',
+            ljweb_value: '',
+            ljweb_url: '',
+            ljweb_ljref: (document.cookie.match(/(?:^| )ljref=([^;]*)(?:;|$)/) || ['', ''])[1],
+            ljweb_sample: (document.cookie.match(/(?:^| )sample_traffic_test=([^;]*)(?:;|$)/) || ['', ''])[1],
+            ljweb_ref: document.referrer,
+            ljweb_cid: '210100',
+            ljweb_channel: 'xiaoqu',
+            ljweb_page: 'xiaoqu_detail',
+            ljweb_source: '',
+            ljweb_stat_id: ''
+        }
+    };
+
+
+    var UT = {
+        send: function () {
+
+        }
+    };
+    var LjUserTrack = {
+        log: [],
+        initInterval: false,
+        intervalLog: function () {
+            setTimeout(function () {
+                if (window.$ULOG && $ULOG.send) {
+                    for (var i = 0, l = LjUserTrack.log.length; i < l; i++) {
+                        LjUserTrack.__send(LjUserTrack.log[i]);
+                    }
+
+                    for (var m = 0, n = LjUserTrack.logIds.length; m < n; m++) {
+                        LjUserTrack.__sendId(LjUserTrack.logIds[m]);
+                    }
+                    for (var j = 0, k = LjUserTrack.logDatas.length; j < k; j++) {
+                        LjUserTrack.__sendData(LjUserTrack.logDatas[j].id, LjUserTrack.logDatas[j].data);
+                    }
+                } else {
+                    LjUserTrack.intervalLog();
+                }
+            }, 16.7);
+        },
+        _start_time: +new Date,
+        logDatas: [],
+        __sendData: function (id, data) {
+            if (id && (typeof(data) == 'object')) {
+                data.pid = (window.__UDL_CONFIG && window.__UDL_CONFIG.pid && window.__UDL_CONFIG.pid) || "lianjiaweb";
+                data.key = window.location.href;
+                window.$ULOG && $ULOG.send(id, data);
+            }
+        },
+        sendData: function (id, data) {
+            if (window.$ULOG && $ULOG.send) {
+                LjUserTrack.__sendData(id, data);
+            } else {
+                LjUserTrack.logDatas.push({id: id, data: data});
+
+                LjUserTrack.initInterval || (LjUserTrack.initInterval = true, LjUserTrack.intervalLog());
+
+            }
+        },
+        __send: function (data) {
+            var evt_id = data.evt_id || '10043';
+            if ('evt_id' in data) {
+                delete data.evt_id;
+            }
+
+            window.$ULOG && $ULOG.send(evt_id, {
+                "pid": (window.__UDL_CONFIG && window.__UDL_CONFIG.pid && window.__UDL_CONFIG.pid) || "lianjiaweb",
+                "key": window.location.href,
+                "action": data
+            });
+        },
+        logIds: [],
+        __sendId: function (id) {
+            id && window.$ULOG && window.$ULOG && $ULOG.send(id, {
+                "pid": (window.__UDL_CONFIG && window.__UDL_CONFIG.pid && window.__UDL_CONFIG.pid) || "lianjiaweb",
+                "key": window.location.href
+            });
+        },
+        sendId: function (id) {
+            if (window.$ULOG && $ULOG.send) {
+                LjUserTrack.__sendId(id);
+            } else {
+                LjUserTrack.logIds.push(id);
+
+                LjUserTrack.initInterval || (LjUserTrack.initInterval = true, LjUserTrack.intervalLog());
+
+            }
+        },
+        send: function (data, el, config) {
+
+            var utConf = __STAT_LJ_CONF;
+            var params = config || utConf.params,
+                win = window,
+                j;
+
+            data.groupIndex = data.ljweb_group || 0;
+
+            if (params) {
+                for (var d in params) {
+                    if (params[d] !== j && data[d] === j) {
+                        data[d] = params[d];
+                    }
+                }
+            }
+
+            if (el) {
+                this.checkClick(el, data);
+            }
+
+            data.ljweb_group = params['ljweb_group'][data.groupIndex || 0];
+
+            delete data.groupIndex;
+
+            if (data.typ) {
+                data.ljweb_bl = (data.ljweb_bl || '') + '_' + data.typ;
+                delete data.typ;
+            }
+
+            if (window.$ULOG && $ULOG.send) {
+                LjUserTrack.__send(data);
+            } else {
+                LjUserTrack.log.push(data);
+
+                LjUserTrack.initInterval || (LjUserTrack.initInterval = true, LjUserTrack.intervalLog());
+
+            }
+
+        },
+        checkClick: function (el, data) {
+
+            var TAG_LINK = 'A';
+            var href = '';
+            var elParent = null;
+
+            href = (el.tagName.toUpperCase() === TAG_LINK ? el.getAttribute("href", 2) : '');
+            if (!href && (elParent = el.parentNode) && elParent.nodeType === 1) {
+                href = (elParent.tagName.toUpperCase() === TAG_LINK ? elParent.getAttribute("href", 2) : '');
+            }
+
+            if (href) {
+                data.ljweb_url = href;
+            } else {
+                data.ljweb_url = data.ljweb_url
+                    || el.getAttribute("data-log_url")
+                    || (elParent = el.parentNode || el).getAttribute("data-log_url")
+                    || (
+                        (elParent = elParent.parentNode || elParent)
+                        && (elParent.nodeType === 1)
+                        && elParent.getAttribute("data-log_url")
+                    )
+                    || "";
+            }
+
+            this.attr(el, data);
+
+        },
+        path: function () {
+
+        },
+        attr: function (el, data) {
+            var modId = el.getAttribute("log-mod");
+            var blAttr = el.getAttribute("data-bl");
+            var elAttr = el.getAttribute("data-el");
+            var slAttr = el.getAttribute("data-sl");
+            var InAttr = el.getAttribute("data-log_index");
+            var valAttr = el.getAttribute("data-log_value");
+            var idAttr = el.getAttribute("data-log_id");
+            var groupAttr = el.getAttribute("data-log_group");
+            var sourceAttr = el.getAttribute("data-log_source");
+            var statIdAttr = el.getAttribute("data-log_statId");
+            var evtId = el.getAttribute("data-log_evtid");
+
+            data.ljweb_bl = data.ljweb_bl || blAttr || '';
+            data.ljweb_el = data.ljweb_el || elAttr || '';
+            data.ljweb_sl = data.ljweb_sl || slAttr || '';
+            data.ljweb_index = data.ljweb_index || InAttr || '';
+            data.ljweb_value = data.ljweb_value || valAttr || '';
+            data.ljweb_id = data.ljweb_id || idAttr || '';
+            data.ljweb_source = data.ljweb_source || sourceAttr || '';
+            data.ljweb_stat_id = data.ljweb_stat_id || statIdAttr || 0;
+            data.groupIndex = data.groupIndex || groupAttr || 0;
+            data.evt_id = data.evt_id || evtId || '';
+
+            if (!modId) {
+                if (el.parentNode && el.parentNode.nodeType === 1 && el.parentNode.tagName.toUpperCase() !== 'BODY') {
+                    this.attr(el.parentNode, data);
+                }
+            } else {
+                data.ljweb_mod = modId;
+            }
+        }
+    };
+
+    ;
+    ;(function () {
+        var isW3c = !!document.addEventListener;
+
+        LjUserTrack.send({
+            ljweb_mod: 'pv',
+            ljweb_group: 1
+        });
+
+        /*window[isW3c ? 'addEventListener' : 'attachEvent'](
+            (isW3c ? '': 'on') + 'beforeunload',
+            function(e) {
+                var _end_time = +new Date;
+                UT.send({type: 'show', subtype: 'stay', time: (_end_time-UT._start_time)/1000});
+            },
+            false);*/
+    })();
+
+
+</script>
+
+<!--顶部导航栏开始-->
+<div th:replace="base/header :: html"></div>
+<!--顶部导航栏结束-->
+
+
+<script type="text/template" id="userInfoTpl">
+    <i></i>
+    <%if(isAgent){%>
+    <a id="userNameContainer" href="<%=$.env.fixedUrl('//agent.lianjia.com/')%>"><%=username%></a>
+    <%}else{%>
+    <a id="userNameContainer" href="<%=$.env.fixedUrl('//user.lianjia.com/')%>" rel="nofollow"><%=username%></a>
+    <%}%>
+    <span id="tipContainer"></span>
+    &nbsp;&nbsp;<a href="<%=logoutUrl%>">退出</a>
+    <span id="pushNewsListContainer"></span>
+</script>
+<script type="text/template" id="pushNewsListTpl">
+    <div class="pushNewsList">
+        <%for(var i in group_by_type){%>
+        <%if(group_by_type[i].unread !== 0 && pushMsgMap.hasOwnProperty(i)){%>
+        <a href="<%=pushMsgMap[i].url%>"><%=$.replaceTpl(pushMsgMap[i].text, {unread:group_by_type[i].unread})%></a>
+        <%}%>
+        <%}%>
+    </div>
+</script>
+
+<!--<div class="header">-->
+<!--<div class="menu clear">-->
+<!--<div class="menuLeft"><a href="/ershoufang/" class="logo"></a>&lt;!&ndash; <span class="channelName">二手房</span> &ndash;&gt;<ul class="typeList"><li ><a href="/ershoufang/">在售</a></li><li ><a href="/chengjiao/">成交</a></li><li class="selected"><a href="/xiaoqu/">小区</a></li><li ><a href="/fangjia/">房价</a></li><li ><a href="/ditu/">地图找房</a></li></ul></div><div class="search"><div class="input" log-mod="search"><form action="/ershoufang/rs" id="searchForm"><span class="downArrow" data-bl="switch"><span class="state">在售</span><i></i></span><span class="sstate" data-bl="switch"><span data-state="1">在售</span><span data-state="2">成交</span><span data-state="3">小区</span></span><input type="text" id="searchInput" placeholder="请输入关键字搜索" autocomplete="off"><button type="submit" class="searchButton" data-bl="search" data-el="search">&nbsp;<i></i>&nbsp;</button></form><div class="searchMsg" id="searchMsgContainer"></div></div></div></div></div>-->
+
+
+<script type="text/template" id="searchSuggestionTpl">
+    <div class="searchMsgTitle">
+        <span class="searchMsgName">你可能在找</span>
+    </div>
+    <ul data-bl="sug" data-el="sug">
+        <%for(var i = 0;i < list.length;i++){%>
+        <li>
+            <a href="<%=list[i].url%>" role="addHistory" data-log_index="<%=i+1%>" data-log_value="<%=list[i].title%>">
+        <span class="msgListTitle">
+          <!--<%=list[i].title%>-->
+            <!--<%if(list[i].region){%>-->
+            <span class="msgListArea">
+              <!--<%=list[i].region%>-->
+            </span>
+            <!--<%}%>-->
+        </span>
+                <!--<%if(type === 'sell'){%>-->
+                <span class="msgListAdd">
+            <!--约<%=list[i].count%>套在售-->
+          </span>
+                <!--<%}else if(type === 'deal'){%>-->
+                <span class="msgListAdd">
+            <!--约<%=list[i].count%>套成交-->
+          </span>
+                <!--<%}%>-->
+            </a>
+        </li>
+        <!--<%}%>-->
+    </ul>
+</script>
+
+<div class="download_layer">
+    <div class="download_layer_ewmframe"><span class="close black">&times</span>
+        <!--<img src="static/picture/57d4910941ba4fa3bbcc25d3a0c6250a.gif" />-->
+        <p class="gray">查看最新成交价格</p>
+        <p class="gray">下载誉桥APP</p></div>
+</div>
+<div class="xiaoquDetailHeader">
+    <div class="xiaoquDetailHeaderContent clear">
+        <div class="detailHeader fl">
+            <h1 class="detailTitle">[[${hr.data.loupanmingcheng}]]</h1>
+            <div class="detailDesc">[[${hr.data.loupandizhi}]]</div>
+        </div>
+        <div class="DetailFollow fr">
+            <!--<button class="followBtn" data-role="followBtn">关注小区</button>-->
+            <!--<div class="detailFollowedNum">-->
+            <!--<span data-role="followNumber">470</span>位用户已关注</div>-->
+            <span class="layer-qrcode followLayer" style="display: none;">
+    <div class="icon-qrcode">
+
+    </div>
+    <span class="txt">下载誉桥APP</span>
+    <span class="sub-txt">房源动态早知道</span>
+    <span class="icon-close">
+
+    </span>
+  </span>
+        </div>
+    </div>
+</div>
+<div class="xiaoquDetailbreadCrumbs" mod-id="lj-common-bread">
+    <div class="fl l-txt">
+        <a th:href="@{/}">誉桥网沈阳站</a>
+        <span class="stp">&nbsp;&gt;&nbsp;</span>
+        <a th:href="@{/xiaoqu/xiaoqu}">沈阳小区</a>
+        <span class="stp">&nbsp;&gt;&nbsp;</span>
+        <a th:href="@{'/xiaoqu/xiaoqu?searchName='+${hr.data.quyu}}">[[${hr.data.quyu}]]小区</a>
+        <!--<span class="stp">&nbsp;&gt;&nbsp;</span>-->
+        <!--<a th:href="https://需要更换.com/xiaoqu/hunnanxinqu1/">浑南新区小区</a>-->
+        <span class="stp">&nbsp;&gt;&nbsp;</span>
+        <a th:href="@{'/xiaoqu/'+${hr.data.id}}">[[${hr.data.loupanbieming}]]</a></div>
+    <div class="fr">
+        <span class="shareIcon"></span>分享此小区
+        <div class="shareInfomation">
+            <!--<img src="static/picture/209c69a615dc4d678d2493f45de96e78.gif" alt="">-->
+            <div class="desc1">使用微信扫一扫</div>
+            <div class="desc2">查看小区信息分享给好友</div>
+        </div>
+        <script type="text/javascript" th:src="@{/js/newself/verificationImg.js}"></script>
+    </div>
+</div>
+
+<!--房源图片滚动-->
+<!--<div id="ContentPlaceHolder1__pHouseImage" class="xiaoquImg fl">-->
+
+<!--<div class="h-m-movebox">-->
+<!--<span id="prev" class="btn prev"></span>-->
+<!--<span id="next" class="btn next"></span>-->
+<!--<span id="prevTop" class="btn prev"></span>-->
+<!--<span id="nextTop" class="btn next"></span>-->
+<!--<div id="picBox" class="picBox">-->
+<!--<ul class="cf" style="width: 742px; left: 0px;">-->
+<!--&lt;!&ndash;201804 张广睿 增加视频附件repeter&ndash;&gt;-->
+
+<!--<li th:each="photo:${hr.data.photos}">-->
+<!--<a href="#houseImage">-->
+<!--<img name="mob_bigImg" th:src="@{'http://dev-12.lingke.mobi/HousePhoto/'+${photo.path}}" onerror="javascript:this.src='/yuqiaopc/img/house/linshi_house (1).jpg';" style="transform: rotate(0deg);" alt="主卧" ></a>-->
+<!--<span></span>-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--<div id="listBox" class="listBox">-->
+<!--<ul class="cf" style="width: 742px; left: 0px;">-->
+<!--&lt;!&ndash;201804 张广睿 增加视频附件repeter&ndash;&gt;-->
+
+<!--<li class="on" th:each="photo:${hr.data.photos}">-->
+<!--<em>-->
+<!--<img name="mob_smallImg"   th:src="@{'http://dev-12.lingke.mobi/CommunityPhoto/'+${photo.path}}" onerror="javascript:this.src='/yuqiaopc/img/house/linshi_house (3).jpg';" style="transform: rotate(0deg);" alt="主卧"></em>-->
+<!--</li>-->
+
+
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--</div>-->
+
+
+<div class="xiaoquOverview">
+    <div class="xiaoquImg fl">
+        <div class="xiaoquBigImg">
+            <img th:src="@{'http://dev-12.lingke.mobi/CommunityPhoto/'+${hr.data.photos[0].path}}"
+                 onerror="javascript:this.src='/yuqiaopc/img/house/linshi_house (4).jpg';" alt="" id="overviewBigImg"
+                 class="new-default-icon">
+            <!--<div class="imgDesc">查看剩余22张大图</div>-->
+            <div class="overviewImgLoading">
+                <span></span>
+            </div>
+        </div>
+        <div class="xiaoquImgThumbnail clear">
+            <div class="imgControllLeft fl" id="overviewImgLeft"><</div>
+            <div class="imgControllRight fr" id="overviewImgRight">></div>
+            <div class="imgThumbnailList">
+                <ol id="overviewThumbnail">
+                    <li th:each="photo:${hr.data.photos}"
+                        data-src="https://image1.yuqiao.com/hdic-resblock/3fe4dede-83d8-4e97-9a44-17f1c569ea61.jpg.710x400.jpg">
+                        <img th:src="@{'http://dev-12.lingke.mobi/CommunityPhoto/'+${hr.data.photos[0].path}}"
+                             onerror="javascript:this.src='/yuqiaopc/img/house/linshi_house (4).jpg';"
+                             th:alt="${hr.data.loupanmingcheng}">
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" th:src="@{/js/newself/xqImgOverview.js}"></script>
+    <div class="xiaoquDescribe fr">
+        <div class="xiaoquPrice clear" th:if="${hr.data.price != null}">
+            <div class="fl">
+      <span class="xiaoquUnitPrice">
+        [[${#strings.substringBefore(hr.data.price ,'.')}]]
+      </span>
+                元/㎡
+                <span class="xiaoquUnitPriceDesc">最新参考均价
+      </span>
+            </div>
+        </div>
+        <div class="xiaoquInfo">
+            <div class="xiaoquInfoItem">
+                <span class="xiaoquInfoLabel">建筑年代</span>
+                <span class="xiaoquInfoContent">[[${hr.data.jungongniandai}]]年竣工 </span>
+            </div>
+            <div class="xiaoquInfoItem"><span class="xiaoquInfoLabel">建筑面积</span><span class="xiaoquInfoContent">[[${hr.data.jianzhumianji}]]</span>
+            </div>
+            <div class="xiaoquInfoItem"><span class="xiaoquInfoLabel">物业费用</span>
+                <span class="xiaoquInfoContent">[[${hr.data.zhuwufeiyong}]]元/平米/月</span>
+            </div>
+            <div class="xiaoquInfoItem">
+                <span class="xiaoquInfoLabel">物业公司</span>
+                <span class="xiaoquInfoContent">[[${hr.data.wuyegongsi}]]</span></div>
+            <div class="xiaoquInfoItem"><span class="xiaoquInfoLabel">开发商</span>
+                <span class="xiaoquInfoContent">[[${hr.data.kaifagongsi}]]</span></div>
+            <div class="xiaoquInfoItem">
+                <span class="xiaoquInfoLabel">楼栋总数</span>
+                <span class="xiaoquInfoContent">[[${hr.data.guihuadongshu}]]栋</span></div>
+            <div class="xiaoquInfoItem"><span class="xiaoquInfoLabel">房屋总数</span>
+                <span class="xiaoquInfoContent">[[${hr.data.guihuahushu}]]户</span></div>
+            <div class="xiaoquInfoItem">
+                <span class="xiaoquInfoLabel">附近门店</span>
+                <span class="xiaoquInfoContent"><span mendian="123.457114,41.738154"
+                                                      xiaoqu="[123.45908744974,41.738131477795]" class="actshowMap">
+    </span>[[${hr.data.shop.name}]]</span></div>
+        </div>
+        <div class="xiaoquAgent clear LOGVIEWDATA" log-mod="xiaoqu_detail_diamond-first" data-lj_view_evtid="13138"
+             data-lj_action_pid="lianjiaweb" data-lj_action_event="ModuleExpo"
+             data-lj_action_source_type="小区详情页小区顾问展位曝光" data-lj_action_agent_ucid="1000000021341472"
+             data-lj_action_e_plan='{"v":"V1","s":"NATURAL","adId":100000107,"flow":"natural","sid":"1000000021341472_3111053388449","rid":"26213766_3850_747"}'>
+            <a target="_blank" th:href="@{'/agent/message/'+${hr.data.createuserid}}"
+               class="xiaoquAgentImg fl LOGVIEW LOGCLICK" data-log_id="20001" data-bl="agent"
+               data-el="1000000021341472">
+                <img th:src="@{'http://dev-12.lingke.mobi/UserPhoto/'+${hr.data.user.photos.path}}"
+                     onerror="javascript:this.src='/yuqiaopc/img/house/linshi_house (1).jpg';"
+                     th:alt="${hr.data.user.name}" class="LOGCLICKDATA" data-lj_evtid="13140"
+                     data-lj_action_pid="lianjiaweb" data-lj_action_event="WebClick"
+                     data-lj_action_source_type="小区详情页小区顾问经纪人头像点击" data-lj_action_agent_ucid="1000000021341472"
+                     data-lj_action_e_plan='{"v":"V1","s":"NATURAL","adId":100000107,"flow":"natural","sid":"1000000021341472_3111053388449","rid":"26213766_3850_747"}'></a>
+            <div class="agentInfo fr">
+                <div class="agentTitle clear">
+                    <div class="fl">
+                        <a target="_blank" class="agentName LOGCLICK LOGCLICKDATA"
+                           th:href="@{'/agent/message/'+${hr.data.createuserid}}" data-log_id="20001" data-bl="agent"
+                           data-el="1000000021341472" data-lj_evtid="13141" data-lj_action_pid="lianjiaweb"
+                           data-lj_action_event="WebClick" data-lj_action_source_type="小区详情页小区顾问经纪人名字点击"
+                           data-lj_action_agent_ucid="1000000021341472"
+                           data-lj_action_e_plan='{"v":"V1","s":"NATURAL","adId":100000107,"flow":"natural","sid":"1000000021341472_3111053388449","rid":"26213766_3850_747"}'>[[${hr.data.user.name
+                            == null? '暂无':hr.data.user.name}]]</a>
+                    </div>
+                    <!--<div class="agentScore fl">评分:5.0/-->
+                    <!--<a href="https://dianpu.lianjia.com/1000000021341472/?w=pingjia">-->
+                    <!--3人评价-->
+                    <!--</a>-->
+                    <!--</div>-->
+                </div>
+                <div class="agentDesc">有任何选房、买房、缴税过户问题，欢迎咨询
+                </div>
+                <div class="phone">[[${hr.data.user.mobile == null? '暂无联系方式':hr.data.user.mobile}]]</div>
+                <span class="agent_chat LOGCLICK LOGCLICKDATA im-talk" data-role="" data-ucid="1000000021341472"
+                      data-log_id="20001" data-bl="agentim" data-el="1000000021341472"
+                      data-source-port="PC:ershou_xiaoqu_sp" data-source-extends={"community_id":"3111053388449"}
+                      data-msg-payload="HI，您好。我正在看SR国际新城小区" data-lj_evtid="13142" data-lj_action_pid="lianjiaweb"
+                      data-lj_action_event="WebClick" data-lj_action_source_type="小区详情页小区顾问IM点击"
+                      data-lj_action_agent_ucid="1000000021341472"
+                      data-lj_action_e_plan='{"v":"V1","s":"NATURAL","adId":100000107,"flow":"natural","sid":"1000000021341472_3111053388449","rid":"26213766_3850_747"}'><i></i><span>在线咨询</span></span>
+            </div>
+        </div>
+        <div class="download">
+            <div class="qr-code">
+                <!--<img width="94" height="94" src="static/picture/3aa7c51d15724acdbaa484e5e9232300.gif" alt="下载誉桥app">-->
+                <span class="text">扫描下载APP 随时查看新房源</span></div>
+        </div>
+    </div>
+</div>
+<div class="fixedContent">
+    <div class="fixedTabs">
+        <div class="fixedTabsContent"><a href="#goodSell">优质二手房</a>
+            <a href="#frameDeal">小区成交记录
+            </a>
+            <a href="#brokerList">
+                优秀经纪人</a>
+            <a href="#around">周边配套
+            </a>
+            <a href="#nearby">
+                附近小区
+            </a></div>
+    </div>
+</div>
+<div class="m-content">
+    <div class="box-l xiaoquMainContent">
+        <div class="goodSell" id="goodSell" th:if="${esfHouse != null}">
+            <div class="goodSellHeader clear">
+                <h3 class="fl">
+                    [[${hr.data.loupanmingcheng}]]优质二手房
+                </h3>
+                <a th:href="@{'/ershoufang/xq/'+${hr.data.id}+'/'}" class="fr">
+                    查看小区全部在售二手房
+                </a>
+            </div>
+            <ol class="clear">
+                <li class="fl" th:each="house:${esfHouse}">
+                    <a target="_blank" th:href="@{'/ershoufang/'+${house.id}}" class="goodSellItemPic">
+                        <img class="lj-lazy"
+                             th:src="@{'http://dev-12.lingke.mobi/HousePhoto/'+${house.housePhoto[0].path}}"
+                             onerror="javascript:this.src='/yuqiaopc/img/house/linshi_house (4).jpg';" alt="">
+                        <span class="goodSellItemPrice">
+          [[${#strings.substringBefore(house.zuigaoshoujia ,'.')}]]万
+        </span>
+                    </a>
+                    <div class="goodSellItemTitle">
+                        <a th:href="@{'/ershoufang/'+${house.id}}">
+                            [[${hr.data.loupanmingcheng}]] [[${hr.data.loupandizhi}]]
+                            [[${house.mianji}]]平[[${house.zuigaoshoujia}]]万
+                        </a>
+                    </div>
+                    <div class="goodSellItemDesc">[[${house.mianji}]]平/[[${house.huxing}]]</div>
+                </li>
+            </ol>
+        </div>
+
+        <!--<div class="frameDeal" id="frameDeal">-->
+        <!--<h3 class="frameDealHeader">SR国际新城小区成交记录</h3><div class="frameDealList"><div class="frameDealListHeader"><div class="frameDealInfo">房屋户型</div><div class="frameDealArea">面积</div><div class="frameDealDate">签约日期</div><div class="frameDealPrice">成交价</div><div class="frameDealUnitPrice">成交单价</div></div><ol class="frameDealListItem"><li><div class="mask chengjiaodaoliu_mask"></div><div class="frameDealInfo"><a target="_blank" href="https://需要更换.com/chengjiao/102100871122.html" class="frameDealImg"><img class="lj-lazy" src="static/picture/blank.gif" data-original="" alt=""></a><div class="frameDealDesc"><a target="_blank" href="https://需要更换.com/chengjiao/102100871122.html" class="frameDealTitle">1室1厅</a><div class="frameDealFloor">中楼层/30层&nbsp;南</div><div class="frameDealResblock">2009年建成</div></div></div><div class="frameDealArea">65平米</div><div class="frameDealDate">2018-10-03</div><div class="frameDealPrice">6*万</div><div class="frameDealUnitPrice"><span class="number green erweima_hover">下载APP查看成交><div class="ewm_frame"><img src="static/picture/57d4910941ba4fa3bbcc25d3a0c6250a.gif" /></div></span></div></li><li><div class="mask chengjiaodaoliu_mask"></div><div class="frameDealInfo"><a target="_blank" href="https://需要更换.com/chengjiao/102100763134.html" class="frameDealImg"><img class="lj-lazy" src="static/picture/blank.gif" data-original="https://image1.yuqiao.com/210100-inspection/7e4358fe-993e-464c-9b5d-21477f459b3b.jpg.68x50.jpg" alt=""></a><div class="frameDealDesc"><a target="_blank" href="https://需要更换.com/chengjiao/102100763134.html" class="frameDealTitle">2室1厅</a><div class="frameDealFloor">低楼层/32层&nbsp;南</div><div class="frameDealResblock">2009年建成</div></div></div><div class="frameDealArea">91.08平米</div><div class="frameDealDate">2018-10-01</div><div class="frameDealPrice">8*万</div><div class="frameDealUnitPrice"><span class="number green erweima_hover">下载APP查看成交><div class="ewm_frame"><img src="static/picture/57d4910941ba4fa3bbcc25d3a0c6250a.gif" /></div></span></div></li><li><div class="mask chengjiaodaoliu_mask"></div><div class="frameDealInfo"><a target="_blank" href="https://需要更换.com/chengjiao/102100710656.html" class="frameDealImg"><img class="lj-lazy" src="static/picture/blank.gif" data-original="https://image1.yuqiao.com/210100-inspection/528a15a8-8a30-4e52-94ad-d7442aeec11b.jpg.68x50.jpg" alt=""></a><div class="frameDealDesc"><a target="_blank" href="https://需要更换.com/chengjiao/102100710656.html" class="frameDealTitle">1室1厅</a><div class="frameDealFloor">中楼层/25层&nbsp;西</div><div class="frameDealResblock">2009年建成</div></div></div><div class="frameDealArea">61平米</div><div class="frameDealDate">2018-09-27</div><div class="frameDealPrice">4*万</div>-->
+        <!--<div class="frameDealUnitPrice"><span class="number green erweima_hover">下载APP查看成交><div class="ewm_frame"><img src="static/picture/57d4910941ba4fa3bbcc25d3a0c6250a.gif" /></div></span></div></li></ol></div><a href="https://需要更换.com/chengjiao/c3111053388449/" target="_blank" class="btn-large">查看全部成交记录</a></div>-->
+
+        <!--<div class="brokerList LOGVIEWDATA" id="brokerList" log-mod="xiaoqu_detail_diamond-many" data-lj_view_evtid="13139" data-lj_action_pid="lianjiaweb" data-lj_action_event="ModuleExpo" data-lj_action_source_type="小区详情页经纪人列表展位曝光" data-lj_action_agent_ucid="1000000021341472" data-lj_action_e_plan='{"v":"V1","s":"NATURAL","adId":100000107,"flow":"natural","sid":"1000000021341472_3111053388449","rid":"26213766_3850_747"}'><div class="broheader"><h3 class="title">联系经纪人</h3><span class="subTitle">您可以通过电话联系经纪人</span></div>-->
+        <!--<ul><li>-->
+        <!--<a target="_blank" href="https://dianpu.lianjia.com/1000000020369768"><img class="lj-lazy LOGVIEW LOGCLICK LOGCLICKDATA" src="static/picture/noimg_1.jpg" data-original="https://image1.yuqiao.com/usercenter/images/uc_ehr_avatar/c9c391fa-8bba-4b74-9857-47f861f325d9.jpg.60x80.jpg" alt="" data-log_id="20001" data-bl="agent" data-el="1000000020369768" data-log_index="1" data-lj_evtid="13143" data-lj_action_pid="lianjiaweb" data-lj_action_event="WebClick" data-lj_action_source_type="小区详情页经纪人列表经纪人头像点击" data-lj_action_agent_ucid="1000000020369768" data-lj_action_e_plan='{"v":"V1","s":"NATURAL","adId":100000108,"flow":"natural","sid":"1000000020369768_3111053388449","rid":"26213784_3804_440"}'></a><div class="desc"><div class="brotitle"><a target="_blank" href="https://dianpu.lianjia.com/1000000020369768" class="name LOGCLICK LOGCLICKDATA" data-log_id="20001" data-bl="agent" data-el="1000000020369768" data-log_index="1" data-lj_evtid="13144" data-lj_action_pid="lianjiaweb" data-lj_action_event="WebClick" data-lj_action_source_type="小区详情页经纪人列表经纪人名字点击" data-lj_action_agent_ucid="1000000020369768" data-lj_action_e_plan='{"v":"V1","s":"NATURAL","adId":100000108,"flow":"natural","sid":"1000000020369768_3111053388449","rid":"26213784_3804_440"}'>高航</a><div class="phone">4008259606转4953</div>&lt;!&ndash; <a class="agentIMIcon im-talk LOGCLICK LOGCLICKDATA" title="在线咨询" data-role="" data-ucid="1000000020369768" data-log_id="20001" data-bl="agentim" data-el="1000000020369768" data-log_index="1" data-source-port="PC:ershou_xiaoqu_goodagents" data-source-extends={"community_id":"3111053388449"} data-msg-payload="HI，您好。我正在看SR国际新城小区" data-lj_evtid="13145" data-lj_action_pid="lianjiaweb" data-lj_action_event="WebClick" data-lj_action_source_type="小区详情页经纪人列表IM点击" data-lj_action_agent_ucid="1000000020369768" data-lj_action_e_plan='{"v":"V1","s":"NATURAL","adId":100000108,"flow":"natural","sid":"1000000020369768_3111053388449","rid":"26213784_3804_440"}'></a> &ndash;&gt;<div class="rate"><span>高级经纪人</span>评分:5.0/<a href="https://dianpu.lianjia.com/1000000020369768/?w=pingjia">36人评价</a></div><div class="describes">本小区好评经纪人</div></div></div><span class="agent_chat LOGCLICK LOGCLICKDATA im-talk" data-role="" data-ucid="1000000020369768" data-log_id="20001" data-bl="agentim" data-el="1000000020369768" data-log_index="1" data-source-port="PC:ershou_xiaoqu_goodagents" data-source-extends={"community_id":"3111053388449"} data-msg-payload="HI，您好。我正在看SR国际新城小区" data-lj_evtid="13145" data-lj_action_pid="lianjiaweb" data-lj_action_event="WebClick" data-lj_action_source_type="小区详情页经纪人列表IM点击" data-lj_action_agent_ucid="1000000020369768" data-lj_action_e_plan='{"v":"V1","s":"NATURAL","adId":100000108,"flow":"natural","sid":"1000000020369768_3111053388449","rid":"26213784_3804_440"}'><i></i><span>在线咨询</span></span></li><li><a target="_blank" href="https://dianpu.lianjia.com/1000000020382907"><img class="lj-lazy LOGVIEW LOGCLICK LOGCLICKDATA" src="static/picture/noimg_1.jpg" data-original="https://image1.yuqiao.com/usercenter/images/uc_ehr_avatar/2203a98b-7c91-44b8-b56e-7e2b519cb3fb.jpg.60x80.jpg" alt="" data-log_id="20001" data-bl="agent" data-el="1000000020382907" data-log_index="2" data-lj_evtid="13143" data-lj_action_pid="lianjiaweb" data-lj_action_event="WebClick" data-lj_action_source_type="小区详情页经纪人列表经纪人头像点击" data-lj_action_agent_ucid="1000000020382907" data-lj_action_e_plan='{"v":"V1","s":"NATURAL","adId":100000108,"flow":"natural","sid":"1000000020382907_3111053388449","rid":"26213784_3804_440"}'></a><div class="desc"><div class="brotitle"><a target="_blank" href="https://dianpu.lianjia.com/1000000020382907" class="name LOGCLICK LOGCLICKDATA" data-log_id="20001" data-bl="agent" data-el="1000000020382907" data-log_index="2" data-lj_evtid="13144" data-lj_action_pid="lianjiaweb" data-lj_action_event="WebClick" data-lj_action_source_type="小区详情页经纪人列表经纪人名字点击" data-lj_action_agent_ucid="1000000020382907" data-lj_action_e_plan='{"v":"V1","s":"NATURAL","adId":100000108,"flow":"natural","sid":"1000000020382907_3111053388449","rid":"26213784_3804_440"}'>宛南</a><div class="phone">4008259606转3329</div>&lt;!&ndash; <a class="agentIMIcon im-talk LOGCLICK LOGCLICKDATA" title="在线咨询" data-role="" data-ucid="1000000020382907" data-log_id="20001" data-bl="agentim" data-el="1000000020382907" data-log_index="2" data-source-port="PC:ershou_xiaoqu_goodagents" data-source-extends={"community_id":"3111053388449"} data-msg-payload="HI，您好。我正在看SR国际新城小区" data-lj_evtid="13145" data-lj_action_pid="lianjiaweb" data-lj_action_event="WebClick" data-lj_action_source_type="小区详情页经纪人列表IM点击" data-lj_action_agent_ucid="1000000020382907" data-lj_action_e_plan='{"v":"V1","s":"NATURAL","adId":100000108,"flow":"natural","sid":"1000000020382907_3111053388449","rid":"26213784_3804_440"}'></a> &ndash;&gt;<div class="rate"><span>高级经纪人</span>评分:5.0/<a href="https://dianpu.lianjia.com/1000000020382907/?w=pingjia">22人评价</a></div><div class="describes">本小区好评经纪人</div></div></div><span class="agent_chat LOGCLICK LOGCLICKDATA im-talk" data-role="" data-ucid="1000000020382907" data-log_id="20001" data-bl="agentim" data-el="1000000020382907" data-log_index="2" data-source-port="PC:ershou_xiaoqu_goodagents" data-source-extends={"community_id":"3111053388449"} data-msg-payload="HI，您好。我正在看SR国际新城小区" data-lj_evtid="13145" data-lj_action_pid="lianjiaweb" data-lj_action_event="WebClick" data-lj_action_source_type="小区详情页经纪人列表IM点击" data-lj_action_agent_ucid="1000000020382907" data-lj_action_e_plan='{"v":"V1","s":"NATURAL","adId":100000108,"flow":"natural","sid":"1000000020382907_3111053388449","rid":"26213784_3804_440"}'><i></i><span>在线咨询</span></span></li></ul></div>-->
+
+        <div class="rentList" th:if="${zfHouse != null}">
+            <div class="rentListHeader clear">
+                <h3 class="rentListTitle fl"> [[${hr.data.loupanmingcheng}]]正在出租</h3>
+                <a th:href="@{'/zufang/xq/'+${hr.data.id}+'/'}" class="fr">查看小区全部出租房</a></div>
+            <div class="rentListContent clear">
+                <div class="rentItem fl" th:each="house:${zfHouse}">
+                    <a target="_blank" th:href="@{'/zufang/'+${house.id}}" class="rentItemImg">
+                        <img class="lj-lazy"
+                             th:src="@{'http://dev-12.lingke.mobi/HousePhoto/'+${house.housePhoto[0].path}}"
+                             onerror="javascript:this.src='/yuqiaopc/img/house/linshi_house (4).jpg';"
+                             data-original="https://image1.yuqiao.com/210100-inspection/rsp_pic_uploadd9637e35-7d5c-4d8e-b772-d80ce7ff6eb5.jpg.280x210.jpg"
+                             alt="">
+                    </a>
+                    <div class="rentItemTitle">
+                        <a target="_blank" th:href="@{'/zufang/'+${house.id}}">
+                            [[${hr.data.quyu}]] [[${hr.data.loupandizhi}]] [[${house.huxing}]] [[${house.zhuangxiu}]]
+                            [[${house.peitao}]]</a></div>
+                    <div class="rentItemInfo clear">
+                        <div class="rentItemRoom fl">[[${house.mianji}]]平/[[${house.huxing}]]</div>
+                        <div class="rentItemPrice fr">
+                            <span>[[${#strings.substringBefore(house.zuidizujin ,'.')}]]</span>元/月
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="box-r fixedAgent" style="display: none;" log-mod="xiaoqu_detail_diamond-first">
+        <div class="fixedAgentMain">
+            <div class="fixedRelationInfo clear"><
+                div class="fl">小区顾问
+            </div>
+            <div class="fr"><a>[[${hr.data.loupanmingcheng}]]</a></div>
+        </div>
+        <div class="fixedAgentInfo clear"><a target="_blank" href="https://dianpu.lianjia.com/1000000021341472"
+                                             class="agentImg fl LOGCLICK" data-log_id="20001" data-bl="agent"
+                                             data-el="1000000021341472">
+            <!--<img src="static/picture/075d4c32-ee59-4dc9-bc01-36f1d0530924.jpg.81x108.jpg" alt="李振东" class="LOGCLICKDATA" data-lj_evtid="13140" data-lj_action_pid="lianjiaweb" data-lj_action_event="WebClick" data-lj_action_source_type="小区详情页小区顾问经纪人头像点击" data-lj_action_agent_ucid="1000000021341472" data-lj_action_e_plan='{"v":"V1","s":"NATURAL","adId":100000107,"flow":"natural","sid":"1000000021341472_3111053388449","rid":"26213766_3850_747"}'></a><div class="fixedAgentMainInfo fr">-->
+            <div class="fixedAgentTitle clear">
+                <div class="fl"><a target="_blank" href="https://dianpu.lianjia.com/1000000021341472"
+                                   class="agentName LOGCLICK LOGCLICKDATA" data-log_id="20001" data-bl="agent"
+                                   data-el="1000000021341472" data-lj_evtid="13141" data-lj_action_pid="lianjiaweb"
+                                   data-lj_action_event="WebClick" data-lj_action_source_type="小区详情页小区顾问经纪人名字点击"
+                                   data-lj_action_agent_ucid="1000000021341472"
+                                   data-lj_action_e_plan='{"v":"V1","s":"NATURAL","adId":100000107,"flow":"natural","sid":"1000000021341472_3111053388449","rid":"26213766_3850_747"}'>李振东</a>
+                </div>
+                <div class="agentScore">评分:5.0/<a href="https://dianpu.lianjia.com/1000000021341472/?w=pingjia">3人评价</a>
+                </div>
+            </div>
+            <div class="fixedAgentDesc">有任何选房、买房、缴税过户问题，欢迎咨询</div>
+            <div class="fixedAgentPhone">4008259606转3294</div>
+            <span class="agent_chat LOGCLICK LOGCLICKDATA im-talk" data-role="" data-ucid="1000000021341472"
+                  data-log_id="20001" data-bl="agentim" data-el="1000000021341472"
+                  data-source-port="PC:ershou_xiaoqu_sp" data-source-extends={"community_id":"3111053388449"}
+                  data-msg-payload="HI，您好。我正在看SR国际新城小区" data-lj_evtid="13142" data-lj_action_pid="lianjiaweb"
+                  data-lj_action_event="WebClick" data-lj_action_source_type="小区详情页小区顾问IM点击"
+                  data-lj_action_agent_ucid="1000000021341472"
+                  data-lj_action_e_plan='{"v":"V1","s":"NATURAL","adId":100000107,"flow":"natural","sid":"1000000021341472_3111053388449","rid":"26213766_3850_747"}'><i></i><span>在线咨询</span></span>
+        </div>
+    </div>
+
+    <!--<button class="btn-large followFrameBtn" data-role="followBtn">关注小区</button><div class="followedLine"></div><div class="followedDesc"><span class="followedDescContent">已有<span data-role="followNumber">470</span>人关注此小区</span></div></div></div>-->
+    <!--<div class="xiaoquAround">-->
+    <!--<div class="around" id="around">-->
+    <!--<h2 class="aroundTitle">SR国际新城周边配套</h2>-->
+    <!--<div class="aroundContainer">-->
+    <!--<div class="aroundMap" id="map">-->
+    <!--</div>-->
+    <!--<div class="tabBox">-->
+    <!--<ul class="aroundType">-->
+    <!--<li class="LOGCLICK" data-log_evtid='10242'  data-bl="traffic" data-key="地铁站,公交站" data-index="subway,bus" data-length="10,10">交通</li>-->
+    <!--<li class="LOGCLICK" data-log_evtid='10242'  data-bl="education" data-key="幼儿园,小学,中学,大学"-->
+    <!--data-index="kindergarten,primary-school,middle-school,University"-->
+    <!--data-length="5,5,5,5"-->
+    <!--&gt;教育</li>-->
+    <!--<li class="LOGCLICK" data-log_evtid='10242'  data-bl="medical" data-key="医院,药店" data-index="hospital,pharmacy" data-length="10,10">医疗</li>-->
+    <!--<li class="LOGCLICK" data-log_evtid='10242'  data-bl="shopping" data-key="商场,超市,市场" data-index="mall,supermarket,market" data-length="7,7,6">购物</li>-->
+    <!--<li class="LOGCLICK" data-log_evtid='10242'  data-bl="life" data-key="银行,ATM,餐厅,咖啡馆" data-index="bank,atm,restaurant,coffee" data-length="5,5,5,5">生活</li>-->
+    <!--<li class="LOGCLICK" data-log_evtid='10242'  data-bl="entertainment" data-key="公园,电影院,健身房,体育馆" data-index="park,cinema,gym,sport" data-length="5,5,5,5">娱乐</li>-->
+    <!--</ul>-->
+    <!--<div class="itemTagBox"></div>-->
+    <!--<div class="aroundList" id="mapListContainer"></div>-->
+    <!--<div class="loading">-->
+    <!--<img src="static/picture/loading.gif" class="loadingImg">-->
+    <!--<span class="loadingText">努力加载中...</span>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <!--<script type='text/template' id="mapListTpl">-->
+    <!--<div class="name">-->
+    <!--&lt;!&ndash;<%=keyword%>&ndash;&gt;-->
+    <!--</div>-->
+    <!--<ul>-->
+    <!--&lt;!&ndash;<%for(var i = 0;i < list.length;i++){%>&ndash;&gt;-->
+    <!--<li data-index="<%=i%>">-->
+    <!--<i>&#<%=i+65%>;-->
+    <!--</i>-->
+    <!--<div class="item">-->
+    <!--<div class="itemTitle"><%=list[i].title%></div>-->
+    <!--<div class="itemInfo"><%=list[i].address%></div>-->
+    <!--</div>-->
+    <!--</li>-->
+    <!--<%}%>-->
+    <!--</ul>-->
+    <!--</script>-->
+    <!--<div class="nearby" id="nearby"><div class="nearbyHeader clear"><h3 class="nearByTitle fl">SR国际新城附近小区</h3><a href="https://需要更换.com/xiaoqu/hunnanxinqu1/" class="fr">查看同商圈小区</a></div><div class="nearbyList clear"><div class="nearbyItem fl"><a target="_blank" href="https://需要更换.com/xiaoqu/3113536396062502/"><img class="lj-lazy" src="static/picture/blank.gif" data-original="https://image1.yuqiao.com/hdic-resblock/f6a8bf38-1b28-4abb-9f98-16ccf5a317c1.JPG.170x125.jpg" alt=""><div class="bg"></div><div class="desc"><div class="nearbyItemTitle">新加坡城</div><div class="nearbyItemType"><span>13621元/㎡</span></div></div></a></div><div class="nearbyItem fl"><a target="_blank" href="https://需要更换.com/xiaoqu/3113491118025777/"><img class="lj-lazy" src="static/picture/blank.gif" data-original="" alt=""><div class="bg"></div><div class="desc"><div class="nearbyItemTitle">世茂新五里河</div><div class="nearbyItemType"><span>12576元/㎡</span></div></div></a></div><div class="nearbyItem fl"><a target="_blank" href="https://需要更换.com/xiaoqu/3113463991103809/"><img class="lj-lazy" src="static/picture/blank.gif" data-original="https://image1.yuqiao.com/hdic-resblock/585c4942-99b9-47b5-ab66-123fab11148c.jpg.170x125.jpg" alt=""><div class="bg"></div><div class="desc"><div class="nearbyItemTitle">万科新榆公馆</div><div class="nearbyItemType"><span>9183元/㎡</span></div></div></a></div><div class="nearbyItem fl"><a target="_blank" href="https://需要更换.com/xiaoqu/3111053984961/"><img class="lj-lazy" src="static/picture/blank.gif" data-original="https://image1.yuqiao.com/hdic-resblock/3aa2c409-dbf6-4e1c-98b8-5c1bf22156d7.jpg.170x125.jpg" alt=""><div class="bg"></div><div class="desc"><div class="nearbyItemTitle">首创国际城</div><div class="nearbyItemType"><span>10745元/㎡</span></div></div></a></div><div class="nearbyItem fl"><a target="_blank" href="https://需要更换.com/xiaoqu/3113490305119066/"><img class="lj-lazy" src="static/picture/blank.gif" data-original="" alt=""><div class="bg"></div><div class="desc"><div class="nearbyItemTitle">华发首府</div><div class="nearbyItemType"><span>13935元/㎡</span></div></div></a></div></div></div></div>-->
+</div>
+
+<div class="m-yezhu">
+    <div class="wrap">
+        <div class="hd">我有房子要卖</div>
+        <ul>
+            <li class="item-gujia">
+                <div class="marsk"></div>
+                <div class="tit">不知道如何计算</div>
+                <div class="sub-tit">每天超过30000000次的贷款计算</div>
+                <a th:href="@{/wenda/daikuanjisuan.html}" class="btn-link" target="_blank">贷款计算&nbsp;&gt;</a></li>
+            <li class="item-maifang">
+                <div class="marsk"></div>
+                <div class="tit">把房源委托给誉桥</div>
+                <div class="sub-tit">10万+专业经纪人·8000+誉桥门店</div>
+                <a th:href="@{/helphouse/maifang}" class="btn-link" target="_blank">发布房源&nbsp;&gt;</a></li>
+            <li class="item-xiazai">
+                <div class="marsk"></div>
+                <div class="tit">已有房源在誉桥销售</div>
+                <div class="sub-tit">去誉桥APP业主中心管理委托</div>
+                <span href="javascript:;" class="btn-link btn-app"><span>去APP管理委托&nbsp;&gt;</span><span
+                        class="layer-qrcode"><span class="icon-qrcode"></span><span class="txt">去誉桥APP提升卖房速度</span><span
+                        class="sub-txt">APP·移动卖房新体验</span></span></span></li>
+        </ul>
+    </div>
+</div><!-- 地图浮层 -->
+<div id="ditufloat" style="display:none">
+    <div class="floatmap clear"><i class="close"></i>
+        <div class="top clear">
+            <div class="dis fl"><i class="icon1"></i><span class="first">SR国际新城</span>
+                <p class="second">浑南浑南新区</p></div>
+            <span class="three"><i class="icon2"></i></span>
+            <div class="shop fl"><i class="icon3"></i><span class="five">融城店</span>
+                <p class="six">浑南新区彩霞街1-4号2门</p></div>
+        </div>
+        <div class="mapcon">
+            <div class="map" id="mapInitalize"></div>
+        </div>
+    </div>
+</div>
+<div class="bigImg">
+    <div class="mask"></div>
+    <div class="list"><img src="" alt="">
+        <div class="loading"></div>
+        <div class="pre"><span></span></div>
+        <div class="next"><span></span></div>
+    </div>
+    <div class="close"></div>
+    <!--<div class="slide">-->
+        <!--<div class="desc"></div>-->
+        <!--<ul>-->
+            <!--<li data-src="https://image1.yuqiao.com/hdic-resblock/e55029c8-8480-4ac8-bd5c-442d4a427426.jpg.1000x750.jpg">-->
+                <!--&lt;!&ndash;<img src="static/picture/e55029c8-8480-4ac8-bd5c-442d4a427426.jpg.118x80.jpg" alt="">&ndash;&gt;-->
+            <!--</li>-->
+            <!--<li data-src="https://image1.yuqiao.com/hdic-resblock/3fe4dede-83d8-4e97-9a44-17f1c569ea61.jpg.1000x750.jpg">-->
+                <!--&lt;!&ndash;<img src="static/picture/3fe4dede-83d8-4e97-9a44-17f1c569ea61.jpg.118x80.jpg" alt="">&ndash;&gt;-->
+            <!--</li>-->
+            <!--<li data-src="https://image1.yuqiao.com/hdic-resblock/8b978d87-4041-4dfd-83f6-ead0b0d034dd.jpg.1000x750.jpg">-->
+                <!--<img src="static/picture/8b978d87-4041-4dfd-83f6-ead0b0d034dd.jpg.118x80.jpg" alt=""></li>-->
+            <!--<li data-src="https://image1.yuqiao.com/hdic-resblock/6279c459-9a78-4ef4-9f8e-f888d21490f0.jpg.1000x750.jpg">-->
+                <!--<img src="static/picture/6279c459-9a78-4ef4-9f8e-f888d21490f0.jpg.118x80.jpg" alt=""></li>-->
+            <!--<li data-src="https://image1.yuqiao.com/hdic-resblock/a9449b7c-faf5-4c60-8fbd-3e257a0db68e.jpg.1000x750.jpg">-->
+                <!--<img src="static/picture/a9449b7c-faf5-4c60-8fbd-3e257a0db68e.jpg.118x80.jpg" alt=""></li>-->
+            <!--<li data-src="https://image1.yuqiao.com/hdic-resblock/591b19ac-7299-41ba-948f-49725a34cf8e.jpg.1000x750.jpg">-->
+                <!--<img src="static/picture/591b19ac-7299-41ba-948f-49725a34cf8e.jpg.118x80.jpg" alt=""></li>-->
+            <!--<li data-src="https://image1.yuqiao.com/hdic-resblock/037fa0f8-5191-4eff-b83c-654999cd1d2d.jpg.1000x750.jpg">-->
+                <!--<img src="static/picture/037fa0f8-5191-4eff-b83c-654999cd1d2d.jpg.118x80.jpg" alt=""></li>-->
+            <!--<li data-src="https://image1.yuqiao.com/hdic-resblock/9c5211fe-3a94-409d-a409-685771235255.jpg.1000x750.jpg">-->
+                <!--<img src="static/picture/9c5211fe-3a94-409d-a409-685771235255.jpg.118x80.jpg" alt=""></li>-->
+            <!--<li data-src="https://image1.yuqiao.com/hdic-resblock/a4f7d820-6b67-42eb-964a-06ab78222168.jpg.1000x750.jpg">-->
+                <!--<img src="static/picture/a4f7d820-6b67-42eb-964a-06ab78222168.jpg.118x80.jpg" alt=""></li>-->
+            <!--<li data-src="https://image1.yuqiao.com/hdic-resblock/10e0d254-1351-498a-a5a3-47e9f1605aef.jpg.1000x750.jpg">-->
+                <!--<img src="static/picture/10e0d254-1351-498a-a5a3-47e9f1605aef.jpg.118x80.jpg" alt=""></li>-->
+            <!--<li data-src="https://image1.yuqiao.com/hdic-resblock/d00864bb-d256-46ef-9ac2-58b925d55525.jpg.1000x750.jpg">-->
+                <!--<img src="static/picture/d00864bb-d256-46ef-9ac2-58b925d55525.jpg.118x80.jpg" alt=""></li>-->
+            <!--<li data-src="https://image1.yuqiao.com/hdic-resblock/fdd05eaa-0a14-4e42-8b9a-a3287b626707.jpg.1000x750.jpg">-->
+                <!--<img src="static/picture/fdd05eaa-0a14-4e42-8b9a-a3287b626707.jpg.118x80.jpg" alt=""></li>-->
+            <!--<li data-src="https://image1.yuqiao.com/hdic-resblock/6279c459-9a78-4ef4-9f8e-f888d21490f0.jpg.1000x750.jpg">-->
+                <!--<img src="static/picture/6279c459-9a78-4ef4-9f8e-f888d21490f0.jpg.118x80.jpg" alt=""></li>-->
+            <!--<li data-src="https://image1.yuqiao.com/hdic-resblock/b0a3cb06-fa11-4234-981e-9f97b28b6f02.jpg.1000x750.jpg">-->
+                <!--<img src="static/picture/b0a3cb06-fa11-4234-981e-9f97b28b6f02.jpg.118x80.jpg" alt=""></li>-->
+            <!--<li data-src="https://image1.yuqiao.com/hdic-resblock/742b7347-1eaa-4722-9b3a-d95992da48f2.jpg.1000x750.jpg">-->
+                <!--<img src="static/picture/742b7347-1eaa-4722-9b3a-d95992da48f2.jpg.118x80.jpg" alt=""></li>-->
+            <!--<li data-src="https://image1.yuqiao.com/hdic-resblock/3f6e43a4-8cd3-43c5-a21f-9580c11cd32c.jpg.1000x750.jpg">-->
+                <!--<img src="static/picture/3f6e43a4-8cd3-43c5-a21f-9580c11cd32c.jpg.118x80.jpg" alt=""></li>-->
+            <!--<li data-src="https://image1.yuqiao.com/hdic-resblock/78b63369-785a-47fb-a44f-5e5c3c10669c.jpg.1000x750.jpg">-->
+                <!--<img src="static/picture/78b63369-785a-47fb-a44f-5e5c3c10669c.jpg.118x80.jpg" alt=""></li>-->
+            <!--<li data-src="https://image1.yuqiao.com/hdic-resblock/88f3562c-e05b-41f5-96c3-dd35e5c53593.jpg.1000x750.jpg">-->
+                <!--<img src="static/picture/88f3562c-e05b-41f5-96c3-dd35e5c53593.jpg.118x80.jpg" alt=""></li>-->
+            <!--<li data-src="https://image1.yuqiao.com/hdic-resblock/87d7b027-d584-4d6d-ab92-f9ae36707d10.jpg.1000x750.jpg">-->
+                <!--<img src="static/picture/87d7b027-d584-4d6d-ab92-f9ae36707d10.jpg.118x80.jpg" alt=""></li>-->
+            <!--<li data-src="https://image1.yuqiao.com/hdic-resblock/1b7d8315-6e11-44b4-8b08-b9ab64e5d064.jpg.1000x750.jpg">-->
+                <!--<img src="static/picture/1b7d8315-6e11-44b4-8b08-b9ab64e5d064.jpg.118x80.jpg" alt=""></li>-->
+            <!--<li data-src="https://image1.yuqiao.com/hdic-resblock/dd3b51ca-3a62-4b23-9362-b5c4cf419b89.jpg.1000x750.jpg">-->
+                <!--<img src="static/picture/dd3b51ca-3a62-4b23-9362-b5c4cf419b89.jpg.118x80.jpg" alt=""></li>-->
+            <!--<li data-src="https://image1.yuqiao.com/hdic-resblock/e3a541ca-82ef-4c2a-9f45-e6ef7313ecaa.jpg.1000x750.jpg">-->
+                <!--<img src="static/picture/e3a541ca-82ef-4c2a-9f45-e6ef7313ecaa.jpg.118x80.jpg" alt=""></li>-->
+        <!--</ul>-->
+    <!--</div>-->
+</div>
+<!--底部-->
+
+<div th:replace="base/footer :: html"></div>
+<!--底部 end-->
+
+<!--<script th:src="@{/js/lj/fe_1.js}"></script>-->
+<!--<script th:src="@{/js/lj/common_1.js}"></script>-->
+<div style="display:none">
+    <!--<script th:src="@{/js/lj/ljanalytics_1.js}"></script>-->
+</div>
+<div id="only" data-city="sy" data-page="xiaoqu_detail"></div>
+<!--<script>var path = 'https://s1.yuqiao.com/feroot/pc/asset?_v=20181018164256'.split("?");require.config({baseUrl: path[0],paths: {'echarts' : '../../dep/echarts-1.4.1/build/echarts','echarts/chart/bar' : '../../dep/echarts-1.4.1/build/echarts','echarts/chart/line' : '../../dep/echarts-1.4.1/build/echarts','echarts/chart/pie' : '../../dep/echarts-1.4.1/build/echarts','echarts3' : '../../dep/echarts3/echarts3','common': 'common','jquery-ui': '../../dep/jquery-ui/jquery-ui.min','zeroclipboard': '../../dep/zeroclipboard-2.2.0/ZeroClipboard'},urlArgs:  path[1]});var feData = {"cityName": "北京","getFavHouseUrl":       "/api/gethousefav","setFavHouseUrl":       "/api/sethousefav","getLastSearch":        "/api/getlastsearch","getCommunityHistory":  "/api/getcommunityhistory","verifyHouse":          "/api/verifyHouse","getUser":              "/api/getUser","verifyCode":           "/verifycode/getVerifyCode","complaint":            "/api/complaint","getDecoration":        "/api/getDecoration","trendData" :           "/site/getpicinfo"}</script>-->
+
+<!--<script type="text/javascript">-->
+<!--require(['ershoufang/xiaoquDetail/index'], function(main) {-->
+<!--main({-->
+<!--id:3111053388449,-->
+<!--resblockPosition:'123.45908744974,41.738131477795',-->
+<!--resblockName:'SR国际新城'-->
+<!--});-->
+<!--});-->
+
+<!--require(['common/initTalk'], function(initTalk) {-->
+<!--initTalk()-->
+<!--});-->
+
+<!--require(['common/backtopV3'], function (main) {-->
+<!--main({-->
+<!--ucid: '',-->
+<!--uuid: 'd678a421-53f2-4792-a29e-86efbf34f1de',-->
+<!--loadingImg: 'https://s1.yuqiao.com/feroot/pc/asset/ershoufang/sellDetail/img/loading.gif?_v=20181018164256',-->
+<!--qrImg: '//ajax.api.lianjia.com/qr/getDownloadQr'-->
+<!--});-->
+<!--});-->
+<!--</script>-->
+<!--<script>-->
+<!--require(['common/suggestion'], function (suggestion) {window.defaultSuggest = suggestion.init({requestOptions: {cityId: '210100',cityName: '沈阳'},url: '/api/headerSearch?channel=xiaoqu&q=',main: '#keyword-box',appendTo: '#suggest-cont',redirect: true});});</script>-->
+<!--<div class="loninContaner"><div class="overlay_bg"></div>-->
+<!--<div class="panel_login animated" id="dialog"><div class="panel_info"><i class="close_login" >&times</i><div class="panel_tab"><div class="title"><div class="fl">账号密码登录</div></div><div class="clear"></div><div id="con_login_user"><form action="" method="post"><ul><li class="item border-t userName"><input type="text" class="the_input topSpecial users" placeholder="请输入手机号"  maxlength="11" /></li><li class="item border-b pwd"><input type="password" class="the_input password" maxlength="20" placeholder="请输入登录密码"/><em class="password-view"></em></li><li class="item checkVerimg" style="display:none;"><input type="text" class="the_input ver-img" maxlength="6"  placeholder="请输入验证码"/><img class="verImg"></li><li class="item drag" style="display:none;"><div id="drag"></div></li><li class="show-error"><dd>用户名或密码错误</dd></li><li class="li_01"><label class="checkbox-btn"><span class="active"><input type="checkbox" name="remember" value="1" class="mind-login" checked/></span>7天内免登录</label><a href="javascript:;" rel="nofollow" class="toforget">忘记密码</a></li><li class="li_btn"><a class="login-user-btn"  />登录</a></li><li class="footer-link"><a href="javascript:;" rel="nofollow" class="totellogin">手机快捷登录</a></li></ul></form></div><div id="con_login_agent" class="undis"><form action="" method="post"><ul><li class="item"><dd></dd><input type="text" class="the_input users" placeholder="输入经纪人ID号码" /></li><li class="item"><input type="password" class="the_input password"  placeholder="登录密码"/></li><li class="li_01"><label class="checkbox-btn"><span class="active"><input type="checkbox" name="remember" value="1" class="mind-login" checked/></span>7天内免登录</label><a href="https://passport.lianjia.com/register/resources/lianjia/forget.html?service=http://bj.lianjia.com/" rel="nofollow">忘记密码</a></li><li><input class="login-agent-btn" value="立即登录"/></li></ul></form></div></div></div><div class="registered"></div></div><div class="panel_login animated" id="dialog_tel"><div class="panel_info"><i class="close_login">&times</i><div class="panel_tab"><div class="title"><div class="fl">手机快捷登录</div><div class="register_text_tel">别担心，无账号自动注册不会导致手机号被泄露</div></div><div class="clear"></div><div id="con_login_user_tel"><form action="" method="post"><ul><li class="item border-t userName"><input type="text" class="the_input topSpecial users_tel" maxlength="11" placeholder="请输入手机号" /></li>&lt;!&ndash; <li class="item pwd"><input type="password" class="the_input password_tel"  placeholder="请输入短信验证码"/></li> &ndash;&gt;<li class="item checkVerimg" style=""><input type="text" class="the_input ver-img" maxlength="6"  placeholder="请输入验证码"/><img class="verImg"></li><li class="item border-b Verify"><input type="text" class="the_input verifycode" maxlength="6"  placeholder="请输入短信验证码"/><a class="send_verify_code" id="send_verify_code_tel" href="javascript:;" rel="nofollow"><em>获取验证码</em></a></li><li class="send_verify_code_s" id="send_verify_code_tel_s" href="javascript:;" rel="nofollow"><em>没有收到验证码？</em><a class="voice_a">发送语音验证码</a></li><li class="show-error"><dd>用户名或密码错误</dd></li><li class="li_01"><label class="checkbox-btn"><span class="active"><input type="checkbox" name="remember" value="1" class="mind-login" checked/></span>7天内免登录</label></li><li class="li_btn"><a class="login-user-tel-btn"  />登录</a></li><li class="footer-link"><a href="javascript:;" rel="nofollow" class="tologin">账号密码登录</a></li></ul></form></div></div></div><div class="registered"></div></div><div class="panel_login animated" id="dialog_reg"><div class="panel_info"><i class="close_login">&times</i><div class="panel_tab"><div class="title"><div class="fl">手机号码注册</div><label class="fr register_text">已有账号？<a href="javascript:;" rel="nofollow" class="tologin">去登录</a></label></div><div class="clear"></div><div id="con_login_user_reg"><form action="" method="post"><ul><li class="item border-t userName"><input type="text" class="the_input topSpecial users_reg"  maxlength="11" placeholder="请输入手机号" /></li><li class="item checkVerimg" style=""><input type="text" class="the_input ver-img" maxlength="6"  placeholder="请输入验证码"/><img class="verImg"></li><li class="item border-c Verify"><input type="text" class="the_input verifycode" maxlength="6"  placeholder="请输入短信验证码"/><a class="send_verify_code" id="send_verify_code_reg" href="javascript:;" rel="nofollow"><em>获取验证码</em></a></li><li class="item border-b pwd"><input type="password" class="the_input password_reg" maxlength="20"  placeholder="请输入密码（最少8位，数字+字母）"/><em class="password-view"></em></li><li class="send_verify_code_s" id="send_verify_code_reg_s" href="javascript:;" rel="nofollow"><em>没有收到验证码？</em><a class="voice_a">发送语音验证码</a></li><li class="show-error"><dd>用户名或密码错误</dd></li><li class="li_01"><label class="checkbox-btn"><span class="active"><input type="checkbox" name="read" value="1" class="read-protocol" checked/></span>我已阅读并同意</label><a class="toprotocol" href="//www.lianjia.com/zhuanti/protocol" target="_blank" >《誉桥用户使用协议》</a></li><li class="li_btn"><a class="register-user-btn"  />注册</a></li></ul></form></div></div></div><div class="registered"></div></div><div class="panel_login animated" id="dialog_forget"><div class="panel_info"><i class="close_login">&times</i><div class="panel_tab"><div class="title"><div class="fl">找回密码</div></div><div class="clear"></div><div id="con_forget_user_tel" class="con_forget_user_tel"><form action="" method="post"><ul><li class="item border-t userName"><input type="text" class="the_input topSpecial user_forget_phone" placeholder="请输入手机号"  maxlength="11" /></li><li class="item checkVerimg" style=""><input type="text" class="the_input ver-img" maxlength="6"  placeholder="请输入验证码"/><img class="verImg"></li><li class="item border-b Verify"><input type="text" class="the_input verifycode" maxlength="6"  placeholder="请输入短信验证码"/><a class="send_verify_code" id="send_verify_code_forget" href="javascript:;" rel="nofollow"><em>获取验证码</em></a></li><li class="item border-t pwd" style="margin-top:-1px;"><input type="password" class="the_input password_reg" maxlength="20"  placeholder="请输入密码（最少8位，数字+字母）"/><em class="password-view"></em></li><li class="send_verify_code_s" id="send_verify_code_forget_s"><em>没有收到验证码？</em><a class="voice_a">发送语音验证码</a></li><li class="show-error"><dd>用户名或密码错误</dd></li><li class="li_btn"><a class="user-forget"  />修改密码</a></li></ul></form></div><div id="con_forget_user_pw" class="con_forget_user_pw"><form action="" method="post"><ul><li class="item border-t pwd"><input type="password" class="the_input password_reg" maxlength="20"  placeholder="请输入密码（最少8位，数字+字母）"/><em class="password-view"></em></li><li class="show-error"><dd>用户名或密码错误</dd></li><li class="li_btn"><a class="modify-user-pswd"  />修改密码</a></li></ul></form></div></div></div><div class="registered"></div></div></div>-->
+<!-- LianjiaIM Style -->
+<!--<script th:src="@{/js/lj/lianjiaim1.0.min.js}"></script>-->
+<!-- <script src="static/js/lianjiaim1.1.min.js"></script> -->
+<!--<script>-->
+<!--(function() {var imConf = {"ajaxroot":"\/\/ajax.api.lianjia.com\/","imAppid":"LIANJIA_WEB_20160624","imAppkey":"6dfdcee27d78b1107fceeca55d80b7bd"};let login = require('common/login');$.listener.on('userInfo', function (data) {if (data.code === 1) {data.ucid = '';}window.LJIM = new LianjiaIM({appid: imConf.imAppid,appkey: imConf.imAppkey,login: login.openLoginDialog,is_ljbb: true,userData: data,downAppUrl: '//www.lianjia.com/client/',appDesc: '立即下载誉桥APP，随时随地聊~',staticRoot: 'https://s1.yuqiao.com/feroot/?_v=20181018164256'})});})();</script>-->
+
+<!--<script type="text/javascript">var advert = 'https://s1.yuqiao.com/feroot/pc/asset/common/advert.js?_v=20181018164256';-->
+<!--$.listener.on('userInfo', function (data) {-->
+<!--window.loginData = data;-->
+<!--});-->
+<!--var mvl = document.createElement('script');-->
+<!--mvl.type = 'text/javascript';-->
+<!--mvl.async = true;-->
+<!--mvl.src = advert;-->
+<!--var s = document.getElementsByTagName('script')[0];-->
+<!--s.parentNode.insertBefore(mvl, s);-->
+<!--</script>-->
+<!--<script type="text/javascript">-->
+<!--(function(){var canonicalURL, curProtocol;var x=document.getElementsByTagName("link");if(x.length > 0){for (i=0;i<x.length;i++){if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){canonicalURL=x[i].href;}}}if (!canonicalURL){curProtocol = window.location.protocol.split(':')[0];}else{curProtocol = canonicalURL.split(':')[0];}if (!canonicalURL) canonicalURL = window.location.href;(function() {var e = /([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r = canonicalURL,t = document.referrer;if (!e.test(r)) {var n = (String(curProtocol).toLowerCase() === 'https') ? "https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif" : "//api.share.baidu.com/s.gif";t ? (n += "?r=" + encodeURIComponent(document.referrer), r && (n += "&l=" + r)) : r && (n += "?l=" + r);var i = new Image;i.src = n}})(window);})();</script>-->
+<!--cookie mapping-->
+<!--<img src='static/picture/cm_1.fcg' alt="cookie_mapping_url" style="display: none;">-->
+</body>
+</html>

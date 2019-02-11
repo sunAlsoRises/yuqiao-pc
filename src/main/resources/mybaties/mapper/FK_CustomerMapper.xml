@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mapper.LoginRegist.FK_CustomerMapper" >
+  <resultMap id="BaseResultMap" type="com.model.FK_Customer" >
+    <id column="Id" property="id" jdbcType="NVARCHAR" />
+    <result column="Name" property="name" jdbcType="NVARCHAR" />
+    <result column="Sex" property="sex" jdbcType="NVARCHAR" />
+    <result column="Mobile" property="mobile" jdbcType="NVARCHAR" />
+    <result column="KeYuanBianHao" property="keyuanbianhao" jdbcType="NVARCHAR" />
+    <result column="YongTu" property="yongtu" jdbcType="NVARCHAR" />
+    <result column="QuYu" property="quyu" jdbcType="NVARCHAR" />
+    <result column="HuXing" property="huxing" jdbcType="NVARCHAR" />
+    <result column="ZhuangXiu" property="zhuangxiu" jdbcType="NVARCHAR" />
+    <result column="LouPan" property="loupan" jdbcType="NVARCHAR" />
+    <result column="LouCeng" property="louceng" jdbcType="NVARCHAR" />
+    <result column="GongJiCeng" property="gongjiceng" jdbcType="NVARCHAR" />
+    <result column="ZuiDiZuJin" property="zuidizujin" jdbcType="DECIMAL" />
+    <result column="ZuiGaoZuJin" property="zuigaozujin" jdbcType="DECIMAL" />
+    <result column="ZuiXiaoMianJi" property="zuixiaomianji" jdbcType="NVARCHAR" />
+    <result column="ZuiDaMianJi" property="zuidamianji" jdbcType="NVARCHAR" />
+    <result column="ChaoXiang" property="chaoxiang" jdbcType="NVARCHAR" />
+    <result column="MuDi" property="mudi" jdbcType="NVARCHAR" />
+    <result column="DianTi" property="dianti" jdbcType="NVARCHAR" />
+    <result column="LouXing" property="louxing" jdbcType="NVARCHAR" />
+    <result column="HuKou" property="hukou" jdbcType="NVARCHAR" />
+    <result column="ZhuangTai" property="zhuangtai" jdbcType="NVARCHAR" />
+    <result column="LaiYuan" property="laiyuan" jdbcType="NVARCHAR" />
+    <result column="XingZhi" property="xingzhi" jdbcType="NVARCHAR" />
+    <result column="BeiZhu" property="beizhu" jdbcType="NVARCHAR" />
+    <result column="BelongToUserId" property="belongtouserid" jdbcType="NVARCHAR" />
+    <result column="BelongToUserName" property="belongtousername" jdbcType="NVARCHAR" />
+    <result column="BelongToBranchShopId" property="belongtobranchshopid" jdbcType="NVARCHAR" />
+    <result column="CreateUserId" property="createuserid" jdbcType="NVARCHAR" />
+    <result column="CreateName" property="createname" jdbcType="NVARCHAR" />
+    <result column="CreateTime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="LastUpdateUserId" property="lastupdateuserid" jdbcType="NVARCHAR" />
+    <result column="LastUpdateName" property="lastupdatename" jdbcType="NVARCHAR" />
+    <result column="LastUpdateTime" property="lastupdatetime" jdbcType="TIMESTAMP" />
+    <result column="IsDel" property="isdel" jdbcType="NVARCHAR" />
+    <result column="Type" property="type" jdbcType="NVARCHAR" />
+    <result column="CompanyId" property="companyid" jdbcType="NVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    Id, Name, Sex, Mobile, KeYuanBianHao, YongTu, QuYu, HuXing, ZhuangXiu, LouPan, LouCeng, 
+    GongJiCeng, ZuiDiZuJin, ZuiGaoZuJin, ZuiXiaoMianJi, ZuiDaMianJi, ChaoXiang, MuDi, 
+    DianTi, LouXing, HuKou, ZhuangTai, LaiYuan, XingZhi, BeiZhu, BelongToUserId, BelongToUserName, 
+    BelongToBranchShopId, CreateUserId, CreateName, CreateTime, LastUpdateUserId, LastUpdateName, 
+    LastUpdateTime, IsDel, Type, CompanyId
+  </sql>
+  <select id="getIdByMobile" parameterType="String" resultType="String">
+    select Top 1 id from FK_Customer where mobile = #{mobile};
+  </select>
+  <!--查询当月需求数-->
+  <select id="findCountByMounth" resultType="int">
+  SELECT count(*) FROM FK_Customer
+  WHERE datediff(month,CreateTime,getdate())=0
+  </select>
+</mapper>

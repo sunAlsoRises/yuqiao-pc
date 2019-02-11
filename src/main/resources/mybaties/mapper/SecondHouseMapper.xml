@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.ershoufang.ErshoufangXmlMapper">
+    <resultMap type="com.model.FK_House" id="FK_HouseResultMap">
+              <id property="id" column="id"/>
+              <result property="leixing" column="leixing"/>
+              <result property="zhuangtai" column="zhuangtai"/>
+        <result property="tongtu" column="tongtu"/>
+        <result property="isshow" column="isshow"/>
+        <result property="name" column="name"/>
+        <result property="dongzuo" column="dongzuo"/>
+        <result property="danyuan" column="danyuan"/>
+        <result property="fanghao" column="fanghao"/>
+        <result property="louceng" column="louceng"/>
+        <result property="gongjiceng" column="gongjiceng"/>
+        <result property="mianji" column="mianji"/>
+        <result property="woshi" column="woshi"/>
+        <result property="ketingcanting" column="ketingcanting"/>
+        <result property="weishengjian" column="weishengjian"/>
+        <result property="chufang" column="chufang"/>
+        <result property="yangtai" column="yangtai"/>
+        <result property="zhuangxiu" column="zhuangxiu"/>
+        <result property="chaoxiang" column="chaoxiang"/>
+        <result property="louxing" column="louxing"/>
+        <result property="chewei" column="chewei"/>
+        <result property="createname" column="createname"/>
+        <result property="zuidishoujia" column="zuidishoujia"/>
+        <result property="peitao" column="peitao"/>
+        <result property="quyu" column="quyu"/>
+
+        <result property="fangyuanbianhao" column="fangyuanbianhao"/>
+        <result property="fangyuanbiaoqian" column="fangyuanbiaoqian"/>
+        <result property="hexinmaidian" column="hexinmaidian"/>
+        <result property="lastupdatetime" column="lastupdatetime"/>
+        <result property="createuserid" column="CreateUserId"/>
+        <result property="huxing" column="huxing"/>
+        <result property="createtime" column="createtime"/>
+        <result property="zuigaoshoujia" column="zuigaoshoujia"/>
+        <result property="yajinleixing" column="yajinleixing"/>
+        <result property="shuxing" column="shuxing"/>
+        <result property="zuidizujin" column="zuidizujin"/>
+        <result property="zuigaozujin" column="zuigaozujin"/>
+      <!--小区表-->
+      <association property="com" javaType="com.model.FK_Community">
+          <id column="Id" property="id"  />
+          <result column="ZhuanJiaUserId" property="zhuanjiauserid" jdbcType="VARCHAR" />
+          <result column="ZhuanJiaUserName" property="zhuanjiausername" jdbcType="VARCHAR" />
+          <result column="ZhuanJiaBranchShopId" property="zhuanjiabranchshopid" jdbcType="VARCHAR" />
+          <result column="BiaoQian" property="biaoqian" jdbcType="VARCHAR" />
+          <result column="YongTu" property="yongtu" jdbcType="VARCHAR" />
+          <result column="LouPanMingCheng" property="loupanmingcheng" jdbcType="VARCHAR" />
+          <result column="LouPanBieMing" property="loupanbieming" jdbcType="VARCHAR" />
+          <result column="LouPanDiZhi" property="loupandizhi" jdbcType="VARCHAR" />
+          <result column="ChanQuanNianXian" property="chanquannianxian" jdbcType="VARCHAR" />
+          <result column="RongJiLv" property="rongjilv" jdbcType="VARCHAR" />
+          <result column="LvHuaLv" property="lvhualv" jdbcType="VARCHAR" />
+          <result column="GuiHuaDongShu" property="guihuadongshu" jdbcType="VARCHAR" />
+          <result column="GuiHuaHuShu" property="guihuahushu" jdbcType="VARCHAR" />
+          <result column="TingCheWei" property="tingchewei" jdbcType="VARCHAR" />
+          <result column="ZhanDiMianJi" property="zhandimianji" jdbcType="VARCHAR" />
+          <result column="JianZhuMianJi" property="jianzhumianji" jdbcType="VARCHAR" />
+          <result column="ZhuWuFeiYong" property="zhuwufeiyong" jdbcType="VARCHAR" />
+          <result column="KaiFaGongSi" property="kaifagongsi" jdbcType="VARCHAR" />
+          <result column="WuYeGongSi" property="wuyegongsi" jdbcType="VARCHAR" />
+          <result column="JunGongNianDai" property="jungongniandai" jdbcType="VARCHAR" />
+          <result column="XiaoQuJianJie" property="xiaoqujianjie" jdbcType="VARCHAR" />
+          <result column="ZhouBianPeiTao" property="zhoubianpeitao" jdbcType="VARCHAR" />
+          <result column="JiaoTongChuXing" property="jiaotongchuxing" jdbcType="VARCHAR" />
+          <result column="CreateUserId" property="createuserid" jdbcType="VARCHAR" />
+          <result column="CreateName" property="createname" jdbcType="VARCHAR" />
+          <result column="CreateTime" property="createtime" jdbcType="TIMESTAMP" />
+          <result column="LastUpdateUserId" property="lastupdateuserid" jdbcType="NVARCHAR" />
+          <result column="LastUpdateName" property="lastupdatename" jdbcType="NVARCHAR" />
+          <result column="LastUpdateTime" property="lastupdatetime" jdbcType="TIMESTAMP" />
+          <result column="BranchShopId" property="branchshopid" jdbcType="NVARCHAR" />
+          <result column="CompanyId" property="companyid" jdbcType="NVARCHAR" />
+          <result column="IsDel" property="isdel" jdbcType="NVARCHAR" />
+
+
+          <result column="esfCount" property="esfCount" jdbcType="VARCHAR" />
+          <result column="zfCount" property="zfCount" jdbcType="VARCHAR" />
+
+          <result column="longitude" property="longitude" jdbcType="VARCHAR" />
+          <result column="latitude" property="latitude" jdbcType="VARCHAR" />
+      </association>
+        <!--门店表-->
+        <association property="shop" javaType="com.model.Sys_BranchShop">
+            <id column="id" property="id" />
+            <result column="shopName" property="name" jdbcType="NVARCHAR" />
+            <result column="Province" property="province" jdbcType="NVARCHAR" />
+            <result column="City" property="city" jdbcType="NVARCHAR" />
+            <result column="Address" property="address" jdbcType="NVARCHAR" />
+            <result column="ShopownerName" property="shopownername" jdbcType="NVARCHAR" />
+            <result column="ShopownerMobile" property="shopownermobile" jdbcType="NVARCHAR" />
+            <result column="ShopownerCardNum" property="shopownercardnum" jdbcType="NVARCHAR" />
+            <result column="Remarks" property="remarks" jdbcType="NVARCHAR" />
+            <result column="CompanyId" property="companyid" jdbcType="NVARCHAR" />
+            <result column="CreateUser" property="createuser" jdbcType="NVARCHAR" />
+            <result column="CreateTime" property="createtime" jdbcType="TIMESTAMP" />
+            <result column="LastUpdateUser" property="lastupdateuser" jdbcType="NVARCHAR" />
+            <result column="LastUpdateTime" property="lastupdatetime" jdbcType="TIMESTAMP" />
+        </association>
+        <!--业务员表-->
+        <association property="user" javaType="com.model.Sys_User">
+            <id column="Id" property="id" jdbcType="NVARCHAR" />
+            <result column="UserName" property="username" jdbcType="NVARCHAR" />
+            <result column="Name" property="name" jdbcType="NVARCHAR" />
+            <result column="PassWord" property="password" jdbcType="NVARCHAR" />
+            <result column="CardNumber" property="cardnumber" jdbcType="NVARCHAR" />
+            <result column="Mobile" property="mobile" jdbcType="NVARCHAR" />
+            <result column="Mail" property="mail" jdbcType="NVARCHAR" />
+            <result column="QQ" property="qq" jdbcType="NVARCHAR" />
+            <result column="Sex" property="sex" jdbcType="NVARCHAR" />
+            <result column="HomeAddress" property="homeaddress" jdbcType="NVARCHAR" />
+            <result column="BirthDate" property="birthdate" jdbcType="TIMESTAMP" />
+            <result column="Education" property="education" jdbcType="NVARCHAR" />
+            <result column="DutiesId" property="dutiesid" jdbcType="NVARCHAR" />
+            <result column="Remarks" property="remarks" jdbcType="NVARCHAR" />
+            <result column="PhotoId" property="photoid" jdbcType="NVARCHAR" />
+            <result column="BranchShopId" property="branchshopid" jdbcType="NVARCHAR" />
+            <result column="CompanyId" property="companyid" jdbcType="NVARCHAR" />
+            <result column="CreateUser" property="createuser" jdbcType="NVARCHAR" />
+            <result column="CreateTime" property="createtime" jdbcType="TIMESTAMP" />
+            <result column="LastUpdateUser" property="lastupdateuser" jdbcType="NVARCHAR" />
+            <result column="LastUpdateTime" property="lastupdatetime" jdbcType="TIMESTAMP" />
+            <result column="IsDel" property="isdel" jdbcType="VARCHAR" />
+        </association>
+    </resultMap>
+<!--少量信息-->
+    <resultMap type="com.model.FK_House" id="SmallMessageResultMap">
+        <id property="id" column="id"/>
+        <result property="leixing" column="leixing"/>
+        <result property="zhuangtai" column="zhuangtai"/>
+        <result property="chaoxiang" column="chaoxiang"/>
+        <result property="mianji" column="mianji"/>
+
+        <result property="huxing" column="huxing"/>
+        <result property="zuigaoshoujia" column="zuigaoshoujia"/>
+
+        <result property="danyuan" column="danyuan"/>
+        <result property="fanghao" column="fanghao"/>
+
+
+        <!--房源图片表-->
+        <collection property="housePhoto"
+                    column="id"
+                    javaType="ArrayList"
+                    ofType="com.model.PK_HousePhoto"
+                    select="com.mapper.housePhoto.HousePhotoMapper.getPhotosByEsfId"/>
+    </resultMap>
+
+<!--分页条件-->
+    <sql id="zhuangtai">
+        and zhuangtai in ('有效','公共')
+    </sql>
+    <sql id="pageFenYe" >
+              <if test="zuidimianji != null and zuidimianji !='' ">
+                  and mianji != ''    AND convert(DECIMAL,[mianji]) >= #{zuidimianji}
+              </if>
+              <if test="zuigaomianji != null and zuigaomianji !='' ">
+                  AND  #{zuigaomianji}  >=  convert(DECIMAL,[mianji])
+              </if>
+
+              <if test="zuidishoujia != null and zuidishoujia !='' ">
+                  <choose>
+                      <when test="leixing == 1">
+                          and zuidishoujia != ''   AND zuidishoujia  >= #{zuidishoujia}
+                      </when>
+                      <otherwise>
+                          and zuidizujin != ''   AND zuidizujin  >= #{zuidishoujia}
+                      </otherwise>
+                  </choose>
+
+              </if>
+              <if test="zuigaoshoujia != null and zuigaoshoujia !='' ">
+                  <choose>
+                      <when test="leixing == 1">
+                          AND  #{zuigaoshoujia} >= zuidishoujia
+                      </when>
+                      <otherwise>
+                          AND  #{zuigaoshoujia} >= zuidizujin
+                      </otherwise>
+                  </choose>
+
+              </if>
+
+        <if test="woshi != null and woshi !='' ">
+            AND huxing   like CONCAT('%','${woshi}','%' )
+        </if>
+              <if test="name != null and name !='' ">
+                  --               这一步是先通过客户输入的楼盘名称去小区表搜索到小区id,把小区id 设置为二手房的name作为条件来查询
+                  AND name   = #{name}
+              </if>
+
+    </sql>
+    <!--类型条件-->
+    <sql id="leixing">
+        <if test="leixing !=null and leixing !=''">
+            <choose>
+                <when test="leixing == 1">
+                    and leixing like '%售%'
+                </when>
+                <otherwise>
+                    and leixing like '%租%'
+                </otherwise>
+            </choose>
+        </if>
+        <if test="searchName !=null and searchName !=''">
+            and (h.quyu like CONCAT('%','${searchName}','%' ) or c.loupanmingcheng like CONCAT('%','${searchName}','%' )
+            or c.loupanbieming like CONCAT('%','${searchName}','%' ))
+        </if>
+    </sql>
+    <!--排序-->
+    <sql id="paixu" >
+        <if test="orderby !=null and orderby !=0">
+            order by
+                <if test="orderby == 1">
+                    h.createtime
+                </if>
+                <if test="orderby == 2">
+                    <if test="leixing == 2">
+                        h.zuidizujin asc
+                    </if>
+                    <if test="leixing == 1">
+                        h.zuidishoujia  asc
+                    </if>
+                </if>
+                <if test="orderby == 3">
+                    <if test="leixing == 2">
+                        h.zuidizujin desc
+                    </if>
+                    <if test="leixing == 1">
+                        h.zuidishoujia  desc
+                    </if>
+                </if>
+                <if test="orderby == 4">
+                    convert(DECIMAL,[mianji])
+                </if>
+                <if test="shunxu !=null and shunxu !=0">
+                    asc
+                </if>
+        </if>
+    </sql>
+    <sql id="xiaoquId">
+        <if test="xiaoquId !=null  and xiaoquId != ''">
+           and h.NAME = #{xiaoquId}
+        </if>
+    </sql>
+    <!--经纪人id-->
+    <sql id="userId">
+        <if test="userId !=null  and xiaoquId != ''">
+            and h.createuserid = #{userId}
+        </if>
+        <if test="shopId !=null  and shopId != ''">
+            and h.branchshopid = #{shopId}
+        </if>
+    </sql>
+    <!--分页根据实体类queryVo查询二手房结果-->
+    <select id="findHouseByPage" parameterType="com.util.QueryVo" resultMap="FK_HouseResultMap">
+        SELECT *
+        FROM (
+        SELECT TOP ${pageSize} * FROM FK_House WHERE ID NOT IN
+        (SELECT TOP ${start} ID FROM FK_House)
+        <include refid="zhuangtai"/>
+        <include refid="leixing"/>
+        <include refid="pageFenYe"/>
+        )h
+        left JOIN FK_Community c ON h.name = c.Id
+        where 1= 1
+
+        <include refid="userId"/>
+        <include refid="xiaoquId"/>
+
+        <include refid="paixu"/>
+
+    </select>
+    <!--根据实体类queryVo查询数据条数-->
+    <select id="queryCountByPage" parameterType="com.util.QueryVo" resultType="int">
+        SELECT count(*) FROM FK_House h
+        left JOIN FK_Community c ON h.name = c.Id
+        where 1 = 1
+        <include refid="zhuangtai"/>
+        <include refid="userId"/>
+        <include refid="xiaoquId"/>
+        <include refid="leixing"/>
+      <include refid="pageFenYe"/>
+    </select>
+    <!--通过小区id获取二手房数量-->
+    <select id="getCountEsf" parameterType="java.lang.String" resultType="int">
+        select count (id) from FK_House WHERE NAME = #{xiaoquId}
+        <include refid="zhuangtai"/>
+    </select>
+    <!--通过小区id获取租房数量-->
+    <select id="getCountZf" parameterType="java.lang.String" resultType="int">
+        select count (id) from FK_House WHERE NAME = #{xiaoquId} and leixing like '%租%'
+        <include refid="zhuangtai"/>
+    </select>
+    <!--根据id获取二手房,小区,经纪人,门店信息-->
+    <select id="getErAndXiaoQuById" parameterType="String" resultMap="FK_HouseResultMap">
+        SELECT h.*,c.*,u.*,shop.name as 'shopName' FROM FK_House h
+        left join FK_Community c on h.name = c.id
+          left join Sys_User u on h.createuserid = u.id
+          left join Sys_BranchShop shop on h.branchshopid = shop.id
+         where h.id=#{id}
+        <include refid="zhuangtai"/>
+    </select>
+    <!--根据id获取租房,小区,经纪人,门店信息-->
+    <select id="getTenementById" parameterType="String" resultMap="FK_HouseResultMap">
+        SELECT h.*,c.*,u.*,shop.name as 'shopName' FROM FK_House h
+        left join FK_Community c on h.name = c.id
+          left join Sys_User u on h.createuserid = u.id
+          left join Sys_BranchShop shop on h.branchshopid = shop.id
+         where h.id=#{id}  and leixing like '%租%'
+        <include refid="zhuangtai"/>
+    </select>
+    <!--浏览历史中通过id查询二手房与租房少量信息-->
+    <select id="getHouseByHisTory" parameterType="String" resultMap="SmallMessageResultMap">
+        SELECT
+        *
+         FROM FK_House
+
+         where id=#{id}
+        <include refid="zhuangtai"/>
+    </select>
+   <!--通过小区id查询在售二手房-->
+    <select id="getHouseByXiaoQuId" parameterType="String" resultMap="FK_HouseResultMap">
+        select Top ${pageSize} id, zuigaoshoujia ,mianji,zuidizujin,
+        louxing ,chaoxiang,zhuangxiu, huxing ,
+        fangyuanbiaoqian ,hexinmaidian,fangyuanbianhao
+        from  FK_House h where 1= 1
+        <include refid="zhuangtai"/>
+        <include refid="leixing"/>
+        <include refid="xiaoquId"/>
+    </select>
+    <!--查询关注的额房源-->
+    <select id="findErHouseByMobile" parameterType="String" resultMap="FK_HouseResultMap">
+    select top 10  h.* ,c.loupanmingcheng,c.loupandizhi ,
+        c.jiaotongchuxing, c.zhoubianpeitao,c.xiaoqujianjie
+        FROM FK_House h
+    left JOIN FK_Community c ON h.name = c.Id
+    where h.id in(
+      select houseid from FK_Collection where  phone = #{phone}
+    )
+        and leixing like '%售%'
+        <include refid="zhuangtai"/>
+
+  </select>
+    <select id="findZuHouseByMobile" parameterType="String" resultMap="FK_HouseResultMap">
+        select top 10  h.* ,c.loupanmingcheng,c.loupandizhi ,
+        c.jiaotongchuxing, c.zhoubianpeitao,c.xiaoqujianjie
+        FROM FK_House h
+        left JOIN FK_Community c ON h.name = c.Id
+        where h.id in(
+        select houseid from FK_Collection where  phone = #{phone}
+        )
+        and leixing like '%租%'
+        <include refid="zhuangtai"/>
+
+    </select>
+</mapper>

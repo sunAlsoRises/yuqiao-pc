@@ -1,0 +1,8 @@
+.about-top-t { font-size: 24px; text-align: center; padding: 20px 0px; color: #C30D23; border-bottom: 1px solid rgb(234, 234, 234); }
+.about-right-page h2 { height: 30px; line-height: 30px; font-size: 16px; border-bottom: 2px solid rgb(235, 235, 235); position: relative; padding: 10px 0px 8px; margin: 0px 25px; font-weight: bold; color: rgb(51, 51, 51); z-index: 0; }
+.about-right-page h2 span { position: absolute; top: 17px; right: 0px; font-style: italic; color: rgb(238, 238, 238); }
+.about-content { margin: 0px auto; padding: 10px 25px; text-align: left; }
+.about-content p { font-size: 14px; line-height: 26px; }
+.about-content p strong {  }
+.dk-right-page h2 { height: auto; line-height: normal; font-size: 16px; border-bottom: 1px solid rgb(234, 234, 234); position: relative; padding: 10px 0px 15px; font-weight: normal; color: rgb(51, 51, 51); z-index: 0; margin: 0px 0px 30px; }
+.dk-right-page h2 span { position: absolute; top: 17px; right: 0px; font-style: normal; color: rgb(238, 238, 238); font-size: 12px; }

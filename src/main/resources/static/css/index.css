@@ -1,0 +1,260 @@
+/*隐藏的四个盒子*/
+.newsbox{
+	display: none;
+}
+.huosenumber{
+	display: none;
+}
+.showmango-app{
+	display: none;
+}
+.showmango{
+	display: none;
+}
+/* ::::: https://g.517cdn.com/www517cn/2016v1/css/main2016.css ::::: */
+/*真伪查询开始*/
+.s-truth { 
+	background: #212121 no-repeat scroll center top; width: 100%; height: 180px; padding-top: 60px; }
+.s-truth .truth-txt { 
+	background-position: -19px -254px; width: 501px; height: 115px; margin-top: 4px; 
+	
+	}
+.s-truth .truth-txt p{
+	text-align: center;
+	font-size: 35px;
+	color: rgb(255,255,255);
+}
+.s-truth .truth-txt p:first-child{
+	font-weight: 700;
+}
+.s-truth .truth-txt p:last-child{
+	margin-top: 20px;
+	text-align: center;
+	
+}
+.s-truth .truth-search { width: 550px; float: right; margin-right: 80px;}
+.s-truth .truth-search p { color: #C30D23; font-size: 16px; line-height: 25px; }
+.s-truth .truth-search .search-box { position: relative; }
+.s-truth .truth-search .search-box .result-box { display: none; background: rgb(249, 249, 249) none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2); border-radius: 2px; width: 304px; height: 81px; margin-left: 3px; margin-top: 15px; padding: 22px; position: absolute; }
+.s-truth .truth-search .serach-inp { width: 531px; height: 29px; margin-top: 18px; padding: 7px 12px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; line-height: 29px; border-radius: 2px; box-shadow: 0px 1px 3px rgba(14, 5, 10, 0.25); }
+.s-truth .truth-search .serach-inp input { border: 0px none; height: 28px; }
+.s-truth .truth-search .serach-inp input.tex { width: 495px; font-size: 14px; }
+.s-truth .truth-search .serach-inp .sub { background-image: url('../img/spritev2_new.png'); background-position: -407px -20px; width: 18px; height: 18px; display: inline-block; margin-top: 5px; float: right; cursor: pointer; }
+
+/*真伪查询结束*/
+.search-wrapper { background: rgb(68, 68, 68) url('../img/bannerv2.jpg') repeat scroll center center; height: 422px; position: relative; z-index: 5; }
+.mainsearch { width: 1100px; margin: 0px auto; padding: 60px 0px 0px; height: auto; position: relative; z-index: 2; }
+.m-searchBox { height: 315px; margin: 0px auto; box-sizing: border-box; padding: 0px; }
+.search-select-text { width: 1080px; margin: 0px 20px 0px 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; height: 315px; float: left; }
+.search-menu { height: 50px; border-bottom: 2px solid #C30D23; }
+.search-menu ul li { display: inline-block; float: left; height: 40px; width: 80px; }
+.search-menu ul li a { display: block; width: 80px; height: 50px; text-align: center; font-size: 16px; line-height: 50px; color: rgb(51, 51, 51); text-decoration: none; }
+.search-menu ul li a:hover { background: #C30D23 none repeat scroll 0% 0%; color: rgb(255, 255, 255); }
+.search-menu ul li.selectCurrent a { background: #C30D23 none repeat scroll 0% 0%; color: rgb(255, 255, 255); }
+.search-menu .mapsearch-house, .search-menu .quanjing-house, .fangguan-house, .jingzhuang-house { display: inline-block; float: right; height: 50px; padding: 0px 15px 0px 0px; }
+.search-menu .mapsearch-house a, .search-menu .quanjing-house a, .fangguan-house a, .jingzhuang-house a { display: block; line-height: 50px; color: #C30D23; font-size: 16px; }
+/*.search-menu .fangguan-house a i { display: inline-block; background: rgba(0, 0, 0, 0) url('../img/fangguan.png') no-repeat scroll left 0px; width: 20px; height: 20px; vertical-align: middle; margin: -2px 10px 0px 0px; }
+*/
+.search-menu .quanjing-house a i { display: inline-block; background: rgba(0, 0, 0, 0) url('../img/720webhomeicon.png') no-repeat scroll left 0px; width: 20px; height: 20px; vertical-align: middle; margin: -2px 10px 0px 0px; }
+.searchinput { padding: 19px 26px 9px; position: relative; z-index: 1; background: rgb(241, 241, 241) none repeat scroll 0% 0%; }
+.searchtextinput { width: 77%; padding: 8px 10px; border: 1px solid rgb(219, 219, 219); line-height: 25px; font-size: 14px; box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1) inset; overflow: visible; background: rgb(255, 255, 255) none repeat scroll 0% 0%; float: left; color: rgb(102, 102, 102); }
+.searchbutton { height: 43px; line-height: 43px; width: 19.2%; background: #C30D23 none repeat scroll 0% 0%; font-size: 18px; border: medium none; color: rgb(255, 255, 255); cursor: pointer; }
+.guanjianci { height: 20px; overflow: hidden; margin: 6px 0px 0px; }
+.guanjianci a { padding: 0px 10px 0px 0px; font-size: 12px; }
+.houseUpDate { width: 100%; text-align: left; color: rgb(102, 102, 102); font-size: 12px; padding: 0px 26px; }
+.houseUpDate a { color: rgb(102, 102, 102); font-weight: 700; display: inline-block; padding: 0px 3px; text-decoration: none; font-style: normal; font-size: 12px; }
+.searchinput-text { position: absolute; top: 61px; left: 26px; width: 468px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1); z-index: 234565; }
+/*.left-logo{
+	float: left;
+}*/
+/*.search-right-box { width: 302px; height: 310px; float: right; }
+.rightguang-gao{
+	width: 302px;
+	height: 220px;
+	position: relative;
+	background: #212121;
+}
+.rightguang-gao img{
+	  position: absolute;
+	  top: 50%;
+    left: 50%;
+    margin-left: -100px;   
+    margin-top: -28px;
+}*/
+.sell-buy-btn { width: 302px; height: 89px; }
+.sell-buy-btn a { display: inline-block; float: left; width: 151px; height: 89px; overflow: hidden; text-decoration: none; }
+.sell-buy-btn a.mybuyhouse { background: rgba(0, 0, 0, 0) url('../img/buy-sell-btnicon.png') no-repeat scroll left top; }
+.sell-buy-btn a.mysellhouse { background: rgba(0, 0, 0, 0) url('../img/buy-sell-btnicon.png') no-repeat scroll right top; }
+.sell-buy-btn a span { display: block; text-align: center; line-height: 20px; font-size: 12px; margin: 60px 0px 0px; color: rgb(255, 255, 255); }
+.searchtianjian { padding: 15px 0px 10px 24px; }
+.searchtianjian ul li { float: left; display: inline-block; width: 344px; border-bottom: 1px solid rgb(238, 238, 238); padding: 0px 0px 8px 40px; margin: 0px 24px 5px 0px; overflow: hidden; position: relative; box-sizing: border-box; height: 48px; }
+.searchtianjian ul li span { display: inline-block; height: 28px; position: absolute; top: 0px; left: 0px; line-height: 20px; color: rgb(51, 51, 51); }
+.searchtianjian ul li a { line-height: 20px; display: inline-block; margin: 0px 10px 0px 0px; font-size: 12px; }
+.newtoolnr .td { float: left; width: 26.5%; height: 54px; border-right: 1px dashed rgb(221, 221, 221); }
+.newtoolnr .td .s3 { float: left; width: 94px; height: 54px; line-height: 54px; font-size: 28px; padding-left: 32px; }
+.newtoolnr .td .s3 a, .newtoolnr .td .s3 a:hover { color: #C30D23; text-decoration: none; font-size: 28px; }
+.newtoolnr .td.nob { border-right: 0px none; }
+.newtoolnr .td .s2 { float: left; height: 20px; line-height: 20px; font-size: 14px; margin-top: 4px; position: relative; }
+.newtoolnr .td .s2 a { margin: 0px 10px 0px 0px; display: inline-block; width: 70px; position: relative; z-index: 0; font-weight: normal; }
+.newtoolnr .td .s2 a i { position: absolute; top: 0px; right: 0px; }
+.newtoolnr .td .s2 a b { position: absolute; top: 0px; right: -5px; }
+.newtoolnr .w20 { width: 20%; }
+.houseTJbox { width: 1100px; margin: 30px auto 0px; }
+.tabs { width: 1100px; overflow: hidden; }
+.horizontal { height: 50px; width: 1200px; }
+.horizontal li { float: left; width: 30%; background: rgb(245, 245, 245) none repeat scroll 0% 0%; margin: 0px 10px 0px 0px; }
+.horizontal li.active { border-bottom: medium none; background: rgb(250, 250, 250) none repeat scroll 0% 0%; border-right: medium none; height: 50px; }
+.horizontal li.active a { color: #C30D23; font-weight: bold; line-height: 47px; border-bottom: 3px solid #C30D23; height: 47px; }
+.horizontal li a { display: block; line-height: 50px; height: 50px; text-align: center; font-size: 16px; color: rgb(153, 153, 153); position: relative; z-index: 0; }
+.horizontal li a i { position: absolute; top: 15px; right: 100px; }
+.housetj-list { padding: 20px 0px 0px; }
+.housestatus {  }
+.housestatus ul { margin: 0px 0px 0px -20px; display: block; position: relative; }
+.housestatus ul li { display: inline-block; float: left; width: 204px; height: auto; position: relative; margin: 0px 0px 0px 20px; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; padding: 0px; }
+.houseimgbox a { width: 204px; overflow: hidden; display: block; }
+.houseimgbox a img { width: 204px; height: 150px; }
+.houseimgbox .housetj-img { display: block; width: 204px; height: 150px; position: relative; z-index: 0; }
+.houseimgbox .housetj-img i { display: inline-block; width: 35px; height: 35px; position: absolute; top: 0px; right: 0px; line-height: 120px; overflow: hidden; background: rgba(0, 0, 0, 0) url('../img/tgrightupicon.png') no-repeat scroll center center / 100% auto; }
+.houseimgbox .housetj-img b { display: inline-block; padding: 5px; color: rgb(255, 255, 255); font-size: 16px; position: absolute; bottom: 5px; right: 5px; background: rgb(51, 51, 51) none repeat scroll 0% 0%; font-weight: normal; }
+.houseimgbox .houseimgtext { background: rgb(250, 250, 250) none repeat scroll 0% 0%; padding: 0px 5px; }
+.houseimgbox .houseimgtext .housetj-title { display: block; border-bottom: 1px solid rgb(217, 217, 217); padding: 5px 0px; height: 40px; overflow: hidden; }
+.houseimgbox .houseimgtext .housetj-info { display: block; height: 20px; font-size: 12px; line-height: 20px; padding: 5px 0px; color: rgb(153, 153, 153); }
+.houseimgbox .houseimgtext .housetj-info strong { float: left; display: inline-block; width: 100px; height: 20px; overflow: hidden; }
+.houseimgbox .houseimgtext .housetj-info i { float: right; font-style: normal; color: rgb(153, 153, 153); }
+.showmango { width: 1100px; margin: 20px auto 0px; overflow: hidden; }
+.showmango-3 { float: right; }
+.showmango-3 .showmango-3-1 { width: 260px; height: 192px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; }
+.showmango-3 .showmango-3-1 img { width: 260px; height: 192px; }
+.showmango-3 .showmango-3-2 { width: 260px; height: 121px; background: rgb(238, 238, 238) none repeat scroll 0% 0%; margin-top: 17px; }
+.s-a { width: 1100px; margin: 20px auto 0px; }
+.slideshow { clear: both; }
+.slideshow li { position: relative; overflow: hidden; }
+.slideshow span.title, .slidebar li { background: rgba(0, 0, 0, 0.3) none repeat scroll 0% 0%; color: rgb(255, 255, 255); overflow: hidden; }
+.slidebar { position: absolute; bottom: 5px; right: 5px; }
+.slidebar li { float: left; margin-left: 5px; width: 8px; height: 8px; line-height: 30px; text-align: center; font-size: 10px; cursor: pointer; overflow: hidden; border-radius: 100px; }
+.slidebar li.on { background: rgba(255, 255, 255, 0.5) none repeat scroll 0% 0%; }
+.frame { background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; border: 0px solid rgb(255, 255, 255); margin-bottom: 0px; }
+#frameHlicAe { margin: 0px !important; border: 0px none !important; }
+.comiis_wrapad { margin: 0px auto; width: 1100px; }
+.comiis_wrapad { overflow: hidden; position: relative; }
+#slidesImgs li { width: 1100px; height: 90px; display: none; }
+#slidesImgs li img { width: 100%; height: 90px; }
+.newhousebox { width: 1100px; margin: 40px auto 0px; }
+.nhtitle { font-size: 24px; padding: 0px 0px 30px; color: rgb(153, 153, 153); }
+.nhtitle::after { content: "."; display: block; height: 0px; clear: both; visibility: hidden; }
+.nhtitle span { color: rgb(190, 190, 190); font-weight: normal; }
+.nhtitle span b { padding: 0px 10px 0px 0px; color: rgb(102, 102, 102); font-weight: normal; }
+.nhtitle a { font-size: 12px; color: rgb(153, 153, 153); display: inline-block; margin: 0px 0px 0px 50px; float: right; line-height: 24px; }
+.house-ul { width: 1100px; overflow: hidden; }
+.house-ul ul { margin-left: -20px; }
+.house-ul ul li { float: left; width: 204px; margin-left: 20px; }
+.house-ul ul li a { position: relative; width: 204px; height: 150px; overflow: hidden; display: block; }
+.house-ul ul li a img { width: 204px; height: 150px; }
+.house-ul ul li a p { position: absolute; left: 0px; bottom: 0px; width: 204px; height: 35px; line-height: 35px; text-align: center; display: block; color: rgb(255, 255, 255); background: rgb(0, 0, 0) none repeat scroll 0% 0%; opacity: 0.7; }
+.house-ul ul li .house-txt { height: 55px; }
+.house-ul ul li .house-txt .h-price { height: 33px; line-height: 35px; overflow: hidden; clear: both; }
+.house-ul ul li .house-txt .h-price .fl { float: left; color: rgb(51, 51, 51); }
+.house-ul ul li .house-txt .h-price .fl strong { color: rgb(238, 68, 51); font-size: 20px; }
+.house-ul ul li .house-txt .h-price .fr { float: right; color: rgb(153, 153, 153); font-size: 12px; }
+.house-ul ul li .house-txt .p { height: 20px; line-height: 20px; color: rgb(153, 153, 153); font-size: 12px; clear: both; overflow: hidden; }
+.huosenumber { width: 1100px; height: 200px; margin: 20px auto 0px; 
+/*background: rgba(0, 0, 0, 0) url('../img/housenumber.jpg') no-repeat scroll left top;*/ padding: 0.1% 0px 0px; }
+.h-n-search { width: 484px; height: 40px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border-radius: 2px; box-shadow: 1px 1px 2px rgb(119, 119, 119); margin: 50px 0px 0px 550px; position: relative; }
+.h-n-s-text { font-size: 16px; color: rgb(255, 255, 255); margin: 10px 0px 0px 550px; line-height: 24px; }
+.h-n-t { font-size: 14px; width: 380px; margin: 9px 0px 0px 10px; height: 20px; border: medium none; }
+.h-n-b { border: medium none; background: rgb(68, 68, 68) none repeat scroll 0% 0%; color: rgb(255, 255, 255); font-size: 14px; width: 90px; text-align: center; height: 40px; cursor: pointer; float: right; }
+.h-n-b {  }
+.h-n-s-house { position: absolute; top: 46px; left: 0px; width: 348px; height: 110px; border-radius: 2px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3); }
+.h-n-s-box { padding: 10px; }
+.h-n-s-box a.h-n-s-img { float: left; margin: 0px 10px 0px 0px; }
+.h-n-s-box a.h-n-s-img img { width: 110px; height: 90px; }
+.h-n-s-info p { font-size: 16px; color: rgb(39, 190, 95); padding: 0px 0px 5px; }
+.h-n-s-info a, .h-n-s-info span { display: block; font-size: 12px; color: rgb(102, 102, 102); height: 20px; overflow: hidden; }
+.h-n-s-info span em { font-size: 14px; color: rgb(238, 68, 51); padding: 0px 0px 0px 5px; font-style: normal; }
+.h-n-s-house .arrow-up { width: 0px; height: 0px; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 6px solid rgb(255, 255, 255); font-size: 0px; line-height: 0; position: absolute; top: -6px; left: 30px; display: block; }
+.h-n-search {  }
+.h-n-t {  }
+.h-n-s-house {  }
+.newsbox { width: 1100px; margin: 40px auto 0px; }
+.newsshow { width: 820px; overflow: hidden; float: left; margin: 0px 20px 0px 0px; }
+.n-t { font-size: 24px; padding: 0px 0px 20px; color: rgb(153, 153, 153); }
+.n-t span { color: rgb(190, 190, 190); font-weight: normal; }
+.n-t span b { padding: 0px 10px 0px 0px; color: rgb(102, 102, 102); font-weight: normal; }
+.n-t a { font-size: 12px; color: rgb(153, 153, 153); display: inline-block; margin: 0px 0px 0px 50px; float: right; line-height: 24px; }
+.n-jsmove { width: 540px; height: 290px; float: left; overflow: hidden; }
+ul.hiSlider li img { width: 540px; height: 290px; }
+.hiSlider-pages, .hiSlider-title { position: absolute; z-index: 3; }
+.hiSlider-btn-prev, .hiSlider-btn-next { position: absolute; z-index: 5; top: 50%; height: 30px; width: 30px; background: rgba(0, 0, 0, 0) url('../img/hislider-arrow.png') no-repeat scroll 0% 0%; margin-top: -15px; text-indent: -200px; overflow: hidden; opacity: 0.6; }
+.hiSlider-btn-prev { left: 10px; }
+.hiSlider-btn-next { right: 10px; background-position: -30px 0px; }
+.hiSlider-btn-prev:hover, .hiSlider-btn-next:hover { opacity: 1; }
+.hiSlider-title { bottom: 0px; width: 100%; padding: 6px 0px; color: rgb(255, 255, 255); text-indent: 10px; background: rgba(0, 0, 0, 0.6) none repeat scroll 0% 0%; z-index: 2; font: 14px/2 "Microsoft YaHei",Arial,Tahoma; }
+.hiSlider-pages { bottom: 16px; right: 10px; text-align: right; }
+.hiSlider-pages a { height: 8px; width: 8px; margin: 0px 6px; display: inline-block; overflow: hidden; text-indent: -100px; font-size: 0px; border-radius: 50%; background: rgb(255, 255, 255) none repeat scroll 0% 0%; }
+.hiSlider-pages a.active { background: #C30D23 none repeat scroll 0% 0%; }
+.n-l-text { float: left; margin: 0px 0px 0px 20px; width: 260px; }
+.n-l-t-t { padding: 0px 0px 10px; }
+.n-l-t-t h2 a { display: block; height: 24px; line-height: 24px; overflow: hidden; font-size: 18px; color: rgb(51, 51, 51); font-weight: normal; }
+.n-l-t-t h2 a:hover { color: #C30D23; }
+.n-l-t-t p { font-size: 12px; line-height: 18px; color: rgb(153, 153, 153); height: 36px; overflow: hidden; }
+.n-l-text ul li { display: block; height: 24px; overflow: hidden; }
+.n-l-text ul li a { display: inline-block; line-height: 24px; width: 220px; float: left; }
+.n-l-text ul li span { display: inline-block; line-height: 24px; color: rgb(153, 153, 153); font-size: 12px; float: right; }
+.fangjiazoushi { width: 1100px; margin: 40px auto 0px; }
+.esfzs { width: 540px; height: 320px; float: left;  }
+.esfzs-t { font-size: 24px; padding: 0px 0px 20px; color: rgb(153, 153, 153); }
+.esfzs-t span { color: rgb(190, 190, 190); font-weight: normal; }
+.esfzs-t span b { padding: 0px 10px 0px 0px; color: rgb(102, 102, 102); font-weight: normal; }
+.esfzs-c-g { width: 540px; overflow: hidden; }
+.esfzs-cj, .esfzs-gp { width: 243px; border-radius: 2px; background: #212121 none repeat scroll 0% 0%; height: 90px; margin: 0px 53px 0px 0px; position: relative; }
+.esfzs-cj span, .esfzs-gp span { display: block; margin: 20px auto 10px; text-align: center; font-size: 24px; color: rgb(255, 255, 255); font-weight: normal; }
+.esfzs-gp { background: rgb(255, 174, 131) none repeat scroll 0% 0%; margin: 0px; }
+.esfzs-qx { height: 170px; margin: 10px 0px 0px; overflow: hidden; }
+.loushifenxi { float: left; margin: 0px 0px 0px 20px; width: 260px; }
+.lsfx-t { font-size: 18px; padding: 0px 0px 20px; color: rgb(153, 153, 153); }
+.lsfx-t span { color: rgb(190, 190, 190); font-weight: normal; }
+.lsfx-t span b { padding: 0px 10px 0px 0px; color: rgb(102, 102, 102); font-weight: normal; }
+.lsfx-t a { font-size: 12px; color: rgb(153, 153, 153); display: inline-block; margin: 0px 0px 0px 50px; float: right; line-height: 24px; }
+
+
+.b-four { width: 1100px; margin: 40px auto; overflow: hidden; border-top: 1px solid rgb(238, 238, 238); border-bottom: 1px solid rgb(238, 238, 238); padding: 20px 0px; }
+.b-four ul li { display: block; width: 274px; border-right: 1px solid rgb(186, 186, 186); float: left; height: 65px; overflow: hidden; }
+.b-four ul li.b-f-4 { border: medium none; }
+.b-four ul li span { display: inline-block; background: rgba(0, 0, 0, 0) url('../img/bottominfo.png') no-repeat scroll 0% 0%; height: 65px; float: left; width: 69px; }
+.b-four ul li div { padding: 0px 20px; }
+.b-four ul li div h5 { font-size: 16px; line-height: 24px; }
+.b-four ul li.b-f-1 span { background-position: 0px 0px; margin: 0px 20px 0px 0px; }
+.b-four ul li.b-f-2 span { background-position: -70px 0px; margin: 0px 20px 0px 40px; }
+.b-four ul li.b-f-3 span { background-position: -139px 0px; margin: 0px 20px 0px 40px; }
+.b-four ul li.b-f-4 span { background-position: -209px 0px; margin: 0px 20px 0px 40px; }
+.b-four ul li.b-f-4 div { padding: 0px 0px 0px 20px; }
+
+
+
+/*誉桥二维码*/
+.hand-lianjia { 
+	 background: rgba(0, 0, 0, 0) url('../img/bg-app.jpg') no-repeat scroll center top;
+	height: 390px; 
+	background-size: 100%;
+	}
+.hand-lianjia .fl { width: 479px; padding-top: 40px; }
+/*
+.hand-lianjia .fl .titles { 
+	background-image: url('../img/spritev2_new.png');
+	 background-position: -448px -379px; width: 286px; height: 118px; 
+	 }
+*/
+.hand-lianjia .fl p { line-height: 22px; margin-top: 22px; color: #212121; font-size:18px;}
+.hand-lianjia .fl .download { width: 479px; margin-top: 38px; position: relative; }
+.hand-lianjia .fl .download .hand-app { float: left; width: 134px; margin-right: 14px; }
+.hand-lianjia .fl .download .hand-app a { background-image: url('../img/spritev2_new.png'); display: inline-block; width: 134px; height: 44px; }
+.hand-lianjia .fl .download .hand-app a.ios { background-position: -20px -139px; }
+.hand-lianjia .fl .download .hand-app a.ios:hover { background-position: -168px -139px; }
+.hand-lianjia .fl .download .hand-app a.ios:active { background-position: -316px -139px; }
+.hand-lianjia .fl .download .hand-app a.android { margin-top: 8px; background-position: -20px -197px; }
+.hand-lianjia .fl .download .hand-app a.android:hover { background-position: -168px -197px; }
+.hand-lianjia .fl .download .hand-app a.android:active { background-position: -316px -197px; }
+.hand-lianjia .fl .download .erweima { float: left; background-image: url('../img/spritev2_new.png'); background-position: -464px -139px; width: 102px; height: 102px; }
+.hand-lianjia .fl .download .video-img-btn { cursor: pointer; position: relative; float: left; margin-left: 14px; width: 109px; height: 109px; }
+.hand-lianjia .fl .download .video-img-btn .video-img-btn-bg { width: 109px; height: 109px; background-image: url('../img/spritev2_new.png'); background-position: -580px -139px; }
+.hand-lianjia .fl .download .video-img-btn .video-btn-normal { position: absolute; top: 50%; left: 50%; margin-left: -18px; margin-top: -17px; opacity: 0.7; background-image: url('spritev2_new.png'); background-position: -374px -20px; width: 29px; height: 29px; }

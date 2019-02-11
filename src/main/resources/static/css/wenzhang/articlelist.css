@@ -1,0 +1,43 @@
+.n-l-s1 {border-bottom:1px #e4e4e4 dotted;padding:30px 0}
+.n-l-s1 h2 {padding:0 0 10px}
+.n-l-s1 h2 a {display:inline-block;font-size:18px;color:#333}
+.n-l-s1 h2 a:hover {text-decoration:underline}
+.n-l-s1 p {color:#999;line-height:20px;height:120px;overflow:hidden;margin:0 0 5px;font-size:14px}
+.n-l-s1 p a {float:left;display:inline-block;margin:0 10px 0 0}
+.n-l-s1 p a img {width:160px;height:120px}
+.n-l-s1 em {color:#bfbfbf}
+@media screen and (max-width:480px) {body {width:100%;min-width:100%}
+    #ZY_Foot,.floatleftadimg,.r-float,.topbox {display:none;}
+    .showtime-img {width:auto;margin:0 0 10px}
+    .showtime-img a {width:auto;height:auto}
+    .showtime-img a img {width:100%}
+    .width960 {width:auto;margin:0 10px}
+    .to-menu {height:auto}
+    .to-menu:after {content:".";display:block;height:0;clear:both;visibility:hidden}
+    .to-menu ul li {height:50px;width:33.3%;background:#f1f1f1;position:inherit;float:left}
+    .to-menu ul li span {font-size:12px;line-height:25px;padding:0 2%}
+    .to-menu ul li span.to-ment-ing {background:#3c9;width:auto;height:auto}
+    .to-menu ul li.to-menu-3 span {line-height:50px}
+    .to-tishi {border-radius:3px;margin:10px 0}
+    .FormTab div input[type=text] {width:50%}
+    .FormTab div span.cilianxiang {float:none}
+    .area1 {width:100%;border:1px #ccc solid;box-shadow:inset 0 1px 3px rgba(0,0,0,.1)}
+    .FormTab div ul {float:none}
+    .FormTab div ul li {float:none;display:inline-block}
+    .FormTab div.btn h3 {display:none}
+    .FormTab div.btn ul li {display:block;text-align:center}
+    .mui-mbar-tabs {display:none}
+    .n-keyword,.n-share,.n-tjlist,.newsNavBox,.path-nav,.rightside,.t-search-wrapper {display:none}
+    .newsListBox {width:auto;margin:0 auto;overflow:hidden}
+    .n-Content {width:auto;margin:0;float:none;padding:10px}
+    .n-content-s p img {width:100%!important;height:auto!important}
+    .n-info span:nth-child(3) {display:none}
+    .n-list {width:auto;margin:0;float:none}
+    .n-l-box {padding:0 10px}
+    .n-listTitle {padding:10px 0;border-bottom:2px #3c9 solid;margin:0}
+    .n-l-s1 p {line-height:20px;height:60px}
+    .n-l-s1 p a img {width:110px;height:auto}
+    .pagesizebox-news {width:auto;margin:20px 0 10px;padding:0 10px}
+    .pagebtn {float:none;height:auto}
+    .pagebtn a,.pagebtn span {display:inline-block;float:none;border:1px #eee solid;height:28px;line-height:28px;padding:0 12px;margin:0 2px 10px}
+}

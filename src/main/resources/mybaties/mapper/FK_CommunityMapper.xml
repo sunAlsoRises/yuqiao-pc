@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mapper.xiaoqu.XiaoQuXmlMapper" >
+  <resultMap id="BaseResultMap" type="com.model.FK_Community" >
+    <id column="Id" property="id" jdbcType="VARCHAR" />
+    <result column="ZhuanJiaUserId" property="zhuanjiauserid" jdbcType="VARCHAR" />
+    <result column="ZhuanJiaUserName" property="zhuanjiausername" jdbcType="VARCHAR" />
+    <result column="ZhuanJiaBranchShopId" property="zhuanjiabranchshopid" jdbcType="VARCHAR" />
+    <result column="BiaoQian" property="biaoqian" jdbcType="VARCHAR" />
+    <result column="YongTu" property="yongtu" jdbcType="VARCHAR" />
+    <result column="LouPanMingCheng" property="loupanmingcheng" jdbcType="VARCHAR" />
+    <result column="LouPanBieMing" property="loupanbieming" jdbcType="VARCHAR" />
+    <result column="LouPanDiZhi" property="loupandizhi" jdbcType="VARCHAR" />
+    <result column="ChanQuanNianXian" property="chanquannianxian" jdbcType="VARCHAR" />
+    <result column="RongJiLv" property="rongjilv" jdbcType="VARCHAR" />
+    <result column="LvHuaLv" property="lvhualv" jdbcType="VARCHAR" />
+    <result column="GuiHuaDongShu" property="guihuadongshu" jdbcType="VARCHAR" />
+    <result column="GuiHuaHuShu" property="guihuahushu" jdbcType="VARCHAR" />
+    <result column="TingCheWei" property="tingchewei" jdbcType="VARCHAR" />
+    <result column="ZhanDiMianJi" property="zhandimianji" jdbcType="VARCHAR" />
+    <result column="JianZhuMianJi" property="jianzhumianji" jdbcType="VARCHAR" />
+    <result column="ZhuWuFeiYong" property="zhuwufeiyong" jdbcType="VARCHAR" />
+    <result column="KaiFaGongSi" property="kaifagongsi" jdbcType="VARCHAR" />
+    <result column="WuYeGongSi" property="wuyegongsi" jdbcType="VARCHAR" />
+    <result column="JunGongNianDai" property="jungongniandai" jdbcType="VARCHAR" />
+    <result column="XiaoQuJianJie" property="xiaoqujianjie" jdbcType="VARCHAR" />
+    <result column="ZhouBianPeiTao" property="zhoubianpeitao" jdbcType="VARCHAR" />
+    <result column="JiaoTongChuXing" property="jiaotongchuxing" jdbcType="VARCHAR" />
+    <result column="CreateUserId" property="createuserid" jdbcType="VARCHAR" />
+    <result column="CreateName" property="createname" jdbcType="VARCHAR" />
+    <result column="CreateTime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="LastUpdateUserId" property="lastupdateuserid" jdbcType="NVARCHAR" />
+    <result column="LastUpdateName" property="lastupdatename" jdbcType="NVARCHAR" />
+    <result column="LastUpdateTime" property="lastupdatetime" jdbcType="TIMESTAMP" />
+    <result column="BranchShopId" property="branchshopid" jdbcType="NVARCHAR" />
+    <result column="CompanyId" property="companyid" jdbcType="NVARCHAR" />
+    <result column="IsDel" property="isdel" jdbcType="NVARCHAR" />
+
+    <result column="quyu" property="quyu" jdbcType="VARCHAR" />
+
+    <result column="esfCount" property="esfCount" jdbcType="VARCHAR" />
+    <result column="zfCount" property="zfCount" jdbcType="VARCHAR" />
+
+    <result column="longitude" property="longitude" jdbcType="VARCHAR" />
+    <result column="latitude" property="latitude" jdbcType="VARCHAR" />
+
+    <!--门店表-->
+    <association property="shop" javaType="com.model.Sys_BranchShop">
+      <id column="id" property="id" />
+      <result column="shopName" property="name" jdbcType="NVARCHAR" />
+      <result column="Province" property="province" jdbcType="NVARCHAR" />
+      <result column="City" property="city" jdbcType="NVARCHAR" />
+      <result column="Address" property="address" jdbcType="NVARCHAR" />
+      <result column="ShopownerName" property="shopownername" jdbcType="NVARCHAR" />
+      <result column="ShopownerMobile" property="shopownermobile" jdbcType="NVARCHAR" />
+      <result column="ShopownerCardNum" property="shopownercardnum" jdbcType="NVARCHAR" />
+      <result column="Remarks" property="remarks" jdbcType="NVARCHAR" />
+      <result column="CompanyId" property="companyid" jdbcType="NVARCHAR" />
+      <result column="CreateUser" property="createuser" jdbcType="NVARCHAR" />
+      <result column="CreateTime" property="createtime" jdbcType="TIMESTAMP" />
+      <result column="LastUpdateUser" property="lastupdateuser" jdbcType="NVARCHAR" />
+      <result column="LastUpdateTime" property="lastupdatetime" jdbcType="TIMESTAMP" />
+    </association>
+    <!--业务员表-->
+    <association property="user" javaType="com.model.Sys_User">
+      <id column="Id" property="id" />
+      <result column="UserName" property="username" jdbcType="NVARCHAR" />
+      <result column="Name" property="name" jdbcType="NVARCHAR" />
+      <result column="PassWord" property="password" jdbcType="NVARCHAR" />
+      <result column="CardNumber" property="cardnumber" jdbcType="NVARCHAR" />
+      <result column="Mobile" property="mobile" jdbcType="NVARCHAR" />
+      <result column="Mail" property="mail" jdbcType="NVARCHAR" />
+      <result column="QQ" property="qq" jdbcType="NVARCHAR" />
+      <result column="Sex" property="sex" jdbcType="NVARCHAR" />
+      <result column="HomeAddress" property="homeaddress" jdbcType="NVARCHAR" />
+      <result column="BirthDate" property="birthdate" jdbcType="TIMESTAMP" />
+      <result column="Education" property="education" jdbcType="NVARCHAR" />
+      <result column="DutiesId" property="dutiesid" jdbcType="NVARCHAR" />
+      <result column="Remarks" property="remarks" jdbcType="NVARCHAR" />
+      <result column="PhotoId" property="photoid" jdbcType="NVARCHAR" />
+      <result column="BranchShopId" property="branchshopid" jdbcType="NVARCHAR" />
+      <result column="CompanyId" property="companyid" jdbcType="NVARCHAR" />
+      <result column="CreateUser" property="createuser" jdbcType="NVARCHAR" />
+      <result column="CreateTime" property="createtime" jdbcType="TIMESTAMP" />
+      <result column="LastUpdateUser" property="lastupdateuser" jdbcType="NVARCHAR" />
+      <result column="LastUpdateTime" property="lastupdatetime" jdbcType="TIMESTAMP" />
+      <result column="IsDel" property="isdel" jdbcType="VARCHAR" />
+    </association>
+    <!--房源表-->
+    <collection  property="houses" ofType="com.model.FK_House">
+      <id property="id" column="id"/>
+      <result property="leixing" column="leixing"/>
+      <result property="zhuangtai" column="zhuangtai"/>
+      <result property="tongtu" column="tongtu"/>
+      <result property="isshow" column="isshow"/>
+      <result property="name" column="name"/>
+      <result property="dongzuo" column="dongzuo"/>
+      <result property="danyuan" column="danyuan"/>
+      <result property="fanghao" column="fanghao"/>
+      <result property="louceng" column="louceng"/>
+      <result property="gongjiceng" column="gongjiceng"/>
+      <result property="mianji" column="mianji"/>
+      <result property="woshi" column="woshi"/>
+      <result property="ketingcanting" column="ketingcanting"/>
+      <result property="weishengjian" column="weishengjian"/>
+      <result property="chufang" column="chufang"/>
+      <result property="yangtai" column="yangtai"/>
+      <result property="zhuangxiu" column="zhuangxiu"/>
+      <result property="chaoxiang" column="chaoxiang"/>
+      <result property="louxing" column="louxing"/>
+      <result property="chewei" column="chewei"/>
+      <result property="createname" column="createname"/>
+      <result property="zuidishoujia" column="zuidishoujia"/>
+      <result property="peitao" column="peitao"/>
+      <result property="quyu" column="quyu"/>
+
+      <result property="huxing" column="huxing"/>
+      <result property="createtime" column="createtime"/>
+      <result property="zuigaoshoujia" column="zuigaoshoujia"/>
+      <result property="yajinleixing" column="yajinleixing"/>
+      <result property="shuxing" column="shuxing"/>
+      <result property="zuidizujin" column="zuidizujin"/>
+      <result property="zuigaozujin" column="zuigaozujin"/>
+    </collection>
+
+  </resultMap>
+  <sql id="Base_Column_List" >
+    Id, ZhuanJiaUserId, ZhuanJiaUserName, ZhuanJiaBranchShopId, BiaoQian, YongTu, LouPanMingCheng, 
+    LouPanBieMing, LouPanDiZhi, ChanQuanNianXian, RongJiLv, LvHuaLv, GuiHuaDongShu, GuiHuaHuShu, 
+    TingCheWei, ZhanDiMianJi, JianZhuMianJi, ZhuWuFeiYong, KaiFaGongSi, WuYeGongSi, JunGongNianDai, 
+    XiaoQuJianJie, ZhouBianPeiTao, JiaoTongChuXing, CreateUserId, CreateName, CreateTime, 
+    LastUpdateUserId, LastUpdateName, LastUpdateTime, BranchShopId, CompanyId, IsDel,longitude,latitude
+  </sql>
+  <!--根据小区id查询二手房与租房数量-->
+  <sql id="houseCount">
+     LEFT JOIN (
+    SELECT
+    Name,
+    COUNT (*) AS 'esfCount'
+    FROM
+    FK_House
+    where dbo.FK_House.leixing like '%售%'
+    GROUP BY
+    dbo.FK_House.Name
+
+    ) AS esf ON com.Id = esf.Name
+
+    LEFT JOIN (
+    SELECT
+    Name,
+    COUNT (*) AS 'zfCount'
+    FROM
+    FK_House
+    where dbo.FK_House.leixing like '%租%'
+    GROUP BY
+    dbo.FK_House.Name
+
+    ) AS zf ON com.Id = zf.Name
+  </sql>
+  <!--地图坐标条件-->
+  <sql id="mapCondition">
+    <if test="minlng !=null and minlng !=''">
+      and longitude != ''  and Latitude != ''
+    </if>
+    <if test="minlng !=null and minlng !=''">
+      AND convert(DECIMAL(13,6),[longitude ]) >= #{minlng}
+    </if>
+    <if test="maxlng !=null and maxlng !=''">
+      AND #{maxlng} >= convert(DECIMAL(13,6),[longitude])
+    </if>
+
+    <if test="minlat !=null and minlat !=''">
+      AND convert(DECIMAL(13,6),[Latitude ]) >= #{minlat}
+    </if>
+
+    <if test="maxlat !=null and maxlat !=''">
+      AND #{maxlat} >= convert(DECIMAL(13,6),[Latitude])
+    </if>
+  </sql>
+
+  <!--小区分页条件-->
+  <sql id="pageCondition">
+    <if test="searchName !=null and searchName !=''">
+      and (c.quyu like CONCAT('%','${searchName}','%' )
+      or c.loupanmingcheng like CONCAT('%','${searchName}','%' )
+      or c.biaoqian like CONCAT('%','${searchName}','%' )
+      or c.loupanbieming like CONCAT('%','${searchName}','%' ))
+    </if>
+  </sql>
+  <!--地图小区列表-->
+  <select id="findXiaoQuMap" parameterType="com.util.map.QueryMap" resultMap="BaseResultMap">
+      select com.*,
+    ISNULL(esf.esfCount, 0) as 'esfCount' , ISNULL(zf.zfCount, 0) as 'zfCount'
+      from FK_Community com
+    <include refid="houseCount"/>
+    where 1= 1
+    <include refid="mapCondition"/>
+  </select>
+  <!--小区分页列表-->
+  <!--分页根据实体类queryVo查询小区结果-->
+  <select id="findCommunityByPage" parameterType="com.util.QueryVo" resultMap="BaseResultMap">
+    SELECT
+    com.*,ISNULL(esf.esfCount, 0) as 'esfCount' ,
+    ISNULL(zf.zfCount, 0) as 'zfCount'
+    FROM  (
+    SELECT
+    ROW_NUMBER () OVER (ORDER BY c.id DESC) AS px , c.*
+    FROM
+    FK_Community c
+    where  1=1
+    <include refid="pageCondition"/>
+    ) AS com
+    <include refid="houseCount"/>
+    WHERE
+    com.px BETWEEN ${start}+1
+    AND ${start}+${pageSize}
+
+  </select>
+  <!--根据实体类queryVo查询数据条数-->
+  <select id="CommunityCountByPage" parameterType="com.util.QueryVo" resultType="int">
+    SELECT count(*) FROM FK_Community c
+    where 1= 1
+    <include refid="pageCondition"/>
+  </select>
+  <!--根据id查询小区-->
+  <select id="findCommunityById" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select  com.*, u.*, shop.name as 'shopName' ,
+    ISNULL(esf.esfCount, 0) as 'esfCount' , ISNULL(zf.zfCount, 0) as 'zfCount'
+    from FK_Community com
+    left join Sys_User u on com.ZhuanJiaUserId = u.id
+    left join Sys_BranchShop shop on com.ZhuanJiaBranchShopId = shop.id
+    <include refid="houseCount"/>
+     where com.id = #{id}
+
+  </select>
+  <!--浏览历史中通过id查询小区少量信息-->
+  <select id="getComByHisTory" parameterType="String" resultMap="BaseResultMap">
+        SELECT com.id , com.loupanmingcheng ,
+        ISNULL(esf.esfCount, 0) as 'esfCount' , ISNULL(zf.zfCount, 0) as 'zfCount'
+         FROM FK_Community com
+    <include refid="houseCount"/>
+         where com.id=#{id}
+    </select>
+</mapper>

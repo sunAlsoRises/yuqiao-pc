@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户页面</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/base.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login-res/user.css}" />
+
+</head>
+<body>
+<script>
+    var projecImgtName = "yuqiaopc";
+    var pathName = window.document.location.pathname;
+    var projectName = pathName.substring(0,pathName.substr(1).indexOf('/')+1);
+    var BaseUrl_IIS_Application_Name = "http://dev-12.lingke.mobi";
+    var SecondaryPath = "HousePhoto";
+    __STAT_LJ_CONF = {
+        params: {
+            ljweb_group: ['SEARCH', 'BIGDATA_PC'],
+            ljweb_id: '',
+            ljweb_mod: '',
+            ljweb_bl: '',
+            ljweb_el: '',
+            ljweb_index: '',
+            ljweb_value: '',
+            ljweb_url: '',
+            ljweb_ljref: (document.cookie.match(/(?:^| )ljref=([^;]*)(?:;|$)/) || ['', ''])[1],
+            ljweb_sample: (document.cookie.match(/(?:^| )sample_traffic_test=([^;]*)(?:;|$)/) || ['', ''])[1],
+            ljweb_ref: document.referrer,
+            ljweb_cid: '',
+            ljweb_channel: 'site',
+            ljweb_page: 'site_index'
+        }
+    };
+
+
+    var UT = {
+        send: function () {
+
+        }
+    };
+    var LjUserTrack = {
+        log: [],
+        initInterval: false,
+        intervalLog: function () {
+            setTimeout(function () {
+                if (window.$ULOG && $ULOG.send) {
+                    for (var i = 0, l = LjUserTrack.log.length; i < l; i++) {
+                        LjUserTrack.__send(LjUserTrack.log[i]);
+                    }
+
+                    for (var m = 0, n = LjUserTrack.logIds.length; m < n; m++) {
+                        LjUserTrack.__sendId(LjUserTrack.logIds[m]);
+                    }
+                    for (var j = 0, k = LjUserTrack.logDatas.length; j < k; j++) {
+                        LjUserTrack.__sendData(LjUserTrack.logDatas[j].id, LjUserTrack.logDatas[j].data);
+                    }
+                } else {
+                    LjUserTrack.intervalLog();
+                }
+            }, 16.7);
+        },
+        _start_time: +new Date,
+        logDatas: [],
+        __sendData: function (id, data) {
+            if (id && (typeof(data) == 'object')) {
+                data.pid = (window.__UDL_CONFIG && window.__UDL_CONFIG.pid && window.__UDL_CONFIG.pid) || "lianjiaweb";
+                data.key = window.location.href;
+                window.$ULOG && $ULOG.send(id, data);
+            }
+        },
+        sendData: function (id, data) {
+            if (window.$ULOG && $ULOG.send) {
+                LjUserTrack.__sendData(id, data);
+            } else {
+                LjUserTrack.logDatas.push({id: id, data: data});
+
+                LjUserTrack.initInterval || (LjUserTrack.initInterval = true, LjUserTrack.intervalLog());
+
+            }
+        },
+        __send: function (data) {
+            var evt_id = data.evt_id || '10043';
+            if ('evt_id' in data) {
+                delete data.evt_id;
+            }
+
+            window.$ULOG && $ULOG.send(evt_id, {
+                "pid": (window.__UDL_CONFIG && window.__UDL_CONFIG.pid && window.__UDL_CONFIG.pid) || "lianjiaweb",
+                "key": window.location.href,
+                "action": data
+            });
+        },
+        logIds: [],
+        __sendId: function (id) {
+            id && window.$ULOG && $ULOG.send(id, {
+                "pid": (window.__UDL_CONFIG && window.__UDL_CONFIG.pid && window.__UDL_CONFIG.pid) || "lianjiaweb",
+                "key": window.location.href
+            });
+        },
+        sendId: function (id) {
+            if (window.$ULOG && $ULOG.send) {
+                LjUserTrack.__sendId(id);
+            } else {
+                LjUserTrack.logIds.push(id);
+
+                LjUserTrack.initInterval || (LjUserTrack.initInterval = true, LjUserTrack.intervalLog());
+
+            }
+        },
+        send: function (data, el, config) {
+
+            var utConf = __STAT_LJ_CONF;
+            var params = config || utConf.params,
+                win = window,
+                j;
+
+            data.groupIndex = data.ljweb_group || 0;
+
+            if (params) {
+                for (var d in params) {
+                    if (params[d] !== j && data[d] === j) {
+                        data[d] = params[d];
+                    }
+                }
+            }
+
+            if (el) {
+                this.checkClick(el, data);
+            }
+
+            data.ljweb_group = params['ljweb_group'][data.groupIndex || 0];
+
+            delete data.groupIndex;
+
+            if (data.typ) {
+                data.ljweb_bl = (data.ljweb_bl || '') + '_' + data.typ;
+                delete data.typ;
+            }
+
+            if (window.$ULOG && $ULOG.send) {
+                LjUserTrack.__send(data);
+            } else {
+                LjUserTrack.log.push(data);
+
+                LjUserTrack.initInterval || (LjUserTrack.initInterval = true, LjUserTrack.intervalLog());
+
+            }
+
+        },
+        checkClick: function (el, data) {
+
+            var TAG_LINK = 'A';
+            var href = '';
+            var elParent = null;
+
+            href = (el.tagName.toUpperCase() === TAG_LINK ? el.getAttribute("href", 2) : '');
+            if (!href && (elParent = el.parentNode) && elParent.nodeType === 1) {
+                href = (elParent.tagName.toUpperCase() === TAG_LINK ? elParent.getAttribute("href", 2) : '');
+            }
+
+            if (href) {
+                data.ljweb_url = href;
+            } else {
+                data.ljweb_url = data.ljweb_url
+                    || el.getAttribute("data-log_url")
+                    || (elParent = el.parentNode || el).getAttribute("data-log_url")
+                    || (
+                        (elParent = elParent.parentNode || elParent)
+                        && (elParent.nodeType === 1)
+                        && elParent.getAttribute("data-log_url")
+                    )
+                    || "";
+            }
+
+            this.attr(el, data);
+
+        },
+        path: function () {
+
+        },
+        attr: function (el, data) {
+            var modId = el.getAttribute("log-mod");
+            var blAttr = el.getAttribute("data-bl");
+            var elAttr = el.getAttribute("data-el");
+            var InAttr = el.getAttribute("data-log_index");
+            var valAttr = el.getAttribute("data-log_value");
+            var idAttr = el.getAttribute("data-log_id");
+            var groupAttr = el.getAttribute("data-log_group");
+            var evtId = el.getAttribute("data-log_evtid");
+
+            data.ljweb_bl = data.ljweb_bl || blAttr || '';
+            data.ljweb_el = data.ljweb_el || elAttr || '';
+            data.ljweb_index = data.ljweb_index || InAttr || '';
+            data.ljweb_value = data.ljweb_value || valAttr || '';
+            data.ljweb_id = data.ljweb_id || idAttr || '';
+            data.groupIndex = data.groupIndex || groupAttr || 0;
+            data.evt_id = data.evt_id || evtId || '';
+
+            if (!modId) {
+                if (el.parentNode && el.parentNode.nodeType === 1 && el.parentNode.tagName.toUpperCase() !== 'BODY') {
+                    this.attr(el.parentNode, data);
+                }
+            } else {
+                data.ljweb_mod = modId;
+            }
+        }
+    };
+
+    ;
+    ;(function () {
+        var isW3c = !!document.addEventListener;
+
+        LjUserTrack.send({
+            ljweb_mod: 'pv',
+            ljweb_group: 1
+        });
+
+        /*window[isW3c ? 'addEventListener' : 'attachEvent'](
+            (isW3c ? '': 'on') + 'beforeunload',
+            function(e) {
+                var _end_time = +new Date;
+                UT.send({type: 'show', subtype: 'stay', time: (_end_time-UT._start_time)/1000});
+            },
+            false);*/
+    })();
+
+
+</script>
+<script th:src="@{/lib/jquery-3.2.1.min.js}"></script>
+
+<script type="text/javascript" th:src="@{/js/newself/myself_quick_link.js}"></script>
+
+<!--顶部导航栏开始-->
+<div th:replace="base/header :: html"></div>
+<!--顶部导航栏结束-->
+<div class="user-main">
+    <div class="main-left fl">
+        <div class="name">
+        </div>
+        <div class="user-name">欢迎你，[[${#strings.substring(session.loginUser,0,2)}]]*******[[${#strings.substring(session.loginUser,9)}]]</div>
+        <ul>
+            <li class="hover"><a th:href="@{/login/user}">首页</a></li>
+            <!--<li><a href="/site/seeList/">待看清单</a></li>-->
+            <!--<li><a href="/site/seeSchedule/">看房日程</a></li>-->
+            <li><a th:href="@{/login/user/attentionHouse/}" >关注的房源</a></li>
+            <!--<li><a th:href="@{/login/user/attentionCommunity/}">关注的小区</a></li>-->
+            <!--<li><a th:href="@{/login/user/attentionHouse/}">我的经纪人</a></li>-->
+            <!--<li><a href="#">看房记录</a></li>-->
+            <li><a th:href="@{/login/user/entrust/}">我的委托</a></li>
+            <!--<li><a href="/site/searchlist/">我的搜索</a></li>-->
+            <!--<li><a href="/site/myWenda/">我的问答</a></li>-->
+            <!--<li><a href="/site/client/">编辑资料</a></li>-->
+        </ul>
+    </div>
+    <div class="main-right fr">
+        <div id="allList">
+            <div class="title">您关注的房源/小区最新动态</div>
+            <div class="tab"><span class="actTap actSetArgs hover" actdata="filter=&amp;p=1">全部</span>
+                <!--<span class="actTap actSetArgs " actdata="filter=2&amp;p=1">调价</span>-->
+                <!--<span class="actTap actSetArgs " actdata="filter=3&amp;p=1">新上</span>-->
+                <!--<span class="actTap actSetArgs saveArgs   actdata=" filter="4&amp;p=1&quot;&quot;">搜索条件提醒</span>-->
+            </div>
+            <!--<script type="text/template" id="allListTemplate">-->
+                <!--<%if(list.length){%>-->
+                <!--<ul>-->
+                    <!--<%for(var i = 0 ,len = list.length;i< len;i++){%>-->
+                    <!--<li>-->
+                        <!--<div class="list-title">-->
+                            <!--<%if(list[i].state==1){%>-->
+                            <!--<span class="cj">成交</span>-->
+                            <!--<%}else if(list[i].state==2){%>-->
+                            <!--<%if(list[i].isTrendDown){%>-->
+                            <!--<span class="jj">降价</span>-->
+                            <!--<%}else{%>-->
+                            <!--<span class="zj">涨价</span>-->
+                            <!--<%}%>-->
+                            <!--<%}else if(list[i].state==3){%>-->
+                            <!--<span class="xs">新上</span>-->
+                            <!--<%}else if(list[i].state==4){%>-->
+                            <!--<span class="ts">停售</span>-->
+                            <!--<%}%>-->
+                            <!--<%=$.formatDate(list[i].createTime,"yyyy-MM-dd")%>，-->
+                            <!--<%if(list[i].state==2){%>-->
+                            <!--<%if(list[i].isTrendDown){%>-->
+                            <!--您关注的房源降到-->
+                            <!--<%}else{%>-->
+                            <!--您关注的房源涨到-->
+                            <!--<%}%>-->
+                            <!--<%=list[i].price%>万-->
+                            <!--<%if(list[i].percentage){%>,-->
+                            <!--<%if(list[i].isTrendDown){%>-->
+                            <!--降幅-->
+                            <!--<%}else{%>-->
+                            <!--涨幅-->
+                            <!--<%}%>-->
+                            <!--<%=Math.floor(list[i].percentage*100)/100%>%-->
+                            <!--<%}%>-->
+                            <!--<%}else if(list[i].state==1){%>-->
+                            <!--您关注的房源已售出，售价<%=list[i].price%>万-->
+                            <!--<%}else if(list[i].state == 3){%>-->
+                            <!--您关注的该小区有套新上房源，详情如下-->
+                            <!--<%}else if(list[i].state==4){%>-->
+                            <!--您关注的房源已停售，详情如下-->
+                            <!--<%}%>-->
+                        <!--</div>-->
+                        <!--<div class="list">-->
+                            <!--<div class="pic-panel">-->
+                                <!--<a target="_blank" href="<%=list[i].viewUrl%>">-->
+                                    <!--<%if(list[i].imgSrc){%>-->
+                                    <!--<img src="<%=list[i].imgSrc%>" onerror="this.src='<%=$Config.defaultImg%>'">-->
+                                    <!--<%}else{%>-->
+                                    <!--<img src="<%=$Config.defaultImg%>">-->
+                                    <!--<%}%>-->
+                                <!--</a>-->
+                                <!--<p><%=$.betweenTime(list[i].createTime,serverTime)%>&nbsp;来自<%=list[i].source%></p>-->
+                            <!--</div>-->
+                            <!--<div class="info-panel">-->
+                                <!--<h2>-->
+                                    <!--<a target="_blank" href="<%=list[i].viewUrl%>">-->
+                                        <!--<%=list[i].title%>-->
+                                    <!--</a>-->
+                                <!--</h2>-->
+                                <!--<div class="col-1">-->
+                                    <!--<div class="where">-->
+                                        <!--<a href="<%=list[i].communityUrl%>">-->
+                                            <!--<span class="region"><%=list[i].community%>&nbsp;&nbsp;</span>-->
+                                        <!--</a>-->
+                                        <!--<span class="zone">-->
+                              <!--<span><%=list[i].roomNum%></span>-->
+                            <!--</span>-->
+                                        <!--<span class="meters"><%=list[i].square%>平米</span>-->
+                                        <!--<span><%=list[i].orientation%></span>-->
+                                    <!--</div>-->
+                                    <!--<div class="other">-->
+                                        <!--<div class="con">-->
+                                            <!--<a target="_blank" href="<%=list[i].bbdUrl%>"><%=list[i].bbdName%>二手房</a>-->
+                                            <!--<span>/</span>-->
+                                            <!--<%=list[i].floorStat%>(共<%=list[i].totalFloor%>层)-->
+                                            <!--<span>/</span>-->
+                                            <!--<%=list[i].buildYear%>年建<%=list[i].hbtName%>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="chanquan">-->
+                                        <!--<div class="left agency">-->
+                                            <!--<div class="view-label left">-->
+                                                <!--<%if(list[i].schoolName){%>-->
+                                                <!--<span class="fang05"></span>-->
+                                                <!--<span class="fang05-ex">-->
+                                  <!--<span><%=list[i].schoolName%></span>-->
+                                <!--</span>-->
+                                                <!--<%}%>-->
+                                                <!--<%if(list[i].subwayInfo){%>-->
+                                                <!--<span class="fang-subway"></span>-->
+                                                <!--<span class="fang-subway-ex">-->
+                                  <!--<span><%=list[i].subwayInfo%></span>-->
+                                <!--</span>-->
+                                                <!--<%}%>-->
+                                                <!--<%if(list[i].tags){%>-->
+                                                <!--<%for(var j=0,jLen = list[i].tags.length;j < jLen;j++){%>-->
+                                                <!--<span class="<%=list[i].tags[j][0]%>"></span>-->
+                                                <!--<span class="<%=list[i].tags[j][0]%>-ex">-->
+                                      <!--<span><%=list[i].tags[j][1]%></span>-->
+                                    <!--</span>-->
+                                                <!--<%}%>-->
+                                                <!--<%}%>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="col-3">-->
+                                    <!--<div class="price">-->
+                                        <!--<span class="num"><%=list[i].price%>万</span>-->
+                                        <!--<%if(list[i].isTrendDown){%>-->
+                                        <!--<img src="<%=$Config.animatedec%>">-->
+                                        <!--<%}%>-->
+                                    <!--</div>-->
+                                    <!--<div class="price-pre"><%=list[i].unitPrice%> 元/m²</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<%}%>-->
+                <!--</ul>-->
+                <!--<%if(typeof totalPage != "undefined" && totalPage >1){%>-->
+                <!--<div class="page">-->
+                    <!--<div class="page-box house-lst-page-box" node-type="pageList"-->
+                         <!--node-val="totalPage=<%=totalPage%>&curPage=<%=curPage%>">-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<%}%>-->
+                <!--<%}else{%>-->
+                <!--<div class="initial">-->
+                    <!--<div class="initial-logo"></div>-->
+                    <!--<p>没发现有动态哦</p>-->
+                <!--</div>-->
+                <!--<%}%>-->
+            <!--</script>-->
+            <div class="all-list" node-type="list">
+                <div class="initial">
+                    <div class="initial-logo"></div>
+                    <p>没发现有动态哦</p>
+                </div>
+
+            </div>
+        </div>
+        <div id="tsavelist" style="display:none;">
+            <!--<script type="text/template" id="savelist">-->
+                <!--<%if(typeof data != 'undefined' && data && data.list &&  data.list.length){%>-->
+                <!--<ul class="list-bot">-->
+                    <!--<%var list = data.list;for(var i = 0 ,len = list.length;i< len;i++){%>-->
+                    <!--<li>-->
+                        <!--<div class="list">-->
+                            <!--<div class="pic-panel">-->
+                                <!--<a target="_blank" href="<%=list[i].viewUrl%>">-->
+                                    <!--<img src="<%=list[i].imgSrc%>" onerror="this.src='<%=$Config.defaultImg%>'">-->
+                                    <!--<%if(list[i].imgCount){%>-->
+                                    <!--<div class="pic-num">-->
+                                        <!--<div class="pic-num-bg"></div>-->
+                                        <!--<span><i class="ico-pic"></i><em class="num"><%=list[i].imgCount%></em></span>-->
+                                    <!--</div>-->
+                                    <!--<%}%>-->
+                                    <!--<%if(args.filter!=2 && list[i].isSaled){%>-->
+                                    <!--<div class="sold"></div>-->
+                                    <!--<%}else if(args.filter==2 && list[i].isRented){%>-->
+                                    <!--<div class="sold1"></div>-->
+                                    <!--<%}%>-->
+                                <!--</a>-->
+                            <!--</div>-->
+                            <!--<div class="info-panel">-->
+                                <!--<h2>-->
+                                    <!--<a target="_blank" href="<%=list[i].viewUrl%>">-->
+                                        <!--<%=list[i].title%>-->
+                                    <!--</a><%if(list[i].valid === 0){%><span class="valid">(停售)</span><%}%>-->
+                                <!--</h2>-->
+                                <!--<div class="col-1">-->
+                                    <!--<div class="where">-->
+                                        <!--<a href="<%=list[i].communityUrl%>" target="_blank">-->
+                                            <!--<span class="region"><%=list[i].communityName%>&nbsp;&nbsp;</span>-->
+                                        <!--</a>-->
+                                        <!--<span class="zone">-->
+                          <!--<span><%=list[i].roomNum%></span>-->
+                        <!--</span>-->
+                                        <!--<span class="meters"><%=list[i].square%>平米</span>-->
+                                        <!--<span><%=list[i].orientation%></span>-->
+                                    <!--</div>-->
+                                    <!--<div class="other">-->
+                                        <!--<div class="con">-->
+                                            <!--<a href="<%=list[i].regionUrl%>"><%=list[i].regionName%></a>-->
+                                            <!--<span>/</span>-->
+                                            <!--<%=list[i].floorStat%>(共<%=list[i].totalFloor%>层)-->
+                                            <!--<span>/</span>-->
+                                            <!--<%=list[i].buildYear%>年建<%=list[i].hbtName%>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="chanquan">-->
+                                        <!--<div class="left agency">-->
+                                            <!--<div class="view-label left">-->
+                                                <!--<%if(list[i].tags){%>-->
+                                                <!--<%for(var j=0,jLen = list[i].tags.length;j < jLen;j++){%>-->
+                                                <!--<div class="fl">-->
+                                                    <!--<span class="<%=list[i].tags[j][0]%>"></span>-->
+                                                    <!--<span class="<%=list[i].tags[j][0]%>-ex">-->
+                                    <!--<span><%=list[i].tags[j][1]%></span>-->
+                                  <!--</span>-->
+                                                <!--</div>-->
+                                                <!--<%}%>-->
+                                                <!--<%}%>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="col-3">-->
+                                    <!--<%if(args.filter!=2){%>-->
+                                    <!--<div class="price">-->
+                                        <!--<span class="num"><%=list[i].price%></span>万-->
+                                        <!--<%if(list[i].isTrendDown){%>-->
+                                        <!--<img src="<%=$Config.animatedec%>">-->
+                                        <!--<%}%>-->
+                                    <!--</div>-->
+                                    <!--<div class="price-pre"><%=list[i].unitPrice%> 元/m²</div>-->
+                                    <!--<%}else{%>-->
+                                    <!--<div class="price">-->
+                                        <!--<span class="num"><%=list[i].price%></span>元/月-->
+                                    <!--</div>-->
+                                    <!--<%}%>-->
+
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<p>房源来源：<%=list[i].saveTitle%></p>-->
+                        <!--</div>-->
+                        <!--<a class="del-fav actDelFollow" act-data="id=<%=list[i].houseId%>">取消关注</a>-->
+                    <!--</li>-->
+                    <!--<div class="clear"></div>-->
+                    <!--<%}%>-->
+                <!--</ul>-->
+                <!--<%if(typeof data.totalPage != "undefined" && data.totalPage >1){%>-->
+                <!--<div class="page">-->
+                    <!--<div class="page-box house-lst-page-box" node-type="pageList"-->
+                         <!--node-val="totalPage=<%=data.totalPage%>&curPage=<%=data.curPage%>">-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<%}%>-->
+                <!--<%}else{%>-->
+                <!--<div class="initial">-->
+                    <!--<div class="initial-logo"></div>-->
+                    <!--<p>关注的条件没有房源</p>-->
+                <!--</div>-->
+                <!--<%}%>-->
+            <!--</script>-->
+            <div class="save-list" node-type="list">
+
+                <div class="initial">
+                    <div class="initial-logo"></div>
+                    <p>关注的条件没有房源</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<!--<script type="text/templae" id="jsPagerTemplate">-->
+
+  <!--<%curPage = parseInt(curPage);totalPage=parseInt(totalPage);%>-->
+  <!--<%if(curPage != 1){%>-->
+    <!--<a href="javascript:;" class="actPage" act-data="p=<%=curPage-1%>">上一页</a>-->
+  <!--<%}%>-->
+  <!--<%if(totalPage <= 8){%>-->
+      <!--<%for(var j = 1; j <= totalPage;j++){ %>-->
+        <!--<a class="<%=curPage==j?'on':' actPage'%>" act-data="p=<%=j%>" href="javascript:;"><%=j%></a>-->
+      <!--<%}%>-->
+  <!--<%}else{%>-->
+      <!--<a href="javascript:;" class="<%=curPage==1?'on':' actPage'%>" act-data="p=1">1</a>-->
+      <!--<%if(curPage > 6){%>-->
+           <!--<span>...</span>-->
+      <!--<%}%>-->
+      <!--<%var startPage = Math.max(curPage-3,2),endPage = Math.min(curPage+4,totalPage-1);%>-->
+      <!--<%for(var j = startPage;j<= endPage;j++){%>-->
+        <!--<a class="<%=curPage==j?'on':' actPage'%>" act-data="p=<%=j%>" href="javascript:;"><%=j%></a>-->
+      <!--<%}%>-->
+      <!--<%if(curPage < totalPage-5){%>-->
+          <!--<span>...</span>-->
+      <!--<%}%>-->
+      <!--<a class="<%=curPage==totalPage?'on':' actPage'%>" act-data="p=<%=totalPage%>" href="javascript:;"><%=totalPage%></a>-->
+  <!--<%}%>-->
+  <!--<%if(curPage != totalPage){%>-->
+    <!--<a class="actPage" act-data="p=<%=curPage+1%>" href="javascript:;">下一页</a>-->
+  <!--<%}%>-->
+
+
+<!--</script>-->
+<!--底部-->
+
+<div th:replace="base/footer :: html"></div>
+<!--底部 end-->
+<!--<script src="https://s1.ljcdn.com/feroot/pc/asset/base/fe.js?_v=20180926210301"></script>-->
+<!--<script src="https://s1.ljcdn.com/feroot/pc/asset/common/common.js?_v=20180926210301"></script>-->
+<div id="only" data-city="bj" data-page="site_index"></div>
+
+<!--<script>var path = 'https://s1.ljcdn.com/feroot/pc/asset?_v=20180926210301'.split("?");-->
+<!--require.config({-->
+    <!--baseUrl: path[0],-->
+    <!--paths: {-->
+        <!--'echarts': '../../dep/echarts-1.4.1/build/echarts',-->
+        <!--'echarts/chart/bar': '../../dep/echarts-1.4.1/build/echarts',-->
+        <!--'echarts/chart/line': '../../dep/echarts-1.4.1/build/echarts',-->
+        <!--'echarts/chart/pie': '../../dep/echarts-1.4.1/build/echarts',-->
+        <!--'common': 'common',-->
+        <!--'jquery-ui': '../../dep/jquery-ui/jquery-ui.min',-->
+        <!--'webuploader': '../../dep/webuploader/webuploader'-->
+    <!--},-->
+    <!--urlArgs: path[1]-->
+<!--});</script>-->
+<!--<script type="text/javascript">-->
+    <!--window.$Config = {-->
+        <!--defaultImg: "https://s1.ljcdn.com/feroot/pc/asset/img/new-version/default_block.png?_v=20180926210301",-->
+        <!--animatedec: "https://s1.ljcdn.com/feroot/pc/asset/img/animatedec.gif?_v=20180926210301"-->
+    <!--}-->
+    <!--require(["user/home/list"], function (ListView) {-->
+        <!--var list = new ListView({-->
+            <!--el: "#allList",-->
+            <!--template: "#allListTemplate",-->
+            <!--url: "/site/indexdata/",-->
+            <!--args: {-->
+                <!--p: 1,-->
+                <!--filter: ""-->
+            <!--}-->
+        <!--})-->
+        <!--list.init();-->
+        <!--var savelist = new ListView({-->
+            <!--el: "#tsavelist",-->
+            <!--template: "#savelist",-->
+            <!--url: $.env.fixedUrl("//ajax.lianjia.com/ajax/user/favorite/getsearchlist"),-->
+            <!--type: "jsonp",-->
+            <!--args: {-->
+                <!--p: 1-->
+            <!--}-->
+        <!--})-->
+        <!--savelist.init();-->
+        <!--// window.list = list;-->
+    <!--})-->
+<!--</script>-->
+<!--<div style="display:none">-->
+    <!--//google-->
+    <!--<script>-->
+        <!--(function (i, s, o, g, r, a, m) {-->
+            <!--i['GoogleAnalyticsObject'] = r;-->
+            <!--i[r] = i[r] ||-->
+                <!--function () {-->
+                    <!--(i[r].q = i[r].q || []).push(arguments)-->
+                <!--}, i[r].l = 1 * new Date();-->
+            <!--a = s.createElement(o), m = s.getElementsByTagName(o)[0];-->
+            <!--a.async = 1;-->
+            <!--a.src = g;-->
+            <!--m.parentNode.insertBefore(a, m)-->
+        <!--})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');-->
+        <!--switch (window.location.hostname) {-->
+            <!--case "www.lianjia.com":-->
+                <!--ga('create', 'UA-55936351-1', 'auto');-->
+                <!--ga('send', 'pageview', '');-->
+                <!--ga('create', 'UA-24113315-1', 'auto', {-->
+                    <!--'name': 'past'-->
+                <!--});-->
+                <!--ga('past.send', 'pageview');-->
+                <!--break;-->
+            <!--case "bj.lianjia.com":-->
+                <!--ga('create', 'UA-55871340-1', 'auto');-->
+                <!--ga('send', 'pageview', '');-->
+                <!--ga('create', 'UA-24113315-1', 'auto', {-->
+                    <!--'name': 'past'-->
+                <!--});-->
+                <!--ga('past.send', 'pageview');-->
+                <!--break;-->
+            <!--case 'tj.lianjia.com':-->
+                <!--ga('create', 'UA-55875231-1', 'auto');-->
+                <!--ga('send', 'pageview');-->
+                <!--ga('create', 'UA-19369996-1', 'auto', {-->
+                    <!--'name': 'past'-->
+                <!--});-->
+                <!--ga('past.send', 'pageview');-->
+                <!--break;-->
+            <!--case 'nj.lianjia.com':-->
+                <!--ga('create', 'UA-55873426-1', 'auto');-->
+                <!--ga('send', 'pageview');-->
+                <!--ga('create', 'UA-23012833-1', 'auto', {-->
+                    <!--'name': 'past'-->
+                <!--});-->
+                <!--ga('past.send', 'pageview');-->
+                <!--break;-->
+            <!--case 'dl.lianjia.com':-->
+                <!--ga('create', 'UA-55870447-1', 'auto');-->
+                <!--ga('send', 'pageview');-->
+                <!--ga('create', 'UA-19372101-1', 'auto', {-->
+                    <!--'name': 'past'-->
+                <!--});-->
+                <!--ga('past.send', 'pageview');-->
+                <!--break;-->
+            <!--case 'cd.lianjia.com':-->
+                <!--ga('create', 'UA-55870653-1', 'auto');-->
+                <!--ga('send', 'pageview');-->
+                <!--ga('create', 'UA-27100091-1', 'auto', {-->
+                    <!--'name': 'past'-->
+                <!--});-->
+                <!--ga('past.send', 'pageview');-->
+                <!--break;-->
+            <!--case 'qd.lianjia.com':-->
+                <!--ga('create', 'UA-55872336-1', 'auto');-->
+                <!--ga('create', 'UA-27556753-1', 'auto', {-->
+                    <!--'name': 'past'-->
+                <!--});-->
+                <!--ga('send', 'pageview');-->
+                <!--ga('past.send', 'pageview');-->
+                <!--break;-->
+            <!--case 'hz.lianjia.com':-->
+                <!--ga('create', 'UA-55872128-1', 'auto');-->
+                <!--ga('create', 'UA-34442317-1', 'auto', {-->
+                    <!--'name': 'past'-->
+                <!--});-->
+                <!--ga('send', 'pageview');-->
+                <!--ga('past.send', 'pageview');-->
+                <!--break;-->
+            <!--case 'sh.lianjia.com':-->
+                <!--ga('create', 'UA-55872133-1', 'auto');-->
+                <!--ga('send', 'pageview');-->
+                <!--ga('create', 'UA-34733973-1', 'auto', {-->
+                    <!--'name': 'past'-->
+                <!--});-->
+                <!--ga('past.send', 'pageview');-->
+                <!--break;-->
+            <!--case 'su.lianjia.com':-->
+                <!--ga('create', 'UA-60600448-1', 'auto');-->
+                <!--ga('send', 'pageview');-->
+                <!--break;-->
+            <!--case 'm.lianjia.com':-->
+                <!--ga('create', 'UA-55871942-1', 'auto');-->
+                <!--ga('create', 'UA-34859395-1', 'auto', {-->
+                    <!--'name': 'past'-->
+                <!--});-->
+                <!--ga('send', 'pageview');-->
+                <!--ga('past.send', 'pageview');-->
+                <!--break;-->
+            <!--case 'agent.lianjia.com':-->
+                <!--ga('create', 'UA-60860114-1', 'auto');-->
+                <!--ga('send', 'pageview');-->
+            <!--case 'login.lianjia.com':-->
+                <!--ga('create', 'UA-60863507-1', 'auto');-->
+                <!--ga('send', 'pageview');-->
+            <!--case 'cms.lianjia.com':-->
+                <!--ga('create', 'UA-60839596-1', 'auto');-->
+                <!--ga('send', 'pageview');-->
+        <!--}-->
+        <!--ga('create', 'UA-55876525-1', 'auto', {-->
+            <!--'name': 'global'-->
+        <!--});-->
+        <!--ga('global.send', 'pageview');-->
+        <!--ga('create', 'UA-60608360-1', 'auto', {-->
+            <!--'name': 'new_global'-->
+        <!--});-->
+        <!--ga('new_global.send', 'pageview');-->
+    <!--</script>-->
+
+
+    <!--//baidu-->
+    <!--<script>-->
+        <!--var _hmt = _hmt || [];-->
+        <!--(function () {-->
+            <!--var hm = document.createElement("script");-->
+            <!--hm.src = "//hm.baidu.com/hm.js?efa595b768cc9dc7d7f9823368e795f1";-->
+            <!--var s = document.getElementsByTagName("script")[0];-->
+            <!--s.parentNode.insertBefore(hm, s);-->
+        <!--})();-->
+    <!--</script>-->
+
+    <!--//CNZZ STAT-->
+    <!--<script type="text/javascript">-->
+        <!--(function () {-->
+            <!--var id = 0;-->
+            <!--switch (window.location.hostname) {-->
+                <!--case "www.lianjia.com":-->
+                    <!--id = 1253477541;-->
+                    <!--break;-->
+                <!--case "bj.lianjia.com":-->
+                    <!--id = 1253477573;-->
+                    <!--break;-->
+                <!--case "nj.lianjia.com":-->
+                    <!--id = 1253492138;-->
+                    <!--break;-->
+                <!--case "tj.lianjia.com":-->
+                    <!--id = 1253477585;-->
+                    <!--break;-->
+                <!--case "cd.lianjia.com":-->
+                    <!--id = 1253492306;-->
+                    <!--break;-->
+                <!--case "dl.lianjia.com":-->
+                    <!--id = 1253492418;-->
+                    <!--break;-->
+                <!--case "qd.lianjia.com":-->
+                    <!--id = 1253492431;-->
+                    <!--break;-->
+                <!--case "hz.lianjia.com":-->
+                    <!--id = 1253492436;-->
+                    <!--break;-->
+                <!--case "sh.lianjia.com":-->
+                    <!--id = 1253492439;-->
+                    <!--break;-->
+                <!--case "su.lianjia.com":-->
+                    <!--id = 1254525908;-->
+                    <!--break;-->
+                <!--case "m.lianjia.com":-->
+                    <!--id = 1253491255;-->
+                    <!--break;-->
+                <!--case "agent.lianjia.com":-->
+                    <!--id = 1254574589;-->
+                    <!--break;-->
+                <!--case "login.lianjia.com":-->
+                    <!--id = 1254574635;-->
+                    <!--break;-->
+                <!--case "cms.lianjia.com":-->
+                    <!--id = 1254574663;-->
+                    <!--break;-->
+            <!--}-->
+            <!--var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");-->
+            <!--if (id) {-->
+                <!--document.write(unescape("%3Cspan id='cnzz_stat_icon_" + id + "'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "w.cnzz.com/c.php%3Fid%3D" + id + "' type='text/javascript'%3E%3C/script%3E"));-->
+            <!--}-->
+        <!--})();-->
+        <!--var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");-->
+        <!--document.write(unescape("%3Cspan id='cnzz_stat_icon_1254525948'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "w.cnzz.com/c.php%3Fid%3D1254525948' type='text/javascript'%3E%3C/script%3E"));-->
+    <!--</script>-->
+    <!--<span id="cnzz_stat_icon_1254525948"></span>-->
+    <!--<script src=" https://w.cnzz.com/c.php?id=1254525948" type="text/javascript"></script>-->
+
+<!--</div>-->
+<!--<div style="display:none">-->
+    <!--<script src="https://s1.ljcdn.com/feroot/dep/ljulog.js?_v=20180926210301"></script>-->
+<!--</div>-->
+<!-- LianjiaIM Style -->
+
+<!--<script>(function () {-->
+    <!--var imConf = {-->
+        <!--"ajaxapi": "\/\/ajax.api.lianjia.com\/",-->
+        <!--"imAppid": "LIANJIA_WEB_20160624",-->
+        <!--"imAppkey": "6dfdcee27d78b1107fceeca55d80b7bd"-->
+    <!--};-->
+    <!--$.listener.on('userInfo', function (data) {-->
+        <!--if (data.code === 1) {-->
+            <!--data.ucid = '2000000039476887';-->
+        <!--}-->
+        <!--require(['lianjiaIM/lianjiaim'], function (LianjiaIM) {-->
+            <!--var ljim = new LianjiaIM({-->
+                <!--appid: imConf.imAppid,-->
+                <!--appkey: imConf.imAppkey,-->
+                <!--userData: data,-->
+                <!--staticRoot: 'https://s1.ljcdn.com/feroot/?_v=20180926210301'-->
+            <!--});-->
+        <!--});-->
+    <!--});-->
+<!--})();</script>&lt;!&ndash;cookie mapping&ndash;&gt;-->
+<img
+        src="https://cm.e.qq.com/cm.fcg?u=248b9273a849b4bc2bfa58b70247d90a&amp;t=1538375102&amp;p=00b567876dcdfb0441b0f4f45938d506&amp;platform=PC&amp;gdt_dspid=4169211&amp;gdt_dsp_checksum=00b567876dcdfb0441b0f4f45938d506&amp;gdt_dsp_timestamp=1538375102"
+        alt="cookie_mapping_url" style="display: none;">
+<!--<div class="lianjiaim im-fold" data-role="lianjiaim">-->
+    <!--<div class="lianjiaim-shandow clear">-->
+        <!--<div class="lianjiaim-wrap" data-role="im-wrap">-->
+            <!--<div class="lianjiaim-head" data-role="im-head"><span data-role="im-title">在线咨询</span><span-->
+                    <!--class="lianjiaim-head-num" data-role="im-unread" data-unread="0" style="display: none;">0</span><a-->
+                    <!--class="lianjiaim-head-closebtn" title="收起" data-role="im-foldbtn">收起</a></div>-->
+            <!--<div class="lianjiaim-body" data-role="im-body">-->
+                <!--<ul class="lianjiaim-service" data-role="im-serviceitem-container">-->
+                    <!--<li class="lianjiaim-body-item">-->
+                        <!--<div class="im-item-show clear">-->
+                            <!--<table>-->
+                                <!--<tbody>-->
+                                <!--<tr>-->
+                                    <!--<td class="im-item-avatar"><img-->
+                                            <!--src="https://s1.ljcdn.com/feroot/pc/asset/lianjiaIM/img/imgV2/icon_serv@2xV2.png"-->
+                                            <!--alt="" width="40" height="40" data-role="im-listitem-item-avatar"><i-->
+                                            <!--data-role="im-listitem-item-newmsg" style="display: none;"-->
+                                            <!--data-newmsg="0">0</i></td>-->
+                                    <!--<td class="im-item-cont"><span class="name"-->
+                                                                   <!--data-role="im-listitem-item-name">渔樵帮帮</span><span-->
+                                            <!--class="text" data-role="im-listitem-item-text">渔樵网官方人工客服</span></td>-->
+                                <!--</tr>-->
+                                <!--</tbody>-->
+                            <!--</table>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                <!--</ul>-->
+                <!--<ul data-role="im-listitem-container" style="display: none;"></ul>-->
+                <!--<div class="lianjiaim-noagent" data-role="im-noagent-container" style="">-->
+                    <!--<div class="noagent-title">没有聊过的经纪人</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="lianjiaim-window im-online" data-role="im-window" data-agentid="" style="display: none;">-->
+            <!--<div class="lianjiaim-wintitle"><i>在线</i><span class="im-wt-name" data-role="im-window-name"></span><a-->
+                    <!--class="im-wt-closebtn" title="关闭" data-role="im-window-closebtn">关闭</a></div>-->
+            <!--<div class="lianjiaim-wincont">-->
+                <!--<div class="im-wc-hint"><span data-role="im-window-offlinename"></span>当前不在线，您可以在线留言</div>-->
+                <!--<div class="im-wc-chat" data-role="im-window-chatcontainer"><p class="chat-tophint">-->
+                    <!--聊天的时候，经纪人无法知道您的手机号！</p>-->
+                    <!--<div data-role="im-logtrigger"></div>-->
+                    <!--<ul data-role="im-window-msgcontainer"></ul>-->
+                <!--</div>-->
+                <!--<div class="im-wc-input">-->
+                    <!--<div class="im-input-container" data-role="im-input-container"><textarea placeholder="点击输入您想要咨询的问题…"-->
+                                                                                             <!--data-role="im-input-textarea"></textarea><a-->
+                            <!--class="im-input-insertpic" title="插入图片" data-role="im-input-picbtn">插入图片</a><input-->
+                            <!--type="file" style="display: none;" accept=".gif,.jpg,.jpeg,.png,.bmp"-->
+                            <!--data-role="im-input-picupload"><span class="im-errorlog" data-role="im-errorlog"-->
+                                                                 <!--style="display: none;"></span></div>-->
+                    <!--<div class="im-btn-container"><a href="//www.lianjia.com/client/" target="_blank" title="下载渔樵APP">立即下载渔樵APP，随时随地聊~</a><input-->
+                            <!--type="button" value="发送" class="send" data-role="im-input-sendbtn"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="lianjiaim-window im-online disabled" data-role="im-bang" style="display: none;">-->
+            <!--<div class="lianjiaim-wintitle"><i>在线</i><span class="im-wt-name">渔樵帮帮</span><span class="im-wt-time">在线人工服务时间：9:00 - 22:00</span><a-->
+                    <!--class="im-wt-closebtn" title="关闭" data-role="bang-close">关闭</a></div>-->
+            <!--<div class="lianjiaim-wincont">-->
+                <!--<div class="im-wc-chat bang-chatcontainer" data-role="bang-chatcontainer">-->
+                    <!--<ul data-role="bang-msgcontainer"></ul>-->
+                <!--</div>-->
+                <!--<div class="im-wc-input">-->
+                    <!--<div class="im-input-container" data-role="im-input-container"><textarea placeholder="点击输入您想要咨询的问题…"-->
+                                                                                             <!--data-role="bang-textarea"></textarea><a-->
+                            <!--class="im-input-insertpic" title="插入图片" data-role="bang-picbtn">插入图片</a><input type="file"-->
+                                                                                                           <!--style="display: none;"-->
+                                                                                                           <!--accept=".gif,.jpg,.jpeg,.png,.bmp"-->
+                                                                                                           <!--data-role="bang-picupload">-->
+                    <!--</div>-->
+                    <!--<div class="im-btn-container"><input type="button" value="发送" class="send"-->
+                                                         <!--data-role="bang-send"><input type="button" value="结束对话"-->
+                                                                                      <!--class="end" data-role="bang-end"-->
+                                                                                      <!--style="display: none;"></div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="lianjiaim-personcard" data-role="im-pcard" style="display: none; top: 9999em; left: 9999em;">-->
+        <!--<div class="im-personcard-top clear">-->
+            <!--<div class="im-personcard-avatar"><img src="" alt="" width="78" height="78" data-role="im-pcard-avatar">-->
+            <!--</div>-->
+            <!--<div class="im-personcard-detail">-->
+                <!--<div class="im-personname-wrap"><span class="im-personname" data-role="im-pcard-name"></span><span-->
+                        <!--class="im-gray" data-role="im-pcard-grade"></span></div>-->
+                <!--<div><span class="im-gray">主营商圈：</span><span data-role="im-pcard-district"></span></div>-->
+                <!--<div><span class="im-gray">所属门店：</span><span data-role="im-pcard-store"></span></div>-->
+                <!--<div><span class="im-gray">从业年限：</span><span data-role="im-pcard-workage"></span></div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="im-personcard-bottom">-->
+            <!--<table>-->
+                <!--<tbody>-->
+                <!--<tr>-->
+                    <!--<td><span>累计成交：</span><span class="im-red" data-role="im-pcard-totaldeal"></span></td>-->
+                    <!--<td><span>月总带看：</span><span class="im-red" data-role="im-pcard-monthshow"></span></td>-->
+                    <!--<td><span>好评率：</span><span class="im-red" data-role="im-pcard-praiserate"></span></td>-->
+                <!--</tr>-->
+                <!--</tbody>-->
+            <!--</table>-->
+        <!--</div>-->
+        <!--<a class="im-personcard-shopbtn" href="" target="_blank" title="进入店铺" data-role="im-pcard-shoplink">进入店铺</a>-->
+    <!--</div>-->
+<!--</div>-->
+</body>
+</html>

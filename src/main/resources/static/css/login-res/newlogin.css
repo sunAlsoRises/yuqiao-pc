@@ -1,0 +1,12 @@
+.middle-login , .middle-resgist{
+	width: 100%;
+	height: 700px;
+	background: #C30D23;
+	position: relative;
+}
+.agreement input[type='checkbox']{	
+	vertical-align:bottom; 
+}
+.username .input #registname , .region .input #region{
+	padding-left: 15px !important;
+}

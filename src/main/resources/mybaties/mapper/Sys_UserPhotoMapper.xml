@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mapper.jingjiren.Sys_UserPhotoMapper">
+  <resultMap id="BaseResultMap" type="com.model.Sys_UserPhoto" >
+    <id column="Id" property="id" jdbcType="NVARCHAR" />
+    <result column="FileName" property="filename" jdbcType="NVARCHAR" />
+    <result column="Path" property="path" jdbcType="NVARCHAR" />
+    <result column="CreateTime" property="createtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <!--通过经纪人的PhotoId 获取经纪人图片路径-->
+  <select id="getUserPhotoByPhotoId" parameterType="java.lang.String" resultMap="BaseResultMap">
+      select path from Sys_UserPhoto where id = #{photoid}
+  </select>
+</mapper>

@@ -1,0 +1,36 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /yuqiaopc
+
+spring:
+  datasource:
+    url: jdbc:sqlserver://47.93.245.1:11433;DatabaseName=RealEstateERP
+    username: sa
+    password: 5tgb^YHN
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+
+
+    #logging:
+    #  level: DemoApplicationTests = trace
+#    禁用模板缓存
+  thymeleaf:
+    cache: false
+#  jpa:
+mybatis:
+  config-location: classpath:mybaties/mybatis-config.xml
+  mapper-locations: classpath:mybaties/mapper/*.xml
+#  打印sql
+logging:
+  level:
+    com:
+        mapper: INFO
+
+#    show-sql: true
+message:
+  sid: 48a07b3fec5b348c3d857c070367e47f
+  token: 9c950b8f33b61e4d7f1dfc20e4daa3b2
+  appid: 076c9f23055843e19a62e13273a77a10
+  templateid: 369025
+  uid: 4584

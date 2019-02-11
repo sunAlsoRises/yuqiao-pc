@@ -1,0 +1,809 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org" ng-app="DetailHtml" class="ng-scope">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <link th:href="@{/lib/bootstrap/css/bootstrap.css}" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script th:src="@{/lib/html5shiv/html5shiv.min.js}"></script>
+    <script th:src="@{/lib/respond/respond.min.js}"></script>
+    <![endif]-->
+    <script type="text/javascript">
+        var projecImgtName = "yuqiaopc";
+        var pathName = window.document.location.pathname;
+        var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
+        var BaseUrl_IIS_Application_Name = "http://dev-12.lingke.mobi";
+
+    </script>
+    <script th:src="@{/lib/hm.js}"></script>
+    <script th:src="@{/lib/jquery-3.2.1.min.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/address.css}"/>
+
+    <!--<script type="text/javascript" th:src="@{/js/jingjiren/jingjirentodianmian.js}"></script>-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="ie-stand">
+    <meta name="chinaz-site-verification" content="f48e24b0-224b-4aed-92c5-2c711f7e3590">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>
+        【[[${user.name}]]-汇馨店-大东】-誉桥在线
+    </title>
+    <link id="str_ico" rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="https://g.yqcdn.com/wwwyqcn/v2014images/app_Logo.png">
+
+
+    <meta http-equiv="X-UA-Compatible" ie="EmulateIE9">
+    <!--<script type="text/javascript" th:src="@{/js/jquery.imagepreview.1.0.js}"></script>-->
+    <!--<script type="text/javascript" th:src="@{/js/jingjiren/p.js}"></script>-->
+
+    <!--<script type="text/javascript">-->
+    <!--var _gaq = _gaq || [];-->
+    <!--var _hmt = _hmt || [];-->
+    <!--if (document.cookie.indexOf('mis_userid') > 0) {-->
+    <!--_hmt.push(['_setCustomVar', 1, "userType", "misUser", 1]);-->
+    <!--} else {-->
+    <!--_hmt.push(['_setCustomVar', 1, "userType", "visitor", 1]);-->
+    <!--}-->
+    <!--(function () {-->
+    <!--var hm = document.createElement("script");-->
+    <!--hm.src = "https://hm.baidu.com/hm.js?1f8e83330039496a701d7ae44836ed10";-->
+    <!--var s = document.getElementsByTagName("script")[0];-->
+    <!--s.parentNode.insertBefore(hm, s);-->
+    <!--})();-->
+    <!--</script>-->
+    <!--<script th:src="@{/js/newhouse/fingerprint2.min.js}" type="text/javascript" charset="utf-8"></script>-->
+
+    <link th:href="@{/css/base.css}" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/jingjiren/jingjirentoren.css}"/>
+</head>
+
+<body ng-controller="Detailbody" class="ng-scope">
+<!--<div id="cnzz_stat_icon_1272232378" style="display: none;">-->
+<!--<a href="http://www.cnzz.com/stat/website.php?web_id=1272232378" target="_top" title="站长统计">站长统计</a>-->
+<!--</div>-->
+<!--<script src="z_stat.php" language="JavaScript"></script>-->
+<!--<script src="core.php" charset="utf-8" type="text/javascript"></script>-->
+
+<script type="text/javascript">
+    function openwindowindex(aa) {
+        layer.open({
+            type: 2,
+            area: ['360px', '500px'],
+            offset: 'rb',
+            shade: 0,
+            content: ['//webchat.7moor.com/wapchat.html?accessId=477a8f70-4a00-11e8-9b91-a74aa30cfb04&amp;fromUrl=www.yq.cn&amp;urlTitle=%E8%8A%92%E6%9E%9C%E5%9C%A8%E7%BA%BFPc%E7%89%88', 'no']
+        });
+    }
+</script>
+
+<!--添加了 容联七陌  的客服-->
+
+<meta name="description" content="沈阳誉桥在线为您提供最新沈阳租房、沈阳二手房价格信息，沈阳租房、沈阳二手房代理交易，沈阳租房、沈阳二手房经纪人提供沈阳租房、沈阳二手房中介服务！客服电话：">
+<meta name="keywords" content="誉桥在线|沈阳二手房|沈阳租房|沈阳购房经纪人|经纪人推荐">
+
+
+<!--顶部导航栏开始-->
+<div th:replace="base/header :: html"></div>
+<!--顶部导航栏结束-->
+<!--右侧贴边导航quick_links.js控制-->
+<!--<div th:replace="base/rightBase :: html"></div>-->
+<!--右侧贴边导航quick_links.js控制 end-->
+<div id="pop-compare" data-load="true" class="pop-compare"
+     style="display: none; bottom: 0px; left: 0px; right: 0px; margin: auto;">
+    <div class="pop-wrap">
+        <p class="pop-compare-tips"></p>
+        <!--		<div class="pop-inner">
+                    <div class="diff-hd">
+                        <ul class="tab-btns clearfix">
+                            <li class="ui-switchable-item current">
+                                <a href="javascript:;">对比栏</a>
+                            </li>
+
+                        </ul>
+                        <div class="operate">
+                            <a href="javascript:;" class="hide-me">隐藏</a>
+                        </div>
+                    </div>
+                    <div class="diff-bd tab-cons">
+                        <div class="tab-con ui-switchable-panel ui-switchable-panel-selected" style="display: block;">
+                            <div id="diff-items" class="diff-items clearfix compareList">
+
+                            </div>
+                            <div class="diff-operate">
+                                <a target="_blank" id="goto-contrast" class="btn-compare-b compare-active">对比</a>
+                                <a class="del-items">清空对比栏</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            --></div>
+</div>
+<!--右侧悬浮 end-->
+<form method="post" action="https://www.dfyq.cn/s/41726?userid=41726" id="form1" class="ng-pristine ng-valid">
+    <div class="aspNetHidden">
+        <input name="__VIEWSTATE" id="__VIEWSTATE"
+               value="/wEPDwULLTExMzY3MTk5MzNkZA8USuTD/haMUphcP7Y8fcFH1lY/bp0OnO+HeA0ekbkZ" type="hidden">
+    </div>
+
+    <div id="goTop" class="n-top-div">
+        <!--顶部导航-->
+        <div class="n-top-wrapper">
+            <div class="n-topNav">
+                <div class="n-topLeft f-l">
+                    <ul>
+
+                        <li></li>
+                        <li></li>
+
+                        <li></li>
+                        <li>客服电话<em>4001-024-yq</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em id="yijian"
+                                                                                            style="cursor: pointer;">意见反馈</em>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="n-topRight f-r">
+
+                    <!--登录前样式-->
+
+                    <!--登陆后样式-->
+
+                    <div class="n-top-r-l" id="_LoginUser">
+
+                        <i></i>
+                        <a rel="nofollow" href="https://usercenter/login/" class="logintopbtn" target="_top">登录</a>
+                        <a rel="nofollow" href="https://usercenter/reg/" target="_top">注册</a>
+                    </div>
+
+                    <div class="n-top-mapsite">
+                        <a href="#"><span>网站地图<i></i></span></a>
+                        <!--网站地图弹出-->
+                        <div class="mapmenu-btn clearfix">
+                            <h1><a href="https://www.yq.cn/ershoufang/" title="沈阳二手房">沈阳二手房</a></h1>
+                            <ul>
+                                <li>
+                                    <a href="https://www.yq.cn/ershoufang/a1/" title="沈河区二手房" target="_top">沈河区</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.yq.cn/ershoufang/a6/" title="皇姑区二手房" target="_top">皇姑区</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.yq.cn/ershoufang/a5/" title="铁西区二手房" target="_top">铁西区</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.yq.cn/ershoufang/a4/" title="大东区二手房" target="_top">大东区</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.yq.cn/ershoufang/a2/" title="和平区二手房" target="_top">和平区</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.yq.cn/ershoufang/a7/" title="浑南新区二手房" target="_top">浑南新区</a>
+                                </li>
+                            </ul>
+                            <h2><a href="https://www.yq.cn/map/" title="沈阳地图找房">沈阳地图找房</a></h2>
+                            <h2><a href="https://www.yq.cn/xiaoqu/" title="沈阳小区">沈阳小区</a></h2>
+                            <ul>
+                                <li>
+                                    <a href="https://www.yq.cn/xiaoqu/a1/" title="沈河区小区" target="_top">沈河区</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.yq.cn/xiaoqu/a6/" title="皇姑区小区" target="_top">皇姑区</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.yq.cn/xiaoqu/a5/" title="铁西区小区" target="_top">铁西区</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.yq.cn/xiaoqu/a4/" title="大东区小区" target="_top">大东区</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.yq.cn/xiaoqu/a2/" title="和平区小区" target="_top">和平区</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.yq.cn/xiaoqu/a7/" title="浑南新区小区" target="_top">浑南新区</a>
+                                </li>
+                            </ul>
+                            <h2><a href="https://www.yq.cn/shangyongfang/" title="沈阳门市房，厂房，土地，别墅买卖">沈阳商用房</a></h2>
+                            <ul>
+                                <li>
+                                    <a href="https://www.yq.cn/shangyongfang/lx28/" title="沈阳二手别墅买卖"
+                                       target="_top">别墅</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.yq.cn/shangyongfang/lx24/" title="沈阳二手门市房买卖"
+                                       target="_top">门市</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.yq.cn/shangyongfang/lx25/" title="沈阳二手商住综合买卖" target="_top">商住综合</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.yq.cn/shangyongfang/lx30/" title="沈阳二手车库买卖"
+                                       target="_top">车库</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.yq.cn/shangyongfang/lx29/" title="沈阳二手厂房仓库买卖" target="_top">厂房仓库</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.yq.cn/shangyongfang/lx27/" title="沈阳二手库房买卖"
+                                       target="_top">库房</a>
+                                </li>
+                            </ul>
+                            <h2><a href="https://www.yq.cn/s/" title="沈阳二手房经纪人">沈阳网络经纪人</a></h2>
+                            <h2><a href="https://www.yq.cn/daikuan/" title="沈阳二手房贷款，购房须知">购房须知</a></h2>
+                            <h2><a href="https://www.yq.cn/xinwen/" title="沈阳房产资讯">沈阳房产资讯</a></h2>
+                            <h2><a rel="nofollow" href="https://www.yq.cn/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC/"
+                                   title="关于我们">关于我们</a></h2>
+                            <h2><a href="https://zhuanti.yq.cn/" title="">誉桥专题</a></h2>
+                        </div>
+                        <!--网站地图弹出 end-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--网站主导航-->
+        <div id="_pMainNav" class="n-mainNav-wrapper">
+
+            <div class="n-mainNav">
+                <div class="main-logo">
+                    <a href="https://www.yq.cn/" title="誉桥在线，誉桥不动产，誉桥中介，沈阳房产网" alt="誉桥在线，誉桥不动产，誉桥中介，沈阳房产网"><em
+                            class="l-t">真房源|零距离</em><em class="r-t">yq.CN</em></a>
+                </div>
+                <div class="city-menu" style="display: none;">
+                    <span class="city-m-b"><i></i></span>
+                    <!--城市选择弹出-->
+                    <div class="city-list-n">
+                        <ul class="clearfix">
+
+                            <li>
+                                <a href="https://www.yq.cn/" title="沈阳誉桥" target="_top">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://sy.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://bj.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://dl.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://as.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://fs.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://yk.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://jz.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://bx.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://dd.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://hld.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://ly.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://tl.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://fx.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://cy.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://cc.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://th.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://0438.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://ps.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://lys.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://dq.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://qqhe.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://tls.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://wlht.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://kf.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://qhd.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://pj.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://zmd.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                            <li>
+                                <a href="https://lf.yq.cn/" title="沈阳誉桥" target="_top" rel="nofollow">沈阳誉桥</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!--城市选择弹出 end-->
+                </div>
+                <!--网站主导航-->
+                <div class="main-menu">
+                    <ul>
+
+                    </ul>
+                </div>
+                <!--网站主导航 end-->
+                <div class="h-r-ad">
+                    <a href="https://app.yq.cn/" title="" target="_top" rel="nofollow"></a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--<script type="text/javascript">-->
+    <!--$(document).ready(function() {-->
+    <!--//加盟隐藏等级,位置,委托等信息-->
+    <!--if(isJiaMeng == "false") {-->
+    <!--$("._jiaMengNotShowDengJiDiv").show();-->
+    <!--$("._jiaMengNotShowWeiZhiDiv").show();-->
+    <!--$("._jiaMengNotShowWeiTuoDiv").show();-->
+    <!--}-->
+    <!--});-->
+    <!--</script>-->
+    <div class="jjrshow-wrapper clearfix">
+
+        <!--面包屑-->
+        <div class="path-nav">
+            <a href="../index.html" title="">誉桥在线</a><code title="">&gt;</code>
+            <a th:href="@{/jingjiren/jingjiren.html}" title="">沈阳房产经纪人</a><code title="">&gt;</code><code title="">[[${user.name}]]的店铺</code>
+        </div>
+
+        <div id="mis_detail" style="display: none;">
+            <span id="user_span"></span>你好,
+            <a href="#">点击这里打开房源后台详情</a>，如果房源联系人显示的不正常，请
+            <a href="#">点击这里进行修复。</a>
+            <input name="ctl00$ContentPlaceHolder1$cookiemisuser" id="ContentPlaceHolder1_cookiemisuser" type="hidden">
+            <input name="ctl00$ContentPlaceHolder1$userdetail" id="ContentPlaceHolder1_userdetail" type="hidden">
+            <input name="ctl00$ContentPlaceHolder1$mis_url" id="ContentPlaceHolder1_mis_url" type="hidden">
+        </div>
+        <div class="jjrinfobox clearfix">
+            <div class="jjrleftbox">
+                <!--经纪人信息-->
+                <div class="jjr-con-box">
+
+                    <div class="j-store-btn clearfix">
+                        <h1><i></i>[[${user.name}]]的店铺</h1>
+                        <span class="j-s-map _jiaMengNotShowWeiZhiDiv" style=""><i></i><a href="javascript:void(0)"
+                                                                                          datalat="41.81852500000000"
+                                                                                          datalng="123.47785400000000"
+                                                                                          dataxq="汇馨店" dataid="41726"
+                                                                                          class="cboxElement">[[${user.name}]]的位置</a></span>
+                        <div class="j-store-freebtn _jiaMengNotShowWeiTuoDiv" style=""><span>委托[[${user.name}]]</span>
+                            <a th:href="@{/helphouse/buy}">买房</a>
+                            <a th:href="@{/helphouse/maifang}">卖房</a>
+                        </div>
+                    </div>
+
+                    <div class="jjr-jjxx clearfix">
+                        <div class="j-s-photo">
+                            <span th:title="'+${user.zhiwu.name}+'" style="display: block;" class="jyhicon"></span>
+                            <a href="javascript:void(0)">
+
+                                <img th:src="@{'http://dev-12.lingke.mobi/HousePhoto/'+${user.photos.path}}"
+                                     name="mob_jjrImg" alt=""
+                                     onerror="javascript:this.src='/yuqiaopc/img/house/linshi_house (1).jpg';"
+                                     width="125" height="179"></a>
+                        </div>
+                        <div class="j-j-info clearfix j-j-info2" id="lianxidianhua">
+                            <ul>
+                                <li class="j-name">
+                                    <a href="javascript:void(0)" class="j-n-w">[[${user.name}]]</a>
+                                    <a href="javascript:void(0)" class="OnlineContactMe zxzx" data-id="41726"
+                                       data-name="侯祺" onclick="setconversation()">在线联系我</a>
+                                </li>
+                                <li class="j-store">
+                                    <span>区域门店：</span>
+                                    <a th:href="@{'/shop/'+${user.branchshopid}}" target="_top" class="j-s-w">
+                                        [[${user.shop.quyu}]] - [[${user.shop.name}]]</a>
+                                    <!--<a href="javascript:void(0)" datalat="41.81852500000000" datalng="123.47785400000000" th:dataxq="${user.shop.name}" dataid="3470" th:org_name="${user.shop.quyu}+${user.shop.name}" org_add="大东区小什字街163号13单元1楼" class="fontfaceicon jjrStoreWeiZi cboxElement"></a>-->
+                                    <!--店铺位置，请重新制作-->
+                                </li>
+                                <li class="j-telphone">
+                                    <span>联系电话：</span>
+                                    <div class="j-tel" id="lianxidianhuas">[[${user.mobile}]]</div>
+                                    <!--<script type="text/javascript">-->
+                                    <!--//电话显示加"-"-->
+                                    <!--var str = "";-->
+                                    <!--str = "15040152705";-->
+                                    <!--str = updateTeltype(str);-->
+                                    <!--$("#lianxidianhuas").append(str);-->
+                                    <!--//修改电话格式js   参数str 为  字符串格式-->
+                                    <!--function updateTeltype(str) {-->
+                                    <!--if(str.length == 11) {-->
+                                    <!--str = str.substring(0, 3) + "-" + str.substring(3, 7) + "-" + str.substring(7, 11);-->
+                                    <!--}-->
+                                    <!--return str;-->
+                                    <!--}-->
+                                    <!--</script>-->
+                                </li>
+                                <li class="j-lvbox _jiaMengNotShowDengJiDiv">
+                                    <!--<span>年限等级：</span>-->
+                                    <em class="jjrYear">[[${user.remarks}]]</em>
+                                    <!--<em class="jjrLv">D16</em>-->
+                                    <div class="j-lv" style="display: none;">
+                                        <!--<div class="j-lv-tishi" style="left: 71px;">D16</div>-->
+                                        <div class="j-lv-jd" style="width: 88px;"></div>
+                                    </div>
+                                    <!--<div class="j-lv-help" style="display: none;">-->
+                                    <!--<a href="javascript:void(0)"><span>本级别是根据经纪人上个季度的业绩设定，最低级为D0级，最高级为D19级。<br>-->
+                                    <!--注：级别为经纪人能力的体现，仅供参考，誉桥在线建议您根据自身情况选择符合您需要的经纪人来量身定做您的置业计划。</span></a>-->
+                                    <!--</div>-->
+                                </li>
+                                <li class="j_qqicon">
+                                    <!--<a href="https://wpa.qq.com/msgrd?v=3&amp;uin=houqi41726&amp;site=www.yq.cn&amp;menu=yes">
+                                    <img src="https://wpa.qq.com/pa?p=2:houqi41726:46" /></a>-->
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="j-cj-box">
+                            <div class="j-cj-box-c clearfix">
+                                <!--<div class="j-cj-info"><span>累计成交<em>72</em>套</span></div>-->
+                                <!--<div class="j-cj-info"><span>最近成交<em>7</em>套</span></div>-->
+                                <div class="j-urlb">
+                                    <!--<a href="https://www.dfyq.cn/s/41726" target="_top">https://www.dfyq.cn/s/41726</a><span class="j-share"><a id="GengDuoPingTai" href="javascript:void(0)" title="点我分享"></a>-->
+                                    <div id="fenxiangshow"
+                                         style="position: absolute; border: 1px solid rgb(233, 233, 233); border-radius: 3px; background-color: white; width: 435px; display: none;">
+                                        <div class="bshare-custom icon-medium-plus">
+                                            <div class="bsPromo bsPromo2"></div>
+                                            <!--<a title="分享到" href="https://www.bshare.cn/" id="bshare-shareto" class="bshare-more"></a>分享到: <a title="分享到" href="https://www.bshare.cn/" id="bshare-shareto" class="bshare-more"></a><a title="分享到QQ好友" class="bshare-qqim" href="javascript:void(0);"></a><a title="分享到微信" class="bshare-weixin" href="javascript:void(0);"></a><a title="分享到QQ空间" class="bshare-qzone"></a><a title="分享到Facebook" class="bshare-facebook" href="javascript:void(0);"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到人人网" class="bshare-renren" href="javascript:void(0);"></a>-->
+
+                                        </div>
+                                    </div>
+
+                                    </span></div>
+                            </div>
+                            <div class="j-qmb-box">主营板块：[[${user.shop.quyu == null?'暂无门店':user.shop.quyu}]]</div>
+
+                        </div>
+                        <!--<div class="jjr-SonNumber">
+
+                            <img id="qrCodeIco" src="../img/buyandshop/tou.png" style="position: absolute; width: 55px; height: 55px; margin-top: 48px; margin-left: -23px;">
+                            <div id="WechatImg_D"><canvas width="150" height="150"></canvas></div>
+                            <span>手机扫码了解经纪人</span>
+                            <script>
+                                $("document").ready(function() {
+                                    var url = 'https://m.yq.cn/s/41726';
+                                    $("#WechatImg_D").qrcode({
+                                        text: url,
+                                        width: 150,
+                                        height: 150,
+                                        typeNumber: -1,
+                                        background: "white",
+                                        foreground: "black",
+                                    });
+                                });
+                            </script>
+                        </div>-->
+                    </div>
+
+                    <span class="" id="usermemo"></span>
+                    <span class="" id="xqmemo"></span>
+
+
+                </div>
+
+                <!--房源成交记录-->
+
+                <!--经纪人房源-->
+                <div class="jjr-house-info">
+                    <div class="j-h-list">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#secondHouse" aria-controls="secondHouse" role="tab" data-toggle="tab">
+                                    二手房（[[${esfPage.total}]]）
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#zfhouse" aria-controls="zfhouse" role="tab" data-toggle="tab">
+                                    租房（[[${zfPage.total}]]）
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="secondHouse">
+                                <div th:each="houses:${esfPage.rows}" class="ListBox-I J-ListBox clearfix">
+                                    <div class="LB-f-img"><span class="SLimg"> [[${houses.photoCount}]] 图</span><span
+                                            class="SLbg"></span>
+                                        <a th:href="@{'/ershoufang/'+${houses.id}}"
+                                           th:title="${houses.com.loupanmingcheng}" target="_top">
+                                            <img th:src="@{'http://dev-12.lingke.mobi/HousePhoto/'+${houses.housePhoto[0].path}}"
+                                                 th:alt="${houses.com.loupanbieming}" name="mob_smallImg"
+                                                 onerror="javascript:this.src='/yuqiaopc/img/house/linshi_house (1).jpg';"
+                                                 width="161" height="121"></a>
+                                    </div>
+                                    <div class="details">
+                                        <h3><a th:href="@{'/ershoufang/'+${houses.id}}" target="_top">[[${houses.com.loupanbieming}]]
+                                            [[${houses.com.yongtu}]]</a></h3>
+                                        <div class="details-all">
+                                            [[${houses.woshi}]]室[[${houses.ketingcanting}]]厅[[${houses.weishengjian}]]卫
+                                            ，[[${houses.mianji}]]平
+                                            ，楼层：高层(共[[${houses.gongjiceng}]]层)，[[${houses.chaoxiang}]]，[[${houses.zhuangxiu}]]，入住时间[[${houses.ruzhushijian}]]
+                                        </div>
+                                        <div class="details-o">
+                                            <a th:href="@{'/ershoufang/'+${houses.id}}" target="_top">[[${houses.com.loupanmingcheng}]]</a><span></span>
+                                        </div>
+                                        <div class="HDtags">
+                                            <span class="t-xq"><a
+                                                    href="javascript:void(0)">[[${houses.hexinmaidian}]]</a></span>
+                                            <span class="t-dt" style="display: none;"><a
+                                                    href="javascript:void(0)">地铁</a></span>
+                                            <span class="t-ms" style="display: none;"><a
+                                                    href="javascript:void(0)">无税</a></span>
+                                            <span class="t-mwn" style="display: none;"><a
+                                                    href="javascript:void(0)">独家</a></span>
+                                            <span class="t-wy" style="display: none;"><a
+                                                    href="javascript:void(0)">急售</a></span>
+                                        </div>
+                                    </div>
+                                    <div class="price">
+                                        <p class="P-zj"><b>[[${#strings.substringBefore(houses.zuigaoshoujia
+                                            ,'.')}]]</b>万</p>
+                                        <p class="P-dj" th:with="price=(${houses.zuidishoujia } /  ${houses.mianji})">
+                                            [[${#strings.substringBefore(price ,'.')}]]元/平</p>
+                                        <p class="P-gx"
+                                           th:with="time=((${new java.util.Date().getTime()} -  ${new java.util.Date(houses.lastupdatetime).getTime()}) / 86400000)">
+                                            [[${#strings.substringBefore(time ,'.')}]]天前更新
+                                        </p>
+                                    </div>
+                                    <div class="Hbtn hideDiv" style="height: 10px;">
+                                        <!--<a href="javascript:void(0)" class="mapYL cboxElement" datalat="41.82248100000000" datalng="123.46597000000000" dataxq="万科金色家园" dataid="2220683"><i></i>预览地图</a>-->
+                                        <!--<a href="javascript:void(0)" class="addDB addCompare" dataid="2220683" act="house"><i></i>加入对比</a>-->
+                                        <a href="javascript:void(0)" class="favFY btnFavSellHouse"
+                                           dataid="2220683"><i></i>收藏房源</a>
+                                    </div>
+                                    <!--<div class="HBrowse hideDiv">-->
+                                    <!--<p>被查看 1086 次</p>-->
+                                    <!--</div>-->
+                                </div>
+                                <!--点击查看更多房源-->
+                                <div class="jjr-more-house">
+                                    <a id="ContentPlaceHolder1__hlSellHouseCount"
+                                       th:href="@{'/ershoufang/ershoufangs/?userId='+${user.id}}" target="_top">我们找到了
+                                        <em>[[${esfPage.total}]]</em> 套在售房源 查看ta的全部二手房 &gt;&gt;</a>
+
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="zfhouse" th:if="${zfPage.rows != null}">
+                                <div th:each="houses:${zfPage.rows}" class="ListBox-I J-ListBox clearfix">
+                                    <div class="LB-f-img"><span class="SLimg"> [[${houses.photoCount}]] 图</span><span
+                                            class="SLbg"></span>
+                                        <a th:href="@{'/ershoufang/'+${houses.id}}"
+                                           th:title="${houses.com.loupanmingcheng}" target="_top">
+                                            <img th:src="@{'http://dev-12.lingke.mobi/HousePhoto/'+${houses.housePhoto[0].path}}"
+                                                 th:alt="${houses.com.loupanbieming}"
+                                                 onerror="javascript:this.src='/yuqiaopc/img/house/linshi_house (1).jpg';"
+                                                 name="mob_smallImg" width="161" height="121"></a>
+                                    </div>
+                                    <div class="details">
+                                        <h3><a th:href="@{'/ershoufang/'+${houses.id}}" target="_top">[[${houses.com.loupanmingcheng}]]</a>
+                                        </h3>
+                                        <div class="details-all">
+                                            [[${houses.woshi}]]室[[${houses.ketingcanting}]]厅[[${houses.weishengjian}]]卫
+                                            ，[[${houses.mianji}]]平
+                                            ，楼层：高层(共[[${houses.gongjiceng}]]层)，[[${houses.chaoxiang}]]，[[${houses.zhuangxiu}]]，入住时间[[${houses.ruzhushijian}]]
+                                        </div>
+                                        <div class="details-o">
+                                            <a th:href="@{'/ershoufang/'+${houses.id}}" target="_top">[[${houses.com.loupanmingcheng}]]</a><span></span>
+                                        </div>
+                                        <div class="HDtags">
+                                            <span class="t-xq"><a
+                                                    href="javascript:void(0)">[[${houses.hexinmaidian}]]</a></span>
+                                            <span class="t-mwn" style="display: none;"><a
+                                                    href="javascript:void(0)">独家</a></span>
+                                        </div>
+                                    </div>
+                                    <div class="price">
+                                        <p class="P-zj"><b>[[${#strings.substringBefore(houses.zuidizujin ,'.')}]]</b>元/月
+                                        </p>
+                                        <p class="P-gx"
+                                           th:with="time=((${new java.util.Date().getTime()} -  ${new java.util.Date(houses.lastupdatetime).getTime()}) / 86400000)">
+                                            [[${#strings.substringBefore(time ,'.')}]]天前更新
+                                        </p>
+                                    </div>
+                                    <div class="Hbtn hideDiv">
+                                        <!--<a href="javascript:void(0)" class="mapYL cboxElement" datalat="41.82474975451300" datalng="123.46392852126000" dataxq="城市经典" dataid="2487415"><i></i>预览地图</a>-->
+                                        <!--<a href="javascript:void(0)" class="addDB addCompare" dataid="2487415" act="house"><i></i>加入对比</a>-->
+                                        <a href="javascript:void(0)" class="favFY btnFavSellHouse"
+                                           dataid="2487415"><i></i>收藏房源</a>
+                                    </div>
+                                    <!--<div class="HBrowse hideDiv">-->
+                                    <!--<p>被查看 533 次</p>-->
+                                    <!--</div>-->
+                                </div>
+                                <!--点击查看更多房源-->
+                                <div class="jjr-more-house">
+                                    <a id="ContentPlaceHolder1__hlRentHouseCount"
+                                       th:href="@{'/ershoufang/zufang/?userId='+${user.id}}" target="_top">我们找到了 <em>[[${zfPage.total}]]</em>
+                                        套在租房源 查看ta的全部租房 &gt;&gt;</a>
+                                </div>
+                            </div>                                <!--点击查看更多房源-->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="jjrrightbox" style="">
+                <div class="j_Right_box jjrWeiTuo">
+                    <h2>委托Ta</h2>
+                    <div class="freeBtnLink j_wt_freebtn">
+                        <a th:href="@{/helphouse/maifang}" target="_top"><!--<i class="fontfaceicon"></i>-->发布房源</a>
+                        <p>我们为您提供免费发布房源平台，并提供您需要的帮助。</p>
+                    </div>
+                </div>
+
+
+                <!--</ul>-->
+                <!--</div>-->
+                <!--<div class="j_Right_box jjrAppGG">
+                    <a href="https://app.yq.cn/" target="_top" title="誉桥在线app下载">
+                        <img src="7_1136271231.jpg" alt="" width="300" border="0" height="241"></a>
+                </div>-->
+            </div>
+        </div>
+
+    </div>
+    <div style="display: none;">
+        <div id="inlineMapDiv">
+            <a target="_blank">
+                <img></a>
+            <div></div>
+        </div>
+    </div>
+    <!--<script type="text/javascript" charset="utf-8" th:src="@{/js/newhouse/buttonlite.js}"></script>-->
+    <!--<script type="text/javascript" charset="utf-8" th:src="@{/js/newhouse/buttonlite.js}"></script>-->
+    <!--<script type="text/javascript" th:src="@{/js/jingjiren/agentshow.js}"></script>-->
+    <script th:src="@{/lib/jquery.qrcode.min.js}"></script>
+    <script>
+        $(document).ready(function () {
+            $("#GengDuoPingTai").hover(function () {
+                $("#fenxiangshow").show();
+            }, function () {
+                $("#fenxiangshow").hide();
+                $("#fenxiangshow").hover(function () {
+                    $("#fenxiangshow").show();
+                }, function () {
+                    $("#fenxiangshow").hide();
+                })
+            })
+        });
+        var arr = location.href.split('/');
+        var id = 0;
+        if (arr.length > 0) {
+            if (!isNaN(arr[arr.length - 1])) {
+                id = arr[arr.length - 1];
+            } else if (!isNaN(arr[arr.length - 2])) {
+                id = arr[arr.length - 2];
+            }
+        }
+        if (id)
+            document.getElementById("counttimes").src = "/viewtime.aspx?classid=6&mapid=" + id;
+    </script>
+
+
+    <div style="height: 100% !important;"></div>
+    <div id="Panel1"
+         style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; height: 100%; width: 100%; background-color: rgba(0, 0, 0, 0.4); z-index: 999999; display: none;"></div>
+    <div id="Panel2"
+         style="width: 300px; background-color: white; position: fixed; top: 25%; left: 35%; z-index: 999999; display: none;"></div>
+</form>
+
+
+<!--底部-->
+
+<div th:replace="base/footer :: html"></div>
+<!--底部 end-->
+
+<!--浮动广告-->
+<div class="floatleftadimg">
+
+</div>
+<script type="text/javascript">
+    $("a.closefloatAD").click(function () {
+        $("div.floatleftadimg").hide();
+    });
+</script>
+
+
+<!--<script type="text/javascript" th:src="@{/js/jquery.lazyload.min.js}"></script>-->
+<!--<script type="text/javascript" th:src="@{/js/ls.js}"></script>-->
+
+<!--<script type="text/javascript" th:src="@{/js/webmaster.js}"></script>-->
+<!--右侧悬浮导航 end-->
+
+<div id="cboxOverlay" style="display: none;"></div>
+<div id="colorbox" class="" role="dialog" tabindex="-1" style="display: none;">
+    <div id="cboxWrapper">
+        <div>
+            <div id="cboxTopLeft" style="float: left;"></div>
+            <div id="cboxTopCenter" style="float: left;"></div>
+            <div id="cboxTopRight" style="float: left;"></div>
+        </div>
+        <div style="clear: left;">
+            <div id="cboxMiddleLeft" style="float: left;"></div>
+            <div id="cboxContent" style="float: left;">
+                <div id="cboxTitle" style="float: left;"></div>
+                <div id="cboxCurrent" style="float: left;"></div>
+                <button type="button" id="cboxPrevious"></button>
+                <button type="button" id="cboxNext"></button>
+                <button id="cboxSlideshow"></button>
+                <div id="cboxLoadingOverlay" style="float: left;"></div>
+                <div id="cboxLoadingGraphic" style="float: left;"></div>
+            </div>
+            <div id="cboxMiddleRight" style="float: left;"></div>
+        </div>
+        <div style="clear: left;">
+            <div id="cboxBottomLeft" style="float: left;"></div>
+            <div id="cboxBottomCenter" style="float: left;"></div>
+            <div id="cboxBottomRight" style="float: left;"></div>
+        </div>
+    </div>
+    <div style="position: absolute; width: 9999px; visibility: hidden; display: none;"></div>
+</div>
+
+</body>
+<script th:src="@{/lib/jquery/jquery.min.js}"></script>
+<script th:src="@{/lib/bootstrap/js/bootstrap.min.js}"></script>
+</html>

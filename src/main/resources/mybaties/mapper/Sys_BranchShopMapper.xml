@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mapper.BranchShop.BranchShopMapper">
+  <resultMap id="BaseResultMap" type="com.model.Sys_BranchShop" >
+    <id column="id" property="id" jdbcType="NVARCHAR" />
+    <result column="name" property="name" jdbcType="NVARCHAR" />
+    <result column="Province" property="province" jdbcType="NVARCHAR" />
+    <result column="City" property="city" jdbcType="NVARCHAR" />
+    <result column="Address" property="address" jdbcType="NVARCHAR" />
+    <result column="ShopownerName" property="shopownername" jdbcType="NVARCHAR" />
+    <result column="ShopownerMobile" property="shopownermobile" jdbcType="NVARCHAR" />
+    <result column="ShopownerCardNum" property="shopownercardnum" jdbcType="NVARCHAR" />
+    <result column="Remarks" property="remarks" jdbcType="NVARCHAR" />
+    <result column="CompanyId" property="companyid" jdbcType="NVARCHAR" />
+    <result column="CreateUser" property="createuser" jdbcType="NVARCHAR" />
+    <result column="CreateTime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="LastUpdateUser" property="lastupdateuser" jdbcType="NVARCHAR" />
+    <result column="LastUpdateTime" property="lastupdatetime" jdbcType="TIMESTAMP" />
+    <!--经纪人表-->
+    <collection  property="users" column="id"
+                 ofType="com.model.Sys_User"
+                 javaType="ArrayList"
+                 select="com.mapper.jingjiren.JingJiRenMapper.findJjrByShopId"/>
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    shop.Id shopId, shop.Name shopName, Province, City, Address, ShopownerName, ShopownerMobile, ShopownerCardNum,
+    shop.Remarks, CompanyId, shop.CreateUser, shop.CreateTime, shop.LastUpdateUser, shop.LastUpdateTime
+  </sql>
+<!--通过经纪人branchshopid查询门店-->
+  <select id="findShopByUserId" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select *
+    from Sys_BranchShop
+    where id = #{userId}
+  </select>
+
+</mapper>

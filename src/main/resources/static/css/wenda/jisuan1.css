@@ -1,0 +1,41 @@
+.jsq-nav { border-bottom: 1px solid rgb(238, 238, 238); }
+.jsq-nav ul li { display: inline-block; }
+.jsq-nav ul li a { display: inline-block; font-size: 16px; text-align: center; color: rgb(153, 153, 153); padding: 10px 39px; }
+.jsq-nav ul li a i { display: inline-block; width: 20px; height: 20px; overflow: hidden; background: rgba(0, 0, 0, 0) url('../../img/jsqicon.png') no-repeat scroll 0% 0%; vertical-align: middle; margin: 0px 10px 0px 0px; }
+.jsq-nav ul li a:hover, .jsq-nav ul li.jsq-menu-off a { color: rgb(51, 51, 51); }
+.jsq-nav ul li a i.dkhk-j { background-position: 0px 0px; }
+.jsq-nav ul li a i.gfzh-j { background-position: -20px 0px; }
+.jsq-nav ul li a i.tqhk-j { background-position: -41px 0px; }
+.jsq-nav ul li a i.gfnl-j { background-position: -61px 0px; }
+.jsq-nav ul li a:hover i.dkhk-j { background-position: 0px -20px; }
+.jsq-nav ul li a:hover i.gfzh-j { background-position: -20px -20px; }
+.jsq-nav ul li a:hover i.tqhk-j { background-position: -41px -20px; }
+.jsq-nav ul li a:hover i.gfnl-j { background-position: -61px -20px; }
+.jsq-nav ul li.jsq-menu-off { border-bottom: 3px solid #C30D23 ; }
+.jsq-nav ul li.jsq-menu-off a i.dkhk-j { background-position: 0px -20px; }
+.jsq-text, .jsq-jieguo { padding: 0px; margin: 0px 20px 0px 0px; float: left; width: 450px; }
+.jsq-jieguo { border: 0px none; width: 310px; margin: 0px; }
+.jsq-text h2, .jsq-jieguo h2 { font-weight: bold; color: rgb(123, 178, 138); line-height: 30px; margin-bottom: 10px; }
+.jsqbox { font-size: 14px; position: relative; z-index: 0; }
+.jsq-jieguo ul li { border-bottom: 0px none; }
+table.dkhk-text tr td { padding: 10px 5px; border-bottom: 1px dotted rgb(234, 234, 234); }
+table.dkhk-text tr td input { vertical-align: middle; }
+table.dkhk-text tr td div { padding: 0px 0px 8px; }
+table.dkhk-text tr td div p { padding: 3px 0px; }
+table.dkhk-text tr td div p input.jsqText, table.dkhk-text tr td input.jsqText { width: 100px; border: 1px solid rgb(153, 153, 153); padding: 2px 3px; color: rgb(102, 102, 102); box-shadow: 1px 1px 1px rgb(238, 238, 238) inset; border-radius: 2px; margin-right: 5px; }
+table.dkhk-text tr td select, table.dkhk-text tr td div p select { font-size: 14px; color: rgb(102, 102, 102); padding: 2px 3px; border: 1px solid rgb(153, 153, 153); border-radius: 2px; }
+table.dkhk-text tr td input.btn_jsq { padding: 0px 10px; border: 1px solid rgb(228, 228, 228); height: 36px; color: #C30D23 ; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border-radius: 2px; display: inline-block; font-size: 14px; margin: 20px 0px 0px; cursor: pointer; overflow: visible; }
+table.dkhk-text tr td input.btn_jsq:hover { background: #C30D23  none repeat scroll 0% 0%; color: rgb(255, 255, 255); }
+.jsq-jieguo ul li { display: block; border-bottom: 1px dotted rgb(234, 234, 234); padding: 15px 10px; }
+.jsq-jieguo ul li span { color: rgb(255, 51, 0); padding-right: 5px; }
+.jsq-jieguo p { color: rgb(204, 204, 204); line-height: 30px; text-align: right; }
+table.dkhk-text tr.jsqbtn td, table.dkhk-text tr.red td { border: 0px none; }
+.jsqinfobox { font-size: 14px; line-height: 24px; color: rgb(153, 153, 153); padding: 20px 0px 0px; margin: 0px 10px; border-top: 1px solid rgb(234, 234, 234); display: none; }
+.dk-left-page { position: relative; width: 180px; }
+.dk-right-page { width: 880px; margin: 0px; border: medium none; }
+.dk-right-page h2 { height: auto; line-height: normal; font-size: 16px; border-bottom: 1px solid rgb(234, 234, 234); position: relative; padding: 10px 0px 15px; font-weight: normal; color: rgb(51, 51, 51); z-index: 0; margin: 0px 0px 30px; }
+
+
+.jsq-zhjsq { width: 200px; }
+.jsq-zhjsq ul li { padding: 10px; }
+.jsq-jieguo ul li input.jsqText2 { border: 0px none; color: rgb(255, 51, 0); }

@@ -1,0 +1,1555 @@
+﻿<!DOCTYPE html><html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="renderer" content="webkit" /><meta http-equiv="Cache-Control" content="no-transform" /><meta http-equiv="Cache-Control" content="no-siteapp" /><meta name="format-detection" content="telephone=no" />
+    <title>[[${newhouse.loupanmingcheng}]]_沈阳[[${newhouse.loupanmingcheng}]]详情(沈阳誉桥新房)</title>
+    <meta name="description" content="'沈阳誉桥新房为您提供售楼电话、开盘时间、地理位置、相册图片、楼盘房价、户型图等信息,以及周边配套、开发商、售楼处、物业信息等.了解更多详细信息,请关注沈阳誉桥新房频道"/>
+    <meta name="keywords" th:content="${newhouse.loupanmingcheng}+',沈阳'+${newhouse.loupanbieming}+','+${newhouse.loupanmingcheng}+'详情'" />
+    <link rel="stylesheet" th:href="@{/css/base.css}">
+    <!--<link rel="stylesheet" th:href="@{/css/newhouse/index.css}">-->
+    <link rel="stylesheet" th:href="@{/css/newhouse/index_1.css}">
+    <!--<link rel="stylesheet" th:href="@{/css/newhouse/lianjiaim.css}">-->
+    <link rel="stylesheet" th:href="@{/css/newhouse/lianjiaim_1.css}">
+    <link rel="stylesheet" th:href="@{/css/newhouse/site.css}">
+    <!--<link rel="stylesheet" th:href="@{/css/newhouse/site_1.css}">-->
+    <script th:src="@{/lib/jquery-3.2.1.min.js}"></script>
+    <!--图片弹框-->
+    <link rel="stylesheet" th:href="@{/css/base/lightbox.css}" type="text/css" media="screen" />
+    <script type="text/javascript" th:src="@{/js/base/lightbox.js}"></script>
+
+    <script>
+    var projecImgtName = "yuqiaopc";
+    var pathName = window.document.location.pathname;
+    var projectName = pathName.substring(0,pathName.substr(1).indexOf('/')+1);
+
+    var BaseUrl_IIS_Application_Name = "http://dev-12.lingke.mobi";
+    var SecondaryPath = "NewHousePhoto";
+</script><!--[if lt IE 9]>
+
+    <![endif]-->
+<script>
+function RESIZEIMG(b,k,l,m){var c=b.parentNode;var d=parseInt(c.offsetWidth)||k;var e=parseInt(c.offsetHeight)||l;var f=d/e;var g=b.naturalWidth||b.width;var h=b.naturalHeight||b.height;var i=g/h;var j="width";if(f<i){j="height";try{b.style["left"]="-"+parseInt(Math.abs((d-(g*e/h))/2))+"px"}catch(e){}}else if(m){try{b.style["top"]="-"+parseInt(Math.abs((e-(h*d/g))/2))+"px"}catch(e){}};b.style[j]="100%";};
+</script>
+<script>
+var _czc = _czc || [];
+_czc.push(["_setAccount", "1254525948"]);
+</script>
+
+</head><body><script>
+__STAT_LJ_CONF = {
+    params: {
+        ljweb_group: ['SEARCH','BIGDATA_PC'],
+        ljweb_id: '',
+        ljweb_mod: '',
+        ljweb_bl: '',
+        ljweb_el: '',
+        ljweb_index: '',
+        ljweb_value: '',
+        ljweb_url: '',
+        ljweb_sample: (document.cookie.match(/(?:^| )sample_traffic_test=([^;]*)(?:;|$)/) || ['',''])[1],
+        ljweb_ref: document.referrer,
+        ljweb_cid: '210100',
+        ljweb_channel: 'loupan',
+        ljweb_page: 'loupan_view'
+    }
+};
+
+
+
+var UT = {
+    send: function() {
+
+    }
+};
+var LjUserTrack = {
+    log: [],
+    initInterval: false,
+    intervalLog: function() {
+        setTimeout(function() {
+            if(window.$ULOG && $ULOG.send) {
+                for(var i = 0, l = LjUserTrack.log.length; i < l; i++) {
+                    LjUserTrack.__send(LjUserTrack.log[i]);
+                }
+
+                for(var m = 0, n = LjUserTrack.logIds.length; m < n; m++) {
+                    LjUserTrack.__sendId(LjUserTrack.logIds[m]);
+                }
+            } else {
+                LjUserTrack.intervalLog();
+            }
+        }, 16.7);
+    },
+    _start_time: +new Date,
+    __send: function(data) {
+        $ULOG.send("10043", {
+            "pid": (window.__UDL_CONFIG && window.__UDL_CONFIG.pid && window.__UDL_CONFIG.pid)||"lianjiaweb",
+            "key": window.location.href,
+            "action": data
+        });
+    },
+    logIds: [],
+    __sendId: function(id) {
+        id && $ULOG.send(id, {
+            "pid": (window.__UDL_CONFIG && window.__UDL_CONFIG.pid && window.__UDL_CONFIG.pid)||"lianjiaweb",
+            "key": window.location.href
+        });
+    },
+    sendId: function(id) {
+        if(window.$ULOG && $ULOG.send) {
+            LjUserTrack.__sendId(id);
+        } else {
+            LjUserTrack.logIds.push(id);
+
+            LjUserTrack.initInterval || (LjUserTrack.initInterval = true, LjUserTrack.intervalLog());
+
+        }
+    },
+    send: function(data, el, config) {
+
+        var utConf = __STAT_LJ_CONF;
+        var params = config || utConf.params,
+            win = window,
+            j;
+
+        data.groupIndex = data.ljweb_group || 0;
+
+        if (params) {
+            for (var d in params) {
+                if(params[d] !== j && data[d] === j) {
+                    data[d] = params[d];
+                }
+            }
+        }
+
+        if(el) {
+            this.checkClick(el, data);
+        }
+
+        data.ljweb_group = params['ljweb_group'][data.groupIndex || 0];
+
+        delete data.groupIndex;
+
+        if(data.typ) {
+            data.ljweb_bl = (data.ljweb_bl || '') + '_' + data.typ;
+            delete data.typ;
+        }
+
+        if(window.$ULOG && $ULOG.send) {
+            LjUserTrack.__send(data);
+        } else {
+            LjUserTrack.log.push(data);
+
+            LjUserTrack.initInterval || (LjUserTrack.initInterval = true, LjUserTrack.intervalLog());
+
+        }
+
+    },
+    checkClick: function(el, data) {
+
+        var TAG_LINK = 'A';
+        var href = '';
+        var elParent = null;
+
+        href = (el.tagName.toUpperCase() === TAG_LINK ? el.getAttribute("href", 2) : '');
+        if(!href && (elParent = el.parentNode) && elParent.nodeType === 1) {
+            href = (elParent.tagName.toUpperCase() === TAG_LINK ? elParent.getAttribute("href", 2) : '');
+        }
+
+        if(href) {
+            data.ljweb_url = href;
+        } else {
+            data.ljweb_url = data.ljweb_url
+                  || el.getAttribute("data-log_url")
+                  || (elParent=el.parentNode||el).getAttribute("data-log_url")
+                  || (
+                        (elParent=elParent.parentNode||elParent)
+                     && (elParent.nodeType === 1)
+                     && elParent.getAttribute("data-log_url")
+                     )
+                  || "";
+        }
+
+        this.attr(el, data);
+
+    },
+    path: function() {
+
+    },
+    attr: function(el, data) {
+        var modId = el.getAttribute("log-mod");
+        var blAttr = el.getAttribute("data-bl");
+        var elAttr = el.getAttribute("data-el");
+        var InAttr = el.getAttribute("data-log_index");
+        var valAttr = el.getAttribute("data-log_value");
+        var idAttr = el.getAttribute("data-log_id");
+        var groupAttr = el.getAttribute("data-log_group");
+
+        data.ljweb_bl = data.ljweb_bl || blAttr || '';
+        data.ljweb_el = data.ljweb_el || elAttr || '';
+        data.ljweb_index = data.ljweb_index || InAttr || '';
+        data.ljweb_value = data.ljweb_value || valAttr || '';
+        data.ljweb_id = data.ljweb_id || idAttr || '';
+        data.groupIndex = data.groupIndex || groupAttr || 0;
+
+        if (!modId) {
+            if (el.parentNode && el.parentNode.nodeType === 1 && el.parentNode.tagName.toUpperCase() !== 'BODY') {
+                this.attr(el.parentNode, data);
+            }
+        } else {
+            data.ljweb_mod = modId;
+        }
+    }
+};
+
+;;(function() {
+    var isW3c = !!document.addEventListener;
+
+    LjUserTrack.send({
+        ljweb_mod: 'pv',
+        ljweb_group: 1
+    });
+
+    /*window[isW3c ? 'addEventListener' : 'attachEvent'](
+        (isW3c ? '': 'on') + 'beforeunload',
+        function(e) {
+            var _end_time = +new Date;
+            UT.send({type: 'show', subtype: 'stay', time: (_end_time-UT._start_time)/1000});
+        },
+        false);*/
+})();
+
+
+
+
+
+</script>
+    <!-- header -->
+<!--顶部导航栏开始-->
+<div th:replace="base/header :: html"></div>
+<!--顶部导航栏结束-->
+<!--<div class="xinfang-nav">-->
+    <!--<div class="wrapper">-->
+        <!--<div class="fl">-->
+            <!--<a class="logo" href="/" title="誉桥房产网"></a>-->
+            <!--<ul class="nav-list">-->
+                <!--<li>-->
+                    <!--<a href="/" data-xftrack="10131_1">-->
+                        <!--首页-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a class="check" href="/loupan/" data-xftrack="10131_2">楼盘</a></li><li><a href="//m.lianjia.com/san/loupan/zhuanti/11518.html">旅居<i></i></a></li></ul></div><div class="fr connect"><form id="search" data-action="/loupan/rs" method="post" action="/loupan/rs"><div class="bar-search-box"><input id="search-input" type="text" value="" placeholder="请输入楼盘名或区域" autocomplete="off"><button type="submit" class="search-btn searchBtn" data-xftrack="10122_1" data-url="/loupan/rs"><i></i></button><ul id="sugBox" data-xftrack="10122_2" class="sug-box" data-cityid="210100"></ul></div></form></div></div></div>-->
+
+<script id="suggestTpl" type="text/template">
+
+    <li data-url="<%= list[i]['url'] %>" data-xftrack="10127_2" data-title="<%= list[i]['title'] %>" data-index="<%= i+1 %>">
+        <a href="<%= list[i]['url'] %>">
+            <span>
+
+            </span>
+            <!--<% if (list[i]['type'] === 'resblock') { %>-->
+            <span class="for-right">
+
+                  <span class="type"></span>
+
+            </span>
+
+            <span class="for-right">
+                <!--约<%= list[i]['count'] %>个新楼盘-->
+            </span>
+            <!--<% } %>-->
+        </a>
+    </li>
+    <!--<% } %>-->
+</script>
+
+
+    <div class="mod-global">
+    <div>
+        <div id="matchBar"></div>
+    </div>
+    <script id="favBarTpl" type="text/template">
+<div class="match-nav">
+
+    <div class="add-nav-box">
+
+        <div class="focusloupan haswatched" data-xftrack="10179_1">取消关注</div>
+    <!--<% } else { %>    -->
+        <div class="focusloupan" data-xftrack="10179_1">关注楼盘</div>
+    <!--<% } %>    -->
+        <div class="add-word" style="background-color:white">
+      <div class="add-nav-header">已添加对比<span class="add-nav-header-num">（<span><%=matchList.length%></span>/4）</span></div>
+      <div class="add-nav-name">
+      <!--<%for(var i = 0; i < matchList.length;i++){ %>        -->
+          <span><i class="delete-match" data-id="<%=matchList[i]['id']%>">X</i><span title="<%=matchList[i]['title']%>">
+              <!--<%=matchList[i]['title']%>-->
+          </span></span>
+      <!--<% } %>     -->
+      </div>
+      <div class="add-nav-btn">
+        <!--<%if(showMatchBtn && matchList.length >= 2){ %>      -->
+          <button class="clear-btn jumpMatch" data-xftrack="10179_3">开始对比</button>
+        <!--<%}%>        -->
+          <button class="clear-btn clearAll">全部清空</button>
+      </div>
+    </div>
+  </div>
+<!--<%}else{ %>  -->
+    <div class="unadd-nav-box">
+    <!--<% if(followStatus == "1"){ %>   -->
+    <div class="focusloupan haswatched" data-xftrack="10179_1">取消关注</div>
+    <!--<% } else { %>    -->
+    <div class="focusloupan" data-xftrack="10179_1">关注楼盘</div>
+    <!--<% } %>   -->
+    <!--<div class='unadd-word'>-->
+      <!--<span class="unadd-nav-name" style="background-color:white">对比房源</span>-->
+      <!--<span class="unadd-nav-num"><span>0</span>/4</span>-->
+    <!--</div>-->
+  </div>
+<% }%><div class="go-top" data-xftrack="10179_4"><i></i></div>
+</div>
+</script>
+
+    <!-- banner -->
+    
+<div class="mod-banner" style="" data-proname="bgygyyxaftae" data-is_floupan="">
+
+    <div class="filter-bg" >
+         <img th:src="@{/img/newhouse/nhbg.jpg}" data-original="" style="width:100%;height:100%;">
+    </div>
+    <div class="opacity-bg"></div>
+    <div class="mid-content">
+            <div class="breadcrumbs">
+              <i class="icon"></i>&nbsp;
+                            <a th:href="@{/}" data-xftrack="10152">誉桥网沈阳站</a>
+                            <span class="stp">&nbsp;&gt;&nbsp;</span>
+                <a th:href="@{/newHouse/newhouses}" data-xftrack="10152">
+                    沈阳新房
+                </a>
+                            <!--<span class="stp">&nbsp;&gt;&nbsp;</span>                            <a href="/loupan/" data-xftrack="10152">沈阳楼盘</a>-->
+                            <span class="stp">&nbsp;&gt;&nbsp;</span>
+                <a th:href="@{'/newHouse/newhouses?searchName='+${newhouse.quyu}}" data-xftrack="10152">[[${newhouse.quyu}]]楼盘</a>
+                            <span class="stp">&nbsp;&gt;&nbsp;</span>
+                <a th:href="@{'/newHouse/'+${newhouse.id}}" data-xftrack="10152">[[${newhouse.loupanmingcheng}]]</a>
+                                          
+            </div>
+    </div>
+   <div class="banner-box" >
+                 <a target="_blank" data-xftrack="10153" style="display:inline-block;position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 1;"></a>
+         <span class="coverpic-type coverpic-pos-rtf">效果图</span>
+                  <div class="youhui-detail formis">
+             <span class="y-title">优惠详情<span class="s-close"></span></span>
+             <div class="y-con">
+
+                                          
+             </div>
+         </div>
+                          <div class="box-left" style="z-index:2">
+            <div class="box-left-top">
+                <div class="name-box">
+                                        <div class="state-div">
+                        <span class="state">[[${#strings.listSplit(newhouse.yongtu,'|')[0]}]]</span>
+                    </div>
+                                        <a class="clear"  th:title="${newhouse.loupanmingcheng}">
+                        <h1 class="DATA-PROJECT-NAME" data-project_name="bgygyyxaftae">[[${newhouse.loupanmingcheng}]]</h1>
+                                            </a>
+                </div>
+                <p class="jiage">
+                                    <span>均价</span><span class="junjia"> [[${#strings.substringBefore(newhouse.junjiazuigao ,'.')}]]</span><span class="yuan">万</span>
+                                                    <!--<span class="remind-tag changePrice-remind" data-xftrack="10269" data-other-action="is_cancel=0">变价提醒</span>-->
+                                </p>
+
+                <p class="update">
+                                            <span>最近更新时间：[[${#dates.format(newhouse.lastupdatetime ,'yyyy-MM-dd')}]]</span>
+                                    </p>
+            </div>
+            <div class="box-left-bottom clickTargetBox" data-proname="bgygyyxaftae">
+                <div class="bottom-info">
+                    <p class="small-tags">
+                        <span class="popular">[[${newhouse.yongtu}]]</span>
+                        <span class="villa">[[${#strings.listSplit(newhouse.liangdian,'|')[0]}]]</span>
+                        <span class="q70">[[${newhouse.quyu}]]</span>
+                        <!--<span class="limit"></span>                                            </p>-->
+                    <p class="wu-type">
+                        <i></i>
+                        <span>物业类型：</span><span>[[${newhouse.yongtu}]]</span>
+                        <i class="iic"></i>
+                    </p>
+                                        <p class="where" data-xftrack="10155" style="cursor: pointer;" onclick="window.$ && $('#mapWrapper').trigger('click');">
+                        <i></i>
+                        <span th:title="${newhouse.loupandizhi}">项目地址：[[${newhouse.quyu}]] [[${newhouse.loupandizhi}]]</span>
+                    </p>
+                    <div style="position: relative">
+                                                <p class="when" data-more="1">
+                            <i></i>
+                            <span>最新开盘：</span><span>[[${newhouse.kaipanshijian}]]</span>
+                            <i class="iic"></i>
+                        </p>
+                                                                        <!--<span class="remind-tag open-remind" data-xftrack="10270" data-other-action="is_cancel=0">开盘提醒</span>-->
+                                            </div>
+
+                    <div class="more-box2">
+                        <div class="more-title">最新开盘</div>
+                        <div class="more-close"></div>
+                        <div class="more-triangle"></div>
+                        <div class="more-wrap">
+                                                            <div class="more-date-group">
+                                    <div class="more-icon"></div>
+                                    <div class="more-date">[[${newhouse.kaipanshijian}]]</div>
+                                </div>
+                                                                <div class="more-loupan-group">
+                                    <div class="more-icon"></div>
+                                    <!--<div class="more-loupan">第1期</div>-->
+                                </div>
+                                                                <div class="more-loupan-detail">
+                                    <!--<div class="more-detail">创新路33-1号（1号楼）,创新路33-10号（10号楼）</div>-->
+                                </div>
+                            
+                        </div>
+                    </div>
+                    <div class="phonetag clickAction">
+                        <div class="btn_phone_ll LOGCLICK" data-xftrack="10156" data-log_group="1" log-mod="phone_click" data-bl="1" data-dianji="phone_bgygyyxaftae" >
+                            <i></i>
+                                                            <span th:title="${newhouse.user.mobile}">[[${newhouse.user.mobile}]]</span>
+                                                    </div>
+                    </div>
+                    <div class="who clear">
+                        <div class="imgWrap">
+                            <img th:src="@{'http://dev-12.lingke.mobi/UserPhoto/'+${newhouse.user.photos == null ? 'error':newhouse.user.photos.path}}" onerror="javascript:this.src='/yuqiaopc/img/house/linshi_house (4).jpg';" alt="" width="55">
+                        </div>
+                        <div class="infoWrap">
+                            <p class="lineOne">
+                                <span class="managerName">[[${newhouse.user.name}]]</span>
+                                <a class="lianjiaim-createtalkAll new-talk LOGCLICK" data-log_id="" data-bl="agentim" data-source-extends="{&quot;house_code&quot;:&quot;wkfcsjaftal&quot;}" data-el="1000000026026946" style="display: none;" title="在线咨询" data-role="lianjiaim-createtalk" data-ucid="1000000026026946">
+                                    <span class="im-icon"></span>沟通</a>
+
+                            </p>
+                            <p class="lineTwo"><span>[[${newhouse.user.mobile}]]</span></p>
+                            <!--<p class="lineThree"><span><span class="watchedName">带看</span><span class="watchedTime">0次</span></span><span><span class="newwatchName">成交</span><span class="newwatchTime">0单</span></span></p>-->
+                        </div>
+                    </div>
+                    <div class="explain">
+                      <p class="txt">
+                        房源透明 五证齐全 品牌保障
+                      </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="views">
+            <!-- <span class="btn-s">
+                <a  class="pic-btn"   target="_blank" href="/loupan/p_bgygyyxaftae/xiangce/"></a>
+                <span>楼盘相册</span>
+            </span> -->
+
+                                      <!--<a class="license-photos" target="_blank" href="/loupan/p_bgygyyxaftae/xiangqing/#xTable"><i class="license-icon"></i>-->
+                                          <!--<span>预售许可证：沈房预售第18212号</span>-->
+                                      <!--</a>-->
+                                               <!-- <span class="house-photos">
+                <i class="photo-icon"></i>
+                <a class="pho-btn" target="_blank" href="/loupan/p_bgygyyxaftae/xiangce/"></a>
+            </span> -->
+                <!--<a class="pho-btn house-photos" data-xftrack="10154" target="_blank" href="#"><i class="photo-icon"></i><span>相册（38）</span></a>-->
+                        <span class="btn-s hide" style="visibility:hidden;" id="mapWrapper" th:data-name="${newhouse.loupanmingcheng}" data-address="" data-coord="41.676606,123.506112">
+            </span>
+        </div>
+
+
+    </div>
+</div>
+
+    <!-- REMINDING -->
+    
+<div class="reminding-box" style="display: none">
+    <div class="remind_overlay_bg" data-xftrack="10279"></div>
+    <div class="panel_reminding" id="dialog_reminding" style="display: none">
+        <div class="panel_info">
+            <i class="close_reminding" data-xftrack="10279">&times</i>
+            <div class="panel_tab">
+                <div class="title">
+                    <div class="fl">快速订阅</div>
+                    <div class="reminding_text_tel">您的个人信息将会被保密，请放心填写</div>
+                    <div class="reminding_text_select">请选择订阅类型(支持多选)</div>
+                </div>
+                <div class="clear"></div>
+                <div id="reminding_content">
+                    <form action="" method="post">
+                        <ul>
+                            <li class="item border_t reminding_type">
+                                <label for="change_price" class="checkbox_btn change_price_label">
+                                    <span data-xftrack="10280" data-other-action="is_selected=0">
+                                        <input type="checkbox" name="remind_type" value="1" id="change_price" class="reminding_checkbox" />
+                                    </span>
+                                    变价提醒
+                                </label>
+                                <label for="open_time" class="checkbox_btn open_time_label">
+                                    <span data-xftrack="10281" data-other-action="is_selected=0">
+                                        <input type="checkbox" name="remind_type" value="2" id="open_time" class="reminding_checkbox" />
+                                    </span>
+                                    开盘提醒
+                                </label>
+                            </li>
+                            <li class="item username border_c">
+                                <input type="text" class="the_input users_tel" maxlength="11" placeholder="请输入手机号" />
+                            </li>
+                            <li class="item checkVerimg border_c">
+                                <input type="text" class="the_input ver-img" maxlength="6" placeholder="请输入验证码" />
+                                <!--<img src="static/picture/eff64814797d4ee1b30d68d8504ba7f8.gif" class="verImg">-->
+                            </li>
+                            <li class="item border_b Verify">
+                                <input type="text" class="the_input verifycode" maxlength="6" placeholder="请输入短信验证码" />
+                                <a href="javascript:;" class="send_verify_code" id="send_verify_code_tel" rel="nofollow">
+                                    <em>获取验证码</em>
+                                </a>
+                            </li>
+                            <li class="show_error">
+                                <dd>至少选择一个订阅类型</dd>
+                            </li>
+                            <li class="read_protocol">
+                                <label class="checkbox_btn">
+                                    <span class="active">
+                                        <input type="checkbox" name="remember" value="1" class="is_read_proto reminding_checkbox" checked />
+                                    </span>
+                                    我已阅读<a target="_blank" href="//www.lianjia.com/zhuanti/protocol">《誉桥用户协议》</a>（点击可取消）
+                                </label>
+                            </li>
+                            <li class="reminding_btn">
+                                <a class="reminding_user_tel_btn" data-xftrack="10271">立即订阅</a>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel_reminding" id="dialog_success" style="display: none">
+        <div class="panel_info">
+            <i class="close_reminding" data-xftrack="10279">&times</i>
+            <div class="panel_tab">
+                <div class="success_icon"></div>
+                <div class="success_content">
+                    <div class="success_title">订阅成功</div>
+                    <span>楼盘最新动态将会及时短信通知您</span>
+                </div>
+                <div class="success_btn">
+                    <a class="reminding_success_btn">确定</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel_reminding" id="dialog_cancel" style="display: none">
+        <div class="panel_info">
+            <i class="close_reminding" data-xftrack="10279">&times</i>
+            <div class="panel_tab">
+                <div class="cancel_content">
+                    <div class="cancel_title">取消订阅</div>
+                    <span>取消订阅后将无法收到最新通知</span>
+                </div>
+                <div class="cancel_btn_box">
+                    <a class="reminding_continue_btn">继续订阅</a>
+                    <a class="reminding_cancel_btn">确定</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- INFO -->
+    
+    <!-- TAB -->
+    <div class="mod-wrap">
+  <div class="panel-tab clickTargetBox" data-proname="bgygyyxaftae">
+        <ul class="clear">
+                              <li><a href="#estate-dynamic" data-xftrack="10161">楼盘动态</a></li>
+                     <!-- 购房直通车1.0增加房源售卖表 -->
+                              <li><a href="#house-online" data-xftrack="10161">户型介绍</a></li>
+                              <li><a href="#estate-album" data-xftrack="10161">楼盘相册</a></li>
+                              <!--<li><a href="#user-comment" data-xftrack="10161">用户点评</a></li>-->
+                              <!--<li><a href="#build-info">楼栋信息</a></li>-->
+                    <!--<li><a href="#around" data-xftrack="10161">周边配套</a></li>-->
+          <li><a href="#house-details" data-xftrack="10161">楼盘详情</a></li>
+
+                    <!-- <li><a href="#house-push">楼盘推荐</a></li> -->
+                                <span class="phone-s targetInfo" data-xftrack="10162" th:data-all="${newhouse.user.mobile}" data-phone='400' th:title="${newhouse.user.mobile}"><span class="freetel"></span>[[${newhouse.user.mobile}]]</span>
+          
+        </ul>
+        <div class="panel-bg">
+          <span>&#9660</span>
+        </div>
+  </div>
+</div>
+
+     <!-- 楼盘动态 -->
+    <!-- 楼盘动态-->
+
+<div class="mod-wrap">
+    <div class="clear mod-estate-dynamic for-dtpic" id="estate-dynamic">
+        <div class="dynamic-wrap clearfix">
+            <div class="dynamic-wrap-left pull-left">
+                <div class="dynamic-wrap-lt clearfix">
+                    <h2 class="pull-left"><a class="title-link" href="/loupan/p_bgygyyxaftae/dongtai/" target="_blank">楼盘动态</a></h2>
+                                    </div>
+                                <div class="dynamic-wrap-block clearfix">
+                    <h4 class="pull-left">用途</h4>
+                    <div class="dynamic-block-detail pull-right">
+                        <div class="dongtai-title">[[${newhouse.yongtu}]]</div>
+                        <div class="news-content-werapper">
+                            <a href="#" data-xftrack="10260_1" target="_blank" class="dynamic-detail-info-full">
+                                [[${newhouse.yongtu}]]
+                            </a>
+                            <div class="invisible-dongtai dynamic-detail-info-full">
+                                    [[${newhouse.mianji}]]
+                            </div>
+                        </div>
+                        <div class="dynamic-detail-time">
+                            <span>[[${#dates.format(new java.util.Date().getTime(), 'yyyy-MM-dd')}]]</span>
+                        </div>
+                                            </div>
+                </div>
+                                <div class="dynamic-wrap-block clearfix">
+                    <h4 class="pull-left">开发公司</h4>
+                    <div class="dynamic-block-detail pull-right">
+                        <div class="dongtai-title">[[${newhouse.kaifagongsi}]]</div>
+                        <div class="news-content-werapper">
+                            <a href="#" data-xftrack="10260_2" target="_blank" class="dynamic-detail-info-full">
+                                物业公司: [[${newhouse.wuyegongsi}]]
+                            </a>
+                            <div class="invisible-dongtai dynamic-detail-info-full">
+                                竣工年代: [[${newhouse.jungongniandai}]]
+                            </div>
+                        </div>
+                        <div class="dynamic-detail-time">
+                            <span>[[${#dates.format(new java.util.Date().getTime(), 'yyyy-MM-dd')}]]</span>                        </div>
+                                            </div>
+                </div>
+                                <div class="dynamic-wrap-block clearfix">
+                    <h4 class="pull-left">规划</h4>
+                    <div class="dynamic-block-detail pull-right">
+                        <div class="dongtai-title">规划户数</div>
+                        <div class="news-content-werapper">
+                            <a href="#" data-xftrack="10260_3" target="_blank" class="dynamic-detail-info-full">
+[[${newhouse.guihuahushu}]]
+                            </a>
+                            <div class="invisible-dongtai dynamic-detail-info-full">
+规划栋数: [[${newhouse.guihuadudong}]]                            </div>
+                        </div>
+                        <div class="dynamic-detail-time">
+                            <span>[[${#dates.format(new java.util.Date().getTime(), 'yyyy-MM-dd')}]]</span>
+                        </div>
+                                            </div>
+                </div>
+                
+                
+                
+                
+                    
+                    
+                        
+                        
+                            
+                        
+                    
+                
+                
+            </div>
+                        <div class="dynamic-wrap-right pull-left">
+                <div class="dynamic-rt clearfix">
+                    <span class="loupan-matter pull-left">楼盘纪事</span>
+                    <!--<a href="/loupan/p_bgygyyxaftae/xiangqing/#fenqi_info" target="_blank" class="look-info pull-right">查看信息</a>-->
+                </div>
+                <div class="dynamic-right-item clearfix">
+                    <ul class="pull-left">
+                                                                        <li>
+                            <span class="time-info">[[${newhouse.kaipanshijian}]]</span>
+                            <span class="date-info-limited">开盘</span>
+                            <span class="date-info invisible-content">[[${newhouse.lastupdatetime}]]  更新</span>
+                        </li>
+                        <!--<li>-->
+                            <!--<span class="time-info">2018-6-28</span>-->
+                            <!--<span class="date-info-limited">创新路33-1号（1号楼）、创新路33-10号（10号楼） 开盘</span>-->
+                            <!--<span class="date-info invisible-content">创新路33-1号（1号楼）、创新路33-10号（10号楼） 开盘</span>-->
+                        <!--</li>-->
+                                              
+                    </ul>
+                </div>
+            </div>
+                    </div>
+    </div>
+</div>
+<!-- /楼盘动态 -->
+
+    <!-- 房源售卖表 -->
+    
+    <!-- 户型介绍 -->
+    <div class="mod-wrap">
+    <div class='clear mod-panel-houseonline mod-house-online' id="house-online">
+        <span class="h2-flow"><a  class="title-link" href="#" target="_blank" >户型介绍</a></span>
+        <ul class="clear type-tab">
+                        
+        </ul>
+        <p class="det-line-h"></p>
+        <div data-index="4" class="list-item hide">
+        <div class="houselist">
+             <textarea class="hide text-one">
+                                  <ul class="clear house-det" data-id="3120032211687146">
+                <li class="img-li" data-dianji="p_bgygyyxaftae" data-xftrack="10164">
+                    <img class=" " th:alt="${newhouse.loupanmingcheng}" th:title="${newhouse.loupanmingcheng}" th:src="@{'http://dev-12.lingke.mobi/NewHousePhoto/'+${newhouse.photos[0].path}}" onerror="javascript:this.src='/yuqiaopc/img/house/linshi_house (4).jpg';">
+                    <span class="tip" th:title="${newhouse.mianji}">[[${newhouse.mianji}]] 平</span>
+                </li>
+
+                <li class="info-li">
+                    <p class="p1">[[${newhouse.huxing}]] <span>建面 [[${newhouse.mianji}]]</span><span class="p1-orientation ">（[[${newhouse.chaoxiang}]]）</span><span class="p1-state p1-red">[[${#strings.listSplit(newhouse.yongtu,'|')[0]}]]</span></p>
+                                        <p class="p2">均价 <span>[[${#strings.substringBefore(newhouse.junjiazuigao ,'.')}]]</span> 万/套
+                                                    <span class="p2-time">最近更新时间：[[${#dates.format(newhouse.lastupdatetime ,'yyyy-MM-dd')}]]</span>
+                                            </p>
+                                        
+                    
+                    
+
+                    <p class="p3">户型解读：<span th:title="${newhouse.huxing}
+">[[${newhouse.huxing}]]
+</span></p>
+
+                    <p class="p4">
+                        <span class="tag2" >
+                            [[${newhouse.liangdian}]]
+                        </span>
+                        <span class="tag1">[[${newhouse.yongtu}]]</span>
+                        <span class="tag2">[[${newhouse.huxing}]]</span>
+                        <span class="tag3">[[${newhouse.quyu}]]</span>
+                    </p>
+                </li>
+
+                <li  style="float:right">
+                                        <!--div class="slt-li"><span class="wenzi-i">在售共 </span><span class="down">93</span><span class="wenzi-i"> 套</span>
+                        
+                        
+                          
+                          
+                          
+                          
+                        
+                      </div-->
+                                            <!--<span class="chak" data-dianji="p_bgygyyxaftae">查看</span>-->
+                </li>
+
+            </ul>
+                        
+             </textarea>        </div>
+
+        <div class="housemore" style="display:none">
+            <textarea class="hide text-two">
+                                    
+        </textarea>
+        </div>
+            </div>
+        <div data-index="0" class="list-item ">
+        <div class="houselist">
+
+            <ul class="clear house-det" data-id="3120032211687146">
+                <li class="img-li" data-dianji="p_bgygyyxaftae" data-xftrack="10164">
+                    <img class=" " th:alt="${newhouse.loupanmingcheng}" th:title="${newhouse.loupanmingcheng}" th:src="@{'http://dev-12.lingke.mobi/NewHousePhoto/'+${newhouse.photos[0].path}}" onerror="javascript:this.src='/yuqiaopc/img/house/linshi_house (4).jpg';">
+                    <span class="tip" th:title="${newhouse.mianji}+'平'">[[${newhouse.mianji}]]平</span>                </li>
+
+                <li class="info-li">
+                    <p class="p1">[[${newhouse.huxing}]] <span>建面 [[${newhouse.mianji}]]</span><span class="p1-orientation ">（[[${newhouse.chaoxiang}]]）</span><span class="p1-state p1-red">[[${#strings.listSplit(newhouse.yongtu,'|')[0]}]]</span></p>
+                    <p class="p2">均价 <span>[[${#strings.substringBefore(newhouse.junjiazuigao ,'.')}]]</span> 万/套
+                        <span class="p2-time">最近更新时间：[[${#dates.format(newhouse.lastupdatetime ,'yyyy-MM-dd')}]]</span>
+                    </p>
+
+
+
+
+                    <p class="p3">户型解读：<span th:title="${newhouse.huxing}
+">[[${newhouse.huxing}]]
+</span></p>
+
+                    <p class="p4">
+                        <span class="tag2" >
+                            [[${#strings.listSplit(newhouse.liangdian,'|')[0]}]]
+                        </span>
+                        <span class="tag1">[[${newhouse.yongtu}]]</span>
+                        <span class="tag2">[[${newhouse.huxing}]]</span>
+                        <span class="tag3">[[${newhouse.quyu}]]</span>
+                    </p>
+                </li>
+
+                <li  style="float:right">
+                    <!--div class="slt-li"><span class="wenzi-i">在售共 </span><span class="down">93</span><span class="wenzi-i"> 套</span>
+
+
+
+
+
+
+
+  </div-->
+                    <!--<span class="chak" data-dianji="p_bgygyyxaftae">查看</span>-->
+                </li>
+
+            </ul>
+                        
+                     </div>
+
+        <div class="housemore" style="display:none">
+            <textarea class="hide text-two">
+                                    
+        </textarea>
+        </div>
+            </div>
+    
+        <a href="javascript:;" class="leftbtn scroll-to-end" id="leftbtn"></a>
+<a href="javascript:;" class="rightbtn" id="rightbtn"></a>
+<div class="type-pic animated bounceIn" style="display:none">
+    <div class="photo-round">
+        <div class="box">
+            <!--  <a href="javascript:;" class="leftbtn scroll-to-end" id="leftbtn"></a>
+             <a href="javascript:;" class="rightbtn" id="rightbtn"></a> -->
+            <a class="nature" href="" target="_blank" data-xftrack="10166">查看原图</a>
+            <span class="frame-tip"></span>
+            <div class="bigPic">
+                <ul>
+                                                                <li class="img-li">
+                            <img th:alt="${newhouse.loupanmingcheng}" th:title="${newhouse.loupanmingcheng}" data-nature="https://image1.ljcdn.com/hdic-frame/87f2d441-a624-463f-ba3a-82c30c203080.JPG.1000x.jpg" data-id="3120032211687146" data-room_num="" data-area="建面 130m²" data-price="10000" data-totalprice="均价 156 万/套" data-min="1560000" data-ori="南,北" data-decora="" data-read="方正的厅房面积合理，南北通透，科学利用每一寸空间
+" data-tag='["\u53cc\u536b","\u4e24\u5367\u671d\u5357","\u5357\u5317\u901a\u900f","\u5ba2\u5385\u671d\u5357","\u660e\u53a8","\u5e72\u6e7f\u4e0d\u5206\u79bb"]' class=" " data-index="0" data-frame_name="130平" data-followed="0" data-duibi=="0" th:src="@{'http://dev-12.lingke.mobi/NewHousePhoto/'+${newhouse.photos[0].path}}" onerror="javascript:this.src='/yuqiaopc/img/house/linshi_house (4).jpg';">
+                        </li>
+                                            
+                </ul>
+            </div>
+            <div class="smallPic" style="visibility:hidden;">
+                <ul>
+                                                                <li class="img-li">
+                            <img class=" " th:alt="${newhouse.loupanmingcheng}" th:title="${newhouse.loupanmingcheng}" th:src="@{'http://dev-12.lingke.mobi/NewHousePhoto/'+${newhouse.photos[0].path}}" onerror="javascript:this.src='/yuqiaopc/img/house/linshi_house (4).jpg';" data-index='0' />
+                        </li>
+                                            
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="pic-info clickTargetBox" data-proname="bgygyyxaftae">
+        <div class="p-info-box">
+                            <p class="p-title">[[${newhouse.loupanmingcheng}]]</p>
+                <p class="p-tips">
+                                                                        <span class="tag1">双卫</span>
+                                                    <span class="tag2">两卧朝南</span>
+                                                    <span class="tag3">南北通透</span>
+                                                    <span class="tag4">客厅朝南</span>
+                                                    <span class="tag5">明厨</span>
+                                                    <span class="tag6">干湿不分离</span>
+                        
+                                    </p>
+                <p class="p-line"></p>
+                <ul class="p-dtl">
+                    <li>
+                        <span class="nleft">房屋朝向：</span>
+                        <span class="nright direction-info">南,北</span>
+                    </li>
+                    <li>
+                        <span class="nleft">居室：</span>
+                        <span class="nright p-type">暂无</span>
+                    </li>
+                    
+                    <li>
+                        <span class="nleft">面积：</span>
+                        <span class="nright p-are">建面 130m²</span>
+                    </li>
+                    <li class="koleft">
+                        <span class="nleft">参考价格：</span>
+                        <span class="nright p-total-price" data-zongj="156">均价：未定万/套</span>
+                    </li>
+                    
+                    <li class="koleft">
+                        <span class="nleft">户型解读：</span>
+                        <span class="nright pread"></span>
+                    </li>
+
+                </ul>
+                <div class="pprice-box" data-area="130" data-price="10000" data-frame_name="130平" data-id="3120032211687146">
+
+
+                </div>
+                <div class="p-note-b">
+                    <div class="p-note" style="display:none">
+                        <textarea id="p-note-info" class="code-color autocomplete" maxlength="30" placeholder="请输入备注（可选）"></textarea>
+                    </div>
+                </div>
+                <div class="p-update">
+                                            最近更新时间：08月01日
+                                    </div>
+                <div class="pf-btn">
+                    <span class="duibi">添加对比</span>
+                    <span class="guanzhu " data-xftrack="10168_1">关注</span>
+                </div>
+                <div class="p-btn" style="display:none">
+                    <span class="quxiao">取消</span>
+                    <span class="tianjia">确认添加</span>
+                </div>
+                <div class="t-phonetag">
+                    <div class="btn_phone_ll clickAction LOGCLICK" data-xftrack="10169" data-log_group="1" log-mod="phone_click" data-bl="3" data-dianji="phone_bgygyyxaftae">
+                        <i></i>
+                                                    <span title="4008896183转8299">4008896183转8299</span>
+                                            </div>
+                </div>
+                
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+ 
+     <!-- 楼盘相册 -->
+    <!-- 楼盘相册-->
+<div class="mod-wrap">
+    <div class="clear mod-estate-album" id="estate-album">
+        <h2 ><a class="title-link"  href="javascript:void(0);" target="_blank" >楼盘相册</a></h2>
+        <div class="album-wrap clearfix">
+        	 <div class="album-list-item pull-left" th:each="photos:${newhouse.photos}">
+                <a data-lightbox="roadtrip" th:href="@{'http://dev-12.lingke.mobi/NewHousePhoto/'+${photos.path}}"  target="_blank" data-xftrack="10170">
+                    <img th:src="@{'http://dev-12.lingke.mobi/NewHousePhoto/'+${photos.path}}" onerror="javascript:this.src='/yuqiaopc/img/house/linshi_house (4).jpg';" th:alt="${newhouse.loupanmingcheng}"/>
+                    <span class="album-list-info clearfix">点击看大图</span></a>
+            </div>
+
+          
+        </div>
+
+        <a href="#" class="album-bottom" target="_blank">
+            <!--<span class="more-album" data-xftrack="10171">查看全部</span>-->
+        </a>
+    </div>
+</div>
+<!-- /楼盘相册 -->
+
+    <!-- 用户点评 -->
+    <!--<div class="mod-wrap">-->
+	<!--<div class='mod-panel user-comment' id="user-comment">-->
+      <!--<h2><a  class="title-link" href="/loupan/p_bgygyyxaftae/pinglun/" target="_blank" >用户点评</a></h2>-->
+            <!--<div class="top_box clear">-->
+	      <!--<div class="totalscore_box">-->
+	      	<!--<div class="totalscore">综合评分：<span class="score">4.4分</span><span class="ratio">高于29.8%同类新盘</span>-->
+          <!--</div>-->
+	      	<!--<div class="itemscore clear">-->
+	      		<!--<div class="item">-->
+		      	  <!--<span>周边配套：</span>-->
+		      		<!--<div class="star"><div class="star_info" style="width: 90%"></div></div>-->
+		      		<!--<i>4.5分</i>-->
+	      		<!--</div>-->
+	      		<!--<div class="item">-->
+		      		<!--<span>交通方便：</span>-->
+		      		<!--<div class="star"><div class="star_info" style="width: 80%"></div></div>-->
+		      		<!--<i>4.3分</i>-->
+	      		<!--</div>-->
+	      		<!--<div class="item">-->
+		      		<!--<span>绿化环境：</span>-->
+		      		<!--<div class="star"><div class="star_info" style="width: 90%"></div></div>-->
+		      		<!--<i>4.5分</i>-->
+	      		<!--</div>-->
+	      	<!--</div>-->
+	      <!--</div>-->
+	      <!--<span class="comment_btn" data-role="alertlayer" data-xftrack="10172">写点评</span>-->
+      <!--</div>-->
+
+      <!--<div class="list_box">-->
+      	<!--<ul class="tab clear">-->
+      		<!--<li class="active" data-role="allTab">全部评价<span>9</span></li>-->
+                	<!--</ul>-->
+
+        	<!--<ul class="list" data-role="allTabList">-->
+                			<!--<li class="clear" data-role="commentitem" data-id="497576">-->
+      				<!--<div class="l_userpic">-->
+      					<!--<div class="pic"><img src="static/picture/userpic.png"/></div>-->
+      					<!--<div class="info">-->
+      						  <!--誉桥房友186****5509<br />使用誉桥61天      					</div>-->
+      				<!--</div>-->
+      				<!--<div class="r_comment">-->
+      					<!--<span class="tag" style="display: none;"></span>-->
+      					<!--<div class="score clear">-->
+      						<!--<div class="star"><div class="star_info" style="width: 100%"></div></div>-->
+      						<!--<div class="num"><span>配套：5</span><span>交通：5</span><span>环境：5</span></div>-->
+      					<!--</div>-->
+                <!--<div class="words-container">-->
+        					<!--<div class="words">项目 位于沈阳新市府核心板块 紧邻莫子山公园环境优美 居住舒适度非常高</div>-->
+                <!--</div>-->
+                <!--<div class="sepline"></div>-->
+                      					<!--<div class="info">-->
+      						<!--<div class="time">2018-09-06 18:45:32</div>-->
+      						<!--<div class="like"><i></i><span>0</span></div>-->
+      					<!--</div>-->
+      				<!--</div>-->
+      			<!--</li>-->
+                			<!--<li class="clear" data-role="commentitem" data-id="438920">-->
+      				<!--<div class="l_userpic">-->
+      					<!--<div class="pic"><img src="static/picture/userpic.png"/></div>-->
+      					<!--<div class="info">-->
+      						  <!--誉桥房友186****6717<br />使用誉桥69天      					</div>-->
+      				<!--</div>-->
+      				<!--<div class="r_comment">-->
+      					<!--<span class="tag" style="display: none;"></span>-->
+      					<!--<div class="score clear">-->
+      						<!--<div class="star"><div class="star_info" style="width: 100%"></div></div>-->
+      						<!--<div class="num"><span>配套：5</span><span>交通：5</span><span>环境：5</span></div>-->
+      					<!--</div>-->
+                <!--<div class="words-container">-->
+        					<!--<div class="words">项目 位于沈阳新市府核心板块 紧邻莫子山公园环境优美 居住舒适度非常高</div>-->
+                <!--</div>-->
+                <!--<div class="sepline"></div>-->
+                      					<!--<div class="info">-->
+      						<!--<div class="time">2018-08-28 16:32:36</div>-->
+      						<!--<div class="like"><i></i><span>0</span></div>-->
+      					<!--</div>-->
+      				<!--</div>-->
+      			<!--</li>-->
+                			<!--<li class="clear" data-role="commentitem" data-id="357011">-->
+      				<!--<div class="l_userpic">-->
+      					<!--<div class="pic"><img src="static/picture/userpic.png"/></div>-->
+      					<!--<div class="info">-->
+      						  <!--誉桥房友139****9266<br />使用誉桥213天      					</div>-->
+      				<!--</div>-->
+      				<!--<div class="r_comment">-->
+      					<!--<span class="tag" style="display: none;"></span>-->
+      					<!--<div class="score clear">-->
+      						<!--<div class="star"><div class="star_info" style="width: 100%"></div></div>-->
+      						<!--<div class="num"><span>配套：5</span><span>交通：5</span><span>环境：5</span></div>-->
+      					<!--</div>-->
+                <!--<div class="words-container">-->
+        					<!--<div class="words">项目 位于沈阳新市府核心板块 紧邻莫子山公园环境优美 居住舒适度非常高</div>-->
+                <!--</div>-->
+                <!--<div class="sepline"></div>-->
+                      					<!--<div class="info">-->
+      						<!--<div class="time">2018-08-14 11:03:55</div>-->
+      						<!--<div class="like"><i></i><span>0</span></div>-->
+      					<!--</div>-->
+      				<!--</div>-->
+      			<!--</li>-->
+          <!---->
+        	<!--</ul>-->
+
+          <!--<ul class="list" data-role="realTabList" style="display: none;">-->
+          <!---->
+          <!--</ul>-->
+      <!--</div>-->
+
+      <!--<a href="/loupan/p_bgygyyxaftae/pinglun/" data-xftrack="10174"  class="comment-showall" target="_blank">显示全部</a>-->
+
+        <!--</div>-->
+  <!--<div id="comment_mask"></div>-->
+  <!--<div id="comment_layer">-->
+
+      <!--<div class="container">-->
+        <!--<div class="main">-->
+          <!--<div class="tit"><span>点评楼盘</span><i data-role="close"></i></div>-->
+          <!--<div class="comment_box">-->
+            <!--<div class="selarea">-->
+              <!--<i>是否会考虑购买该楼盘</i>-->
+              <!--<div class="sel" val=''><span data-val='0'>有兴趣</span><span data-val='1'>待对比</span><span data-val='2'>暂不考虑</span></div>-->
+            <!--</div>-->
+
+            <!--<div class="stararea">-->
+              <!--<ul>-->
+                <!--<li data-role="around">-->
+                  <!--<span>周边配套：</span>-->
+                   <!--<div class="star_wrap"><div class="layer-star"><div class="star_info"></div></div></div>-->
+                  <!--<i></i>-->
+                  <!--<b></b>-->
+                  <!--<p>如商业、医院、学校等生活配套建设</p>-->
+                <!--</li>-->
+                <!--<li data-role="traffic">-->
+                  <!--<span>交通方便：</span>-->
+                  <!--<div class="star_wrap"><div class="layer-star"><div class="star_info"></div></div></div>-->
+                  <!--<i></i>-->
+                  <!--<b></b>-->
+                  <!--<p>如公交、地铁、驾车、打车等出行条件</p>-->
+                <!--</li>-->
+                <!--<li data-role="green">-->
+                  <!--<span>绿化环境：</span>-->
+                   <!--<div class="star_wrap"><div class="layer-star"><div class="star_info"></div></div></div>-->
+                  <!--<i></i>-->
+                  <!--<b></b>-->
+                  <!--<p>如园林、湖泊等自然景观标准</p>-->
+                <!--</li>-->
+              <!--</ul>-->
+            <!--</div>-->
+
+            <!--<div class="writearea">-->
+              <!--<span>点评楼盘</span>-->
+              <!--<textarea placeholder="楼盘的位置如何,环境怎么样,配套规划满意吗?"></textarea>-->
+              <!--<p>（点评最多支持500字）</p>-->
+            <!--</div>-->
+
+            <!--<div class="uploadarea">-->
+              <!--<span class="title">添加图片<i>（最多可添加12张图片）</i></span>-->
+              <!--<ul class="add_list clear">-->
+                <!--<li class="add">-->
+                  <!--<div id="uploader-demo" data-xftrack="10173">-->
+                      <!--<div id="fileList" class="uploader-list"></div>-->
+                      <!--<div id="filePicker"><img src="static/picture/add_image.png" width="30" height="30"></div>-->
+                  <!--</div>-->
+                <!--</li>-->
+              <!--</ul>-->
+            <!--</div>-->
+
+            <!--<div class="buttonarea">-->
+              <!--<p class="error_tip"></p>-->
+              <!--<div class="btnlist clear">-->
+                <!--<span class="post">提交</span>-->
+                <!--<span class="anonymity"><i class="icon" data-value="0"></i><span>匿名评价</span>-->
+              <!--</div>-->
+            <!--</div>-->
+
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+
+
+  <!--</div>-->
+
+
+<!--</div>-->
+
+    <!-- 楼栋信息 -->
+    <!--<div class="mod-wrap mod-building">-->
+    <!--<div class='clear mod-panel' id="build-info">-->
+        <!--<h2 class="hh2">楼栋信息</h2>-->
+        <!--<div class="info-content clear">-->
+            <!--<div class="fl img-wrap" style="width:664px;height:340px;position:relative;overflow: hidden;" data-role="buildinfo-dragimg-container">-->
+                <!--<div style="position: absolute;left: 0;top: 0;cursor: move;" data-role="buildinfo-dragimg-dragwrap">-->
+                    <!--<img src="static/picture/fc70510d-890b-4f79-b39d-fcf1e6f49054.png.800x.jpg" data-role="buildinfo-dragimg-img">-->
+                    <!--<span class="mark-wrap" style="position: absolute;left: 0;top: 0;width: 100%;height: 100%;" data-role="buildinfo-dragimg-markcontainer"></span>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="fr content-wrap" ></div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+    <!-- 周边配套 -->
+    
+<!--<script type='text/template' id="mapListTpl">-->
+<!--<div class="name"><%=keyword%></div>-->
+<!--<div class="ul-box">-->
+  <!--<ul>-->
+    <!--&lt;!&ndash;<%for(var i = 0;i < list.length;i++){var item=list[i];%>&ndash;&gt;-->
+    <!--<li data-index="<%=i%>">-->
+      <!--<i>-->
+          <!--&#-->
+          <!--&lt;!&ndash;<%=i+65%>;&ndash;&gt;-->
+      <!--</i>-->
+      <!--<div class="item">-->
+          <!--<div class="itemTitle"><span><%=item.title%></span></div>-->
+        <!--&lt;!&ndash;<%if(keyword =="公交"||keyword =="地铁"){%>&ndash;&gt;-->
+          <!--<div class="itemInfo">-->
+             <!--&lt;!&ndash;<%for(var j = 0;j < item.address.split('; ').length;j++){%>&ndash;&gt;-->
+              <!--<span class="bus-one <%=item.type==0?'':'bordered'%>"><%=item.address.split('; ')[j]%></span>-->
+             <!--&lt;!&ndash;<%}%>&ndash;&gt;-->
+           <!--</div>-->
+        <!--&lt;!&ndash;<%}else{%>&ndash;&gt;-->
+          <!--<div class="itemInfo">-->
+              <!--&lt;!&ndash;<%=item.address%>&ndash;&gt;-->
+          <!--</div>-->
+        <!--&lt;!&ndash;<%}%>&ndash;&gt;-->
+        <!--&lt;!&ndash;<%if(item.phoneNumber){%>&ndash;&gt;-->
+          <!--<div class="itemInfo">-->
+              <!--&lt;!&ndash;<%=item.phoneNumber%>&ndash;&gt;-->
+          <!--</div>-->
+        <!--&lt;!&ndash;<%}%>&ndash;&gt;-->
+      <!--</div>-->
+      <!--<div class="busInfo">-->
+      <!--</div>-->
+    <!--</li>-->
+    <!--&lt;!&ndash;<%}%>&ndash;&gt;-->
+  <!--</ul>-->
+<!--</div>-->
+<!--</script>-->
+
+<!--<div class="around" id="around" style="margin-bottom: 15px;margin-top:0px;">-->
+  <!--<div class="content">-->
+    <!--<div class="title"><a class="title-link"  href="/loupan/p_bgygyyxaftae/peitao/" target="_blank" >周边配套</a></div>-->
+    <!--<ul class="type" data-xftrack="10176">-->
+      <!--<li>公交</li>-->
+      <!--<li>地铁</li>-->
+      <!---->
+      <!--<li>医院</li>-->
+      <!--<li>银行</li>-->
+      <!--<li>休闲娱乐</li>-->
+      <!--<li>购物</li>-->
+      <!--<li>餐饮</li>-->
+      <!--<li>运动健身</li>-->
+    <!--</ul>-->
+    <!--<div class="r-result"></div>-->
+    <!--<div class="container">-->
+      <!--<div class="map" id="map">-->
+      <!--</div>-->
+      <!--<span class="back-map">-->
+        <!--<i></i>-->
+      <!--</span>-->
+      <!--<ol class="ctrl">-->
+          <!--<li class="zoom-ctrl zoom-plus">+</li>-->
+          <!--<li class="zoom-ctrl zoom-minus">-</li>-->
+      <!--</ol>-->
+      <!--<div class="list" id="mapListContainer">-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+    <!-- 楼盘详情 -->
+    <div class="mod-wrap">
+	<div class='mod-panel mod-details' id="house-details">
+      <h2><a class="title-link" style="color: #333;"  href="/loupan/p_bgygyyxaftae/xiangqing/" target="_blank" >楼盘详情</a></h2>
+      <p class="mod-details-line"></p>
+      <!-- <ul class="clear tab">
+      		<li class="tab-loupan">
+            <span><i></i>楼盘信息</span>
+          </li>
+      		<li class="tab-wuye no-click">
+            <span><i></i>物业信息</span>
+          </li>
+	    </ul> -->
+    <div class="box-loupan">
+      <p class="desc-p"></p>
+      <p class="desc-p clear">
+        <span class="label">项目地址：</span>
+        <span class="label-val">[[${newhouse.quyu}]] [[${newhouse.loupandizhi}]]</span>
+      </p>
+      <p class="desc-p clear">
+        <span class="label">售楼处地址：</span>
+                <span class="label-val">[[${newhouse.loupandizhi}]]</span>
+              </p>
+      <p class="desc-p clear">
+        <span class="label">开发商：</span>
+        <span class="label-val">[[${newhouse.kaifagongsi}]]</span>
+      </p>
+      <p class="desc-p clear">
+        <span class="label">物业公司：</span>
+        <span class="label-val">[[${newhouse.wuyegongsi}]]</span>
+      </p>
+
+
+      <ul class="table-list clear">
+        <li class="odd">
+          <p class="desc-p clear">
+            <span class="label">最新开盘：</span>
+            <span class="label-val">[[${newhouse.kaipanshijian}]]</span>
+          </p>
+        </li>
+        <li class="even">
+           <p class="desc-p clear">
+            <span class="label">物业类型：</span>
+            <span class="label-val">[[${newhouse.yongtu}]]</span>
+          </p>
+        </li>
+        <li class="odd">
+          <p class="desc-p clear">
+            <span class="label">交房时间：</span>
+            <span class="label-val">[[${newhouse.jiaofangshijian}]]</span>
+          </p>
+        </li>
+        <li class="even">
+           <p class="desc-p clear">
+            <span class="label">容积率：</span>
+            <span class="label-val">
+                              [[${newhouse.rongnalv}]]
+                          </span>
+          </p>
+        </li>
+        <li class="odd">
+          <p class="desc-p clear">
+            <span class="label">产权年限：</span>
+            <span class="label-val">[[${newhouse.chanquannianxian}]]</span>
+          </p>
+        </li>
+        <li class="even">
+            <p class="desc-p clear">
+              <span class="label">绿化率：</span>
+              <span class="label-val">
+                                  [[${newhouse.lvhualv}]]
+                              </span>
+            </p>
+        </li>
+        <li class="odd">
+          <p class="desc-p clear">
+            <span class="label">规划户数：</span>
+            <span class="label-val">[[${newhouse.guihuahushu}]]</span>
+          </p>
+        </li>
+        <li class="even">
+           <p class="desc-p clear">
+              <span class="label">物业费用：</span>
+                            <span class="label-val">[[${newhouse.wuyefeiyong}]]  m²/月</span>
+                          </p>
+        </li>
+        <div class="clear">
+        <li class="odd">
+          <p class="desc-p clear">
+            <span class="label">车位情况：</span>
+            <span class="label-val">
+                                [[${newhouse.tingchewei}]]                                                                                      地下车位数636
+                                                                  </span>
+          </p>
+        </li>
+        <li class="even">
+          <p class="desc-p clear">
+            <span class="label">占地面积：</span>
+                                    <span class="label-val">[[${newhouse.zhandimianji}]]</span>
+            
+                      </p>
+        </li>
+        </div>
+        
+        <li class="odd">
+          <p class="desc-p clear">
+            <span class="label">产权联想：</span>
+            <span class="label-val">[[${newhouse.chanquannianxian}]]</span>
+          </p>
+        </li>
+        <li class="even">
+          <p class="desc-p clear">
+            <span class="label">楼盘别名：</span>
+            <span class="label-val">[[${newhouse.loupanbieming}]]</span>
+          </p>
+        </li>
+        <li class="odd">
+          <p class="desc-p clear">
+            <span class="label">交通状况：</span>
+            <span class="label-val">[[${newhouse.jiaotongzhuangkuang}]]</span>
+          </p>
+        </li>
+        <li class="even">
+          <p class="desc-p clear">
+            <span class="label">嫌恶设施：</span>
+            <span class="label-val">暂无</span>
+          </p>
+        </li>
+        <li class="odd">
+          <p class="desc-p clear">
+            <span class="label">占地面积：</span>
+            <span class="label-val">
+                              [[${newhouse.zhandimianji}]]平方米
+                          </span>
+          </p>
+        </li>
+        <li class="even">
+          <p class="desc-p clear">
+            <span class="label">周边配套：</span>
+            <span class="label-val">
+                              [[${newhouse.zhoubianpeitao}]]
+                          </span>
+          </p>
+        </li>
+      </ul>
+      <!--<a href="/loupan/p_bgygyyxaftae/xiangqing/" class="xqmore-btn-con" target="_blank">-->
+                <!--<span class="xqmore-btn" data-xftrack="10177" >查看更多</span>-->
+            <!--</a>-->
+     </div>
+    </div>
+</div>
+
+    <!-- 房贷计算器 -->
+    <!--<div class="mod-wrap">-->
+    <!--<div class='clear mod-panel mod-price' id="house-price">-->
+        <!--&lt;!&ndash; <h2>价格决策</h2> &ndash;&gt;-->
+        <!--<div class="count">-->
+            <!--<p class="count-top">-->
+                <!--<span class="count-icon"></span>-->
+                <!--<span class="price-title">房贷计算器</span>-->
+                <!--<span class="count-intro">选择基本情况，帮您快速计算房贷</span></p>-->
+            <!--<ol>-->
+                <!--<li class="clear">-->
+                    <!--<span class='tle'>估算总价：</span>-->
+                    <!--<div class="ret-zongjia" data-type="allpay">-->
+                        <!--<input id="all-pay" value="" maxlength=10>-->
+                        <!--<span class="wan">万</span></div>-->
+                <!--</li>-->
+                <!--<li class="clear">-->
+                    <!--<span class="tle">首付成数：</span>-->
+                    <!--<div class="ret" data-type="percent">-->
+                        <!--<span class="da chengshu-value" data-value="0.7">7成</span>-->
+                        <!--<span class="arrow"></span>-->
+                        <!--<ol>-->
+                            <!--<li data-value="0.1">1成</li>-->
+                            <!--<li data-value="0.2">2成</li>-->
+                            <!--<li data-value="0.3">3成</li>-->
+                            <!--<li data-value="0.4">4成</li>-->
+                            <!--<li data-value="0.5">5成</li>-->
+                            <!--<li data-value="0.6">6成</li>-->
+                            <!--<li data-value="0.7">7成</li></ol>-->
+                    <!--</div>-->
+                <!--</li>-->
+                <!--<li class="clear">-->
+                    <!--<span class="tle">贷款类别：</span>-->
+                    <!--<div class="ret" data-type="rate">-->
+                        <!--<span class="da" data-value="0.0325">公积金贷款</span>-->
+                        <!--<span class="arrow"></span>-->
+                        <!--<ol class="dk-type">-->
+                            <!--<li data-value="0.0325">公积金贷款</li>-->
+                            <!--<li data-value="0.049">商业贷款</li>-->
+                            <!--<li>组合贷款</li></ol>-->
+                    <!--</div>-->
+                <!--</li>-->
+                <!--<div id="dk-list" style="display:none">-->
+                    <!--<li class="clear">-->
+                        <!--<span class='dk'>公积金贷款：</span>-->
+                        <!--<div class="ret-zongjia" data-type="accurate">-->
+                            <!--<input class="da" id="accu-dk" data-value="0.0325">-->
+                            <!--<span class="wan">万</span></div>-->
+                    <!--</li>-->
+                    <!--<li class="clear">-->
+                        <!--<span class='dk'>商业贷款：</span>-->
+                        <!--<div class="ret-zongjia" data-type="bnsrate">-->
+                            <!--<input class="da" id="bns-dk" data-value="0.04635">-->
+                            <!--<span class="wan">万</span></div>-->
+                    <!--</li>-->
+                <!--</div>-->
+                <!--<li class="clear">-->
+                    <!--<span class="tle">贷款时间：</span>-->
+                    <!--<div class="ret" data-type="times">-->
+                        <!--<span class="da" data-value="360">30年（360期）</span>-->
+                        <!--<span class="arrow"></span>-->
+                        <!--<ol>-->
+                            <!--<li data-value="12">1年（12期）</li>-->
+                            <!--<li data-value="24">2年（24期）</li>-->
+                            <!--<li data-value="36">3年（36期）</li>-->
+                            <!--<li data-value="48">4年（48期）</li>-->
+                            <!--<li data-value="60">5年（60期）</li>-->
+                            <!--<li data-value="72">6年（72期）</li>-->
+                            <!--<li data-value="84">7年（84期）</li>-->
+                            <!--<li data-value="96">8年（96期）</li>-->
+                            <!--<li data-value="108">9年（108期）</li>-->
+                            <!--<li data-value="120">10年（120期）</li>-->
+                            <!--<li data-value="132">11年（132期）</li>-->
+                            <!--<li data-value="144">12年（144期）</li>-->
+                            <!--<li data-value="156">13年（156期）</li>-->
+                            <!--<li data-value="168">14年（168期）</li>-->
+                            <!--<li data-value="180">15年（180期）</li>-->
+                            <!--<li data-value="192">16年（192期）</li>-->
+                            <!--<li data-value="204">17年（204期）</li>-->
+                            <!--<li data-value="216">18年（216期）</li>-->
+                            <!--<li data-value="228">19年（228期）</li>-->
+                            <!--<li data-value="240">20年（240期）</li>-->
+                            <!--<li data-value="252">21年（252期）</li>-->
+                            <!--<li data-value="264">22年（264期）</li>-->
+                            <!--<li data-value="276">23年（276期）</li>-->
+                            <!--<li data-value="288">24年（288期）</li>-->
+                            <!--<li data-value="300">25年（300期）</li>-->
+                            <!--<li data-value="312">26年（312期）</li>-->
+                            <!--<li data-value="324">27年（324期）</li>-->
+                            <!--<li data-value="336">28年（336期）</li>-->
+                            <!--<li data-value="348">29年（348期）</li>-->
+                            <!--<li data-value="360">30年（360期）</li></ol>-->
+                    <!--</div>-->
+                <!--</li>-->
+                <!--<li class="select-math">-->
+                    <!--<i class="wu-icon right-icon"></i>-->
+                    <!--<span class="slt-i">等额本息</span>-->
+                    <!--<i class="wu-icon" data-value="2"></i>-->
+                    <!--<span class="slt-i">等额本金</span></li>-->
+            <!--</ol>-->
+        <!--</div>-->
+        <!--<div class="clear start-div">-->
+            <!--<span class="start-line"></span>-->
+            <!--<span class="clear start-btn" data-xftrack="10178"></span>-->
+        <!--</div>-->
+        <!--<div class="clear bill">-->
+            <!--<p class="bill-top">-->
+                <!--<span class="price-title">您的账单</span>-->
+                <!--<span class="jiage">均价:</span>-->
+                <!--<span class="jiage-info">-->
+                    <!--<span class="junjia-info"></span>-->
+                <!--</span>-->
+                <!--<span class="jiage">估算总价:</span>-->
+                <!--<span class="zongjia-info-box">-->
+                    <!--<span class="zongjia-info"></span>-->
+                <!--</span>-->
+            <!--</p>-->
+            <!--<div class="bill-info">-->
+                <!--<div class="pie-bgbgbg"></div>-->
+                <!--<div id="my-pie"></div>-->
+                <!--<p class="shoufu">-->
+                    <!--<span>首付：-->
+                        <!--<span class="shoufu-info"></span>-->
+                        <!--<span class="shoufu-chengshu"></span>-->
+                    <!--</span>-->
+                <!--</p>-->
+                <!--<p class="daikuan">-->
+                    <!--<span>贷款金额：-->
+                        <!--<span class="daikuan-info"></span></span>-->
+                <!--</p>-->
+                <!--<p class="lixi">-->
+                    <!--<span>偿还利息：-->
+                        <!--<span class="lixi-info"></span></span>-->
+                <!--</p>-->
+            <!--</div>-->
+            <!--<div id="per-month" class="yue">-->
+                <!--<span class="yue1">每月还款：-->
+                    <!--<span class="yue-info"></span></span>-->
+            <!--</div>-->
+            <!--<div id="first-month" style="display:none" class="yue">-->
+                <!--<span class="yue1">首月还款：-->
+                    <!--<span class="yue-info"></span></span>-->
+            <!--</div>-->
+            <!--<div class="small">-->
+                <!--<span>＊备注：公积金贷款利率3.25% 商业贷款利率4.90%（贷款5年以上利率）数据来源：中国人民银行官网 2016-10-26数据</span></div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+    <!-- 推荐楼盘 -->
+    <div class="mod-wrap" th:if="${houseQuyu  !=null}">
+    <div class='clear mod-panel' id="house-push">
+        <h2>推荐楼盘</h2>
+        <div class="img-list">
+            <div class="show-content">
+                <ul>
+                    <li th:each="house:${houseQuyu}" class="post_ulog_exposure_scroll" data-ulog-exposure="xinfangpc_show=20009&location=1&project_name=xdwkcxcabndl&recommend_log_info=">
+                        <a class="pic" data-xftrack="10123" data-other-action="location=1&project_name=xdwkcxcabndl&recommend_log_info="  th:href="@{'/newHouse/'+${house.id}}">
+                        <span class="coverpic-type coverpic-pos-rt">效果图</span>
+                            <img th:src="@{'http://dev-12.lingke.mobi/NewHousePhoto/'+${newhouse.photos[0].path}}" onerror="javascript:this.src='/yuqiaopc/img/house/linshi_house (4).jpg';" th:alt="${house.loupanmingcheng}" th:title="${house.loupanmingcheng}" >
+
+                            <span class="tip">
+                                                                                                            均价 [[${#strings.substringBefore(house.junjiazuigao ,'.')}]]元/平
+                                                                                                </span>
+
+                        </a>
+                        <a class="house-name" data-xftrack="10123" data-other-action="location=1&project_name=xdwkcxcabndl&recommend_log_info=" th:href="@{'/newHouse/'+${house.id}}">
+                            <strong style="font-weight: bold;">
+                                [[${house.loupandizhi}]]
+                                    －[[${house.loupanbieming}]]                                                          </strong>
+                        </a>
+                        <span class="zhuzhai">[[${house.yongtu}]]</span>                        <P>
+                        
+                                                          建面 [[${house.jianzhumianji}]]㎡
+                                                    </P>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    <!-- 免责声明 -->
+    <!--<div class="mod-wrap">-->
+        <!--<p class="det-disclaimer">免责声明：楼盘信息由开发商提供，最终以政府部门登记备案为准，请谨慎核查。如楼盘信息有误，您可拨打电话投诉：10109666</p>-->
+    <!--</div>-->
+    
+    <span class="close"></span>
+    <div class="overlayBgl"></div>
+    </div>
+<!--底部-->
+
+<div th:replace="base/footer :: html"></div>
+<!--底部 end-->
+
+<div style="display:none">
+            <!-- google -->
+
+        </div><!-- lianjia ulog -->
+<div style="display:none">
+
+</div></div><!-- LianjiaIM Style -->
+
+
+</body></html>

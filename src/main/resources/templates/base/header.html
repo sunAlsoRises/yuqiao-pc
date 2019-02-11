@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>头部导航</title>
+    <script type="text/javascript" th:src="@{/lib/jquery.cookie.js}"></script>
+    <script type="text/javascript" th:src="@{/lib/common_001.js}"></script>
+</head>
+<body>
+<!--顶部导航栏开始-->
+<div class="topbox" id="NewgoTop">
+    <div class="topnav">
+        <h1 class="f-l"><a th:href="@{/index}" title="誉桥在线"></a></h1>
+        <!--网站主导航-->
+        <div class="main-menu f-l">
+            <ul>
+
+                <li>
+                    <a target="_self" title="首页" th:href="@{/index}" class="">首页</a>
+                </li>
+
+                <li>
+                    <a target="_self" title="沈阳二手房" th:href="@{/ershoufang/ershoufangs/}"  class="menuhover">二手房</a>
+                    <div class="main-m-2j"><i></i>
+                        <!--<span>-->
+                        <!--<a th:href="@{/ershoufang/ershoufangs/}">个人房源</a></span>-->
+                        <span><a th:href="@{/newHouse/newhouses/}">新房</a></span>
+                        <span><a th:href="@{/xiaoqu/xiaoqu}">找小区</a></span>
+                        <!--	<span><a href="https://www.yqgs.cn/daikuan/gongju/daikuan/">贷款计算</a></span>
+--><span class="m-m-2j-btn"><a th:href="@{/helphouse/maifang}">我要卖房</a></span></div>
+                </li>
+
+                <li>
+                    <a target="_self" title="沈阳新房" th:href="@{/newHouse/newhouses/}" class="">新房团购</a>
+                </li>
+
+                <li>
+                    <a target="_self" title="沈阳租房" th:href="@{/ershoufang/zufang}" class="">租房</a>
+                    <div class="main-m-2j"><i></i>
+                        <!--<span><a href="../ershoufang/ershoufang.html" targer="_blank">誉桥整租</a></span>-->
+                        <!--<span><a href="../ershoufang/ershoufang.html">个人房源</a></span>-->
+                        <span><a href="../ershoufang/ershoufang.html">找小区</a></span>
+                        <!--<span><a href="../ershoufang/ershoufang.html">房屋管家</a></span>-->
+                        <span class="m-m-2j-btn"><a th:href="@{/helphouse/chuzu}">免费出租</a></span>
+                    </div>
+                </li>
+
+                <li>
+                    <a target="_self" title="沈阳找经纪人" th:href="@{/jingjiren/jingjiren/}" class="">找经纪人</a>
+                </li>
+
+                <li>
+                    <a target="_self" title="沈阳海外房产，沈阳门市房" href="#" class="">海外房产</a>
+                    <div class="main-m-2j"><i></i><span><a href="#">房产买卖</a></span><span><a href="#">房产租赁</a></span></div>
+                </li>
+
+                <li>
+                    <a target="_self" title="沈阳地图找房" th:href="@{/maptohouse/ditu}" class="">地图找房</a>
+                </li>
+
+                <li>
+                    <a target="_self" title="沈阳二手房贷款问答指南" th:href="@{/wenda/wenda}" class="">问答指南</a>
+                    <div class="main-m-2j"><i></i><span><a th:href="@{/wenda/wenda}">贷款知识</a></span><span><a th:href="@{/wenda/wenda}">权证知识</a></span><span><a th:href="@{/wenda/wenda}">贷款计算</a></span></div>
+                </li>
+
+                <li>
+                    <a title="沈阳房产网资讯" th:href="@{/xiaoqu/xiaoqu}" class="">小区</a>
+                </li>
+
+                <li>
+                    <a target="_self" title="沈阳发布房源" th:href="@{/helphouse/maifang}" class="">发布房源</a>
+                    <!--<div class="main-m-2j"><i></i><span><a th:href="@{/helphouse/maifang}"> 卖房 </a></span><span><a th:href="@{/helphouse/buy}"> 买房 </a></span>-->
+                        <!--<span><a th:href="@{/helphouse/chuzu}"> 出租 </a></span>-->
+                        <!--<span><a th:href="@{/helphouse/chuzu}"> 求租 </a></span>-->
+                    <!--</div>-->
+                </li>
+
+                <li>
+                    <a target="_self" title="沈阳移动APP" href="#" class="">移动APP</a>
+                    <div class="main-m-2j hearerweima"><i></i>
+                        <div class="h_erweima"></div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+        <div class="loginbox f-l">
+            <div>
+                <a rel="nofollow" th:href="@{/login-res/login/}" class="logintopbtn" target="_top">登录</a><i>|</i>
+                <a rel="nofollow" th:href="@{/login-res/resgist/}" target="_top">注册</a>
+            </div>
+        </div>
+        <script type="text/javascript" th:src="@{/js/newself/loginCookie.js}"></script>
+<script>
+
+    var login = new LoginCookie($(".loginbox").find("a").eq(0),$(".loginbox").find("a").eq(1));
+        login.init();
+</script>
+
+    </div>
+</div>
+<!--顶部导航栏结束-->
+
+</body>
+</html>
